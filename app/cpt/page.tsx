@@ -130,4 +130,15 @@ export default function CPTPage() {
 </div>
     </main>
   );
-}
+}<Link
+  href="/cpt/surgery/10000-series-post-work-quiz"
+  className="block rounded-lg border p-4 hover:bg-gray-100"
+>
+  <h3 className="font-bold">
+    10,000 Series Post-Work Quiz
+  </h3>
+  <p>
+    Practice questions for the CPT Surgery
+    10,000 Series section.
+  </p>
+</Link>

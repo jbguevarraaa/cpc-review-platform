@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/cpt/surgery/10000-series-post-work-quiz", "app/cpt/surgery/10000-series-post-work-quiz"  ],
   "exclude": ["node_modules"]
 }
