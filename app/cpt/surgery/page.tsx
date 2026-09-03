@@ -63,6 +63,13 @@ export default function SurgeryPage() {
   </div>
 </Link> 
 
+        <Link
+          href="/cpt/surgery/20,000"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
         <div
           style={{
             border: "1px solid #ddd",
@@ -75,6 +82,7 @@ export default function SurgeryPage() {
           <h3>20,000 Series</h3>
           <p>Musculoskeletal System</p>
         </div>
+        </Link>
 
         <div
           style={{
