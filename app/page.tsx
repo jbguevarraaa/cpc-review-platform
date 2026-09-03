@@ -11,6 +11,7 @@ export default function Home() {
 };
   return (
     <main
+  className="homepage"
   style={{
     maxWidth: "1400px", 
     margin: "0 auto",
@@ -21,7 +22,8 @@ export default function Home() {
     minHeight: "100vh",
   }}
 >
-      <div
+        <div
+      className="homepage-hero"
   style={{
     background: "linear-gradient(135deg, #2563eb, #7c3aed)",
     color: "white",
@@ -85,6 +87,7 @@ export default function Home() {
   }}
 >
   <div
+  className="homepage-stats"
     style={{
       flex: 1,
       minWidth: "180px",
@@ -100,6 +103,7 @@ export default function Home() {
   </div>
 
   <div
+  className="homepage-welcome"
     style={{
       flex: 1,
       backgroundColor: "white",
@@ -174,7 +178,8 @@ export default function Home() {
     and tracking your certification readiness.
   </p>
 </div>
-      <div
+        <div
+      className="homepage-learning"
   style={{
     display: "flex",
     gap: "15px",
@@ -183,6 +188,7 @@ export default function Home() {
   }}
 >
   <div
+  className="homepage-study-grid"
     style={{
       background: "#2563eb",
       color: "white",
@@ -383,7 +389,7 @@ minHeight: "120px",
   📝 Practice
 </h2>
 
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div className="homepage-practice" style={{ display: "flex", gap: "10px" }}>
         <div
   style={{
     border: "1px solid #ddd",
