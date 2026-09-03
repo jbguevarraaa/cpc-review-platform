@@ -1,6 +1,7 @@
 export default function StudyTipsPage() {
   return (
     <main
+      className="study-tips-reviewer"
       style={{
         maxWidth: "1000px",
         margin: "40px auto",
@@ -551,6 +552,119 @@ export default function StudyTipsPage() {
 
       <hr />
 
+      <h2>📚 ACTUAL CPT GUIDELINES — 10,000 SERIES</h2>
+
+      <h3 style={guidelineHeadingStyle}>1. Fine Needle Aspiration (FNA) Biopsy</h3>
+      <ol>
+        <li>FNA obtains cells with a fine needle for cytologic examination.</li>
+        <li>Report FNA once per lesion sampled during the session.</li>
+        <li>When separate lesions are sampled with the same imaging modality, use the appropriate add-on code for additional lesions.</li>
+        <li>When different imaging modalities are used, report the corresponding primary code with modifier 59 for the additional modality.</li>
+        <li>Do not separately report imaging guidance when it is included in the FNA code.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>2. Debridement</h3>
+      <ol>
+        <li>Select the code by the deepest tissue removed and the wound surface area.</li>
+        <li>For one wound, report the deepest level of tissue removed.</li>
+        <li>For multiple wounds, add the areas only when the wounds are debrided to the same depth.</li>
+        <li>Do not combine areas from different depths.</li>
+        <li>Use 97597-97598 for skin-only debridement and 11042-11047 for subcutaneous tissue, muscle/fascia, or bone.</li>
+        <li>Do not report 11042-11047 with 97597-97602 for the same wound.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>3. Biopsy</h3>
+      <ol>
+        <li>Report a biopsy when tissue is obtained independently or distinctly for diagnostic histopathologic examination.</li>
+        <li>Tissue obtained during excision, destruction, or shave removal is usually included and is not a separate biopsy.</li>
+        <li>Partial-thickness biopsy does not extend below the dermis or lamina propria.</li>
+        <li>Full-thickness biopsy extends into the subcutaneous or submucosal space.</li>
+        <li>Sampling only the stratum corneum is not a separately reportable skin biopsy.</li>
+        <li>Tangential biopsy uses a shave, scoop, saucerize, or curette technique and is reported with 11102-11103.</li>
+        <li>Punch biopsy uses a punch tool to obtain a cylindrical full-thickness sample and is reported with 11104-11105. Simple closure is included.</li>
+        <li>Incisional biopsy uses a sharp blade to obtain a full-thickness vertical or wedge sample and is reported with 11106-11107. Simple closure is included.</li>
+        <li>For multiple biopsies, report one primary biopsy code and use the appropriate add-on code for each additional lesion or technique.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>4. Skin Tags and Shave Removal</h3>
+      <ol>
+        <li>Report removal of up to 15 skin tags with 11200 and each additional 10 lesions, or part thereof, with 11201.</li>
+        <li>Shaving is transverse or horizontal removal of an epidermal or dermal lesion without full-thickness dermal excision.</li>
+        <li>Shave removal is therapeutic and includes local anesthesia and wound cauterization when performed.</li>
+        <li>Use 11300-11313 according to the lesion location and diameter.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>5. Benign and Malignant Excision</h3>
+      <ol>
+        <li>Excision means full-thickness removal through the dermis, including margins and simple closure when performed.</li>
+        <li>Measure the greatest diameter of the lesion plus the narrowest margins required for complete excision before removal.</li>
+        <li>Use the same excised diameter whether the defect is closed linearly or reconstructed with a graft.</li>
+        <li>Report each separate lesion excised.</li>
+        <li>Report intermediate or complex closure separately when the closure meets those definitions.</li>
+        <li>When adjacent tissue transfer is performed, report the adjacent tissue transfer code only; do not separately report 11400-11446 or 11600-11646.</li>
+        <li>For malignant re-excision at a later operative session, report the appropriate excision code and append modifier 58 when performed during the postoperative period.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>6. Wound Repair and Closure</h3>
+      <ol>
+        <li>Simple repair is a superficial wound requiring a simple one-layer closure.</li>
+        <li>Intermediate repair includes layered closure of deeper subcutaneous tissue and superficial non-muscle fascia, or a single-layer closure of a heavily contaminated wound requiring extensive cleaning.</li>
+        <li>Complex repair includes intermediate repair plus features such as exposed bone, cartilage, tendon, named neurovascular structures, debridement of wound edges, extensive undermining, free-margin involvement, or retention sutures.</li>
+        <li>Measure and record every repaired wound in centimeters.</li>
+        <li>Add lengths only for wounds in the same repair classification and the same anatomic grouping.</li>
+        <li>Do not add lengths from different repair classifications or different anatomic groupings.</li>
+        <li>When multiple classifications are repaired, report the more complicated repair first and the less complicated repair with modifier 59.</li>
+        <li>Debridement is separately reportable only when it involves prolonged cleansing, appreciable removal of devitalized or contaminated tissue, or is performed separately without immediate primary closure.</li>
+        <li>Repair of exposed nerves, vessels, or tendons is reported under the appropriate body system. Simple exploration or ligation is generally included in wound closure.</li>
+        <li>For wound enlargement, penetration assessment, foreign-body removal, or coagulation of minor vessels after penetrating trauma, use 20100-20103 as appropriate.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>7. Adjacent Tissue Transfer</h3>
+      <ol>
+        <li>Codes 14000-14302 include excision and/or repair by adjacent tissue transfer or rearrangement.</li>
+        <li>Undermining alone without additional incisions is not adjacent tissue transfer; use complex repair codes when appropriate.</li>
+        <li>Do not separately report benign or malignant lesion excision with an adjacent tissue transfer code.</li>
+        <li>For code selection, add the primary and secondary defects together to determine the total defect size.</li>
+        <li>Use the recipient area and total defect size to select the appropriate code.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>8. Skin Replacement, Grafts, and Flaps</h3>
+      <ol>
+        <li>Surgical preparation codes 15002-15005 prepare a clean, viable wound bed for a graft, flap, skin substitute, or negative-pressure wound therapy.</li>
+        <li>Do not use 15002-15005 for chronic-wound debris removal when the wound is left to heal by secondary intention.</li>
+        <li>For multiple wounds, add areas only within the same anatomic grouping.</li>
+        <li>Use the recipient-area size when selecting skin replacement and graft codes.</li>
+        <li>Skin substitute supply is reported separately with 15271-15278.</li>
+        <li>Removal of a current graft and simple wound cleansing are included when performed.</li>
+        <li>Debridement is separately reportable only when it meets the guideline requirements for gross contamination, appreciable devitalized tissue, or separate performance.</li>
+        <li>Repair of a donor site requiring a skin graft or local flap is separately reportable.</li>
+        <li>For flaps, the listed region generally refers to the recipient site, except when the code describes a donor site for a tube or delayed flap.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>9. Burns and Destruction</h3>
+      <ol>
+        <li>Burn treatment codes 16000-16036 refer to local treatment of the burned surface.</li>
+        <li>List the percentage of body surface involved and the depth of the burn when required.</li>
+        <li>Destruction includes ablation of benign, premalignant, or malignant tissue by methods such as electrosurgery, cryosurgery, laser, chemical treatment, or curettement.</li>
+        <li>Destruction codes generally include local anesthesia and usually do not require closure.</li>
+        <li>For premalignant lesions, use 17000 for the first lesion, 17003 for lesions 2 through 14, and 17004 for 15 or more lesions.</li>
+        <li>For benign lesions, use 17110 for up to 14 lesions and 17111 for 15 or more lesions.</li>
+        <li>Do not report 17004 with 17000-17003 for the same service.</li>
+      </ol>
+
+      <h3 style={guidelineHeadingStyle}>10. Breast Procedure Reminders</h3>
+      <ol>
+        <li>Percutaneous image-guided breast biopsy codes 19081-19086 include the applicable imaging guidance and localization device placement when performed.</li>
+        <li>Do not separately report 76098, 76942, 77002, or 77021 for the same lesion when included in the breast biopsy service.</li>
+        <li>For additional lesions using the same imaging modality, use the appropriate add-on code.</li>
+        <li>For bilateral image-guided biopsies, use the primary code for the initial lesion and the add-on code for the contralateral or additional lesion.</li>
+        <li>Percutaneous breast biopsy without imaging guidance is reported with 19100.</li>
+        <li>Open incisional breast biopsy is reported with 19101 and does not include imaging guidance.</li>
+        <li>For bilateral applicable breast procedures, report modifier 50 according to payer and current coding instructions.</li>
+      </ol>
+
+      <hr />
+
       <h2>🔥 10,000-SERIES EXAM PRIORITIES</h2>
 
       <ol>
@@ -611,4 +725,12 @@ const cellStyle = {
   border: "1px solid #ddd",
   padding: "10px",
   textAlign: "left" as const,
+};
+
+const guidelineHeadingStyle = {
+  color: "#1d4ed8",
+  fontSize: "26px",
+  fontWeight: "800",
+  marginTop: "30px",
+  marginBottom: "14px",
 };
