@@ -374,6 +374,50 @@ minHeight: "120px",
   Level II Codes & Modifiers
 </small>
 </Link>
+
+        <Link
+  href="/business-medicine"
+  style={{
+    display: "inline-block",
+    padding: "30px",
+    border: "1px solid #ddd",
+    borderRadius: "12px",
+    borderTop: "5px solid #f97316",
+    textDecoration: "none",
+    color: "black",
+    backgroundColor: "white",
+    minHeight: "120px",
+    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+    cursor: "pointer",
+    transition: "0.2s",
+  }}
+>
+  <h3
+  style={{
+    fontSize: "24px",
+    marginBottom: "12px",
+  }}
+>
+  📋 Business of Medicine
+</h3>
+
+<p
+  style={{
+    color: "#6b7280",
+    marginBottom: "12px",
+  }}
+>
+  Healthcare business fundamentals
+</p>
+
+<small
+  style={{
+    color: "#9ca3af",
+  }}
+>
+  Reimbursement • Compliance • Privacy
+</small>
+</Link>
       </div>
 
       <br />
