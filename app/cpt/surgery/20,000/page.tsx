@@ -26,12 +26,21 @@ export default function TwentyThousandSeriesPage() {
         20,000 Series Study Resources
       </h2>
 
-      <Link href="/cpt/surgery/20,000-series-study-tips" style={{ textDecoration: "none", color: "inherit" }}>
-        <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
-          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>📚 Study Tips & Hacks</h3>
-          <p style={{ margin: 0 }}>Helpful coding tips, strategies, and study hacks for the 20,000 Series.</p>
-        </div>
-      </Link>
+      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+        <Link href="/cpt/surgery/20000-series-post-work-quiz" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>📝 20,000 Series Post-Work Quiz</h3>
+            <p style={{ margin: 0 }}>Practice questions for the CPT Surgery 20,000 Series.</p>
+          </div>
+        </Link>
+
+        <Link href="/cpt/surgery/20,000-series-study-tips" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>📚 Study Tips & Hacks</h3>
+            <p style={{ margin: 0 }}>Helpful coding tips, strategies, and study hacks for the 20,000 Series.</p>
+          </div>
+        </Link>
+      </div>
 
       <div style={{ marginTop: "35px" }}>
         <Link href="/cpt/surgery" style={{ textDecoration: "none", color: "#2563eb", fontWeight: "600" }}>
