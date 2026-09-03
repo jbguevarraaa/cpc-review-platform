@@ -67,18 +67,27 @@ export default function SurgeryPage() {
         </Link>
 
         {/* 20,000 Series */}
-        <div
+        <Link
+          href="/cpt/surgery/20,000"
           style={{
-            border: "1px solid #ddd",
-            borderRadius: "12px",
-            padding: "20px",
-            width: "220px",
-            backgroundColor: "white",
+            textDecoration: "none",
+            color: "inherit",
           }}
         >
-          <h3>20,000 Series</h3>
-          <p>Musculoskeletal System</p>
-        </div>
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "220px",
+              backgroundColor: "white",
+              cursor: "pointer",
+            }}
+          >
+            <h3>20,000 Series</h3>
+            <p>Musculoskeletal System</p>
+          </div>
+        </Link>
 
         {/* 30,000 Series */}
         <div
