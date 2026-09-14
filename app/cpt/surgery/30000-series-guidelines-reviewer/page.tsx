@@ -357,6 +357,39 @@ const rulesTitleStyle = { margin: "0 0 8px", color: "#991b1b", fontWeight: 800, 
 const tipsBoxStyle = { background: "#f0fdf4", border: "1px solid #bbf7d0", borderLeft: "5px solid #16a34a", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
 const tipsTitleStyle = { margin: "0 0 8px", color: "#166534", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const backLinkStyle = { textDecoration: "none", color: "#0f766e", fontWeight: 700 };
+const highlightGridStyle = { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px", marginTop: "14px" };
+const highlightCardStyle = { background: "#f9faf9", border: "1px solid #ece7db", borderRadius: "12px", padding: "16px 18px" };
+const highlightTitleStyle = { margin: "0 0 10px", display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" as const, fontSize: "15px", fontWeight: 800, color: "#111827" };
+const highlightLineStyle = { margin: "0 0 8px", lineHeight: 1.6, fontSize: "13.5px" };
+
+type ExamHighlight = { title: string; range: string; trap: string; tip: string };
+
+const examHighlights: ExamHighlight[] = [
+  {
+    title: "Nose",
+    range: "30000–30999",
+    trap: "Turbinate work has three separate techniques (excision/resection, ablation, fracture) that are never billed together on the same turbinate — and superior/middle turbinate procedures have no dedicated code, so they always route to 30999.",
+    tip: "Setting tells you the code: simple polyp excision (30110) is office-level, extensive (30115) is hospital-level.",
+  },
+  {
+    title: "Accessory Sinuses",
+    range: "31000–31299",
+    trap: "The single biggest trap in this series: once the most extensive endoscopic procedure for a sinus/region is billed on one side, the lesser or diagnostic components for that same side are not separately reportable.",
+    tip: "Before picking any endoscopy add-on, ask: 'is this already included in a more extensive code I'm also billing on this side?'",
+  },
+  {
+    title: "Larynx",
+    range: "31300–31599",
+    trap: "31551–31554 and 31580 (laryngeal stenosis/web repair) are mutually exclusive — patient age (under vs. 12+) and whether a stent is left in place decide the one correct code.",
+    tip: "Ask two questions in order: web or stenosis? Stent or no stent? That narrows it to one code almost every time.",
+  },
+  {
+    title: "Trachea & Bronchi",
+    range: "31600–31899",
+    trap: "31628/31629 (transbronchial biopsies) are billed once per lobe no matter how many individual biopsies are taken there — additional lobes go to the add-on codes (31632/31633), not repeated units of the base code.",
+    tip: "\"Each additional lobe\" in a question is your flag to reach for the matching add-on code instead of doubling the base code.",
+  },
+];
 
 export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
   return (
@@ -375,6 +408,23 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
 
       <section style={introStyle}>
         <strong>How to use this reviewer:</strong> each subsection lists its code range, the codes grouped by category the way the book organizes them, a set of key coding rules (paraphrased closely for accuracy, not copied verbatim), and a couple of editable memory tips. Lungs &amp; Pleura (32035 onward) is still coming — send the rest whenever you&apos;re ready and I&apos;ll add it as Part 2.
+      </section>
+
+      <section style={sectionStyle}>
+        <div style={sectionHeaderStyle}>
+          <span style={sectionNumberStyle}>🚨</span>
+          <h2 style={sectionTitleStyle}>Top Exam Traps &amp; Tips — Quick Reference</h2>
+        </div>
+        <p style={pStyle}>Skim this before diving into the full sections below — one flagship trap and one memory tip per subsection. The complete rule and tip lists live further down under each subsection.</p>
+        <div style={highlightGridStyle}>
+          {examHighlights.map((h) => (
+            <div key={h.title} style={highlightCardStyle}>
+              <p style={highlightTitleStyle}>{h.title} <span style={rangeChipStyle}>{h.range}</span></p>
+              <p style={highlightLineStyle}><strong>🟥 Trap:</strong> {h.trap}</p>
+              <p style={{ ...highlightLineStyle, margin: 0 }}><strong>🧠 Tip:</strong> {h.tip}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {subsections.map((sub) => (
