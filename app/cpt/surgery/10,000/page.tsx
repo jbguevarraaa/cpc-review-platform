@@ -130,6 +130,76 @@ export default function TenThousandSeriesPage() {
             </p>
           </div>
         </Link>
+
+        {/* Transcript Quiz */}
+        <Link
+          href="/cpt/surgery/10000-series-transcript-quiz"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "25px",
+              width: "320px",
+              backgroundColor: "white",
+              cursor: "pointer",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              🧪 Transcript Quiz
+            </h3>
+
+            <p style={{ margin: 0 }}>
+              Separate question set based on the transcript screenshots with answer
+              explanations.
+            </p>
+          </div>
+        </Link>
+
+        {/* Guidelines Question Quiz */}
+        <Link
+          href="/cpt/surgery/10000-series-guidelines-quiz"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "25px",
+              width: "320px",
+              backgroundColor: "white",
+              cursor: "pointer",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              📘 Guidelines Question Quiz
+            </h3>
+
+            <p style={{ margin: 0 }}>
+              Photo-based CPT guideline questions with transcript-based
+              explanations.
+            </p>
+          </div>
+        </Link>
       </div>
 
       {/* Back Button */}

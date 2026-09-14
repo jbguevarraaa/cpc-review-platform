@@ -90,18 +90,50 @@ export default function SurgeryPage() {
         </Link>
 
         {/* 30,000 Series */}
-        <div
+        <Link
+          href="/cpt/surgery/30,000"
           style={{
-            border: "1px solid #ddd",
-            borderRadius: "12px",
-            padding: "20px",
-            width: "220px",
-            backgroundColor: "white",
+            textDecoration: "none",
+            color: "inherit",
           }}
         >
-          <h3>30,000 Series</h3>
-          <p>Respiratory System</p>
-        </div>
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "220px",
+              backgroundColor: "white",
+              cursor: "pointer",
+            }}
+          >
+            <h3>30,000 Series</h3>
+            <p>Respiratory System</p>
+          </div>
+        </Link>
+
+        {/* Cardiovascular System (33,000s) */}
+        <Link
+          href="/cpt/surgery/33,000"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #f0d7d7",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "220px",
+              backgroundColor: "#fff8f8",
+              cursor: "pointer",
+            }}
+          >
+            <h3>Cardiovascular</h3>
+            <p>Heart System (33,000s)</p>
+          </div>
+        </Link>
 
         {/* 40,000 Series */}
         <div
@@ -144,7 +176,67 @@ export default function SurgeryPage() {
           <h3>60,000 Series</h3>
           <p>Nervous System</p>
         </div>
+
+        {/* 70,000 Series / Radiology */}
+        <Link
+          href="/cpt/radiology"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #d8d0c5",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "220px",
+              backgroundColor: "#fffaf4",
+              cursor: "pointer",
+            }}
+          >
+            <h3>70,000 Series</h3>
+            <p>Radiology</p>
+          </div>
+        </Link>
       </div>
+
+      {/* E/M Series */}
+      <section style={{ marginTop: "40px" }}>
+        <h2
+          style={{
+            fontSize: "28px",
+            fontWeight: "700",
+            marginBottom: "20px",
+          }}
+        >
+          E/M Series
+        </h2>
+
+        <Link
+          href="/cpt/e-m"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "300px",
+              backgroundColor: "white",
+              cursor: "pointer",
+            }}
+          >
+            <h3 style={{ margin: "0 0 8px 0" }}>🩺 E/M Series</h3>
+            <p style={{ margin: 0 }}>
+              Evaluation and Management reviewer materials and guidelines.
+            </p>
+          </div>
+        </Link>
+      </section>
 
       {/* 10,000 Series Resources */}
       <section
@@ -230,6 +322,72 @@ export default function SurgeryPage() {
               <p style={{ margin: 0 }}>
                 Helpful coding tips, strategies, and study hacks for the
                 10,000 Series.
+              </p>
+            </div>
+          </Link>
+
+          {/* Transcript Quiz */}
+          <Link
+            href="/cpt/surgery/10000-series-transcript-quiz"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3
+                style={{
+                  margin: "0 0 8px 0",
+                }}
+              >
+                🧪 Transcript Quiz
+              </h3>
+
+              <p style={{ margin: 0 }}>
+                Separate question set based on the transcript screenshots with
+                answer explanations.
+              </p>
+            </div>
+          </Link>
+
+          {/* Guidelines Question Quiz */}
+          <Link
+            href="/cpt/surgery/10000-series-guidelines-quiz"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3
+                style={{
+                  margin: "0 0 8px 0",
+                }}
+              >
+                📘 Guidelines Question Quiz
+              </h3>
+
+              <p style={{ margin: 0 }}>
+                Separate photo-based CPT guideline questions with transcript-
+                based explanations.
               </p>
             </div>
           </Link>

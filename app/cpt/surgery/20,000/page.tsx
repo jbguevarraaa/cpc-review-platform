@@ -34,6 +34,13 @@ export default function TwentyThousandSeriesPage() {
           </div>
         </Link>
 
+        <Link href="/cpt/surgery/20,000-series-cpt-book/page-1" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>📘 CPT Book Guidelines & Codes</h3>
+            <p style={{ margin: 0 }}>Reference pages for the musculoskeletal CPT book text, codes, and guidelines.</p>
+          </div>
+        </Link>
+
         <Link href="/cpt/surgery/20,000-series-study-tips" style={{ textDecoration: "none", color: "inherit" }}>
           <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
             <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>📚 Study Tips & Hacks</h3>

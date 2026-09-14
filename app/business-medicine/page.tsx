@@ -13,11 +13,18 @@ const rbrvsComponents = [
   ["Professional liability insurance", "About 4%", "Resource-based professional liability insurance expense."],
 ];
 
+const quickHighlights = [
+  ["Payers", "Medicare, Medicaid, private insurance, and payer rules."],
+  ["RVUs", "Work, practice expense, and malpractice costs."],
+  ["Medical Necessity", "Least radical appropriate treatment for the condition."],
+  ["HIPAA", "Minimum necessary, privacy, and breach response."],
+];
+
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section style={styles.section}>
-      <h2>{title}</h2>
-      {children}
+      <h2 style={styles.sectionTitle}>{title}</h2>
+      <div style={styles.sectionBody}>{children}</div>
     </section>
   );
 }
@@ -30,6 +37,18 @@ export default function BusinessMedicineReviewerPage() {
         <h1>Business of Medicine</h1>
         <p style={styles.subtitle}>CPC foundations for coding, reimbursement, compliance, privacy, and healthcare operations.</p>
       </header>
+
+      <section style={styles.quickSummary}>
+        <h3 style={styles.quickTitle}>Quick Review</h3>
+        <div style={styles.quickGrid}>
+          {quickHighlights.map(([title, detail]) => (
+            <div key={title} style={styles.quickCard}>
+              <strong>{title}</strong>
+              <p>{detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Section title="Coding as a Profession">
         <p>Healthcare records document observations, medical or surgical interventions, diagnostic studies, and treatment outcomes. Coding translates that documentation into numeric and alphanumeric codes.</p>
@@ -124,11 +143,17 @@ export default function BusinessMedicineReviewerPage() {
 }
 
 const styles = {
-  main: { maxWidth: "1100px", margin: "0 auto", padding: "40px", background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)", minHeight: "100vh", lineHeight: 1.6 },
+  main: { maxWidth: "1100px", margin: "0 auto", padding: "40px", background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)", minHeight: "100vh", lineHeight: 1.7, fontFamily: "Arial, Helvetica, sans-serif" },
   header: { background: "linear-gradient(135deg, #2563eb, #7c3aed)", color: "white", padding: "48px", borderRadius: "20px", marginBottom: "30px", boxShadow: "0 10px 30px rgba(0,0,0,0.15)" },
   eyebrow: { letterSpacing: "2px", fontSize: "12px", fontWeight: "700", margin: 0, opacity: 0.85 },
   subtitle: { fontSize: "19px", maxWidth: "760px", marginBottom: 0, opacity: 0.92 },
-  section: { background: "white", border: "1px solid #e5e7eb", borderRadius: "14px", padding: "28px", marginBottom: "24px", boxShadow: "0 4px 14px rgba(15,23,42,0.06)" },
+  quickSummary: { background: "white", border: "1px solid #e5e7eb", borderRadius: "14px", padding: "24px", marginBottom: "24px", boxShadow: "0 4px 14px rgba(15,23,42,0.06)" },
+  quickTitle: { marginTop: 0, marginBottom: "16px", color: "#1f2937", fontSize: "22px" },
+  quickGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "14px" },
+  quickCard: { background: "linear-gradient(135deg, #eff6ff, #f8fafc)", border: "1px solid #dbeafe", borderRadius: "12px", padding: "16px", minHeight: "110px" },
+  section: { background: "white", border: "1px solid #e5e7eb", borderRadius: "16px", padding: "28px", marginBottom: "24px", boxShadow: "0 4px 14px rgba(15,23,42,0.06)" },
+  sectionTitle: { marginTop: 0, marginBottom: "16px", fontSize: "28px", color: "#111827", lineHeight: 1.3 },
+  sectionBody: { display: "grid", gap: "14px" },
   grid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "16px" },
   subcard: { background: "#f8fafc", border: "1px solid #e2e8f0", borderTop: "4px solid #2563eb", borderRadius: "10px", padding: "18px" },
   tip: { background: "#eff6ff", borderLeft: "5px solid #2563eb", borderRadius: "6px", padding: "16px", margin: "18px 0" },

@@ -84,6 +84,13 @@ export default function SurgeryPage() {
         </div>
         </Link>
 
+        <Link
+          href="/cpt/surgery/30,000"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
         <div
           style={{
             border: "1px solid #ddd",
@@ -96,6 +103,28 @@ export default function SurgeryPage() {
           <h3>30,000 Series</h3>
           <p>Respiratory System</p>
         </div>
+        </Link>
+
+        <Link
+          href="/cpt/surgery/33,000"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+        <div
+          style={{
+            border: "1px solid #f0d7d7",
+            borderRadius: "12px",
+            padding: "20px",
+            width: "220px",
+            backgroundColor: "#fff8f8",
+          }}
+        >
+          <h3>Cardiovascular</h3>
+          <p>Heart System (33,000s)</p>
+        </div>
+        </Link>
 
         <div
           style={{
@@ -136,6 +165,117 @@ export default function SurgeryPage() {
           <p>Nervous System</p>
         </div>
       </div>
+
+      <section
+        style={{
+          marginTop: "40px",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "28px",
+            fontWeight: "700",
+            marginBottom: "20px",
+          }}
+        >
+          10,000 Series Resources
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "15px",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href="/cpt/surgery/10000-series-post-work-quiz"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3 style={{ margin: "0 0 8px 0" }}>📝 10,000 Series Post-Work Quiz</h3>
+              <p style={{ margin: 0 }}>
+                Practice questions for the CPT Surgery 10,000 Series.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href="/cpt/surgery/10000-series-study-tips"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3 style={{ margin: "0 0 8px 0" }}>📚 Study Tips & Hacks</h3>
+              <p style={{ margin: 0 }}>
+                Helpful coding tips, strategies, and study hacks for the
+                10,000 Series.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href="/cpt/surgery/10000-series-transcript-quiz"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3 style={{ margin: "0 0 8px 0" }}>🧪 Transcript Quiz</h3>
+              <p style={{ margin: 0 }}>
+                Separate question set based on the transcript screenshots with
+                answer explanations.
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href="/cpt/surgery/10000-series-guidelines-quiz"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3 style={{ margin: "0 0 8px 0" }}>📘 Guidelines Question Quiz</h3>
+              <p style={{ margin: 0 }}>
+                Photo-based CPT guideline questions with transcript-based
+                explanations.
+              </p>
+            </div>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }const questions = [

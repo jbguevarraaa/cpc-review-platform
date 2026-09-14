@@ -14,6 +14,132 @@ export default function StudyTipsPage() {
 
       <hr />
 
+      <div
+        style={{
+          background: "linear-gradient(135deg, #eff6ff, #f5f3ff)",
+          border: "1px solid #c7d2fe",
+          borderRadius: "14px",
+          padding: "22px",
+          marginBottom: "28px",
+        }}
+      >
+        <h2 style={{ marginTop: 0, marginBottom: "12px", color: "#1e3a8a" }}>
+          📌 BDF QUICK EXTRACT — 10,000 SERIES
+        </h2>
+
+        <p>
+          <strong>High-yield BDF takeaway:</strong> the 10,000 series is all about
+          distinguishing <strong>skin procedures</strong> from deeper tissue work
+          and matching the code to <strong>depth, location, and number of lesions</strong>.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Debridement:</strong> select by <strong>deepest tissue removed</strong>
+            {" "}first, then by <strong>surface area</strong>.
+          </li>
+          <li>
+            <strong>Same-depth wounds:</strong> add area together. <strong>Different depths:</strong> do not add.
+          </li>
+          <li>
+            <strong>Biopsy:</strong> code based on <strong>technique</strong> (tangential, punch, incisional).
+          </li>
+          <li>
+            <strong>Shave removal:</strong> code by <strong>body location + lesion diameter</strong>.
+          </li>
+          <li>
+            <strong>Excision:</strong> lesion diameter + margins = excised diameter.
+          </li>
+          <li>
+            <strong>Simple closure:</strong> included with most lesion excisions/biopsies unless intermediate or complex repair is performed.
+          </li>
+          <li>
+            <strong>FNA:</strong> report once per lesion with imaging guidance as defined by the modality; add-on codes apply for additional lesions.
+          </li>
+          <li>
+            <strong>ATT/adjacent tissue transfer:</strong> report the flap/transfer code and use <strong>defect size</strong> to select the code.
+          </li>
+        </ul>
+
+        <p style={{ marginBottom: 0 }}>
+          <strong>Exam trigger:</strong> when a question mentions <strong>depth, size, margins, same wound, or skin vs subcutaneous</strong>, stop and classify the service before choosing the code.
+        </p>
+      </div>
+
+      <div
+        style={{
+          background: "#fff7ed",
+          border: "2px solid #fdba74",
+          borderRadius: "16px",
+          padding: "20px",
+          marginBottom: "28px",
+          boxShadow: "0 4px 10px rgba(251,146,60,0.08)",
+        }}
+      >
+        <h2 style={{ marginTop: 0, marginBottom: "16px", color: "#9a4d00" }}>
+          🖼️ VISUAL STUDY SHEET — PDF STYLE
+        </h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "16px",
+          }}
+        >
+          <div style={{ background: "white", border: "1px solid #fed7aa", borderRadius: "12px", padding: "16px" }}>
+            <h3 style={{ marginTop: 0, color: "#c2410c" }}>Skin vs Deep</h3>
+            <p style={{ margin: 0 }}>
+              <strong>Skin only</strong> → 97597/97598<br />
+              <strong>SubQ</strong> → 11042/11045<br />
+              <strong>Muscle</strong> → 11043/11046<br />
+              <strong>Bone</strong> → 11044/11047
+            </p>
+          </div>
+
+          <div style={{ background: "white", border: "1px solid #fed7aa", borderRadius: "12px", padding: "16px" }}>
+            <h3 style={{ marginTop: 0, color: "#c2410c" }}>Biopsy Clues</h3>
+            <p style={{ margin: 0 }}>
+              <strong>Diagnostic</strong> = biopsy<br />
+              <strong>Tangential</strong> = 11102/11103<br />
+              <strong>Punch</strong> = 11104/11105<br />
+              <strong>Incisional</strong> = 11106/11107
+            </p>
+          </div>
+
+          <div style={{ background: "white", border: "1px solid #fed7aa", borderRadius: "12px", padding: "16px" }}>
+            <h3 style={{ marginTop: 0, color: "#c2410c" }}>Excision Rule</h3>
+            <p style={{ margin: 0 }}>
+              <strong>Lesion + margins = excised diameter</strong><br />
+              If <strong>simple closure</strong> only, do not add a repair code separately.<br />
+              If <strong>intermediate/complex</strong> closure is used, code repair separately.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "18px",
+            background: "#fff",
+            border: "1px solid #fdba74",
+            borderRadius: "12px",
+            padding: "16px",
+          }}
+        >
+          <h3 style={{ marginTop: 0, marginBottom: "10px", color: "#9a4d00" }}>
+            🔍 Decision Flow for the Exam
+          </h3>
+          <p style={{ margin: 0 }}>
+            <strong>1. Is it skin only, subcutaneous, muscle, or bone?</strong> → determines debridement family.<br />
+            <strong>2. Is it diagnostic biopsy, therapeutic shave, or excision?</strong> → choose the correct code family.<br />
+            <strong>3. Are the lesions multiple and at the same depth?</strong> → add area only when appropriate.<br />
+            <strong>4. Did closure become intermediate or complex?</strong> → code repair separately.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
       <h2>1. DEBRIDEMENT: DEPTH FIRST, THEN AREA</h2>
 
       <p>
