@@ -402,6 +402,7 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
 
       <nav aria-label="30,000 series navigation" style={navStyle}>
         <Link href="/cpt/surgery/30,000" style={navLinkStyle}>30,000 Series home</Link>
+        <Link href="/cpt/surgery/30000-series-beginner-guide" style={navLinkStyle}>Beginner Scenarios</Link>
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
