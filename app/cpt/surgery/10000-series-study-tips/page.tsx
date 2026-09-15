@@ -68,6 +68,32 @@ export default function StudyTipsPage() {
 
       <div
         style={{
+          background: "#f0fdf4",
+          border: "1px solid #bbf7d0",
+          borderLeft: "5px solid #16a34a",
+          borderRadius: "14px",
+          padding: "20px 22px",
+          marginBottom: "28px",
+        }}
+      >
+        <h2 style={{ marginTop: 0, marginBottom: "10px", color: "#166534" }}>
+          📅 2026 UPDATE CHECK
+        </h2>
+        <p style={{ margin: "0 0 8px" }}>
+          Cross-checked this page against the 2026 codebook text — everything already here still matches. One addition worth flagging:
+        </p>
+        <ul style={{ margin: 0, paddingLeft: "20px" }}>
+          <li>
+            <strong>10040</strong> (Extraction — e.g., marsupialization, or opening/removal of multiple milia, comedones, cysts, or pustules) carries fresh 2026 guidance and wasn&apos;t previously listed on this page. It&apos;s now added to the Incision &amp; Drainage section below.
+          </li>
+        </ul>
+        <p style={{ margin: "10px 0 0" }}>
+          Two other gaps got filled in while reviewing: <strong>Paring or Cutting (11055–11057)</strong> and <strong>Nails (11719–11732)</strong> weren&apos;t covered anywhere on this page before — both are now included as their own sections.
+        </p>
+      </div>
+
+      <div
+        style={{
           background: "#fff7ed",
           border: "2px solid #fdba74",
           borderRadius: "16px",
@@ -496,12 +522,19 @@ export default function StudyTipsPage() {
 
       <ul>
         <li>
+          <strong>10040</strong> = extraction (e.g., marsupialization, or opening/removal of multiple milia, comedones, cysts, or pustules) — <em>flagged for 2026</em>
+        </li>
+        <li>
           <strong>10060</strong> = simple/single abscess
         </li>
         <li>
           <strong>10061</strong> = complicated/multiple abscess
         </li>
       </ul>
+
+      <p>
+        <strong>Do first:</strong> figure out whether you&apos;re draining one simple site or something complicated/multiple before picking 10060 vs 10061 — and if it&apos;s a batch of small lesions like milia being opened/removed rather than a true abscess drainage, that&apos;s 10040, not 10060/10061.
+      </p>
 
       <hr />
 
@@ -608,6 +641,62 @@ export default function StudyTipsPage() {
 
       <hr />
 
+      <h2>21. PARING OR CUTTING (11055–11057)</h2>
+
+      <p>
+        These codes are for shaving down a <strong>hyperkeratotic lesion</strong> — think corns and calluses — not for removing a growth entirely.
+      </p>
+
+      <ul>
+        <li>
+          <strong>11055</strong> = single lesion
+        </li>
+        <li>
+          <strong>11056</strong> = 2 to 4 lesions
+        </li>
+        <li>
+          <strong>11057</strong> = more than 4 lesions
+        </li>
+      </ul>
+
+      <h3>⭐ Remember:</h3>
+      <p>
+        Code selection here is purely a <strong>lesion count</strong>, not a size measurement like excision or shaving. Don&apos;t reach for the destruction codes (17110/17111) for a corn or callus — paring has its own dedicated code family.
+      </p>
+
+      <hr />
+
+      <h2>22. NAILS (11719–11732)</h2>
+
+      <p>
+        Three different levels of nail work, each with its own code — don&apos;t treat them as interchangeable.
+      </p>
+
+      <ul>
+        <li>
+          <strong>11719</strong> = trimming of nondystrophic nails, any number
+        </li>
+        <li>
+          <strong>11720</strong> = debridement of nail(s), 1 to 5
+        </li>
+        <li>
+          <strong>11721</strong> = debridement of nail(s), 6 or more
+        </li>
+        <li>
+          <strong>11730</strong> = avulsion of nail plate, partial or complete, simple, single
+        </li>
+        <li>
+          <strong>11732</strong> = avulsion, each additional nail plate (add-on)
+        </li>
+      </ul>
+
+      <h3>⭐ Remember:</h3>
+      <p>
+        Trimming (11719) is the simplest/routine service. Debridement (11720/11721) splits by how many nails, not by size. Avulsion (11730 + 11732) is the most involved — removing the nail plate itself — and 11732 is an add-on, so it&apos;s never billed alone.
+      </p>
+
+      <hr />
+
       <h2>🧠 THE BIGGEST CPC EXAM THINKING RULES</h2>
 
       <h3>DEBRIDEMENT</h3>
@@ -675,6 +764,46 @@ export default function StudyTipsPage() {
         <br />
         <strong>11201 = each additional 10 or part</strong>
       </p>
+
+      <hr />
+
+      <h2>🎯 WHAT TO DO FIRST / WHAT TO AVOID — SECTION BY SECTION</h2>
+
+      <p>
+        A fast overview built for exam day: for each subsection, the single first question to ask, and the most common way students lose the point.
+      </p>
+
+      <h3 style={guidelineHeadingStyle}>Incision &amp; Drainage</h3>
+      <p><strong>Do first:</strong> decide simple/single vs. complicated/multiple before touching a code — that alone splits 10060 from 10061.</p>
+      <p><strong>Avoid:</strong> coding a puncture aspiration (10160) as if it were an incision and drainage — they&apos;re different procedures with different codes.</p>
+
+      <h3 style={guidelineHeadingStyle}>Debridement</h3>
+      <p><strong>Do first:</strong> find the single deepest tissue layer removed across the whole wound — that depth picks the code family (skin, subQ, muscle/fascia, or bone).</p>
+      <p><strong>Avoid:</strong> adding surface areas together across different depths. Same depth → combine area. Different depths → keep them separate, and don&apos;t confuse epidermis/dermis-only debridement (which belongs under 97597/97598, not 11042–11047).</p>
+
+      <h3 style={guidelineHeadingStyle}>Paring or Cutting</h3>
+      <p><strong>Do first:</strong> count the lesions — this family is selected by count (1, 2–4, or 5+), not by size.</p>
+      <p><strong>Avoid:</strong> reaching for a destruction code (17110/17111) or an excision code for a simple corn/callus paring — it has its own dedicated code family.</p>
+
+      <h3 style={guidelineHeadingStyle}>Biopsy</h3>
+      <p><strong>Do first:</strong> identify the technique actually used — tangential (shave/scoop/curette), punch, or incisional — since that alone determines the code, not the diagnosis.</p>
+      <p><strong>Avoid:</strong> separately coding a biopsy when the tissue sample was simply a routine byproduct of another procedure (like sending tissue to pathology during an excision) — that&apos;s not a separately reportable biopsy.</p>
+
+      <h3 style={guidelineHeadingStyle}>Shaving of Lesions</h3>
+      <p><strong>Do first:</strong> confirm the intent was therapeutic removal (not diagnostic sampling), then use body location plus lesion diameter to pick the code.</p>
+      <p><strong>Avoid:</strong> using a shave code when the documentation actually describes a full-thickness removal with margins — that&apos;s excision territory, not shaving.</p>
+
+      <h3 style={guidelineHeadingStyle}>Excision — Benign &amp; Malignant</h3>
+      <p><strong>Do first:</strong> measure lesion diameter plus the narrowest adequate margin to get the excised diameter, then check location (trunk/arms/legs vs. scalp/neck/hands/feet/genitalia vs. face/ears/eyelids/nose/lips) for the right code range.</p>
+      <p><strong>Avoid:</strong> billing an excision code alongside an adjacent tissue transfer performed at the same session — the excision is bundled into the tissue transfer code, not reported separately.</p>
+
+      <h3 style={guidelineHeadingStyle}>Skin Tags</h3>
+      <p><strong>Do first:</strong> count the total number of tags removed in the session, not per site.</p>
+      <p><strong>Avoid:</strong> using the skin tag codes for a lesion that&apos;s actually being fully excised with margins — that belongs in the excision code family instead.</p>
+
+      <h3 style={guidelineHeadingStyle}>Nails</h3>
+      <p><strong>Do first:</strong> identify the level of service — routine trimming, debridement (and how many nails), or avulsion of the nail plate.</p>
+      <p><strong>Avoid:</strong> coding a simple trim as a debridement, or a debridement as an avulsion — these represent increasing levels of work and aren&apos;t interchangeable.</p>
 
       <hr />
 
