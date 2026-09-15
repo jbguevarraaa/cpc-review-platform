@@ -207,6 +207,7 @@ export default function Icd10Chapter1GuidelinesReviewerPage() {
 
       <nav aria-label="ICD-10 navigation" style={navStyle}>
         <Link href="/icd10" style={navLinkStyle}>ICD-10-CM home</Link>
+        <Link href="/icd10/chapter-1-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 

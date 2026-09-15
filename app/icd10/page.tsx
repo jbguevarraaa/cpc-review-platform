@@ -22,6 +22,7 @@ export default function ICD10Page() {
 
       <nav aria-label="ICD-10 navigation" style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "30px" }}>
         <Link href="/icd10/chapter-1-guidelines-reviewer" style={navLinkStyle}>Chapter 1 Reviewer</Link>
+        <Link href="/icd10/chapter-1-practice-quiz" style={navLinkStyle}>Chapter 1 Practice Quiz</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -30,6 +31,12 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 1 · A00–B99, U07.1, U09.9</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Certain Infectious &amp; Parasitic Diseases</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>HIV, antibiotic resistance, sepsis/severe sepsis/septic shock, MRSA, Zika, and COVID-19 — rule summaries plus easy and hard example scenarios.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-1-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 1 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>14-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Interactive practice questions with a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
