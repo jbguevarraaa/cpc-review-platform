@@ -22,7 +22,9 @@ export default function ICD10Page() {
 
       <nav aria-label="ICD-10 navigation" style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "30px" }}>
         <Link href="/icd10/chapter-1-guidelines-reviewer" style={navLinkStyle}>Chapter 1 Reviewer</Link>
-        <Link href="/icd10/chapter-1-practice-quiz" style={navLinkStyle}>Chapter 1 Practice Quiz</Link>
+        <Link href="/icd10/chapter-1-practice-quiz" style={navLinkStyle}>Chapter 1 Quiz</Link>
+        <Link href="/icd10/chapter-18-guidelines-reviewer" style={navLinkStyle}>Chapter 18 Reviewer</Link>
+        <Link href="/icd10/chapter-18-practice-quiz" style={navLinkStyle}>Chapter 18 Quiz</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -39,9 +41,21 @@ export default function ICD10Page() {
           <p style={{ margin: 0, lineHeight: 1.65 }}>Interactive practice questions with a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
         </Link>
 
+        <Link href="/icd10/chapter-18-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 18 · R00–R99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Symptoms, Signs &amp; Abnormal Findings</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Symptom-code rules, repeated falls, coma &amp; coma scale, SIRS (non-infectious), death NOS, and the NIHSS stroke scale.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-18-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 18 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>12-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
           <span style={{ color: "#94a3a8", fontWeight: 800 }}>COMING SOON</span>
-          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Chapters 2–22</h2>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Remaining Chapters</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Neoplasms, endocrine/metabolic, mental/behavioral, nervous system, and the rest of the ICD-10-CM chapters will be added here as guidelines are sent over.</p>
         </div>
       </div>
