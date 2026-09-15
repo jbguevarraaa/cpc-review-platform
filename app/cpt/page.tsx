@@ -238,6 +238,43 @@ export default function SurgeryPage() {
         </Link>
       </section>
 
+      {/* CPT Modifiers Reference */}
+      <section style={{ marginTop: "40px" }}>
+        <h2
+          style={{
+            fontSize: "28px",
+            fontWeight: "700",
+            marginBottom: "20px",
+          }}
+        >
+          Modifiers Reference
+        </h2>
+
+        <Link
+          href="/cpt/modifiers"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "300px",
+              backgroundColor: "white",
+              cursor: "pointer",
+            }}
+          >
+            <h3 style={{ margin: "0 0 8px 0" }}>🏷️ CPT Modifiers</h3>
+            <p style={{ margin: 0 }}>
+              Level I, Category II, Physical Status, hospital-outpatient, and HCPCS modifiers, plus common modifier traps.
+            </p>
+          </div>
+        </Link>
+      </section>
+
       {/* 10,000 Series Resources */}
       <section
         style={{
