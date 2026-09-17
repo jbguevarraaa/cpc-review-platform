@@ -26,6 +26,7 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-18-guidelines-reviewer" style={navLinkStyle}>Chapter 18 Reviewer</Link>
         <Link href="/icd10/chapter-18-practice-quiz" style={navLinkStyle}>Chapter 18 Quiz</Link>
         <Link href="/icd10/chapter-18-worked-examples" style={navLinkStyle}>Chapter 18 Worked Examples</Link>
+        <Link href="/icd10/chapter-18-flashcards" style={navLinkStyle}>Chapter 18 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -58,6 +59,12 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 18 · WORKED EXAMPLES</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10 Scenarios, Jump to Any Question</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-18-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 18 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>14 tap-to-flip flashcards, one rule per card — built for a quick phone skim, not a deep-dive read.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
