@@ -8,6 +8,7 @@ type Subsection = {
   range: string;
   intro?: string;
   categories: Category[];
+  steps: string[];
   rules: string[];
   tips: string[];
 };
@@ -85,6 +86,12 @@ const subsections: Subsection[] = [
         ],
       },
     ],
+    steps: [
+      "Step 1 — Identify the action: incision/drainage, excision, injection/introduction, foreign body removal, repair, destruction, or nosebleed control. That narrows you to one category immediately.",
+      "Step 2 — If it's turbinate work, check which turbinate (inferior vs. superior/middle) and which technique (excision, submucous resection, ablation, or fracture) — pick exactly one technique per turbinate.",
+      "Step 3 — If it's a repair, check the approach: primary vs. secondary rhinoplasty, which nasal-valve technique, or septal work — and whether it's a first-time or revision procedure.",
+      "Step 4 — Check laterality. Described as one side or both? Match that to modifier 50 (bilateral) or modifier 52 (unilateral, for codes that default to bilateral).",
+    ],
     rules: [
       "Turbinate work has three distinct techniques that are never billed together on the same turbinate: excision/resection (30130/30140), ablation (30801/30802), and therapeutic fracture (30930).",
       "The superior and middle turbinates have no dedicated codes anywhere in this subsection — any procedure on them (excision, submucous resection, ablation, or fracture) routes to unlisted code 30999.",
@@ -153,6 +160,12 @@ const subsections: Subsection[] = [
         name: "Other Procedures",
         codes: [["31299", "Unlisted procedure, accessory sinuses"]],
       },
+    ],
+    steps: [
+      "Step 1 — Was a scope actually used? No scope → look at Incision/Excision codes (lavage, sinusotomy, ethmoidectomy, maxillectomy). Scope used → move to the Endoscopy family.",
+      "Step 2 — If endoscopic, is it purely diagnostic (31231–31235), or is something surgical also happening (biopsy, ethmoidectomy, antrostomy, sphenoidotomy, CSF leak repair, decompression, balloon dilation)?",
+      "Step 3 — If surgical, identify the MOST EXTENSIVE procedure performed on that side first — that's your primary code.",
+      "Step 4 — Check that primary code's exclusion notes before adding any other endoscopy code on the same side — most combinations are already bundled into the more extensive code.",
     ],
     rules: [
       "This is the single biggest bundling trap in the 30,000 series: nearly every surgical endoscopy add-on explicitly excludes being reported with several sibling codes when performed on the same side. Once the most extensive procedure for a given sinus/region is billed on one side, the lesser or diagnostic components for that same side are not separately reportable.",
@@ -232,6 +245,12 @@ const subsections: Subsection[] = [
         name: "Other Procedures",
         codes: [["31599", "Unlisted procedure, larynx"]],
       },
+    ],
+    steps: [
+      "Step 1 — Is this an open external procedure (laryngotomy, laryngectomy, arytenoidectomy) or an endoscopic laryngoscopy?",
+      "Step 2 — If laryngoscopy: indirect, flexible, or direct? Diagnostic only, or with an added intervention (biopsy, foreign body removal, injection, tumor excision)?",
+      "Step 3 — Was an operating microscope or telescope used? If so, look for the matching microscope-inclusive code variant instead of the plain version.",
+      "Step 4 — If this is a repair (laryngoplasty family): web or stenosis? Age under or over 12? Stent left in place or not? Those three questions point to exactly one code.",
     ],
     rules: [
       "The laryngeal stenosis/web repair family (31551, 31552, 31553, 31554, 31580) is mutually exclusive across all five codes — the correct choice depends on patient age (under vs. 12+), whether a stent is left in place, and whether it's a web (31580) vs. stenosis (31551–31554).",
@@ -324,6 +343,12 @@ const subsections: Subsection[] = [
         codes: [["31899", "Unlisted procedure, trachea, bronchi"]],
       },
     ],
+    steps: [
+      "Step 1 — Is this an open procedure (tracheostomy, tracheoplasty, tracheal repair) or an endoscopic bronchoscopy?",
+      "Step 2 — If bronchoscopy: purely diagnostic (cell washing, brushing, lavage, biopsy), or is a therapeutic intervention also performed (dilation, stent, tumor treatment, valve, EBUS)?",
+      "Step 3 — Identify the single most extensive bronchoscopy procedure performed — that's the base code. Then check whether any additional finding (extra lobe, extra bronchus) needs its own add-on code rather than a repeated base code.",
+      "Step 4 — Is this about lymph node sampling? If EBUS-guided, use the standalone EBUS codes (31652/31653). If it's specifically about a peripheral lesion, look for the transendoscopic ultrasound add-on (31654) instead.",
+    ],
     rules: [
       "Same bundling logic as the sinus endoscopy family: most 316xx therapeutic bronchoscopy add-ons exclude being billed together with several sibling codes when performed on the same side or same lobe — check what the more extensive code already includes before stacking add-ons.",
       "31628 (transbronchial lung biopsy) and 31629 (transbronchial needle aspiration biopsy) are each billed once per lobe/site no matter how many individual biopsies are taken there — additional lobes go to the add-on codes 31632 and 31633, respectively, not repeated units of the base code.",
@@ -356,6 +381,8 @@ const rulesBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", bord
 const rulesTitleStyle = { margin: "0 0 8px", color: "#991b1b", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const tipsBoxStyle = { background: "#f0fdf4", border: "1px solid #bbf7d0", borderLeft: "5px solid #16a34a", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
 const tipsTitleStyle = { margin: "0 0 8px", color: "#166534", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+const stepsBoxStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "5px solid #2563eb", borderRadius: "10px", padding: "16px 18px", margin: "18px 0 0", lineHeight: 1.7 };
+const stepsTitleStyle = { margin: "0 0 8px", color: "#1e40af", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const backLinkStyle = { textDecoration: "none", color: "#0f766e", fontWeight: 700 };
 const highlightGridStyle = { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px", marginTop: "14px" };
 const highlightCardStyle = { background: "#f9faf9", border: "1px solid #ece7db", borderRadius: "12px", padding: "16px 18px" };
@@ -450,6 +477,13 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
               </ul>
             </div>
           ))}
+
+          <div style={stepsBoxStyle}>
+            <p style={stepsTitleStyle}>🪜 STEP BY STEP — HOW TO CODE THIS</p>
+            <ol style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
+              {sub.steps.map((step) => <li key={step}>{step}</li>)}
+            </ol>
+          </div>
 
           <div style={rulesBoxStyle}>
             <p style={rulesTitleStyle}>🟥 KEY CODING RULES</p>
