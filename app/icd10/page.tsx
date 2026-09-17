@@ -28,6 +28,7 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-18-practice-quiz" style={navLinkStyle}>Chapter 18 Quiz</Link>
         <Link href="/icd10/chapter-18-worked-examples" style={navLinkStyle}>Chapter 18 Worked Examples</Link>
         <Link href="/icd10/chapter-18-flashcards" style={navLinkStyle}>Chapter 18 Flashcards</Link>
+        <Link href="/icd10/chapter-13-guidelines-reviewer" style={navLinkStyle}>Chapter 13 Reviewer</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -72,6 +73,12 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 18 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>14 tap-to-flip flashcards, one rule per card — built for a quick phone skim, not a deep-dive read.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-13-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 13 · M00–M99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Musculoskeletal System &amp; Connective Tissue</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Site/laterality, acute vs. chronic conditions, pathologic fractures, and osteoporosis (M80 vs. M81) — plus a quick anatomy and common-pathology reference.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
