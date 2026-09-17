@@ -15,10 +15,10 @@ const topics: Topic[] = [
   {
     n: 1,
     title: "Site and Laterality",
-    codes: "General rule — applies chapter-wide",
+    codes: "M87 (avascular necrosis), M80/M81 (osteoporosis)",
     summary: [
       "Most Chapter 13 codes carry a site AND laterality designation. \"Site\" means the specific bone, joint, or muscle actually involved — figure out which of those three categories the condition affects before picking a code.",
-      "Some conditions sit right at the boundary between a bone and a joint (like avascular necrosis of bone, or osteoporosis with a current pathological fracture). Even though the affected portion is technically part of a joint, the site designation used is still the BONE, not the joint.",
+      "Some conditions sit right at the boundary between a bone and a joint — the two named examples are M87 (avascular necrosis of bone) and M80/M81 (osteoporosis with a current pathological fracture). Even though the affected portion is technically part of a joint, the site designation used for both is still the BONE, not the joint.",
       "When a specific site is documented, code to that specific site. Only fall back to a generic \"multiple sites\" code when individual sites genuinely aren't documented.",
     ],
     steps: [
