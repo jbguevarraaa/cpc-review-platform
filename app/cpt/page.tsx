@@ -275,6 +275,43 @@ export default function SurgeryPage() {
         </Link>
       </section>
 
+      {/* CPT Practice Exams */}
+      <section style={{ marginTop: "40px" }}>
+        <h2
+          style={{
+            fontSize: "28px",
+            fontWeight: "700",
+            marginBottom: "20px",
+          }}
+        >
+          Practice Exams
+        </h2>
+
+        <Link
+          href="/cpt/module-4-practice-exam"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "300px",
+              backgroundColor: "white",
+              cursor: "pointer",
+            }}
+          >
+            <h3 style={{ margin: "0 0 8px 0" }}>📝 Module 4 Practice Exam</h3>
+            <p style={{ margin: 0 }}>
+              30 scenario questions across Integumentary, Musculoskeletal, Respiratory, Cardiovascular/Lymphatic, and Breast — with a coding tip and elimination trick per question.
+            </p>
+          </div>
+        </Link>
+      </section>
+
       {/* 10,000 Series Resources */}
       <section
         style={{
