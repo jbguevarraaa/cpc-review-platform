@@ -33,6 +33,13 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-9-practice-quiz" style={navLinkStyle}>Chapter 9 Quiz</Link>
         <Link href="/icd10/chapter-9-worked-examples" style={navLinkStyle}>Chapter 9 Worked Examples</Link>
         <Link href="/icd10/chapter-9-flashcards" style={navLinkStyle}>Chapter 9 Flashcards</Link>
+        <Link href="/icd10/chapter-2-guidelines-reviewer" style={navLinkStyle}>Chapter 2 Reviewer</Link>
+        <Link href="/icd10/chapter-2-practice-quiz" style={navLinkStyle}>Chapter 2 Quiz</Link>
+        <Link href="/icd10/chapter-2-worked-examples" style={navLinkStyle}>Chapter 2 Worked Examples</Link>
+        <Link href="/icd10/chapter-2-flashcards" style={navLinkStyle}>Chapter 2 Flashcards</Link>
+        <Link href="/icd10/chapter-3-guidelines-reviewer" style={navLinkStyle}>Chapter 3 Reviewer</Link>
+        <Link href="/icd10/chapter-3-practice-quiz" style={navLinkStyle}>Chapter 3 Quiz</Link>
+        <Link href="/icd10/chapter-3-flashcards" style={navLinkStyle}>Chapter 3 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -109,10 +116,52 @@ export default function ICD10Page() {
           <p style={{ margin: 0, lineHeight: 1.65 }}>21 tap-to-flip flashcards, one rule per card — same quick-skim format as the other chapter decks.</p>
         </Link>
 
+        <Link href="/icd10/chapter-2-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 2 · C00–D49</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Neoplasms</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Primary/secondary site sequencing, antineoplastic therapy encounters, the anemia-from-cancer vs. anemia-from-therapy trap, pathologic fracture, and personal history of malignancy.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-2-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 2 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>14-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-2-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 2 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-2-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 2 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>21 tap-to-flip flashcards, one rule per card — same quick-skim format as the other chapter decks.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-3-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 3 · D50–D89</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Blood &amp; Blood-Forming Organs</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Nutritional and hemolytic anemias, hemophilias/von Willebrand disease, purpura/platelet disorders, and immune mechanism disorders — code-structure focused, since this chapter has no official narrative guidelines.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-3-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 3 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-3-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 3 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>15 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
           <span style={{ color: "#94a3a8", fontWeight: 800 }}>COMING SOON</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Remaining Chapters</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Neoplasms, endocrine/metabolic, mental/behavioral, nervous system, and the rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Endocrine/metabolic, mental/behavioral, nervous system, and the rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
         </div>
       </div>
     </main>
