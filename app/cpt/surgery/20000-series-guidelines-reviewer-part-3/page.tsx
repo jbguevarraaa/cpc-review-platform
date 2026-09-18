@@ -385,7 +385,7 @@ const topics: Topic[] = [
       "The Monteggia fracture-dislocation (proximal ulna fracture with radial head dislocation) has its own dedicated closed and open treatment codes — it is NOT coded as a separate ulna-fracture code plus a separate radial-head-dislocation code.",
       "Radial head/neck fracture treatment includes a distinct option for treatment WITH prosthetic replacement of the radial head, separate from simple internal fixation or excision.",
       "Elbow dislocation (isolated) has its own closed/open codes, distinct from the Monteggia combination code and from nursemaid's elbow (radial head subluxation in a child), which has its own single reduction code.",
-      "Elbow arthrodesis is coded with or without autogenous graft; amputation of the arm through the humerus escalates from primary closure to open/circular (guillotine) to implant-assisted, plus separate codes for stump elongation and cineplasty.",
+      "Elbow arthrodesis is coded with or without autogenous graft; amputation of the arm through the humerus escalates from primary closure to open/circular (guillotine) to implant-assisted, plus separate codes for stump elongation and cineplasty (a technique that rigs a muscle to power a prosthetic attachment).",
     ],
     steps: [
       "Step 1 — Identify the fracture: humeral shaft, supracondylar/transcondylar (check for intercondylar extension), epicondylar, condylar, radial head/neck, or ulnar proximal end.",
@@ -558,7 +558,7 @@ const topics: Topic[] = [
       "Distal radial fracture (Colles/Smith type) treatment already includes closed treatment of an associated ulnar styloid fracture when performed — a separate ulnar styloid code applies only when the styloid fracture is treated on its own, without a distal radius fracture.",
       "Distal radial INTRA-articular fracture treatment is tiered by fragment count — internal fixation of 2 fragments vs. 3-or-more fragments — a distinct axis from extra-articular fracture treatment.",
       "Carpal scaphoid (navicular) fracture has its own dedicated codes, separate from \"other carpal bone\" fracture codes, which specifically exclude the scaphoid.",
-      "Wrist arthrodesis (complete vs. limited) each split by graft type (none, sliding graft, or iliac/other autograft); amputation of the forearm/wrist escalates from open circular (guillotine) to secondary closure/scar revision to re-amputation, plus a distinct Krukenberg procedure code.",
+      "Wrist arthrodesis (complete vs. limited) each split by graft type (none, sliding graft, or iliac/other autograft); amputation of the forearm/wrist escalates from open circular (guillotine) to secondary closure/scar revision to re-amputation, plus a distinct Krukenberg procedure code — a specialized amputation reconstruction that splits the radius and ulna into a pincer-like grasping structure. It's rare in practice but occasionally tested by name recognition alone.",
     ],
     steps: [
       "Step 1 — Identify the fracture: radial shaft, ulnar shaft, both together, distal radial (extra- or intra-articular), carpal scaphoid, or other carpal bone.",
