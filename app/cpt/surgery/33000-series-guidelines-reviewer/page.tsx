@@ -352,17 +352,20 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
 
       <div style={pagerStyle}>
         <span style={pagerActiveStyle}>Part 1 (33016–33269)</span>
-        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={pagerLinkStyle}>Part 2 (36555–37214) →</Link>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={pagerLinkStyle}>Part 2 (33300–33999)</Link>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={pagerLinkStyle}>Part 3 (36555–37214) →</Link>
       </div>
 
       <nav aria-label="Cardiovascular series navigation" style={navStyle}>
         <Link href="/cpt/surgery/33,000" style={navLinkStyle}>Cardiovascular System home</Link>
+        <Link href="/cpt/surgery/33000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
+        <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
       <section style={introBoxStyle}>
-        <strong>Where this stops:</strong> the source material cut off mid-sentence right after code 33265 (the endoscopic/thoracoscopic maze codes). This page covers everything complete through the Electrophysiologic Operative Procedures &quot;Incision&quot; category. Send the rest — 33265/33266 (Endoscopy) onward, which is where grafts, bypass, and valve procedures begin — and I&apos;ll add it as Part 2.
+        <strong>Full series now complete:</strong> this page covers Pericardium through Electrophysiologic Operative Procedures (33016–33269). Part 2 picks up with general cardiac repair, LAA closure, heart valves (TAVR and open), coronary artery bypass grafting, aorta &amp; great vessel repair, and ECMO/VAD support. Part 3 covers venous/arterial access, dialysis circuit, portal decompression, and thrombectomy.
       </section>
 
       {subsections.map((sub) => (

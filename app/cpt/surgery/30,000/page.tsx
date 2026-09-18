@@ -25,6 +25,8 @@ export default function ThirtyThousandSeriesPage() {
         <Link href="/cpt/surgery/30000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/30000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/30000-series-beginner-guide" style={navLinkStyle}>Beginner Scenarios</Link>
+        <Link href="/cpt/surgery/30000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
+        <Link href="/cpt/surgery/30000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -43,6 +45,16 @@ export default function ThirtyThousandSeriesPage() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>BEGINNER SCENARIOS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Beginner-Friendly Exam Scenarios</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Slow, step-by-step example scenarios that model the thought process for a 30,000-series question, plus common beginner mistakes.</p>
+        </Link>
+        <Link href="/cpt/surgery/30000-series-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Scenario Quiz, Both Parts</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Interactive questions with elimination tips, covering nose through lung transplantation and ablation.</p>
+        </Link>
+        <Link href="/cpt/surgery/30000-series-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Tap-to-flip flashcards, one rule per card, covering the whole Respiratory series.</p>
         </Link>
       </div>
     </main>

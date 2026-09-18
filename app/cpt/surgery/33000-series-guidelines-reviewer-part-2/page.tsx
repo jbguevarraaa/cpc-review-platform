@@ -15,277 +15,381 @@ type Subsection = {
 const subsections: Subsection[] = [
   {
     n: 1,
-    title: "Central Venous Access Devices",
-    range: "36555–36598",
+    title: "General Cardiac Repair & Percutaneous LAA Closure",
+    range: "33300–33340",
     intro: [
-      "Peripherally inserted central catheters (PICCs) can be placed or replaced with or without imaging guidance. Without imaging guidance, use 36568/36569 (insertion). With imaging guidance (ultrasound and/or fluoroscopy), the bundled codes 36572, 36573, and 36584 already include all imaging, image documentation, the associated radiological supervision and interpretation, venography through the same puncture, and confirming the catheter tip's final central position.",
-      "Because tip-position confirmation is already bundled into the imaging-guided codes, a chest X-ray (71045–71048) is not separately billable on the same day to confirm final position, and neither is 76937 (ultrasound vascular-access guidance) or 77001 (fluoroscopy for central access) alongside 36568, 36569, 36572, 36573, or 36584. If tip confirmation wasn't actually performed as part of an imaging-guided placement, append modifier 52.",
-      "A 'midline' catheter terminates in the peripheral venous system, not centrally — it is never a central venous access device and is never coded as a PICC. Use 36400, 36406, or 36410 instead. Similarly, a PICC placed using magnetic guidance (or any guidance method that isn't imaging-based) is coded as 36568/36569, not the imaging-guidance codes.",
+      "This short bridge section covers general cardiac wound repair, exploratory cardiotomy, general aorta/great vessel suture repair and grafting (distinct from the specific ascending/arch/descending aorta codes later in this part), and the percutaneous left atrial appendage (LAA) closure device — the code most exam-writers associate with the Watchman-type device.",
+      "Removal of an atrial or ventricular thrombus via cardiotomy (33310/33315) is not separately reported alongside another cardiac procedure UNLESS a separate heart incision was genuinely required to remove that thrombus.",
     ],
     categories: [
       {
-        name: "Insertion",
+        name: "General Repair",
         codes: [
-          ["36555 / 36556", "Non-tunneled centrally inserted catheter — younger than 5 vs. 5 or older"],
-          ["36557 / 36558", "Tunneled centrally inserted catheter, no port or pump — younger than 5 vs. 5 or older"],
-          ["36560 / 36561", "Tunneled centrally inserted device, with a subcutaneous port — younger than 5 vs. 5 or older"],
-          ["36563", "Tunneled centrally inserted device, with a subcutaneous pump"],
-          ["36565 / 36566", "Tunneled device requiring 2 catheters via 2 separate access sites (e.g., Tesio type) — without vs. with subcutaneous port(s)"],
-          ["36568 / 36569", "PICC, no port/pump, without imaging guidance — younger than 5 vs. 5 or older"],
-          ["36572 / 36573", "PICC, no port/pump, with bundled imaging guidance — younger than 5 vs. 5 or older"],
-          ["36570 / 36571", "PICC with a subcutaneous port — younger than 5 vs. 5 or older"],
+          ["33300", "Repair of cardiac wound; without bypass"],
+          ["33305", "Same, with cardiopulmonary bypass"],
+          ["33310", "Cardiotomy, exploratory (includes removal of foreign body, atrial or ventricular thrombus); without bypass"],
+          ["33315", "Same, with cardiopulmonary bypass"],
         ],
       },
       {
-        name: "Repair",
+        name: "General Aorta/Great Vessel Repair",
         codes: [
-          ["36575", "Repair of the catheter only (no port/pump), central or peripheral insertion site"],
-          ["36576", "Repair of the device with a port or pump, central or peripheral insertion site"],
+          ["33320", "Suture repair of aorta or great vessels; without shunt or cardiopulmonary bypass"],
+          ["33321", "Same, with shunt bypass"],
+          ["33322", "Same, with cardiopulmonary bypass"],
+          ["33330", "Insertion of graft, aorta or great vessels; without shunt or cardiopulmonary bypass"],
+          ["33335", "Same, with cardiopulmonary bypass"],
         ],
       },
       {
-        name: "Partial Replacement (Catheter Only — Device Stays)",
+        name: "Percutaneous LAA Closure",
         codes: [
-          ["36578", "Replace catheter only, device has a port or pump, central or peripheral insertion site"],
-        ],
-      },
-      {
-        name: "Complete Replacement (Same Venous Access Site)",
-        codes: [
-          ["36580", "Non-tunneled central catheter, no port/pump"],
-          ["36581", "Tunneled central catheter, no port/pump"],
-          ["36582", "Tunneled central device with a port"],
-          ["36583", "Tunneled central device with a pump"],
-          ["36584", "PICC, no port/pump, with bundled imaging guidance"],
-          ["36585", "PICC with a port"],
-        ],
-      },
-      {
-        name: "Removal",
-        codes: [
-          ["36589", "Tunneled catheter, no port or pump"],
-          ["36590", "Tunneled device with a port or pump, central or peripheral insertion"],
-        ],
-      },
-      {
-        name: "Other Central Venous Access Services",
-        codes: [
-          ["36591", "Blood specimen collection from a completely implantable venous access device"],
-          ["36592", "Blood specimen collection using an established central or peripheral venous catheter, not otherwise specified"],
-          ["36593", "Declotting an implanted vascular access device/catheter with a thrombolytic agent"],
-          ["36595", "Mechanical removal of pericatheter obstructive material (e.g., fibrin sheath), via a separate venous access"],
-          ["36596", "Mechanical removal of intraluminal (intracatheter) obstructive material, through the device lumen"],
-          ["36597", "Repositioning a previously placed central venous catheter under fluoroscopic guidance"],
-          ["36598", "Contrast injection(s) to radiologically evaluate an existing central venous access device, including fluoroscopy, image documentation, and report"],
+          ["33340", "Percutaneous transcatheter closure of the left atrial appendage with endocardial implant, including fluoroscopy, transseptal puncture, catheter placement(s), left atrial angiography, and LAA angiography when performed"],
         ],
       },
     ],
     rules: [
-      "36591 and 36592 (blood draws from an existing device) are not reported together with any other service except an actual lab test — they're standalone specimen-collection codes.",
-      "36595 and 36596 are mutually exclusive with each other and with 36593 — pick mechanical removal via a separate access (36595), mechanical removal through the existing lumen (36596), or thrombolytic declotting (36593), not more than one for the same event.",
-      "36598 (contrast injection to evaluate an existing device) is not reported together with fluoroscopy code 76000, or with the obstructive-material removal codes 36595/36596.",
-      "There is no 'without imaging guidance' version of complete PICC replacement — 36584 (with bundled imaging) is the only complete-replacement PICC code; a complete PICC replacement performed without any imaging guidance falls to the unlisted code 37799.",
+      "33340 is not reported together with left/right heart catheterization codes (93451–93461, 93593–93598) unless catheterization is performed for indications distinct from the LAA closure itself, using a non-transseptal approach.",
     ],
     tips: [
-      "Work it in three questions: (1) central or peripheral (PICC)? (2) tunneled or non-tunneled? (3) plain catheter, port, or pump? Age under/over 5 only changes the code for standard central lines and standard PICCs — the Tesio-type and imaging-bundled PICC codes don't split by age at all.",
-      "'Partial' replacement always means catheter-only, device stays — that's always 36578, no matter whether it's a port or a pump. 'Complete' replacement swaps the whole system through the same access site and the code depends on device type (36580–36585).",
+      "33340 (percutaneous LAA closure) is a completely different code family from the surgical/thoracoscopic LAA exclusion codes in Part 1 (33267–33269) — percutaneous device closure vs. surgical exclusion are two different procedures, not two ways to bill the same thing.",
     ],
   },
   {
     n: 2,
-    title: "Arterial Puncture & Catheterization",
-    range: "36600–36680",
+    title: "Aortic Valve — TAVR & Open Replacement",
+    range: "33361–33417",
+    intro: [
+      "TAVR/TAVI (transcatheter aortic valve replacement/implantation) codes are picked purely by the ARTERIAL ACCESS ROUTE used to deliver the new valve — femoral, axillary, iliac, or transaortic/transapical — not by the valve type or manufacturer.",
+      "TAVR/TAVI codes already bundle percutaneous access, balloon aortic valvuloplasty, advancing and positioning the delivery system, deploying the valve, temporary pacemaker insertion for rapid pacing, and arteriotomy closure. All the guidance imaging (angiography, roadmapping, fluoroscopy) needed to place the valve is bundled too — it's never separately billed.",
+      "When cardiopulmonary bypass support is needed during TAVR/TAVI, add the matching bypass add-on: percutaneous peripheral (33367), open peripheral (33368), or central (33369) — chosen by cannulation site and technique, not by the base TAVR code itself.",
+      "Open aortic valve replacement (33405/33406/33410) is chosen by valve material: prosthetic (33405), homograft/allograft (33406), or stentless tissue (33410). Konno (33412, transventricular annulus enlargement) and Ross-Konno (33440, autologous pulmonary valve translocation with annulus enlargement) are specialized enlargement procedures layered on top of that same basic AVR concept.",
+    ],
     categories: [
       {
-        name: "Procedures",
+        name: "Transcatheter Aortic Valve Replacement (TAVR/TAVI), by Access Route",
         codes: [
-          ["36600", "Arterial puncture, withdrawal of blood for diagnosis"],
-          ["36620 / 36625", "Arterial catheterization/cannulation for sampling, monitoring, or transfusion (separate procedure) — percutaneous vs. cutdown"],
-          ["36640", "Arterial catheterization for prolonged infusion therapy (e.g., chemotherapy), cutdown"],
-          ["36660", "Umbilical artery catheterization, newborn, for diagnosis or therapy"],
-          ["36680", "Placement of a needle for intraosseous infusion"],
+          ["33361", "TAVR/TAVI with prosthetic valve; percutaneous femoral artery approach"],
+          ["33362", "Open femoral artery approach"],
+          ["33363", "Open axillary artery approach"],
+          ["33364", "Open iliac artery approach"],
+          ["33365", "Transaortic approach (e.g., median sternotomy, mediastinotomy)"],
+          ["33366", "Transapical exposure (e.g., left thoracotomy)"],
+          ["33370", "Cerebral embolic protection device during TAVR/TAVI (add-on)"],
+        ],
+      },
+      {
+        name: "Open Aortic Valve Replacement & Related",
+        codes: [
+          ["33390 / 33391", "Aortic valvuloplasty, open, with bypass — simple vs. complex"],
+          ["33405", "Replacement, aortic valve, open, with bypass; prosthetic valve (not homograft or stentless)"],
+          ["33406", "Same, with allograft valve (freehand)"],
+          ["33410", "Same, with stentless tissue valve"],
+          ["33411", "Same, with aortic annulus enlargement, noncoronary sinus"],
+          ["33412", "Same, with transventricular aortic annulus enlargement (Konno procedure)"],
+          ["33413", "Same, by translocation of autologous pulmonary valve (Ross procedure)"],
+          ["33440", "Replacement, aortic valve, by autologous pulmonary valve translocation WITH annulus enlargement (Ross-Konno procedure)"],
         ],
       },
     ],
     rules: [
-      "Modifier 63 (procedures on infants under 4kg) is not reported with 36660 — that code already accounts for the newborn population it's written for.",
+      "Diagnostic left heart catheterization and supravalvular aortography codes are not separately billed with TAVR/TAVI — that work is already captured in the TAVR codes themselves, unless a genuinely new diagnostic study is needed (no prior study available, anatomy inadequately visualized, or a clinical change requires new evaluation).",
+      "TAVR/TAVI always requires two physician operators, and the work of both is reported using modifier 62 on the same code — not two different codes.",
+      "33440 (Ross-Konno) is never reported together with 33405, 33406, 33410, 33411, 33412, 33413, 33414, 33416, or 33417 — it's a single all-in-one code for that specific combined procedure.",
     ],
-    tips: ["Percutaneous vs. cutdown is the main fork for 36620/36625 — same clinical purpose (sampling/monitoring/transfusion), different approach."],
+    tips: [
+      "For TAVR: access route decides the code (33361–33366). For open AVR: valve material decides the code (33405 prosthetic / 33406 homograft / 33410 stentless), with Konno/Ross layered on top only when annulus enlargement or pulmonary valve translocation is actually documented.",
+      "\"Two operators, modifier 62\" is a near-guaranteed detail on any TAVR/TAVI question — don't reach for co-surgeon exclusions here like you would elsewhere in Cardiovascular.",
+    ],
   },
   {
     n: 3,
-    title: "Hemodialysis Access & AV Fistula (Open Procedures)",
-    range: "36800–36861",
+    title: "Mitral, Tricuspid & Pulmonary Valve Procedures",
+    range: "33418–33478",
+    intro: [
+      "Transcatheter mitral valve repair (TMVR — 33418 initial prosthesis, +33419 additional prosthesis in the same session) follows the same bundling logic as TAVR: percutaneous access, transseptal puncture, delivery, positioning, and deployment are all included, and diagnostic catheterization isn't separately billed unless one of the same \"genuinely new study needed\" exceptions applies.",
+      "Transcatheter pulmonary valve implantation (TPVI, 33477) is reported only once per session and bundles all associated cardiac catheterization, contrast injection, and imaging — including balloon angioplasty and stenting performed within the pulmonary conduit/treatment zone itself. Angioplasty or stenting done at a separate site outside that zone can still be billed separately (92997/92998 or 37236/37237).",
+      "Open mitral, tricuspid, and pulmonary valve work follows a consistent internal pattern across all three valves: valvotomy (opening a stenotic valve) → valvuloplasty (repair, with or without a ring) → replacement — the same conceptual ladder, just with different code numbers per valve.",
+    ],
     categories: [
       {
-        name: "Cannula Insertion",
+        name: "Mitral Valve",
         codes: [
-          ["36800", "Insertion of a cannula for hemodialysis, other purpose (separate procedure), vein to vein"],
-          ["36810 / 36815", "External arteriovenous cannula (Scribner type) — insertion vs. revision/closure"],
+          ["33418", "Transcatheter mitral valve repair (TMVR), percutaneous, including transseptal puncture when performed; initial prosthesis"],
+          ["33419", "Additional prosthesis(es), same session (add-on)"],
+          ["33420", "Valvotomy, mitral valve; closed heart"],
+          ["33422", "Same, open heart, with cardiopulmonary bypass"],
+          ["33425", "Valvuloplasty, mitral valve, with cardiopulmonary bypass"],
+          ["33426", "Same, with prosthetic ring"],
+          ["33427", "Same, radical reconstruction, with or without ring"],
+          ["33430", "Replacement, mitral valve, with cardiopulmonary bypass"],
         ],
       },
       {
-        name: "Open Arteriovenous Anastomosis (Direct Fistula)",
+        name: "Tricuspid Valve",
         codes: [
-          ["36818", "By upper-arm cephalic vein transposition"],
-          ["36819", "By upper-arm basilic vein transposition"],
-          ["36820", "By forearm vein transposition"],
-          ["36821", "Direct, any site (e.g., Cimino type) (separate procedure)"],
+          ["33460", "Valvectomy, tricuspid valve, with cardiopulmonary bypass"],
+          ["33463", "Valvuloplasty, tricuspid valve; without ring insertion"],
+          ["33464", "Same, with ring insertion"],
+          ["33465", "Replacement, tricuspid valve, with cardiopulmonary bypass"],
+          ["33468", "Tricuspid valve repositioning and plication for Ebstein anomaly"],
         ],
       },
       {
-        name: "Arteriovenous Graft (Non-Direct Fistula)",
+        name: "Pulmonary Valve",
         codes: [
-          ["36825", "Autogenous graft"],
-          ["36830", "Nonautogenous graft (e.g., biological collagen, thermoplastic graft)"],
+          ["33474", "Valvotomy, pulmonary valve, open heart, with cardiopulmonary bypass"],
+          ["33475", "Replacement, pulmonary valve"],
+          ["33476", "Right ventricular resection for infundibular stenosis, with or without commissurotomy"],
+          ["33477", "Transcatheter pulmonary valve implantation (TPVI), percutaneous approach, including pre-stenting when performed"],
+          ["33478", "Outflow tract augmentation (gusset), with or without commissurotomy or infundibular resection"],
         ],
       },
       {
-        name: "Thrombectomy & Revision (Open)",
+        name: "Other Valvular Procedures",
         codes: [
-          ["36831", "Open thrombectomy of an AV fistula, without revision, autogenous or nonautogenous dialysis graft (separate procedure)"],
-          ["36832 / 36833", "Open revision of an AV fistula — without thrombectomy vs. with thrombectomy, autogenous or nonautogenous dialysis graft"],
-        ],
-      },
-      {
-        name: "Percutaneous AV Fistula Creation (Upper Extremity)",
-        codes: [
-          ["36836", "Single access of both the peripheral artery and vein, including fistula maturation procedures when performed, plus all vascular access and imaging"],
-          ["36837", "Separate access sites for the artery and vein, same bundled scope as 36836"],
-        ],
-      },
-      {
-        name: "Other",
-        codes: [
-          ["36823", "Insertion of arterial and venous cannula(s) for isolated extracorporeal circulation with regional chemotherapy perfusion to an extremity, with or without hyperthermia, including removal and repair of the arteriotomy/venotomy sites"],
-          ["36835", "Insertion of a Thomas shunt (separate procedure)"],
-          ["36838", "Distal revascularization and interval ligation (DRIL), upper-extremity hemodialysis access, for steal syndrome"],
-          ["36860 / 36861", "External cannula declotting (separate procedure) — without vs. with a balloon catheter"],
+          ["33496", "Repair of non-structural prosthetic valve dysfunction, with cardiopulmonary bypass (separate procedure)"],
         ],
       },
     ],
     rules: [
-      "36818, 36819, 36820, and 36821 (the open direct AV anastomosis variants) are mutually exclusive on a unilateral procedure — only report one. For a bilateral procedure performed in the same session, use modifier 50 or 59 as appropriate rather than reporting two different variant codes.",
-      "36823 already bundles chemotherapy perfusion supported by a membrane oxygenator/perfusion pump — the general chemotherapy administration codes (96409–96425) are not separately reported with it.",
-      "36836 and 36837 already bundle all vascular access, angiography, imaging guidance, and any fistula-maturation technique (like balloon angioplasty or coil embolization) performed at the same session — a long list of catheterization, imaging, and angioplasty/stent codes are excluded from being reported alongside them.",
-      "32832/36833 (open AV fistula revision) is not reported together with the percutaneous dialysis-circuit codes 36901–36906 for the same revision — pick the open or the percutaneous approach, not both.",
+      "33419 (additional TMVR prosthesis) is only ever reported in conjunction with 33418 — it's an add-on, never standalone, and is capped at once per session no matter how many additional prostheses are placed.",
+      "For a reoperation on a valve more than one month after the original operation, add code 33530 alongside the valve procedure code — this isn't folded into the base valve codes themselves.",
+      "Repairing non-structural prosthetic valve dysfunction (33496) during a reoperation still needs 33530 added alongside it, same as any other valve reoperation.",
     ],
     tips: [
-      "Direct connection of artery to vein = an anastomosis code (36818–36821), picked by which vein is transposed. A graft material bridging artery and vein = 36825 (the patient's own vein) or 36830 (synthetic/biological material) instead.",
-      "36836 vs. 36837 comes down to one question: did the physician access the artery and vein through one skin puncture, or two separate ones?",
+      "Across mitral/tricuspid/pulmonary, memorize the ladder once — valvotomy → valvuloplasty (± ring) → replacement — and you can navigate all three valve families without memorizing 15 codes independently.",
+      "TPVI (33477) is a once-per-session code even if pre-stenting, angioplasty, and valve deployment all happen in the same setting — don't split it into multiple line items.",
     ],
   },
   {
     n: 4,
-    title: "Dialysis Circuit (Percutaneous Interventions)",
-    range: "36901–36909",
+    title: "Coronary Artery Bypass Grafting — Venous, Arterial & Combined",
+    range: "33500–33536, 33572",
     intro: [
-      "The dialysis circuit is the full arteriovenous pathway used for repeated hemodialysis access, running from the arterial anastomosis to the right atrium — built either as a fistula (AVF, a direct artery-to-vein connection) or a graft (AVG, a prosthetic conduit). It's divided into two segments: the peripheral dialysis segment (from the arterial anastomosis out through the axillary/cephalic vein in the arm, or the common femoral vein in the leg) and the central dialysis segment (everything further in — subclavian/innominate veins through the SVC in the arm, or iliac veins through the IVC in the leg).",
-      "This whole family is built as two parallel 3-step ladders, and only one code from either ladder is reported per session, because each step already includes everything below it: the non-thrombus ladder is diagnostic angiography (36901) → + peripheral angioplasty (36902) → + peripheral stent (36903); the thrombus ladder is mechanical thrombectomy/thrombolysis (36904) → + peripheral angioplasty (36905) → + peripheral stent (36906). Each level bundles all the catheter placements, fluoroscopic guidance, roadmapping, and radiological supervision/interpretation needed to perform it, and is reported only once per session regardless of how many lesions were treated within that segment.",
-      "36907 (central-segment angioplasty) and 36908 (central-segment stent) are add-on codes layered on top of whichever base ladder code applies — each reported once per session no matter how many central lesions or stents were involved, and 36908 already includes what 36907 covers, so the two are never reported together. 36909 is a separate add-on for permanent embolization or occlusion of the main circuit or an accessory vein, also capped at once per session.",
+      "CABG codes are counted by the number of DISTAL ANASTOMOSES — the points where the graft is actually sutured onto a diseased coronary artery — not by how many separate graft segments or incisions were used.",
+      "There are three separate CABG code families depending on graft material, and they are NEVER mixed within the same family: venous-only grafts (33510–33516, picked by graft count 1 through 6+), arterial-only grafts (33533–33536, picked by graft count 1 through 4+), and combined arterial-venous grafting, which requires reporting TWO codes together — a combined-grafting add-on code (33517–33523, for the venous component) PLUS the matching arterial graft code (33533–33536).",
+      "Procurement of the saphenous vein graft is already bundled into the venous CABG codes (33510–33516) and the combined codes (33517–33523) — it's never billed as a separate service or co-surgery. Harvesting an upper-extremity vein instead uses add-on 35500; harvesting a femoropopliteal vein segment uses add-on 35572. Endoscopic (rather than open) vein harvest is reported with add-on 33508, and endoscopic upper-extremity artery harvest with add-on 33509.",
+      "The internal mammary (internal thoracic) artery, gastroepiploic artery, epigastric artery, radial artery, and other arterial conduits are all included as \"arterial grafts\" for the 33533–33536 codes — procurement of the artery itself is bundled in, except when an upper-extremity artery like the radial artery is harvested, which gets its own add-on (33509 endoscopic, or 35600 open).",
     ],
     categories: [
       {
-        name: "Diagnostic / Angioplasty / Stent Ladder",
+        name: "Venous Grafts Only (not combined with arterial)",
         codes: [
-          ["36901", "Diagnostic angiography of the entire dialysis circuit, including all direct punctures, catheter placements, and imaging from the arterial anastomosis through the venous outflow to the vena cava"],
-          ["36902", "36901, plus transluminal balloon angioplasty in the peripheral dialysis segment"],
-          ["36903", "36902, plus transcatheter stent placement in the peripheral dialysis segment"],
+          ["33510", "Coronary artery bypass, vein only; single coronary venous graft"],
+          ["33511", "2 coronary venous grafts"],
+          ["33512", "3 coronary venous grafts"],
+          ["33513", "4 coronary venous grafts"],
+          ["33514", "5 coronary venous grafts"],
+          ["33516", "6 or more coronary venous grafts"],
         ],
       },
       {
-        name: "Thrombectomy / Angioplasty / Stent Ladder",
+        name: "Combined Arterial-Venous Grafting (venous component — report WITH an arterial code below)",
         codes: [
-          ["36904", "Percutaneous mechanical thrombectomy and/or thrombolytic infusion, treating thrombus in both the peripheral and central segments, including diagnostic angiography"],
-          ["36905", "36904, plus transluminal balloon angioplasty in the peripheral dialysis segment"],
-          ["36906", "36905, plus transcatheter stent placement in the peripheral dialysis segment"],
+          ["33517", "Using venous graft(s) and arterial graft(s); single vein graft (add-on)"],
+          ["33518", "2 venous grafts (add-on)"],
+          ["33519", "3 venous grafts (add-on)"],
+          ["33521", "4 venous grafts (add-on)"],
+          ["33522", "5 venous grafts (add-on)"],
+          ["33523", "6 or more venous grafts (add-on)"],
         ],
       },
       {
-        name: "Central Segment & Embolization Add-Ons",
+        name: "Arterial Grafts (standalone, or paired with a combined-grafting code above)",
         codes: [
-          ["36907", "+ transluminal balloon angioplasty, central dialysis segment (add-on, once per session)"],
-          ["36908", "+ transcatheter stent placement, central dialysis segment (add-on, once per session, includes 36907's scope)"],
-          ["36909", "+ permanent embolization/occlusion of the main circuit or accessory veins (add-on, once per session)"],
+          ["33533", "Coronary artery bypass, using arterial graft(s); single arterial graft"],
+          ["33534", "2 coronary arterial grafts"],
+          ["33535", "3 coronary arterial grafts"],
+          ["33536", "4 or more coronary arterial grafts"],
+        ],
+      },
+      {
+        name: "Harvest Add-Ons & Related",
+        codes: [
+          ["33508", "Endoscopy, surgical, including video-assisted harvest of vein(s) for CABG (add-on)"],
+          ["33509", "Harvest of upper extremity artery, 1 segment, for CABG, endoscopic (add-on)"],
+          ["33572", "Coronary endarterectomy, open, of LAD/circumflex/RCA, performed with CABG, each vessel (add-on)"],
+          ["33530", "Reoperation, coronary artery bypass or valve procedure, more than 1 month after original operation (add-on)"],
         ],
       },
     ],
     rules: [
-      "Report only one code from 36901–36906 per session — never two levels of the same ladder, and never one from each ladder.",
-      "Removing an arterial plug during a thrombectomy is part of the thrombectomy service itself — it is never separately coded as an angioplasty (36905), even if a balloon catheter is used to dislodge it.",
-      "Ultrasound guidance for the initial dialysis-circuit puncture (76937) is not typically needed or bundled, but can be separately reported — with full documentation — for cases like a new/immature or failing fistula that genuinely requires it to puncture safely.",
-      "When open dialysis-access creation, revision, or thrombectomy (36818–36833) is performed, completion angiography and peripheral-segment angioplasty/stenting are already bundled into that open procedure — but central-segment work (36907/36908) can still be reported separately.",
+      "Never report a venous-only code (33510–33516) together with an arterial code (33533–33536) for the same operative session — that combination is what the combined codes (33517–33523 + 33533–33536) exist for.",
+      "The combined-grafting codes (33517–33523) can never be reported alone — they must always be paired with the matching arterial graft code (33533–33536).",
+      "33530 (reoperation) is an add-on used across valve AND bypass procedures alike, whenever the operation is more than a month after the original — it's not exclusive to CABG.",
     ],
     tips: [
-      "Ask 'did I find thrombus?' first — that alone tells you which ladder (901–903 or 904–906) you're on. Then ask how far you went (diagnostic only, + angioplasty, or + stent) to land on the exact code.",
-      "36907/36908/36909 are the only three things that can ever stack on top of the base ladder code — everything else is already included.",
+      "Count distal anastomoses, not graft segments — a single vein graft that's sequentially anastomosed to two different coronary arteries still only counts by how many suture connection points it made, per the book's own counting note.",
+      "Three-question CABG lookup: (1) venous only, arterial only, or combined? (2) how many grafts? (3) was endarterectomy or a reoperation also involved, needing an add-on?",
     ],
   },
   {
     n: 5,
-    title: "Portal Decompression Procedures",
-    range: "37140–37183",
+    title: "Other Open Cardiac Procedures — VSD Repair, Ventricular Restoration & Endarterectomy",
+    range: "33542–33572",
     categories: [
       {
-        name: "Open Shunts",
+        name: "Other Cardiac Repair Procedures",
         codes: [
-          ["37140", "Open portocaval venous anastomosis"],
-          ["37145", "Open renoportal venous anastomosis"],
-          ["37160", "Open caval-mesenteric venous anastomosis"],
-          ["37180 / 37181", "Open splenorenal venous anastomosis — proximal vs. distal (selective decompression of esophagogastric varices, any technique)"],
-        ],
-      },
-      {
-        name: "Transvenous Intrahepatic Portosystemic Shunt (TIPS)",
-        codes: [
-          ["37182", "Placement of TIPS — includes venous access, hepatic and portal vein catheterization, portography with hemodynamic evaluation, tract formation/dilation, stent placement, and all associated imaging"],
-          ["37183", "Revision of an existing TIPS — same bundled scope as 37182, for a revision"],
+          ["33542", "Myocardial resection (e.g., ventricular aneurysmectomy)"],
+          ["33545", "Repair of postinfarction ventricular septal defect, with or without myocardial resection"],
+          ["33548", "Surgical ventricular restoration procedure, includes prosthetic patch when performed (e.g., SVR, SAVER, Dor procedure)"],
         ],
       },
     ],
     rules: [
-      "37182 and 37183 already include the full portography and hemodynamic workup — the older transhepatic portography supervision-and-interpretation codes (75885, 75887) are not separately reported alongside either one.",
+      "33548 (surgical ventricular restoration) is not reported together with chest tube placement (32551) or several of the exploratory/cardiotomy codes (33210, 33211, 33310, 33315) — it's already inclusive of that scope.",
+      "For a Batista procedure or cardiac pacopexy, route to the unlisted cardiac surgery code (33999) — there's no dedicated code for either.",
     ],
-    tips: ["Open procedure → pick the specific vessel pairing (portocaval, renoportal, caval-mesenteric, or splenorenal). Percutaneous → it's TIPS: 37182 for a new placement, 37183 for revising one already in place."],
+    tips: [
+      "\"Postinfarction VSD\" (33545) is a distinct, specific trap phrase — a ventricular septal defect from a heart attack routes here, not to the congenital septal defect repair codes elsewhere in this section.",
+    ],
   },
   {
     n: 6,
-    title: "Transcatheter Procedures — Mechanical Thrombectomy & Thrombolytic Infusion",
-    range: "37184–37214 (concept coverage — code text cuts off after 37187)",
+    title: "Aorta & Great Vessels — Open Repair and TEVAR",
+    range: "33858–33886",
     intro: [
-      "Catheter placement, diagnostic studies, and other percutaneous interventions (like angioplasty or stenting) performed in the same session are separately reportable in addition to these thrombectomy/thrombolysis codes. Fluoroscopic guidance is already bundled into 37184–37188. An intraprocedural thrombolytic drug injection is bundled into the mechanical thrombectomy codes, but a continuous thrombolytic infusion carried on before or after the thrombectomy session is not bundled and is separately reportable (37211–37214). Coronary mechanical thrombectomy uses a different code entirely (92973), and intracranial arterial mechanical thrombectomy uses 61645 — neither routes through this family.",
-      "'Primary' arterial mechanical thrombectomy (37184/37185) applies when thrombus was already diagnosed beforehand and the thrombectomy itself was the planned procedure — reported per vascular family, with 37184 for the first vessel treated and add-on 37185 for each additional vessel in that same family. A second, separate vascular family treated through a separate access site gets its own 37184 with modifier 59. 'Secondary' thrombectomy (37186) instead applies when only a short segment of thrombus/embolus is retrieved incidentally during another percutaneous intervention (like an angioplasty) — 37184/37185 and 37186 are never reported together.",
-      "Venous mechanical thrombectomy uses 37187 for the initial application (modifier 50 for bilateral through separate access sites) and 37188 for a repeat treatment on a later day during an ongoing course of thrombolytic therapy.",
-      "For thrombolytic drip infusion (as opposed to mechanical thrombectomy), the day of treatment determines the code: the initial day uses 37211 or 37212, continued treatment on a day that is neither the first nor the last uses 37213, and the final day uses 37214. If the entire course starts and finishes on the same day, only 37211 or 37212 is reported — not a combination.",
+      "Ascending aorta graft codes (33858/33859) split purely by INDICATION: 33858 for aortic dissection, 33859 for any other aortic disease (like an aneurysm) — same graft procedure, different reason for doing it.",
+      "Aortic root replacement procedures layer additional work onto the base ascending-graft concept: 33863 (Bentall procedure) adds a valved conduit with coronary artery reconstruction; 33864 (David or Yacoub procedure) is the valve-SPARING version — root remodeling and coronary reconstruction, but the patient's own aortic valve is preserved rather than replaced.",
+      "Aortic hemiarch graft (33866) is an add-on specifically for when hemiarch work is done alongside an ascending aortic graft (33858/33859/33863/33864) — it is never billed together with the full transverse arch graft code (33871), since that describes a more extensive arch reconstruction.",
+      "TEVAR (thoracic endovascular aortic repair, 33880–33886) is coded by which segment of the thoracic aorta the endograft covers relative to the left subclavian artery, not by the underlying pathology (aneurysm, dissection, penetrating ulcer, and traumatic disruption are all coded the same way based on anatomic coverage). All of the pre-procedure imaging, nonselective catheterization from the femoral/iliac access, and completion angiography are bundled into the base TEVAR codes — not separately billable.",
     ],
     categories: [
       {
-        name: "Arterial Mechanical Thrombectomy",
+        name: "Open Ascending Aorta & Aortic Root",
         codes: [
-          ["37184", "Primary percutaneous mechanical thrombectomy, noncoronary/non-intracranial artery or arterial bypass graft — initial vessel"],
-          ["37185", "Same, second and all subsequent vessels within the same vascular family (add-on)"],
-          ["37186", "Secondary mechanical thrombectomy, performed in conjunction with another percutaneous intervention (add-on)"],
+          ["33858", "Ascending aorta graft, with cardiopulmonary bypass, includes valve suspension when performed; for aortic dissection"],
+          ["33859", "Same, for aortic disease other than dissection (e.g., aneurysm)"],
+          ["33863", "Ascending aorta graft with aortic root replacement using a valved conduit and coronary reconstruction (Bentall procedure)"],
+          ["33864", "Ascending aorta graft with valve suspension, coronary reconstruction, and valve-sparing aortic root remodeling (David or Yacoub procedure)"],
         ],
       },
       {
-        name: "Venous Mechanical Thrombectomy",
+        name: "Aortic Arch",
         codes: [
-          ["37187", "Percutaneous mechanical thrombectomy of vein(s), including intraprocedural thrombolytic injection(s) and fluoroscopic guidance"],
-          ["37188", "Repeat venous mechanical thrombectomy on a subsequent day of an ongoing thrombolytic course"],
+          ["33866", "Aortic hemiarch graft including arch-vessel isolation/control and circulatory arrest (add-on, with an ascending graft code)"],
+          ["33871", "Transverse aortic arch graft, with circulatory arrest and reimplantation of arch vessel(s)"],
+        ],
+      },
+      {
+        name: "Descending Thoracic Aorta",
+        codes: [
+          ["33875", "Descending thoracic aorta graft, with or without cardiopulmonary bypass"],
+          ["33877", "Repair of thoracoabdominal aortic aneurysm with graft, with or without cardiopulmonary bypass"],
+        ],
+      },
+      {
+        name: "Thoracic Endovascular Aortic Repair (TEVAR), by Coverage",
+        codes: [
+          ["33880", "Endovascular repair of descending thoracic aorta, covering the left subclavian artery origin; initial endoprosthesis"],
+          ["33881", "Same, not covering the left subclavian artery origin"],
+          ["33882", "Placement of a fenestrated/branched endograft module extending into the left subclavian artery"],
+          ["33883", "Delayed placement of a proximal extension prosthesis (add-on)"],
+          ["33886", "Delayed placement of a distal extension prosthesis (add-on)"],
         ],
       },
     ],
     rules: [
-      "Do not report 37184/37185 for retrieving only a short thrombus/embolus segment found incidentally during another intervention — that scenario is 37186 instead.",
-      "37186 is never reported together with 37184/37185 in the same session.",
-      "For thrombolytic infusion (37211–37214), only one code is used per calendar day of treatment, chosen by whether it's the first day, a middle day, or the final day of the course.",
+      "33864 (David/Yacoub) is never reported together with 33858, 33859, or 33863 — it's a distinct, complete procedure choice, not an add-on to those.",
+      "33871 (full transverse arch graft) and 33866 (hemiarch add-on) are mutually exclusive — pick the one that matches the actual extent of arch work performed.",
+      "Balloon angioplasty or stenting performed within the TEVAR treatment zone, either before or after endograft deployment, is never separately reported — it's bundled into the base TEVAR code.",
     ],
     tips: [
-      "Ask: was thrombus already known and the thrombectomy planned in advance (primary, 37184/37185), or was it an incidental finding during a different procedure (secondary, 37186)?",
-      "For thrombolytic infusion, think of it as a day counter: Day 1 → 37211/37212. Middle days → 37213. Last day → 37214.",
+      "For the ascending aorta/root family, ask: dissection or other disease (858 vs. 859)? Valve replaced or preserved (863 Bentall vs. 864 David/Yacoub)? That's the whole decision tree.",
+      "TEVAR code selection hinges entirely on anatomic coverage relative to the left subclavian artery — memorize that landmark, not the pathology being treated.",
+    ],
+  },
+  {
+    n: 7,
+    title: "ECMO/ECLS, Ventricular Assist Devices & Total Artificial Heart",
+    range: "33927–33999",
+    intro: [
+      "ECMO (extracorporeal membrane oxygenation) and ECLS (extracorporeal life support) are the same concept — continuously pumping blood through an external oxygenator — reported through a consistent 4-code structure repeated for each of the two circuit types: veno-venous (lung support only) and veno-arterial (heart and lung support).",
+      "Initiation codes (33946 veno-venous, 33947 veno-arterial) cover the physician work of setting up the circuit and its parameters. Daily management codes (33948 veno-venous, 33949 veno-arterial) cover the ongoing physician oversight of blood flow, oxygenation, and anticoagulation — and these are billed once per day, separate from the patient's overall daily hospital care codes (which are still separately reportable).",
+      "Cannula insertion (33951–33956) is coded by patient age and circuit type; cannula repositioning (33957–33964) is a distinct service from insertion and is never billed on the same day as an initiation code by the same or a different physician.",
+      "Ventricular assist device (VAD) and intra-aortic balloon pump (IABP) codes exist on a similar insertion/removal/repositioning pattern to the pacemaker and ECMO families — percutaneous VAD insertion/removal uses 33990–33997, transthoracic (implantable) VAD uses 33975/33976/33979, and IABP insertion/removal is split by APPROACH: percutaneous (33967/33968), open femoral (33970/33971), or ascending aorta (33973/33974) — each approach has its own paired insertion and removal code.",
+    ],
+    categories: [
+      {
+        name: "ECMO/ECLS",
+        codes: [
+          ["33946", "ECMO/ECLS, physician services; initiation, veno-venous"],
+          ["33947", "Initiation, veno-arterial"],
+          ["33948", "Daily management, each day, veno-venous"],
+          ["33949", "Daily management, each day, veno-arterial"],
+          ["33951–33956", "Cannula insertion for ECMO/ECLS, by age and veno-venous/veno-arterial circuit type"],
+          ["33957–33964", "Cannula repositioning for ECMO/ECLS, by age and circuit type"],
+        ],
+      },
+      {
+        name: "Ventricular Assist Device & Intra-Aortic Balloon Pump",
+        codes: [
+          ["33967", "Insertion of intra-aortic balloon assist device, percutaneous"],
+          ["33968", "Removal of intra-aortic balloon assist device, percutaneous"],
+          ["33970", "Insertion of intra-aortic balloon assist device through the femoral artery, open approach"],
+          ["33971", "Removal of intra-aortic balloon assist device, including repair of femoral artery, with or without graft"],
+          ["33973", "Insertion of intra-aortic balloon assist device through the ascending aorta"],
+          ["33974", "Removal of intra-aortic balloon assist device from the ascending aorta, including repair, with or without graft"],
+          ["33975 / 33976", "Insertion of implantable (transthoracic) VAD — single ventricle vs. biventricular"],
+          ["33979", "Insertion of a total replacement heart system (artificial heart)"],
+          ["33990–33993, 33995, 33997", "Percutaneous VAD insertion, removal, and repositioning, by ventricle and approach"],
+        ],
+      },
+      {
+        name: "Heart Transplantation",
+        codes: [
+          ["33945", "Heart transplant, with or without recipient cardiectomy"],
+          ["33929", "Removal of a total replacement heart system for heart transplantation (add-on)"],
+        ],
+      },
+    ],
+    rules: [
+      "Daily ECMO/ECLS management codes (33948/33949) are never reported on the same day as an initiation code (33946/33947) — even if performed by a different physician on that same day.",
+      "Initiation codes (33946/33947) are never reported on the same day as a repositioning code (33957–33964).",
+      "Repositioning a cannula at the same session as its original insertion is not separately reported — that's already part of the insertion code itself.",
+    ],
+    tips: [
+      "The ECMO family is one consistent grid: veno-venous vs. veno-arterial, crossed with initiation vs. daily management vs. cannula work — learn the grid, not 19 individual codes.",
+      "\"Different physicians managed different parts of ECMO care\" is a recurring exam setup — each physician reports only the specific service(s) they personally performed, not the whole bundle.",
     ],
   },
 ];
+
+const cabgDiagramStyle = { background: "#fff7f7", border: "1px solid #f0d7d7", borderRadius: "14px", padding: "20px", margin: "18px 0", textAlign: "center" as const };
+const diagramCaptionStyle = { margin: "10px 0 0", fontSize: "13px", color: "#7a3a3a", fontWeight: 700 };
+
+function CabgDiagram() {
+  return (
+    <div style={cabgDiagramStyle}>
+      <svg viewBox="0 0 480 300" width="100%" height="auto" style={{ maxWidth: "440px" }} role="img" aria-label="Diagram of coronary artery bypass grafting showing an internal mammary artery graft and a saphenous vein graft">
+        <rect x="0" y="0" width="480" height="300" fill="#fff7f7" />
+        {/* Heart outline */}
+        <path d="M 180 120 Q 140 60 100 100 Q 60 140 100 190 Q 140 240 200 270 Q 260 240 300 190 Q 340 140 300 100 Q 260 60 220 120 Z" fill="#fbe2e2" stroke="#b91c1c" strokeWidth="2.5" />
+        {/* Aorta */}
+        <path d="M 210 100 Q 220 50 280 40 Q 340 35 360 60" fill="none" stroke="#7a1f1f" strokeWidth="10" strokeLinecap="round" />
+        <text x="300" y="30" fontSize="13" fontWeight="700" fill="#7a1f1f">Aorta</text>
+        {/* Left subclavian artery branch */}
+        <line x1="290" y1="42" x2="290" y2="10" stroke="#7a1f1f" strokeWidth="6" strokeLinecap="round" />
+        <text x="230" y="14" fontSize="11" fill="#7a1f1f">Left subclavian artery</text>
+        {/* LIMA graft (arterial) */}
+        <path d="M 290 42 Q 260 90 230 140 Q 215 165 200 190" fill="none" stroke="#b45309" strokeWidth="5" strokeLinecap="round" strokeDasharray="0" />
+        <text x="250" y="120" fontSize="11" fontWeight="700" fill="#b45309">LIMA graft</text>
+        <text x="215" y="133" fontSize="10" fill="#b45309">(arterial)</text>
+        {/* Vein graft from aorta to a different coronary vessel */}
+        <path d="M 355 62 Q 330 130 280 175 Q 250 200 220 210" fill="none" stroke="#166534" strokeWidth="5" strokeLinecap="round" />
+        <text x="330" y="145" fontSize="11" fontWeight="700" fill="#166534">Vein graft</text>
+        {/* Coronary artery targets */}
+        <circle cx="200" cy="190" r="4" fill="#7a1f1f" />
+        <circle cx="220" cy="210" r="4" fill="#7a1f1f" />
+        <text x="120" y="215" fontSize="11" fill="#7a1f1f">Diseased coronary</text>
+        <text x="120" y="228" fontSize="11" fill="#7a1f1f">artery (distal anastomosis)</text>
+      </svg>
+      <p style={diagramCaptionStyle}>Two graft materials, two separate code families: an arterial graft (e.g., LIMA, 33533–33536) and a vein graft (e.g., saphenous, 33510–33516) — used together, they&apos;re coded as combined grafting (33517–33523 + 33533–33536), not two standalone codes.</p>
+    </div>
+  );
+}
 
 const mainStyle = { maxWidth: "1160px", margin: "0 auto", padding: "36px 24px 64px", minHeight: "100vh", background: "#fdf6f6", color: "#291a1a", fontFamily: "Arial, sans-serif" };
 const heroStyle = { background: "linear-gradient(135deg, #450a0a, #b91c1c)", color: "white", padding: "48px 44px", borderRadius: "18px", marginBottom: "26px", boxShadow: "0 12px 28px rgba(69,10,10,0.22)" };
@@ -305,7 +409,7 @@ const pStyle = { lineHeight: 1.75, margin: "0 0 10px" };
 const categoryTitleStyle = { margin: "18px 0 8px", fontSize: "16px", color: "#b91c1c", fontWeight: 800 };
 const codeListStyle = { listStyle: "none", padding: 0, margin: "0 0 4px", display: "grid", gap: "7px" };
 const codeItemStyle = { display: "flex", gap: "12px", alignItems: "baseline", background: "#fdf8f8", border: "1px solid #f0e2e2", borderRadius: "8px", padding: "8px 13px" };
-const codeChipStyle = { fontWeight: 800, color: "#b91c1c", minWidth: "110px", fontFamily: "Consolas, monospace", fontSize: "13.5px" };
+const codeChipStyle = { fontWeight: 800, color: "#b91c1c", minWidth: "150px", fontFamily: "Consolas, monospace", fontSize: "13.5px" };
 const rulesBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", borderLeft: "5px solid #dc2626", borderRadius: "10px", padding: "16px 18px", margin: "18px 0 0", lineHeight: 1.7 };
 const rulesTitleStyle = { margin: "0 0 8px", color: "#991b1b", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const tipsBoxStyle = { background: "#f0fdf4", border: "1px solid #bbf7d0", borderLeft: "5px solid #16a34a", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
@@ -318,22 +422,24 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
       <header style={heroStyle}>
         <p style={kickerStyle}>33,000 SERIES · CARDIOVASCULAR SYSTEM</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 48px)" }}>CPT Surgery Guidelines Reviewer</h1>
-        <p style={{ margin: "12px 0 0", fontSize: "19px", lineHeight: 1.5 }}>Part 2 — Venous Access, Arterial Access, Dialysis Circuit, Portal Decompression &amp; Thrombectomy (36555–37214)</p>
+        <p style={{ margin: "12px 0 0", fontSize: "19px", lineHeight: 1.5 }}>Part 2 — General Repair, LAA Closure, Heart Valves, Coronary Artery Bypass Grafting, Aorta &amp; Great Vessels, and ECMO/VAD (33300–33999)</p>
       </header>
 
       <div style={pagerStyle}>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={pagerLinkStyle}>← Part 1 (33016–33269)</Link>
-        <span style={pagerActiveStyle}>Part 2 (36555–37214)</span>
+        <span style={pagerActiveStyle}>Part 2 (33300–33999)</span>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={pagerLinkStyle}>Part 3 (36555–37214) →</Link>
       </div>
 
       <nav aria-label="Cardiovascular series navigation" style={navStyle}>
         <Link href="/cpt/surgery/33,000" style={navLinkStyle}>Cardiovascular System home</Link>
+        <Link href="/cpt/surgery/33000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
+        <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>
-        <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
       <section style={introBoxStyle}>
-        <strong>Two gaps to know about:</strong> this material jumps straight from where Part 1 stopped (33265) to Central Venous Access (36555) — codes 33266 through 36554 (heart valves, coronary bypass grafting, aorta and great vessel surgery, and general arterial/venous access below 36555) haven&apos;t been sent yet. And within this chunk itself, the source cut off again partway through the venous mechanical thrombectomy codes (37187/37188), right before the thrombolytic infusion codes' own entries would normally appear — the concepts for 37211–37214 are covered here from the guideline text, but not as standalone code entries yet. Send either gap whenever you&apos;re ready.
+        <strong>This fills the biggest gap in the series:</strong> heart valve surgery (TAVR/TAVI, open valve repair and replacement across all four valves) and coronary artery bypass grafting (CABG) — arguably the most clinically central and most heavily tested part of cardiovascular surgery — plus aorta/great vessel repair (open and endovascular/TEVAR) and ECMO/VAD support. Source text pulled directly from the 2026 CPT codebook. Written in original wording, not copied from the CPT text; codes are grouped by category with representative entries, not every single code listed.
       </section>
 
       {subsections.map((sub) => (
@@ -344,6 +450,8 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
           {sub.intro?.map((p) => <p key={p} style={pStyle}>{p}</p>)}
+
+          {sub.n === 4 && <CabgDiagram />}
 
           {sub.categories.map((cat) => (
             <div key={cat.name}>
@@ -381,6 +489,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
 
       <div style={{ marginTop: "30px", display: "flex", flexWrap: "wrap" as const, gap: "16px" }}>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={backLinkStyle}>← Back to Part 1</Link>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={backLinkStyle}>Continue to Part 3 →</Link>
         <Link href="/cpt/surgery/33,000" style={backLinkStyle}>← Back to Cardiovascular System</Link>
       </div>
     </main>

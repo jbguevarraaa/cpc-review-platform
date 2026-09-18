@@ -24,6 +24,9 @@ export default function CardiovascularSeriesPage() {
         <Link href="/cpt/surgery" style={navLinkStyle}>Back to Surgery</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Guidelines Reviewer Pt. 3</Link>
+        <Link href="/cpt/surgery/33000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
+        <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -35,8 +38,23 @@ export default function CardiovascularSeriesPage() {
         </Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 2</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Heart Valves, CABG, Aorta &amp; ECMO/VAD</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>TAVR and open valve replacement across all four valves, coronary artery bypass grafting (with a labeled graft diagram), aorta/great vessel repair including TEVAR, and ECMO/VAD support for 33300–33999.</p>
+        </Link>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={cardStyle}>
+          <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 3</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Venous/Arterial Access → Thrombectomy</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Central venous access device table, hemodialysis/AV fistula access, the dialysis-circuit intervention ladder, portal decompression, and transcatheter thrombectomy for 36555–37214.</p>
+        </Link>
+        <Link href="/cpt/surgery/33000-series-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#b91c1c", fontWeight: 800 }}>PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Scenario Quiz, All 3 Parts</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Interactive questions with elimination tips, covering pacemakers/ICDs, valves, CABG, aorta, ECMO/VAD, and vascular access.</p>
+        </Link>
+        <Link href="/cpt/surgery/33000-series-flashcards" style={cardStyle}>
+          <span style={{ color: "#b91c1c", fontWeight: 800 }}>FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Tap-to-flip flashcards, one rule per card, covering the whole Cardiovascular series.</p>
         </Link>
       </div>
     </main>
