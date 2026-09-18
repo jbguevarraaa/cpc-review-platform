@@ -30,6 +30,7 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-18-flashcards" style={navLinkStyle}>Chapter 18 Flashcards</Link>
         <Link href="/icd10/chapter-13-guidelines-reviewer" style={navLinkStyle}>Chapter 13 Reviewer</Link>
         <Link href="/icd10/chapter-9-guidelines-reviewer" style={navLinkStyle}>Chapter 9 Reviewer</Link>
+        <Link href="/icd10/chapter-9-coding-approach" style={navLinkStyle}>Chapter 9 How to Approach</Link>
         <Link href="/icd10/chapter-9-practice-quiz" style={navLinkStyle}>Chapter 9 Quiz</Link>
         <Link href="/icd10/chapter-9-worked-examples" style={navLinkStyle}>Chapter 9 Worked Examples</Link>
         <Link href="/icd10/chapter-9-flashcards" style={navLinkStyle}>Chapter 9 Flashcards</Link>
@@ -122,6 +123,12 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 9 · I00–I99</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Circulatory System</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Hypertension combination codes (heart/kidney/crisis/pulmonary/resistant), atherosclerotic CAD with angina, cerebrovascular sequelae, and the full acute MI (type 1/2/other) framework.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-9-coding-approach" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 9 · HOW TO APPROACH</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>The Coding Decision Hierarchy</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Start here if you're not sure where to begin: the eight-question universal checklist (presumed vs. explicit relationships, combination codes, timing windows, sequencing, defaults, add-on codes, look-alike names), plus a topic-by-topic priority checklist for every major rule in this chapter.</p>
         </Link>
 
         <Link href="/icd10/chapter-9-practice-quiz" style={cardStyle}>

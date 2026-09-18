@@ -297,6 +297,7 @@ export default function Icd10Chapter9PracticeQuizPage() {
 
       <nav aria-label="ICD-10 quiz navigation" style={navStyle}>
         <Link href="/icd10" style={navLinkStyle}>ICD-10-CM home</Link>
+        <Link href="/icd10/chapter-9-coding-approach" style={navLinkStyle}>How to Approach This Chapter</Link>
         <Link href="/icd10/chapter-9-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer</Link>
       </nav>
 

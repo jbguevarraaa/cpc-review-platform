@@ -100,6 +100,7 @@ export default function Icd10Chapter9FlashcardsPage() {
         <h1 style={titleStyle}>5-Minute Commute Review</h1>
         <nav aria-label="ICD-10 navigation" style={navStyle}>
           <Link href="/icd10" style={navLinkStyle}>ICD-10 home</Link>
+          <Link href="/icd10/chapter-9-coding-approach" style={navLinkStyle}>How to Approach</Link>
           <Link href="/icd10/chapter-9-guidelines-reviewer" style={navLinkStyle}>Full Reviewer</Link>
         </nav>
       </header>

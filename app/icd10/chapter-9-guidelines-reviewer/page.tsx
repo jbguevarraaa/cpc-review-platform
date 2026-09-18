@@ -229,6 +229,7 @@ export default function Icd10Chapter9GuidelinesReviewerPage() {
 
       <nav aria-label="ICD-10 navigation" style={navStyle}>
         <Link href="/icd10" style={navLinkStyle}>ICD-10-CM home</Link>
+        <Link href="/icd10/chapter-9-coding-approach" style={navLinkStyle}>How to Approach This Chapter</Link>
         <Link href="/icd10/chapter-9-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/icd10/chapter-9-worked-examples" style={navLinkStyle}>Worked Examples</Link>
         <Link href="/icd10/chapter-9-flashcards" style={navLinkStyle}>Flashcards</Link>
