@@ -44,6 +44,14 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-4-practice-quiz" style={navLinkStyle}>Chapter 4 Quiz</Link>
         <Link href="/icd10/chapter-4-worked-examples" style={navLinkStyle}>Chapter 4 Worked Examples</Link>
         <Link href="/icd10/chapter-4-flashcards" style={navLinkStyle}>Chapter 4 Flashcards</Link>
+        <Link href="/icd10/chapter-5-guidelines-reviewer" style={navLinkStyle}>Chapter 5 Reviewer</Link>
+        <Link href="/icd10/chapter-5-practice-quiz" style={navLinkStyle}>Chapter 5 Quiz</Link>
+        <Link href="/icd10/chapter-5-worked-examples" style={navLinkStyle}>Chapter 5 Worked Examples</Link>
+        <Link href="/icd10/chapter-5-flashcards" style={navLinkStyle}>Chapter 5 Flashcards</Link>
+        <Link href="/icd10/chapter-6-guidelines-reviewer" style={navLinkStyle}>Chapter 6 Reviewer</Link>
+        <Link href="/icd10/chapter-6-practice-quiz" style={navLinkStyle}>Chapter 6 Quiz</Link>
+        <Link href="/icd10/chapter-6-worked-examples" style={navLinkStyle}>Chapter 6 Worked Examples</Link>
+        <Link href="/icd10/chapter-6-flashcards" style={navLinkStyle}>Chapter 6 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -186,10 +194,58 @@ export default function ICD10Page() {
           <p style={{ margin: 0, lineHeight: 1.65 }}>17 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
+        <Link href="/icd10/chapter-5-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 5 · F01–F99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Mental, Behavioral &amp; Neurodevelopmental Disorders</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Psychological pain (F45.41/.42), the substance use/abuse/dependence hierarchy, remission by severity, blood alcohol level, factitious disorder self-vs-other, and dementia severity.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-5-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 5 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-5-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 5 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-5-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 5 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>18 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-6-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 6 · G00–G99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Nervous System</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Dominant/nondominant side defaults, plus the full category G89 pain framework: when it's used, sequencing with site codes, postoperative pain, chronic pain, neoplasm-related pain, and pain syndromes.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-6-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 6 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-6-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 6 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-6-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 6 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>17 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
           <span style={{ color: "#94a3a8", fontWeight: 800 }}>COMING SOON</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Remaining Chapters</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Mental/behavioral, nervous system, and the rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Eye, ear, and the rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
         </div>
       </div>
     </main>
