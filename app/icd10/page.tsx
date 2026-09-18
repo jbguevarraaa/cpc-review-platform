@@ -59,6 +59,13 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-8-guidelines-reviewer" style={navLinkStyle}>Chapter 8 Reviewer</Link>
         <Link href="/icd10/chapter-8-practice-quiz" style={navLinkStyle}>Chapter 8 Quiz</Link>
         <Link href="/icd10/chapter-8-flashcards" style={navLinkStyle}>Chapter 8 Flashcards</Link>
+        <Link href="/icd10/chapter-10-guidelines-reviewer" style={navLinkStyle}>Chapter 10 Reviewer</Link>
+        <Link href="/icd10/chapter-10-practice-quiz" style={navLinkStyle}>Chapter 10 Quiz</Link>
+        <Link href="/icd10/chapter-10-worked-examples" style={navLinkStyle}>Chapter 10 Worked Examples</Link>
+        <Link href="/icd10/chapter-10-flashcards" style={navLinkStyle}>Chapter 10 Flashcards</Link>
+        <Link href="/icd10/chapter-11-guidelines-reviewer" style={navLinkStyle}>Chapter 11 Reviewer</Link>
+        <Link href="/icd10/chapter-11-practice-quiz" style={navLinkStyle}>Chapter 11 Quiz</Link>
+        <Link href="/icd10/chapter-11-flashcards" style={navLinkStyle}>Chapter 11 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -289,6 +296,48 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 8 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>14 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-10-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 10 · J00–J99, U07.0</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Respiratory System</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>COPD/asthma exacerbation, acute respiratory failure sequencing, confirmed-vs-unconfirmed influenza, ventilator-associated pneumonia, and vaping-related disorders.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-10-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 10 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>14-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-10-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 10 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>14 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-10-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 10 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>14 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-11-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 11 · K00–K95</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Digestive System</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>GERD, peptic ulcer disease, appendicitis, diverticular disease, IBD (Crohn's vs. ulcerative colitis), gallbladder disease, alcoholic liver disease, and pancreatitis — code-structure focused, since this chapter has no official narrative guidelines.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-11-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 11 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>19-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-11-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 11 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>18 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
