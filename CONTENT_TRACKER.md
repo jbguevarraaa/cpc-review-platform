@@ -41,10 +41,14 @@ _Last updated: 2026-09-18 (post ICD-10 Chapter 9 build). This tracks study-conte
 | Chapter | Guidelines Reviewer | Quiz | Flashcards | Worked Examples |
 |---|---|---|---|---|
 | 1 (Infectious/Parasitic) | ✅ | ✅ | ✅ | — |
+| 2 (Neoplasms) | ✅ | ✅ (14 Q) | ✅ (21 cards) | ✅ (9 scenarios) |
+| 3 (Blood/Blood-Forming Organs) | ✅ (code-structure format — no official narrative guidelines exist for this chapter) | ✅ (10 Q) | ✅ (15 cards) | — (skipped, low sequencing content) |
 | 9 (Circulatory System) | ✅ | ✅ (15 Q) | ✅ (21 cards) | ✅ (9 scenarios) |
 | 13 (Musculoskeletal) | ✅ | — | — | — |
 | 18 (Symptoms/Signs/Abnormal Findings) | ✅ | ✅ | ✅ | ✅ |
-| 2–8, 10–12, 14–17, 19–21 (17 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — still the biggest content gap on the site relative to exam weight |
+| 4–8, 10–12, 14–17, 19–21 (15 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — in progress, working sequentially |
+
+**Note on chapter format:** Not every ICD-10-CM chapter has official narrative guidelines — CMS marks several as "Reserved for future guideline expansion" (confirmed so far: Chapter 3). For those, the reviewer format shifts from sequencing-rule summaries to code-category/clinical-distinction summaries, and Worked Examples are skipped in favor of a tighter Reviewer + Quiz + Flashcards set, to keep pace sustainable across all remaining chapters.
 
 ## HCPCS Level II
 
