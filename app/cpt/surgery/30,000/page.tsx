@@ -22,7 +22,8 @@ export default function ThirtyThousandSeriesPage() {
 
       <nav aria-label="30,000 series navigation" style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "30px" }}>
         <Link href="/cpt/surgery" style={navLinkStyle}>Back to Surgery</Link>
-        <Link href="/cpt/surgery/30000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer</Link>
+        <Link href="/cpt/surgery/30000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
+        <Link href="/cpt/surgery/30000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/30000-series-beginner-guide" style={navLinkStyle}>Beginner Scenarios</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
@@ -31,7 +32,12 @@ export default function ThirtyThousandSeriesPage() {
         <Link href="/cpt/surgery/30000-series-guidelines-reviewer" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 1</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Nose, Sinuses, Larynx, Trachea &amp; Bronchi</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Code ranges, category tables, paraphrased coding rules, memory tips, and a top-traps quick reference for 30000–31899.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Code ranges, category tables, a step-by-step coding walkthrough, paraphrased coding rules, memory tips, and a top-traps quick reference for 30000–31899.</p>
+        </Link>
+        <Link href="/cpt/surgery/30000-series-guidelines-reviewer-part-2" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 2</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Lungs &amp; Pleura</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Biopsy approaches, thoracotomy, lung resection, pleural drainage, thoracoscopy (VATS), lung transplantation, and more for 32035–32999.</p>
         </Link>
         <Link href="/cpt/surgery/30000-series-beginner-guide" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>BEGINNER SCENARIOS</span>

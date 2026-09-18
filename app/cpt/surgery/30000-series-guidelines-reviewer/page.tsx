@@ -366,6 +366,9 @@ const heroStyle = { background: "linear-gradient(135deg, #1f2937, #0f766e)", col
 const kickerStyle = { margin: "0 0 10px", color: "#99f6e4", fontWeight: 800, letterSpacing: "0.08em" };
 const navStyle = { display: "flex", flexWrap: "wrap" as const, gap: "10px", marginBottom: "26px" };
 const navLinkStyle = { textDecoration: "none", color: "#0f766e", background: "#ffffff", border: "1px solid #d7e2df", borderRadius: "999px", padding: "10px 15px", fontWeight: 700, fontSize: "14px" };
+const pagerStyle = { display: "flex", flexWrap: "wrap" as const, gap: "10px", marginBottom: "26px" };
+const pagerLinkStyle = { textDecoration: "none", color: "#0f766e", background: "#fff7e8", border: "1px solid #efd39b", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" };
+const pagerActiveStyle = { ...pagerLinkStyle, background: "#0f766e", color: "#fff", border: "1px solid #0f766e" };
 const introStyle = { background: "#fff7e8", border: "1px solid #efd39b", borderLeft: "7px solid #b7791f", borderRadius: "12px", padding: "22px 24px", marginBottom: "30px", lineHeight: 1.7 };
 const sectionStyle = { background: "#ffffff", border: "1px solid #e5e1d6", borderRadius: "14px", padding: "26px 28px", marginBottom: "22px", boxShadow: "0 5px 16px rgba(15,23,42,0.06)" };
 const sectionHeaderStyle = { display: "flex", alignItems: "center", gap: "14px", marginBottom: "8px", flexWrap: "wrap" as const };
@@ -427,6 +430,11 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
         <p style={{ margin: "12px 0 0", fontSize: "19px", lineHeight: 1.5 }}>Part 1 — Nose, Accessory Sinuses, Larynx, and Trachea &amp; Bronchi (30000–31899)</p>
       </header>
 
+      <div style={pagerStyle}>
+        <span style={pagerActiveStyle}>Part 1 (30000–31899)</span>
+        <Link href="/cpt/surgery/30000-series-guidelines-reviewer-part-2" style={pagerLinkStyle}>Part 2 (32035–32999) →</Link>
+      </div>
+
       <nav aria-label="30,000 series navigation" style={navStyle}>
         <Link href="/cpt/surgery/30,000" style={navLinkStyle}>30,000 Series home</Link>
         <Link href="/cpt/surgery/30000-series-beginner-guide" style={navLinkStyle}>Beginner Scenarios</Link>
@@ -435,7 +443,7 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
       </nav>
 
       <section style={introStyle}>
-        <strong>How to use this reviewer:</strong> each subsection lists its code range, the codes grouped by category the way the book organizes them, a set of key coding rules (paraphrased closely for accuracy, not copied verbatim), and a couple of editable memory tips. Lungs &amp; Pleura (32035 onward) is still coming — send the rest whenever you&apos;re ready and I&apos;ll add it as Part 2.
+        <strong>How to use this reviewer:</strong> each subsection lists its code range, the codes grouped by category the way the book organizes them, a step-by-step coding walkthrough, a set of key coding rules (paraphrased closely for accuracy, not copied verbatim), and a couple of editable memory tips. Lungs &amp; Pleura now lives in Part 2 — linked above.
       </section>
 
       <section style={sectionStyle}>
@@ -502,6 +510,7 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
       ))}
 
       <div style={{ marginTop: "30px", display: "flex", flexWrap: "wrap" as const, gap: "16px" }}>
+        <Link href="/cpt/surgery/30000-series-guidelines-reviewer-part-2" style={backLinkStyle}>Continue to Part 2 (Lungs &amp; Pleura) →</Link>
         <Link href="/cpt/surgery/30,000" style={backLinkStyle}>← Back to 30,000 Series</Link>
         <Link href="/cpt/surgery" style={backLinkStyle}>← Back to Surgery</Link>
       </div>
