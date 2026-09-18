@@ -29,6 +29,10 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-18-worked-examples" style={navLinkStyle}>Chapter 18 Worked Examples</Link>
         <Link href="/icd10/chapter-18-flashcards" style={navLinkStyle}>Chapter 18 Flashcards</Link>
         <Link href="/icd10/chapter-13-guidelines-reviewer" style={navLinkStyle}>Chapter 13 Reviewer</Link>
+        <Link href="/icd10/chapter-9-guidelines-reviewer" style={navLinkStyle}>Chapter 9 Reviewer</Link>
+        <Link href="/icd10/chapter-9-practice-quiz" style={navLinkStyle}>Chapter 9 Quiz</Link>
+        <Link href="/icd10/chapter-9-worked-examples" style={navLinkStyle}>Chapter 9 Worked Examples</Link>
+        <Link href="/icd10/chapter-9-flashcards" style={navLinkStyle}>Chapter 9 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -81,10 +85,34 @@ export default function ICD10Page() {
           <p style={{ margin: 0, lineHeight: 1.65 }}>Site/laterality, acute vs. chronic conditions, pathologic fractures, and osteoporosis (M80 vs. M81) — plus a quick anatomy and common-pathology reference.</p>
         </Link>
 
+        <Link href="/icd10/chapter-9-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 9 · I00–I99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Circulatory System</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Hypertension combination codes (heart/kidney/crisis/pulmonary/resistant), atherosclerotic CAD with angina, cerebrovascular sequelae, and the full acute MI (type 1/2/other) framework.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-9-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 9 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>15-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-9-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 9 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-9-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 9 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>21 tap-to-flip flashcards, one rule per card — same quick-skim format as the other chapter decks.</p>
+        </Link>
+
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
           <span style={{ color: "#94a3a8", fontWeight: 800 }}>COMING SOON</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Remaining Chapters</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Neoplasms, endocrine/metabolic, mental/behavioral, nervous system, and the rest of the ICD-10-CM chapters will be added here as guidelines are sent over.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Neoplasms, endocrine/metabolic, mental/behavioral, nervous system, and the rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
         </div>
       </div>
     </main>
