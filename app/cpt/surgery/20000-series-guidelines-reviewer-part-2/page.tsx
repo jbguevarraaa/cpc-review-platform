@@ -1,9 +1,13 @@
 import Link from "next/link";
 
+type CodeEntry = { code: string; desc: string };
+type Category = { title: string; codes: CodeEntry[] };
+
 type Topic = {
   n: number;
   title: string;
   codes: string;
+  categories?: Category[];
   summary: string[];
   steps: string[];
   easy: { scenario: string; answer: string };
@@ -16,6 +20,45 @@ const topics: Topic[] = [
     n: 1,
     title: "Head — TMJ, Excision, Prosthesis & Craniofacial Reconstruction",
     codes: "21010–21299",
+    categories: [
+      {
+        title: "TMJ procedures",
+        codes: [
+          { code: "21010", desc: "Arthrotomy, temporomandibular joint" },
+          { code: "21050", desc: "Condylectomy, temporomandibular joint (separate procedure)" },
+          { code: "21060", desc: "Meniscectomy, partial or complete, temporomandibular joint" },
+          { code: "21073", desc: "Manipulation of TMJ(s), therapeutic, requiring an anesthesia service" },
+          { code: "21240", desc: "Arthroplasty, temporomandibular joint, with or without autograft" },
+          { code: "21243", desc: "Arthroplasty, temporomandibular joint, with prosthetic joint replacement" },
+        ],
+      },
+      {
+        title: "Excision of mandible/maxilla tumors & cysts",
+        codes: [
+          { code: "21040", desc: "Excision of benign tumor or cyst of mandible, by enucleation and/or curettage" },
+          { code: "21044", desc: "Excision of malignant tumor of mandible" },
+          { code: "21046", desc: "Excision of benign tumor or cyst of mandible; requiring intra-oral osteotomy" },
+          { code: "21048", desc: "Excision of benign tumor or cyst of maxilla; requiring intra-oral osteotomy" },
+        ],
+      },
+      {
+        title: "Head prosthesis (physician-fabricated)",
+        codes: [
+          { code: "21076", desc: "Impression and custom preparation; surgical obturator prosthesis" },
+          { code: "21077", desc: "Impression and custom preparation; orbital prosthesis" },
+          { code: "21088", desc: "Impression and custom preparation; facial prosthesis" },
+        ],
+      },
+      {
+        title: "LeFort midface reconstruction",
+        codes: [
+          { code: "21141", desc: "Reconstruction midface, LeFort I; single piece, without bone graft" },
+          { code: "21145", desc: "Reconstruction midface, LeFort I; single piece, requiring bone grafts" },
+          { code: "21150", desc: "Reconstruction midface, LeFort II; anterior intrusion" },
+          { code: "21159", desc: "Reconstruction midface, LeFort III (extracranial), requiring bone grafts; without LeFort I" },
+        ],
+      },
+    ],
     summary: [
       "TMJ arthrotomy (21010) is for exploring/draining the joint or removing a foreign body — separate from the whole family of craniofacial reconstruction codes that follows.",
       "TMJ manipulation under anesthesia (21073) specifically requires an anesthesia service (general or monitored anesthesia care). Manipulation without that anesthesia service, or closed treatment of an actual TMJ dislocation, are different codes entirely.",
@@ -47,6 +90,37 @@ const topics: Topic[] = [
     n: 2,
     title: "Head — Fracture and Dislocation (Nasal, Orbital, LeFort, Mandible, TMJ)",
     codes: "21315–21499",
+    categories: [
+      {
+        title: "Nasal & orbital fractures",
+        codes: [
+          { code: "21315", desc: "Closed treatment of nasal bone fracture with manipulation; without stabilization" },
+          { code: "21325", desc: "Open treatment of nasal fracture; uncomplicated" },
+          { code: "21400", desc: "Closed treatment of fracture of orbit, except blowout; without manipulation" },
+          { code: "21406", desc: "Open treatment of fracture of orbit, except blowout; without implant" },
+        ],
+      },
+      {
+        title: "LeFort-pattern midface fractures",
+        codes: [
+          { code: "21345", desc: "Closed treatment of nasomaxillary complex fracture (LeFort II type)" },
+          { code: "21421", desc: "Closed treatment of palatal or maxillary fracture (LeFort I type)" },
+          { code: "21431", desc: "Closed treatment of craniofacial separation (LeFort III type)" },
+          { code: "21433", desc: "Open treatment of craniofacial separation (LeFort III type); with wiring and/or internal fixation" },
+        ],
+      },
+      {
+        title: "Mandible fracture & TMJ dislocation",
+        codes: [
+          { code: "21450", desc: "Closed treatment of mandibular fracture; without manipulation" },
+          { code: "21453", desc: "Closed treatment of mandibular fracture with interdental fixation" },
+          { code: "21461", desc: "Open treatment of mandibular fracture; without interdental fixation" },
+          { code: "21465", desc: "Open treatment of mandibular condylar fracture" },
+          { code: "21480", desc: "Closed treatment of temporomandibular dislocation; initial or subsequent" },
+          { code: "21490", desc: "Open treatment of temporomandibular dislocation" },
+        ],
+      },
+    ],
     summary: [
       "Nasal fracture treatment splits into closed (with or without stabilization) vs. open (uncomplicated vs. complicated with internal/external fixation), plus combined treatment when the septum is also fractured.",
       "Orbital floor blowout fractures are their own family, split by surgical approach (transantral, periorbital, or combined) and by whether an implant or bone graft is added.",
@@ -77,6 +151,34 @@ const topics: Topic[] = [
     n: 3,
     title: "Neck (Soft Tissues) and Thorax",
     codes: "21501–21899",
+    categories: [
+      {
+        title: "Chest wall tumor & rib excision",
+        codes: [
+          { code: "21601", desc: "Excision of chest wall tumor including rib(s)" },
+          { code: "21602", desc: "Excision of chest wall tumor involving rib(s), with plastic reconstruction; without mediastinal lymphadenectomy" },
+          { code: "21615", desc: "Excision of first and/or cervical rib" },
+        ],
+      },
+      {
+        title: "Pectus repair",
+        codes: [
+          { code: "21740", desc: "Reconstructive repair of pectus excavatum or carinatum; open" },
+          { code: "21742", desc: "Minimally invasive approach (Nuss procedure), without thoracoscopy" },
+          { code: "21743", desc: "Minimally invasive approach (Nuss procedure), with thoracoscopy" },
+        ],
+      },
+      {
+        title: "Rib & sternal fractures",
+        codes: [
+          { code: "21811", desc: "Open treatment of rib fracture(s) with internal fixation, unilateral; 1–3 ribs" },
+          { code: "21812", desc: "Open treatment of rib fracture(s) with internal fixation; 4–6 ribs" },
+          { code: "21813", desc: "Open treatment of rib fracture(s) with internal fixation; 7 or more ribs" },
+          { code: "21820", desc: "Closed treatment of sternum fracture" },
+          { code: "21825", desc: "Open treatment of sternum fracture with or without skeletal fixation" },
+        ],
+      },
+    ],
     summary: [
       "Incision and drainage of a deep neck/thorax abscess has a distinct code when a partial rib ostectomy is also required.",
       "Soft tissue tumor excision of the neck or anterior thorax follows the same three-tier logic used across the whole Musculoskeletal section: subcutaneous, subfascial, or radical resection, sized by diameter plus margin.",
@@ -108,6 +210,17 @@ const topics: Topic[] = [
     n: 4,
     title: "Back and Flank",
     codes: "21920–21936",
+    categories: [
+      {
+        title: "Biopsy & tumor excision, back/flank",
+        codes: [
+          { code: "21920", desc: "Biopsy, soft tissue of back or flank; superficial" },
+          { code: "21925", desc: "Biopsy, soft tissue of back or flank; deep" },
+          { code: "21930", desc: "Excision, tumor, soft tissue of back or flank, subcutaneous; less than 3 cm" },
+          { code: "21935", desc: "Radical resection of tumor, soft tissue of back or flank; less than 5 cm" },
+        ],
+      },
+    ],
     summary: [
       "This is a short, self-contained family: soft tissue biopsy (superficial vs. deep) and tumor excision (subcutaneous, subfascial, radical) of the back or flank specifically — using the same three-tier size-based logic seen throughout the Musculoskeletal section.",
       "These codes exclude anything involving the spine itself — posterior spine incision and drainage is a separate Spine-subsection code (22010–22015), not a back/flank code.",
@@ -132,6 +245,26 @@ const topics: Topic[] = [
     n: 5,
     title: "Spine — General Bundling Rules, Incision & Excision",
     codes: "22010–22116",
+    categories: [
+      {
+        title: "Incision & drainage, posterior spine",
+        codes: [
+          { code: "22010", desc: "Incision and drainage, open, of deep abscess (subfascial), posterior spine; cervical/thoracic/cervicothoracic" },
+          { code: "22015", desc: "Incision and drainage, open, of deep abscess, posterior spine; lumbar/sacral/lumbosacral" },
+        ],
+      },
+      {
+        title: "Partial vertebral excision (intrinsic bony lesion)",
+        codes: [
+          { code: "22100", desc: "Partial excision of posterior vertebral component, single segment; cervical" },
+          { code: "22102", desc: "Partial excision of posterior vertebral component, single segment; lumbar" },
+          { code: "22103", desc: "Partial excision of posterior vertebral component; each additional segment (add-on)" },
+          { code: "22110", desc: "Partial excision of vertebral body, single segment; cervical" },
+          { code: "22114", desc: "Partial excision of vertebral body, single segment; lumbar" },
+          { code: "22116", desc: "Partial excision of vertebral body; each additional segment (add-on)" },
+        ],
+      },
+    ],
     summary: [
       "Bone grafts (20930–20938) and spinal instrumentation (22840–22859) are ALWAYS reported separately, in addition to arthrodesis — never bundled into the arthrodesis code itself.",
       "When arthrodesis is performed alongside another definitive procedure (osteotomy, fracture care, corpectomy, laminectomy), append modifier 51 to the arthrodesis code — except codes 22585, 22614, and 22632, which are themselves add-on codes and never take modifier 51.",
@@ -162,6 +295,34 @@ const topics: Topic[] = [
     n: 6,
     title: "Spine — Osteotomy",
     codes: "22206–22226",
+    categories: [
+      {
+        title: "3-column osteotomy (pedicle/vertebral body subtraction)",
+        codes: [
+          { code: "22206", desc: "Osteotomy of spine, posterior/posterolateral approach, 3 columns, 1 vertebral segment; thoracic" },
+          { code: "22207", desc: "Osteotomy of spine, posterior/posterolateral approach, 3 columns, 1 vertebral segment; lumbar" },
+          { code: "22208", desc: "Osteotomy of spine, 3 columns; each additional vertebral segment (add-on)" },
+        ],
+      },
+      {
+        title: "1-column posterior/posterolateral osteotomy",
+        codes: [
+          { code: "22210", desc: "Osteotomy of spine, posterior/posterolateral approach, 1 vertebral segment; cervical" },
+          { code: "22212", desc: "Osteotomy of spine, 1 vertebral segment; thoracic" },
+          { code: "22214", desc: "Osteotomy of spine, 1 vertebral segment; lumbar" },
+          { code: "22216", desc: "Osteotomy of spine, 1 column; each additional vertebral segment (add-on)" },
+        ],
+      },
+      {
+        title: "Anterior approach osteotomy",
+        codes: [
+          { code: "22220", desc: "Osteotomy of spine, including discectomy, anterior approach, single segment; cervical" },
+          { code: "22222", desc: "Osteotomy of spine, anterior approach, single segment; thoracic" },
+          { code: "22224", desc: "Osteotomy of spine, anterior approach, single segment; lumbar" },
+          { code: "22226", desc: "Osteotomy of spine, anterior approach; each additional vertebral segment (add-on)" },
+        ],
+      },
+    ],
     summary: [
       "Spinal osteotomy codes apply specifically when a portion of a vertebral segment is cut and removed to help re-align the spine for deformity correction — not for excising an intrinsic bony lesion (that's the Excision family, 22100–22116) and not for routine decompression (a Nervous System code).",
       "The spine is conceptually divided into three columns for these codes: anterior (front two-thirds of the vertebral body), middle (back third of the body plus the pedicle), and posterior (facets, lamina, spinous process).",
@@ -190,6 +351,33 @@ const topics: Topic[] = [
     n: 7,
     title: "Spine — Fracture/Dislocation, Manipulation & Percutaneous Vertebroplasty/Augmentation",
     codes: "22310–22527",
+    categories: [
+      {
+        title: "Fracture/dislocation treatment",
+        codes: [
+          { code: "22310", desc: "Closed treatment of vertebral body fracture(s), without manipulation, requiring casting/bracing" },
+          { code: "22318", desc: "Open treatment and/or reduction of odontoid fracture(s), anterior approach; without grafting" },
+          { code: "22325", desc: "Open treatment and/or reduction of vertebral fracture(s) and/or dislocation(s), posterior approach, 1 fractured vertebra; lumbar" },
+        ],
+      },
+      {
+        title: "Manipulation & percutaneous vertebroplasty/augmentation",
+        codes: [
+          { code: "22505", desc: "Manipulation of spine requiring anesthesia, any region" },
+          { code: "22510", desc: "Percutaneous vertebroplasty, 1 vertebral body; cervicothoracic" },
+          { code: "22511", desc: "Percutaneous vertebroplasty, 1 vertebral body; lumbosacral" },
+          { code: "22513", desc: "Percutaneous vertebral augmentation, including cavity creation, 1 vertebral body; thoracic" },
+          { code: "22514", desc: "Percutaneous vertebral augmentation, 1 vertebral body; lumbar" },
+        ],
+      },
+      {
+        title: "Annuloplasty",
+        codes: [
+          { code: "22526", desc: "Percutaneous intradiscal electrothermal annuloplasty; single level" },
+          { code: "22527", desc: "Percutaneous intradiscal electrothermal annuloplasty; 1 or more additional levels (add-on)" },
+        ],
+      },
+    ],
     summary: [
       "Closed treatment of a vertebral body fracture without manipulation, requiring casting/bracing, is one code; closed treatment of a fracture and/or dislocation requiring manipulation or traction (plus casting/bracing) is a different code.",
       "Open treatment of an odontoid (C1-C2/dens) fracture is its own distinct code pair (with or without grafting) — separate from open treatment of vertebral fracture/dislocation elsewhere in the spine, which is split by region with its own additional-level add-on.",
@@ -220,6 +408,34 @@ const topics: Topic[] = [
     n: 8,
     title: "Spine — Arthrodesis Techniques",
     codes: "22532–22634",
+    categories: [
+      {
+        title: "Lateral extracavitary & anterior transoral",
+        codes: [
+          { code: "22532", desc: "Arthrodesis, lateral extracavitary technique; thoracic" },
+          { code: "22548", desc: "Arthrodesis, anterior transoral or extraoral technique, clivus–C1–C2, with or without excision of odontoid process" },
+        ],
+      },
+      {
+        title: "Anterior interbody techniques",
+        codes: [
+          { code: "22551", desc: "Arthrodesis, anterior interbody, including decompression; cervical below C2" },
+          { code: "22554", desc: "Arthrodesis, anterior interbody technique, minimal discectomy; cervical below C2" },
+          { code: "22558", desc: "Arthrodesis, anterior interbody technique, minimal discectomy; lumbar" },
+          { code: "22585", desc: "Arthrodesis, anterior interbody technique; each additional interspace (add-on)" },
+        ],
+      },
+      {
+        title: "Posterior/posterolateral & posterior interbody",
+        codes: [
+          { code: "22600", desc: "Arthrodesis, posterior or posterolateral technique, single interspace; cervical below C2" },
+          { code: "22612", desc: "Arthrodesis, posterior or posterolateral technique, single interspace; lumbar" },
+          { code: "22614", desc: "Arthrodesis, posterior or posterolateral technique; each additional interspace (add-on)" },
+          { code: "22630", desc: "Arthrodesis, posterior interbody technique, single interspace, lumbar" },
+          { code: "22633", desc: "Arthrodesis, combined posterior/posterolateral with posterior interbody, single interspace, lumbar" },
+        ],
+      },
+    ],
     summary: [
       "Arthrodesis technique codes are organized by surgical approach: Lateral Extracavitary, Anterior or Anterolateral, and Posterior/Posterolateral/Lateral Transverse Process/Interbody.",
       "Anterior transoral/extraoral arthrodesis at clivus-C1-C2 is its own single dedicated code (with or without odontoid excision) — distinct from anterior interbody arthrodesis at other cervical levels below C2, which bundles disc space prep, discectomy, osteophytectomy, and cord/nerve root decompression into one code, with its own additional-interspace add-on.",
@@ -252,6 +468,33 @@ const topics: Topic[] = [
     n: 9,
     title: "Spine — Spine Deformity, Exploration & Spinal Instrumentation",
     codes: "22800–22870",
+    categories: [
+      {
+        title: "Spinal deformity arthrodesis & kyphectomy",
+        codes: [
+          { code: "22800", desc: "Arthrodesis, posterior, for spinal deformity, with or without cast; up to 6 vertebral segments" },
+          { code: "22802", desc: "Arthrodesis, posterior, for spinal deformity; 7 to 12 vertebral segments" },
+          { code: "22808", desc: "Arthrodesis, anterior, for spinal deformity; 2 to 3 vertebral segments" },
+          { code: "22818", desc: "Kyphectomy, circumferential exposure and resection of vertebral segment(s); single or 2 segments" },
+        ],
+      },
+      {
+        title: "Exploration",
+        codes: [
+          { code: "22830", desc: "Exploration of spinal fusion" },
+        ],
+      },
+      {
+        title: "Spinal instrumentation",
+        codes: [
+          { code: "22840", desc: "Posterior non-segmental instrumentation (List separately in addition to code for primary procedure)" },
+          { code: "22842", desc: "Posterior segmental instrumentation; 3 to 6 vertebral segments (add-on)" },
+          { code: "22845", desc: "Anterior instrumentation; 2 to 3 vertebral segments (add-on)" },
+          { code: "22850", desc: "Removal of posterior nonsegmental instrumentation" },
+          { code: "22852", desc: "Removal of posterior segmental instrumentation" },
+        ],
+      },
+    ],
     summary: [
       "Spinal deformity arthrodesis (scoliosis/kyphosis correction) is coded separately from routine arthrodesis, tiered purely by vertebral segment count: posterior approach (up to 6, 7–12, 13+) and anterior approach (2–3, 4–7, 8+) — with or without a cast.",
       "Kyphectomy (circumferential exposure and resection of vertebral segments, body and posterior elements) is its own family, split single-or-2 segments vs. 3-or-more, and is reported alongside the spinal deformity arthrodesis codes with modifier 51 when both are performed.",
@@ -303,6 +546,10 @@ const hardCardStyle = { background: "#fff7ed", border: "1px solid #fed7aa", bord
 const tipsBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", borderLeft: "5px solid #dc2626", borderRadius: "10px", padding: "14px 16px", marginTop: "14px", lineHeight: 1.65, fontSize: "13.5px" };
 const stepsBoxStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "5px solid #2563eb", borderRadius: "10px", padding: "14px 16px", marginTop: "6px", marginBottom: "16px", lineHeight: 1.65, fontSize: "13.5px" };
 const backLinkStyle = { textDecoration: "none", color: "#2563eb", fontWeight: 700 };
+const categoryTitleStyle = { fontWeight: 800, fontSize: "13px", color: "#111827", margin: "10px 0 6px" };
+const codeListStyle = { display: "flex", flexWrap: "wrap" as const, gap: "8px", marginBottom: "12px" };
+const codeItemStyle = { background: "#f8fafc", border: "1px solid #e2e7f0", borderRadius: "8px", padding: "6px 10px", fontSize: "12.5px", lineHeight: 1.4, maxWidth: "320px" };
+const codeNumStyle = { fontFamily: "Consolas, monospace", fontWeight: 800, color: "#2563eb", marginRight: "6px" };
 
 export default function SurgeryTwentyThousandGuidelinesReviewerPart2Page() {
   return (
@@ -336,6 +583,25 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPart2Page() {
             <h2 style={sectionTitleStyle}>{t.title}</h2>
             <span style={codeChipStyle}>{t.codes}</span>
           </div>
+
+          {t.categories && (
+            <>
+              <p style={labelStyle}>🗂️ KEY CODES BY CATEGORY</p>
+              {t.categories.map((c) => (
+                <div key={c.title}>
+                  <p style={categoryTitleStyle}>{c.title}</p>
+                  <div style={codeListStyle}>
+                    {c.codes.map((entry) => (
+                      <span key={entry.code} style={codeItemStyle}>
+                        <span style={codeNumStyle}>{entry.code}</span>
+                        {entry.desc}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
 
           <p style={labelStyle}>📋 RULE SUMMARY</p>
           {t.summary.map((s) => <p key={s} style={pStyle}>{s}</p>)}

@@ -1,9 +1,13 @@
 import Link from "next/link";
 
+type CodeEntry = { code: string; desc: string };
+type Category = { title: string; codes: CodeEntry[] };
+
 type Topic = {
   n: number;
   title: string;
   codes: string;
+  categories?: Category[];
   summary: string[];
   steps: string[];
   easy: { scenario: string; answer: string };
@@ -16,6 +20,17 @@ const topics: Topic[] = [
     n: 1,
     title: "Abdomen — Soft Tissue Tumor Excision",
     codes: "22900–22999",
+    categories: [
+      {
+        title: "Abdominal wall tumor excision",
+        codes: [
+          { code: "22902", desc: "Excision, tumor, soft tissue of abdominal wall, subcutaneous; less than 3 cm" },
+          { code: "22900", desc: "Excision, tumor, soft tissue of abdominal wall, subfascial; less than 5 cm" },
+          { code: "22904", desc: "Radical resection of tumor, soft tissue of abdominal wall; less than 5 cm" },
+          { code: "22999", desc: "Unlisted procedure, abdomen, musculoskeletal system" },
+        ],
+      },
+    ],
     summary: [
       "This is a short, self-contained family covering only soft tissue tumor excision of the abdominal wall — the same three-tier, size-based logic used everywhere else in the Musculoskeletal section: subcutaneous, subfascial (intramuscular), or radical resection.",
       "The abdominal-wall subfascial and subcutaneous excision codes are grouped together in the numbering, and radical resection is its own separate tier — always confirm depth and size independently rather than assuming one implies the other.",
@@ -42,6 +57,32 @@ const topics: Topic[] = [
     n: 2,
     title: "Shoulder — Incision, Excision & Introduction/Removal",
     codes: "23000–23350",
+    categories: [
+      {
+        title: "Incision & basic joint procedures",
+        codes: [
+          { code: "23000", desc: "Removal of subdeltoid calcareous deposits, open" },
+          { code: "23040", desc: "Arthrotomy, glenohumeral joint, including exploration, drainage, or removal of foreign body" },
+          { code: "23044", desc: "Arthrotomy, acromioclavicular or sternoclavicular joint" },
+        ],
+      },
+      {
+        title: "Excision",
+        codes: [
+          { code: "23075", desc: "Excision, tumor, soft tissue of shoulder area, subcutaneous; less than 3 cm" },
+          { code: "23120", desc: "Claviculectomy; partial" },
+          { code: "23130", desc: "Acromioplasty or acromionectomy, partial, with or without coracoacromial ligament release" },
+        ],
+      },
+      {
+        title: "Prosthesis removal & arthrography",
+        codes: [
+          { code: "23334", desc: "Removal of prosthesis, includes debridement/synovectomy when performed; humeral or glenoid component" },
+          { code: "23335", desc: "Removal of prosthesis; humeral and glenoid components" },
+          { code: "23350", desc: "Injection procedure for shoulder arthrography or enhanced CT/MRI shoulder arthrography" },
+        ],
+      },
+    ],
     summary: [
       "Removal of subdeltoid calcareous (calcium) deposits is open-only here — the arthroscopic version routes to the arthroscopy unlisted-procedure code instead.",
       "Incision and drainage of a shoulder abscess/hematoma vs. an infected bursa are two separate codes.",
@@ -74,6 +115,36 @@ const topics: Topic[] = [
     n: 3,
     title: "Shoulder — Repair, Revision & Reconstruction",
     codes: "23395–23491",
+    categories: [
+      {
+        title: "Rotator cuff repair",
+        codes: [
+          { code: "23410", desc: "Repair of ruptured musculotendinous cuff (rotator cuff), open; acute" },
+          { code: "23412", desc: "Repair of ruptured rotator cuff, open; chronic" },
+          { code: "23420", desc: "Reconstruction of complete shoulder (rotator) cuff avulsion, chronic (includes acromioplasty)" },
+        ],
+      },
+      {
+        title: "Capsulorrhaphy variants",
+        codes: [
+          { code: "23450", desc: "Capsulorrhaphy, anterior; Putti-Platt procedure or Magnuson type operation" },
+          { code: "23455", desc: "Capsulorrhaphy, anterior, with labral repair (e.g., Bankart procedure)" },
+          { code: "23460", desc: "Capsulorrhaphy, anterior, any type, with bone block" },
+          { code: "23462", desc: "Capsulorrhaphy, anterior, any type, with coracoid process transfer" },
+          { code: "23465", desc: "Capsulorrhaphy, glenohumeral joint, posterior, with or without bone block" },
+          { code: "23466", desc: "Capsulorrhaphy, glenohumeral joint, any type, multidirectional instability" },
+        ],
+      },
+      {
+        title: "Arthroplasty",
+        codes: [
+          { code: "23470", desc: "Arthroplasty, glenohumeral joint; hemiarthroplasty" },
+          { code: "23472", desc: "Total shoulder arthroplasty, glenoid and proximal humeral replacement" },
+          { code: "23473", desc: "Revision of total shoulder arthroplasty; humeral or glenoid component" },
+          { code: "23474", desc: "Revision of total shoulder arthroplasty; humeral and glenoid components" },
+        ],
+      },
+    ],
     summary: [
       "Rotator cuff repair splits acute vs. chronic, and open repair is a different code from a full reconstruction of a complete chronic cuff avulsion, which bundles in acromioplasty.",
       "Capsulorrhaphy (surgical tightening of the joint capsule for instability) has several distinct variants: basic anterior (Putti-Platt/Magnuson type), anterior with labral repair (Bankart), anterior with bone block, anterior with coracoid process transfer, posterior, and multidirectional — each is its OWN separate code, not a modifier on a single base code.",
@@ -104,6 +175,34 @@ const topics: Topic[] = [
     n: 4,
     title: "Shoulder — Fracture/Dislocation, Manipulation, Arthrodesis & Amputation",
     codes: "23500–23929",
+    categories: [
+      {
+        title: "Clavicle & AC/SC joint injuries",
+        codes: [
+          { code: "23500", desc: "Closed treatment of clavicular fracture; without manipulation" },
+          { code: "23515", desc: "Open treatment of clavicular fracture, includes internal fixation, when performed" },
+          { code: "23540", desc: "Closed treatment of acromioclavicular dislocation; without manipulation" },
+          { code: "23550", desc: "Open treatment of acromioclavicular dislocation, acute or chronic" },
+        ],
+      },
+      {
+        title: "Proximal humeral fracture & shoulder dislocation",
+        codes: [
+          { code: "23600", desc: "Closed treatment of proximal humeral (surgical or anatomical neck) fracture; without manipulation" },
+          { code: "23615", desc: "Open treatment of proximal humeral fracture, includes internal fixation, when performed" },
+          { code: "23650", desc: "Closed treatment of shoulder dislocation, with manipulation; without anesthesia" },
+          { code: "23665", desc: "Closed treatment of shoulder dislocation with fracture of greater humeral tuberosity, with manipulation" },
+        ],
+      },
+      {
+        title: "Manipulation, arthrodesis & amputation",
+        codes: [
+          { code: "23700", desc: "Manipulation under anesthesia, shoulder joint, including application of fixation apparatus (dislocation excluded)" },
+          { code: "23800", desc: "Arthrodesis, glenohumeral joint" },
+          { code: "23920", desc: "Disarticulation of shoulder" },
+        ],
+      },
+    ],
     summary: [
       "Clavicle fracture treatment is closed (without or with manipulation) or open with internal fixation — a simpler three-way split than most fracture families in this section.",
       "Sternoclavicular and acromioclavicular dislocations each have their own closed (without/with manipulation) and open (with or without fascial graft) code sets — they are different joints and are never interchangeable.",
@@ -135,6 +234,32 @@ const topics: Topic[] = [
     n: 5,
     title: "Humerus & Elbow — Incision, Excision & Introduction/Removal",
     codes: "23930–24220",
+    categories: [
+      {
+        title: "Arthrotomy & capsular release",
+        codes: [
+          { code: "24000", desc: "Arthrotomy, elbow, including exploration, drainage, or removal of foreign body" },
+          { code: "24006", desc: "Arthrotomy of the elbow, with capsular excision for capsular release" },
+          { code: "24149", desc: "Radical resection of capsule, soft tissue, and heterotopic bone, elbow, with contracture release" },
+        ],
+      },
+      {
+        title: "Bone-specific excision",
+        codes: [
+          { code: "24110", desc: "Excision or curettage of bone cyst or benign tumor, humerus" },
+          { code: "24120", desc: "Excision or curettage of bone cyst or benign tumor, head or neck of radius or olecranon process" },
+          { code: "24136", desc: "Sequestrectomy (e.g., for osteomyelitis or bone abscess), shaft or distal humerus" },
+        ],
+      },
+      {
+        title: "Prosthesis removal & arthrography",
+        codes: [
+          { code: "24160", desc: "Removal of prosthesis, includes debridement/synovectomy when performed; humeral and ulnar components" },
+          { code: "24164", desc: "Removal of prosthesis; radial head" },
+          { code: "24220", desc: "Injection procedure for elbow arthrography" },
+        ],
+      },
+    ],
     summary: [
       "\"Elbow area\" in this subsection specifically includes the head and neck of the radius and the olecranon process — not just the true elbow joint itself.",
       "Arthrotomy of the elbow (exploration/drainage/foreign body) is distinct from arthrotomy WITH capsular excision for capsular release (contracture treatment) — a more involved procedure.",
@@ -165,6 +290,34 @@ const topics: Topic[] = [
     n: 6,
     title: "Humerus & Elbow — Repair, Revision & Reconstruction",
     codes: "24300–24430",
+    categories: [
+      {
+        title: "Ligament repair vs. reconstruction",
+        codes: [
+          { code: "24343", desc: "Repair lateral collateral ligament, elbow, with local tissue" },
+          { code: "24344", desc: "Reconstruction lateral collateral ligament, elbow, with tendon graft (includes harvesting)" },
+          { code: "24345", desc: "Repair medial collateral ligament, elbow, with local tissue" },
+          { code: "24346", desc: "Reconstruction medial collateral ligament, elbow, with tendon graft (includes harvesting)" },
+        ],
+      },
+      {
+        title: "Epicondylitis treatment tiers",
+        codes: [
+          { code: "24357", desc: "Tenotomy, elbow, lateral or medial (e.g., tennis/golfer's elbow); percutaneous" },
+          { code: "24358", desc: "Debridement, soft tissue and/or bone, open" },
+          { code: "24359", desc: "Debridement, soft tissue and/or bone, open, with tendon repair or reattachment" },
+        ],
+      },
+      {
+        title: "Arthroplasty",
+        codes: [
+          { code: "24361", desc: "Arthroplasty, elbow; with distal humeral prosthetic replacement" },
+          { code: "24363", desc: "Arthroplasty, elbow; with distal humerus and proximal ulnar prosthetic replacement (total elbow)" },
+          { code: "24365", desc: "Arthroplasty, radial head" },
+          { code: "24370", desc: "Revision of total elbow arthroplasty; humeral or ulnar component" },
+        ],
+      },
+    ],
     summary: [
       "Elbow ligament repair/reconstruction splits by side (lateral vs. medial collateral ligament) AND by whether it's a repair with local tissue or a full reconstruction with a tendon graft — four distinct codes result from these two variables.",
       "Epicondylitis (tennis elbow/golfer's elbow) treatment is tiered by invasiveness: percutaneous tenotomy, open debridement of soft tissue and/or bone, or open debridement WITH tendon repair/reattachment.",
@@ -195,6 +348,36 @@ const topics: Topic[] = [
     n: 7,
     title: "Humerus & Elbow — Fracture/Dislocation, Arthrodesis & Amputation",
     codes: "24500–24999",
+    categories: [
+      {
+        title: "Humeral shaft & supracondylar fracture",
+        codes: [
+          { code: "24500", desc: "Closed treatment of humeral shaft fracture; without manipulation" },
+          { code: "24515", desc: "Open treatment of humeral shaft fracture with plate/screws" },
+          { code: "24516", desc: "Treatment of humeral shaft fracture, with insertion of intramedullary implant" },
+          { code: "24545", desc: "Open treatment of humeral supracondylar or transcondylar fracture; without intercondylar extension" },
+        ],
+      },
+      {
+        title: "Epicondylar/condylar fracture, Monteggia & elbow dislocation",
+        codes: [
+          { code: "24560", desc: "Closed treatment of humeral epicondylar fracture, medial or lateral; without manipulation" },
+          { code: "24576", desc: "Closed treatment of humeral condylar fracture, medial or lateral; without manipulation" },
+          { code: "24600", desc: "Closed treatment of elbow dislocation; without anesthesia" },
+          { code: "24620", desc: "Closed treatment of Monteggia fracture-dislocation at elbow, with manipulation" },
+          { code: "24635", desc: "Open treatment of Monteggia fracture-dislocation, includes internal fixation, when performed" },
+        ],
+      },
+      {
+        title: "Radial head fracture, arthrodesis & amputation",
+        codes: [
+          { code: "24650", desc: "Closed treatment of radial head or neck fracture; without manipulation" },
+          { code: "24666", desc: "Open treatment of radial head or neck fracture, with radial head prosthetic replacement" },
+          { code: "24800", desc: "Arthrodesis, elbow joint; local" },
+          { code: "24900", desc: "Amputation, arm through humerus; with primary closure" },
+        ],
+      },
+    ],
     summary: [
       "Humeral shaft fracture treatment escalates from closed without manipulation, to closed with manipulation/traction, to open with plate/screws, to treatment with an intramedullary implant — four distinct approaches.",
       "Supracondylar/transcondylar humeral fracture treatment is a SEPARATE family from humeral shaft fracture, further split by whether there's intercondylar extension, and by closed/percutaneous/open treatment.",
@@ -227,6 +410,32 @@ const topics: Topic[] = [
     n: 8,
     title: "Forearm & Wrist — Incision, Excision & Introduction/Removal",
     codes: "25000–25260",
+    categories: [
+      {
+        title: "Fasciotomy & tendon sheath incision",
+        codes: [
+          { code: "25000", desc: "Incision, extensor tendon sheath, wrist (e.g., de Quervain's disease)" },
+          { code: "25024", desc: "Decompression fasciotomy, forearm and/or wrist, flexor AND extensor compartment; without debridement" },
+          { code: "25025", desc: "Decompression fasciotomy, flexor AND extensor compartment; with debridement of nonviable muscle/nerve" },
+        ],
+      },
+      {
+        title: "Excision — ganglion, bone cyst/curettage, carpectomy",
+        codes: [
+          { code: "25111", desc: "Excision of ganglion, wrist (dorsal or volar); primary" },
+          { code: "25130", desc: "Excision or curettage of bone cyst or benign tumor of radius or ulna" },
+          { code: "25145", desc: "Excision or curettage of bone cyst or benign tumor of carpal bones" },
+          { code: "25210", desc: "Carpectomy; 1 bone" },
+        ],
+      },
+      {
+        title: "Prosthesis removal",
+        codes: [
+          { code: "25250", desc: "Removal of wrist prosthesis (separate procedure)" },
+          { code: "25251", desc: "Removal of wrist prosthesis; complicated, including total wrist" },
+        ],
+      },
+    ],
     summary: [
       "Decompression fasciotomy of the forearm/wrist splits by compartment (flexor only, extensor only, or both) AND by whether debridement of nonviable muscle/nerve is also performed — these two variables combine into the code choice.",
       "Tendon sheath incision (de Quervain's) and flexor tendon sheath incision are each their own codes, distinct from carpal tunnel release (which is a Nervous System code, not Musculoskeletal).",
@@ -257,6 +466,33 @@ const topics: Topic[] = [
     n: 9,
     title: "Forearm & Wrist — Repair, Revision & Reconstruction",
     codes: "25263–25492",
+    categories: [
+      {
+        title: "Flexor/extensor tendon repair",
+        codes: [
+          { code: "25263", desc: "Repair, tendon or muscle, flexor, forearm and/or wrist; primary, single, each" },
+          { code: "25265", desc: "Repair, flexor tendon or muscle; secondary, single, each" },
+          { code: "25270", desc: "Repair, flexor tendon or muscle; secondary, with free graft, each" },
+          { code: "25272", desc: "Repair, tendon or muscle, extensor, forearm and/or wrist; primary, single, each" },
+        ],
+      },
+      {
+        title: "Osteotomy & nonunion repair",
+        codes: [
+          { code: "25390", desc: "Osteotomy, radius; distal third" },
+          { code: "25400", desc: "Repair of nonunion or malunion, radius OR ulna; without graft (e.g., compression technique)" },
+        ],
+      },
+      {
+        title: "Arthroplasty with prosthetic replacement (by bone)",
+        codes: [
+          { code: "25332", desc: "Arthroplasty, wrist, with or without interposition, with or without external or internal fixation" },
+          { code: "25441", desc: "Arthroplasty with prosthetic replacement; distal radius" },
+          { code: "25443", desc: "Arthroplasty with prosthetic replacement; scaphoid carpal (navicular)" },
+          { code: "25446", desc: "Arthroplasty with prosthetic replacement; distal radius and partial or entire carpus (total wrist)" },
+        ],
+      },
+    ],
     summary: [
       "Flexor and extensor tendon/muscle repair at the forearm/wrist each split into primary, secondary, and secondary-with-free-graft — a three-tier escalation repeated for both the flexor and extensor groups.",
       "Wrist arthroplasty (with or without interposition, with or without fixation) is a single code distinct from arthroplasty WITH PROSTHETIC REPLACEMENT, which is its own family split by the specific bone replaced: distal radius, distal ulna, scaphoid, lunate, trapezium, or the combined distal-radius-and-carpus total wrist.",
@@ -286,6 +522,36 @@ const topics: Topic[] = [
     n: 10,
     title: "Forearm & Wrist — Fracture/Dislocation, Arthrodesis & Amputation",
     codes: "25500–25999",
+    categories: [
+      {
+        title: "Radial/ulnar shaft & Galeazzi fracture-dislocation",
+        codes: [
+          { code: "25500", desc: "Closed treatment of radial shaft fracture; without manipulation" },
+          { code: "25515", desc: "Open treatment of radial shaft fracture, includes internal fixation, when performed" },
+          { code: "25526", desc: "Open treatment of radial shaft fracture and open treatment of distal radioulnar joint dislocation (Galeazzi), includes TFCC repair" },
+          { code: "25574", desc: "Open treatment of radial AND ulnar shaft fractures, with internal fixation; of radius OR ulna" },
+        ],
+      },
+      {
+        title: "Distal radial & carpal scaphoid fracture",
+        codes: [
+          { code: "25600", desc: "Closed treatment of distal radial fracture (e.g., Colles or Smith type); without manipulation" },
+          { code: "25608", desc: "Open treatment of distal radial intra-articular fracture; with internal fixation of 2 fragments" },
+          { code: "25609", desc: "Open treatment of distal radial intra-articular fracture; with internal fixation of 3 or more fragments" },
+          { code: "25622", desc: "Closed treatment of carpal scaphoid (navicular) fracture; without manipulation" },
+          { code: "25628", desc: "Open treatment of carpal scaphoid fracture, includes internal fixation, when performed" },
+        ],
+      },
+      {
+        title: "Arthrodesis & amputation",
+        codes: [
+          { code: "25800", desc: "Arthrodesis, wrist; complete, without bone graft" },
+          { code: "25820", desc: "Arthrodesis, wrist; limited, without bone graft (e.g., intercarpal or radiocarpal)" },
+          { code: "25900", desc: "Amputation, forearm, through radius and ulna; open, circular (guillotine)" },
+          { code: "25915", desc: "Krukenberg procedure" },
+        ],
+      },
+    ],
     summary: [
       "Radial shaft fracture treatment is closed (without/with manipulation) or open with internal fixation — and there are dedicated COMBINATION codes for when it occurs together with a distal radioulnar joint dislocation (Galeazzi fracture-dislocation), tiered by closed vs. open treatment of each component.",
       "Ulnar shaft fracture follows the same closed/open pattern independently, and radial-AND-ulnar shaft fractures together have their own separate combination codes, further split by whether one or both bones get open treatment.",
@@ -337,6 +603,10 @@ const hardCardStyle = { background: "#fff7ed", border: "1px solid #fed7aa", bord
 const tipsBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", borderLeft: "5px solid #dc2626", borderRadius: "10px", padding: "14px 16px", marginTop: "14px", lineHeight: 1.65, fontSize: "13.5px" };
 const stepsBoxStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "5px solid #2563eb", borderRadius: "10px", padding: "14px 16px", marginTop: "6px", marginBottom: "16px", lineHeight: 1.65, fontSize: "13.5px" };
 const backLinkStyle = { textDecoration: "none", color: "#2563eb", fontWeight: 700 };
+const categoryTitleStyle = { fontWeight: 800, fontSize: "13px", color: "#111827", margin: "10px 0 6px" };
+const codeListStyle = { display: "flex", flexWrap: "wrap" as const, gap: "8px", marginBottom: "12px" };
+const codeItemStyle = { background: "#f8fafc", border: "1px solid #e2e7f0", borderRadius: "8px", padding: "6px 10px", fontSize: "12.5px", lineHeight: 1.4, maxWidth: "320px" };
+const codeNumStyle = { fontFamily: "Consolas, monospace", fontWeight: 800, color: "#2563eb", marginRight: "6px" };
 
 export default function SurgeryTwentyThousandGuidelinesReviewerPart3Page() {
   return (
@@ -370,6 +640,25 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPart3Page() {
             <h2 style={sectionTitleStyle}>{t.title}</h2>
             <span style={codeChipStyle}>{t.codes}</span>
           </div>
+
+          {t.categories && (
+            <>
+              <p style={labelStyle}>🗂️ KEY CODES BY CATEGORY</p>
+              {t.categories.map((c) => (
+                <div key={c.title}>
+                  <p style={categoryTitleStyle}>{c.title}</p>
+                  <div style={codeListStyle}>
+                    {c.codes.map((entry) => (
+                      <span key={entry.code} style={codeItemStyle}>
+                        <span style={codeNumStyle}>{entry.code}</span>
+                        {entry.desc}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
 
           <p style={labelStyle}>📋 RULE SUMMARY</p>
           {t.summary.map((s) => <p key={s} style={pStyle}>{s}</p>)}

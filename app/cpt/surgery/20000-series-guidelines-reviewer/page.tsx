@@ -1,9 +1,13 @@
 import Link from "next/link";
 
+type CodeEntry = { code: string; desc: string };
+type Category = { title: string; codes: CodeEntry[] };
+
 type Topic = {
   n: number;
   title: string;
   codes: string;
+  categories?: Category[];
   summary: string[];
   steps: string[];
   easy: { scenario: string; answer: string };
@@ -16,6 +20,32 @@ const topics: Topic[] = [
     n: 1,
     title: "Casting, Splinting & Bundling Rules",
     codes: "29000–29750 (casts/splints), 20690/20692 (traction)",
+    categories: [
+      {
+        title: "Cast/splint removal (by someone other than the applying physician)",
+        codes: [
+          { code: "29700", desc: "Removal or bivalving; gauntlet, boot, or body cast" },
+          { code: "29705", desc: "Removal or bivalving; full arm or full leg cast" },
+          { code: "29710", desc: "Removal or bivalving; shoulder or hip spica, Minerva, or Risser jacket" },
+        ],
+      },
+      {
+        title: "Representative subsequent casts/splints (29000–29750 family)",
+        codes: [
+          { code: "29075", desc: "Application of cast, elbow to finger (short arm)" },
+          { code: "29345", desc: "Application of long leg cast (thigh to toes)" },
+          { code: "29425", desc: "Application of short leg cast (below knee to toes)" },
+          { code: "29130", desc: "Application of static finger splint" },
+        ],
+      },
+      {
+        title: "Graft harvest through a separate incision",
+        codes: [
+          { code: "20900", desc: "Bone graft, any donor area; minor or small" },
+          { code: "20920", desc: "Fascia lata graft; by stripper" },
+        ],
+      },
+    ],
     summary: [
       "Every Musculoskeletal procedure code already includes application AND removal of the FIRST cast, splint, or traction device used, when performed — you never separately bill that initial application on top of the procedure code. Supplies can still be billed separately.",
       "A SUBSEQUENT cast/splint (a replacement, not the first one) can be billed separately using the 29000–29750 family, whether it happens during or after the global period.",
@@ -135,6 +165,17 @@ const topics: Topic[] = [
     n: 5,
     title: "Wound Exploration for Penetrating Trauma",
     codes: "20100–20103",
+    categories: [
+      {
+        title: "Wound exploration, by location",
+        codes: [
+          { code: "20100", desc: "Exploration of penetrating wound (separate procedure); neck" },
+          { code: "20101", desc: "Exploration of penetrating wound; chest" },
+          { code: "20102", desc: "Exploration of penetrating wound; abdomen/flank/back" },
+          { code: "20103", desc: "Exploration of penetrating wound; extremity" },
+        ],
+      },
+    ],
     summary: [
       "These codes cover surgical exploration/enlargement of a penetrating wound (gunshot, stab), extending the dissection to check for penetration, debridement, foreign body removal, and minor vessel ligation — all without needing a thoracotomy or laparotomy.",
       "If repairing a major structure or major blood vessel actually requires a thoracotomy or laparotomy, that specific repair code replaces 20100–20103 entirely — the two aren't reported together.",
@@ -162,6 +203,32 @@ const topics: Topic[] = [
     n: 6,
     title: "Muscle & Bone Biopsy",
     codes: "20200–20251",
+    categories: [
+      {
+        title: "Muscle biopsy",
+        codes: [
+          { code: "20200", desc: "Biopsy, muscle; superficial" },
+          { code: "20205", desc: "Biopsy, muscle; deep" },
+          { code: "20206", desc: "Biopsy, muscle, percutaneous needle" },
+        ],
+      },
+      {
+        title: "Bone biopsy — trocar/needle vs. open, by depth",
+        codes: [
+          { code: "20220", desc: "Biopsy, bone, trocar or needle; superficial (e.g., ilium, sternum, ribs)" },
+          { code: "20225", desc: "Biopsy, bone, trocar or needle; deep (e.g., vertebral body, femur)" },
+          { code: "20240", desc: "Biopsy, bone, open; superficial" },
+          { code: "20245", desc: "Biopsy, bone, open; deep" },
+        ],
+      },
+      {
+        title: "Vertebral body open biopsy, by region",
+        codes: [
+          { code: "20250", desc: "Biopsy, vertebral body, open; thoracic" },
+          { code: "20251", desc: "Biopsy, vertebral body, open; lumbar or cervical" },
+        ],
+      },
+    ],
     summary: [
       "Muscle biopsy splits by depth: superficial vs. deep, plus a separate percutaneous needle biopsy code.",
       "Bone biopsy splits by both depth AND technique: trocar/needle biopsy (superficial vs. deep) vs. open biopsy (superficial vs. deep), plus dedicated vertebral body open-biopsy codes split by region (thoracic vs. lumbar/cervical).",
@@ -189,6 +256,36 @@ const topics: Topic[] = [
     n: 7,
     title: "Injections & Arthrocentesis",
     codes: "20526–20612 (trigger points, tendon sheaths, joint/bursa injections)",
+    categories: [
+      {
+        title: "Trigger points & dry needling, by muscle count",
+        codes: [
+          { code: "20552", desc: "Injection(s); single or multiple trigger point(s), 1 or 2 muscles" },
+          { code: "20553", desc: "Injection(s); single or multiple trigger point(s), 3 or more muscles" },
+          { code: "20560", desc: "Needle insertion(s) without injection; 1 or 2 muscles" },
+          { code: "20561", desc: "Needle insertion(s) without injection; 3 or more muscles" },
+        ],
+      },
+      {
+        title: "Tendon sheath / carpal tunnel injections",
+        codes: [
+          { code: "20526", desc: "Injection, therapeutic (e.g., local anesthetic, corticosteroid), carpal tunnel" },
+          { code: "20550", desc: "Injection(s); single tendon sheath, or ligament, aponeurosis (e.g., plantar fascia)" },
+          { code: "20551", desc: "Injection(s); single tendon origin/insertion" },
+        ],
+      },
+      {
+        title: "Arthrocentesis / aspiration / injection, by joint size",
+        codes: [
+          { code: "20600", desc: "Small joint or bursa (e.g., fingers, toes); without ultrasound guidance" },
+          { code: "20604", desc: "Small joint or bursa; with ultrasound guidance" },
+          { code: "20605", desc: "Intermediate joint or bursa (e.g., wrist, elbow, ankle); without ultrasound guidance" },
+          { code: "20606", desc: "Intermediate joint or bursa; with ultrasound guidance" },
+          { code: "20610", desc: "Major joint or bursa (e.g., shoulder, hip, knee); without ultrasound guidance" },
+          { code: "20611", desc: "Major joint or bursa; with ultrasound guidance" },
+        ],
+      },
+    ],
     summary: [
       "Trigger point injections are counted by the number of MUSCLES involved (1–2 vs. 3 or more) — not the number of injection sites within a single muscle.",
       "There's a separate \"needle insertion WITHOUT injection\" code pair (dry needling) that's distinct from the trigger-point-WITH-injection codes — the two aren't interchangeable.",
@@ -217,6 +314,29 @@ const topics: Topic[] = [
     n: 8,
     title: "Skeletal Traction, Halo & External Fixation",
     codes: "20650–20697",
+    categories: [
+      {
+        title: "Traction & halo application",
+        codes: [
+          { code: "20650", desc: "Insertion of wire or pin with application of skeletal traction, including removal" },
+          { code: "20661", desc: "Application of cranial tongs, caliper, or stereotactic frame, including removal" },
+          { code: "20662", desc: "Application of halo, including removal; cranial" },
+          { code: "20663", desc: "Application of halo, including removal; pelvic" },
+          { code: "20664", desc: "Application of halo, including removal; femoral" },
+          { code: "20665", desc: "Removal of tongs or halo applied by another individual" },
+        ],
+      },
+      {
+        title: "External fixation",
+        codes: [
+          { code: "20690", desc: "Application of a uniplane (pins/wires in 1 plane), unilateral, external fixation system" },
+          { code: "20692", desc: "Application of a multiplane (pins/wires in more than 1 plane), unilateral, external fixation system" },
+          { code: "20693", desc: "Adjustment or revision of external fixation system requiring anesthesia" },
+          { code: "20694", desc: "Removal, under anesthesia, of external fixation system" },
+          { code: "20696", desc: "Multiplane external fixation with stereotactic computer-assisted adjustment (spatial frame), including imaging" },
+        ],
+      },
+    ],
     summary: [
       "Skeletal traction (wire/pin insertion with traction applied) and halo/tong/caliper application are distinct procedures, each with the same removal logic as casting: self-removal is bundled, removal by someone who didn't apply it gets its own code.",
       "Halo application codes split by anchor site — cranial, pelvic, or femoral — plus a dedicated higher-pin-count code specifically for thin skull osteology (pediatric patients, hydrocephalus, osteogenesis imperfecta).",
@@ -244,6 +364,30 @@ const topics: Topic[] = [
     n: 9,
     title: "Antibiotic / Drug-Delivery Device Placement",
     codes: "20700–20705 (add-on codes)",
+    categories: [
+      {
+        title: "Placement, by anatomic space",
+        codes: [
+          { code: "20700", desc: "Manual preparation and insertion of drug-delivery device(s), deep (e.g., subfascial)" },
+          { code: "20702", desc: "Manual preparation and insertion of drug-delivery device(s), intramedullary" },
+          { code: "20704", desc: "Manual preparation and insertion of drug-delivery device(s), intra-articular" },
+        ],
+      },
+      {
+        title: "Removal, matching each placement code",
+        codes: [
+          { code: "20701", desc: "Removal of drug-delivery device(s), deep (subfascial)" },
+          { code: "20703", desc: "Removal of drug-delivery device(s), intramedullary" },
+          { code: "20705", desc: "Removal of drug-delivery device(s), intra-articular" },
+        ],
+      },
+      {
+        title: "Removal-only, no other primary procedure that day",
+        codes: [
+          { code: "20680", desc: "Removal of implant; deep (e.g., buried wire, pin, screw, metal band, nail, rod, or plate)" },
+        ],
+      },
+    ],
     summary: [
       "These are all add-on codes for manually mixing an antibiotic (or other therapeutic agent) with a carrier and shaping it into a drug-delivery device (beads, nails, spacers) placed during an open procedure — used when infection is present, suspected, or anticipated.",
       "The location of the PRIMARY surgery decides which add-on applies: deep/subfascial space, intramedullary (inside the bone), or intra-articular (inside a joint) — each with its own matching removal add-on code.",
@@ -273,6 +417,38 @@ const topics: Topic[] = [
     n: 10,
     title: "Bone Grafts & Replantation",
     codes: "20900–20939 (grafts), 20802–20838 (replantation)",
+    categories: [
+      {
+        title: "General orthopedic grafts",
+        codes: [
+          { code: "20900", desc: "Bone graft, any donor area; minor or small" },
+          { code: "20902", desc: "Bone graft, any donor area; major or large" },
+          { code: "20910", desc: "Cartilage graft; costochondral" },
+          { code: "20920", desc: "Fascia lata graft; by stripper" },
+          { code: "20924", desc: "Tendon graft, from a distance (e.g., palmaris, toe extensor, plantaris)" },
+        ],
+      },
+      {
+        title: "Spine-specific graft add-ons",
+        codes: [
+          { code: "20930", desc: "Allograft, morselized, for spine surgery only" },
+          { code: "20931", desc: "Allograft, structural, for spine surgery only" },
+          { code: "20936", desc: "Autograft for spine surgery only; local" },
+          { code: "20937", desc: "Autograft, morselized, through separate skin/fascial incision" },
+          { code: "20938", desc: "Autograft, structural, through separate skin/fascial incision" },
+        ],
+      },
+      {
+        title: "Replantation, complete amputation by level",
+        codes: [
+          { code: "20802", desc: "Replantation, arm, complete amputation" },
+          { code: "20805", desc: "Replantation, forearm, complete amputation" },
+          { code: "20808", desc: "Replantation, hand, complete amputation" },
+          { code: "20824", desc: "Replantation, thumb (carpometacarpal joint to MP joint), complete amputation" },
+          { code: "20838", desc: "Replantation, foot, complete amputation" },
+        ],
+      },
+    ],
     summary: [
       "General orthopedic bone/cartilage/fascia/tendon graft codes are for harvesting through a SEPARATE incision — modifier 62 (co-surgeon) is never appended to any graft code in this range.",
       "A separate, parallel set of graft add-on codes is reserved specifically for spine surgery (allograft morselized/structural, autograft local/morselized/structural, bone marrow aspiration for grafting) — distinct from the general orthopedic graft codes and only used alongside specific spine procedures.",
@@ -301,6 +477,23 @@ const topics: Topic[] = [
     n: 11,
     title: "Other Procedures",
     codes: "20950–20999",
+    categories: [
+      {
+        title: "Bone-healing stimulation & tumor ablation",
+        codes: [
+          { code: "20974", desc: "Electrical stimulation to aid bone healing; noninvasive (nonoperative)" },
+          { code: "20975", desc: "Electrical stimulation to aid bone healing; invasive (operative)" },
+          { code: "20979", desc: "Low intensity ultrasound stimulation to aid bone healing, noninvasive" },
+        ],
+      },
+      {
+        title: "Navigation & unlisted",
+        codes: [
+          { code: "20985", desc: "Computer-assisted surgical navigational procedure for musculoskeletal procedures, image-less" },
+          { code: "20999", desc: "Unlisted procedure, musculoskeletal system, general" },
+        ],
+      },
+    ],
     summary: [
       "Electrical stimulation and low-intensity ultrasound stimulation to aid bone healing are each graded by whether they're invasive/operative or noninvasive.",
       "Bone tumor ablation (radiofrequency or cryoablation) is percutaneous, includes imaging guidance when performed, and covers adjacent soft tissue if the tumor extends into it — imaging guidance is never separately added on top.",
@@ -349,6 +542,10 @@ const hardCardStyle = { background: "#fff7ed", border: "1px solid #fed7aa", bord
 const tipsBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", borderLeft: "5px solid #dc2626", borderRadius: "10px", padding: "14px 16px", marginTop: "14px", lineHeight: 1.65, fontSize: "13.5px" };
 const stepsBoxStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "5px solid #2563eb", borderRadius: "10px", padding: "14px 16px", marginTop: "6px", marginBottom: "16px", lineHeight: 1.65, fontSize: "13.5px" };
 const backLinkStyle = { textDecoration: "none", color: "#2563eb", fontWeight: 700 };
+const categoryTitleStyle = { fontWeight: 800, fontSize: "13px", color: "#111827", margin: "10px 0 6px" };
+const codeListStyle = { display: "flex", flexWrap: "wrap" as const, gap: "8px", marginBottom: "12px" };
+const codeItemStyle = { background: "#f8fafc", border: "1px solid #e2e7f0", borderRadius: "8px", padding: "6px 10px", fontSize: "12.5px", lineHeight: 1.4, maxWidth: "320px" };
+const codeNumStyle = { fontFamily: "Consolas, monospace", fontWeight: 800, color: "#2563eb", marginRight: "6px" };
 
 export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
   return (
@@ -382,6 +579,25 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
             <h2 style={sectionTitleStyle}>{t.title}</h2>
             <span style={codeChipStyle}>{t.codes}</span>
           </div>
+
+          {t.categories && (
+            <>
+              <p style={labelStyle}>🗂️ KEY CODES BY CATEGORY</p>
+              {t.categories.map((c) => (
+                <div key={c.title}>
+                  <p style={categoryTitleStyle}>{c.title}</p>
+                  <div style={codeListStyle}>
+                    {c.codes.map((entry) => (
+                      <span key={entry.code} style={codeItemStyle}>
+                        <span style={codeNumStyle}>{entry.code}</span>
+                        {entry.desc}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
 
           <p style={labelStyle}>📋 RULE SUMMARY</p>
           {t.summary.map((s) => <p key={s} style={pStyle}>{s}</p>)}
