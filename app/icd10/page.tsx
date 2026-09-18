@@ -52,6 +52,13 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-6-practice-quiz" style={navLinkStyle}>Chapter 6 Quiz</Link>
         <Link href="/icd10/chapter-6-worked-examples" style={navLinkStyle}>Chapter 6 Worked Examples</Link>
         <Link href="/icd10/chapter-6-flashcards" style={navLinkStyle}>Chapter 6 Flashcards</Link>
+        <Link href="/icd10/chapter-7-guidelines-reviewer" style={navLinkStyle}>Chapter 7 Reviewer</Link>
+        <Link href="/icd10/chapter-7-practice-quiz" style={navLinkStyle}>Chapter 7 Quiz</Link>
+        <Link href="/icd10/chapter-7-worked-examples" style={navLinkStyle}>Chapter 7 Worked Examples</Link>
+        <Link href="/icd10/chapter-7-flashcards" style={navLinkStyle}>Chapter 7 Flashcards</Link>
+        <Link href="/icd10/chapter-8-guidelines-reviewer" style={navLinkStyle}>Chapter 8 Reviewer</Link>
+        <Link href="/icd10/chapter-8-practice-quiz" style={navLinkStyle}>Chapter 8 Quiz</Link>
+        <Link href="/icd10/chapter-8-flashcards" style={navLinkStyle}>Chapter 8 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -242,10 +249,52 @@ export default function ICD10Page() {
           <p style={{ margin: 0, lineHeight: 1.65 }}>17 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
+        <Link href="/icd10/chapter-7-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 7 · H00–H59</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Eye and Adnexa</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>The full glaucoma coding framework (type/eye/stage, bilateral same-vs-different rules, stage progression, indeterminate vs. unspecified stage) plus blindness and low-vision coding.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-7-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 7 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-7-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 7 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-7-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 7 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>12 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-8-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 8 · H60–H95</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Ear and Mastoid Process</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Otitis externa/media, cholesteatoma, otosclerosis, Meniere's disease, vestibular neuritis, and the conductive/sensorineural/mixed/sudden hearing-loss framework — code-structure focused, since this chapter has no official narrative guidelines.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-8-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 8 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-8-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 8 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>14 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
           <span style={{ color: "#94a3a8", fontWeight: 800 }}>COMING SOON</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Remaining Chapters</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Eye, ear, and the rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>The rest of the ICD-10-CM chapters will be added here as guidelines are built out.</p>
         </div>
       </div>
     </main>

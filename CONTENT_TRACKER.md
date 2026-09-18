@@ -1,6 +1,6 @@
 # CPC Exam Content Tracker
 
-_Last updated: 2026-09-18 (post ICD-10 Chapter 6 build). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
+_Last updated: 2026-09-18 (post ICD-10 Chapter 8 build). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
 
 **Exam date target: within ~3 months of 2026-09-18.**
 
@@ -46,10 +46,12 @@ _Last updated: 2026-09-18 (post ICD-10 Chapter 6 build). This tracks study-conte
 | 4 (Endocrine/Nutritional/Metabolic) | ✅ | ✅ (10 Q) | ✅ (17 cards) | ✅ (9 scenarios) |
 | 5 (Mental/Behavioral/Neurodevelopmental) | ✅ | ✅ (10 Q) | ✅ (18 cards) | ✅ (10 scenarios) |
 | 6 (Nervous System) | ✅ | ✅ (11 Q) | ✅ (17 cards) | ✅ (11 scenarios) |
+| 7 (Eye and Adnexa) | ✅ | ✅ (11 Q) | ✅ (12 cards) | ✅ (11 scenarios) |
+| 8 (Ear and Mastoid Process) | ✅ (code-structure format — no official narrative guidelines exist for this chapter) | ✅ (13 Q) | ✅ (18 cards) | — (skipped, low sequencing content) |
 | 9 (Circulatory System) | ✅ | ✅ (15 Q) | ✅ (21 cards) | ✅ (9 scenarios) |
 | 13 (Musculoskeletal) | ✅ | — | — | — |
 | 18 (Symptoms/Signs/Abnormal Findings) | ✅ | ✅ | ✅ | ✅ |
-| 7–8, 10–12, 14–17, 19–21 (12 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — in progress, working sequentially |
+| 10–12, 14–17, 19–21 (10 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — in progress, working sequentially |
 
 **Note on chapter format:** Not every ICD-10-CM chapter has official narrative guidelines — CMS marks several as "Reserved for future guideline expansion" (confirmed so far: Chapter 3). For those, the reviewer format shifts from sequencing-rule summaries to code-category/clinical-distinction summaries, and Worked Examples are skipped in favor of a tighter Reviewer + Quiz + Flashcards set, to keep pace sustainable across all remaining chapters.
 
