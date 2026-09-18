@@ -1,6 +1,6 @@
 # CPC Exam Content Tracker
 
-_Last updated: 2026-09-18. This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
+_Last updated: 2026-09-18 (post ICD-10 Chapter 9 build). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
 
 **Exam date target: within ~3 months of 2026-09-18.**
 
@@ -41,9 +41,10 @@ _Last updated: 2026-09-18. This tracks study-content coverage across the site ag
 | Chapter | Guidelines Reviewer | Quiz | Flashcards | Worked Examples |
 |---|---|---|---|---|
 | 1 (Infectious/Parasitic) | ✅ | ✅ | ✅ | — |
+| 9 (Circulatory System) | ✅ | ✅ (15 Q) | ✅ (21 cards) | ✅ (9 scenarios) |
 | 13 (Musculoskeletal) | ✅ | — | — | — |
 | 18 (Symptoms/Signs/Abnormal Findings) | ✅ | ✅ | ✅ | ✅ |
-| 2–12, 14–17, 19–21 (16 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — this is the biggest content gap on the site relative to exam weight |
+| 2–8, 10–12, 14–17, 19–21 (17 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — still the biggest content gap on the site relative to exam weight |
 
 ## HCPCS Level II
 
@@ -64,4 +65,8 @@ The two largest untouched blocks relative to how much they're actually tested ar
 
 ## Source material status
 
-- Full CPT 2026 codebook and ICD-10-CM 2026 codebook are available as large PDFs in `~/Downloads/`. A `pdftotext`-based extraction workflow now exists (validated 2026-09-18) that converts the whole book to searchable plain text in ~15 seconds and can pull any code range's exact text on demand — no more manual copy-pasting required for future sections.
+- Full CPT 2026 codebook and ICD-10-CM 2026 codebook are available as large PDFs in `~/Downloads/` (`CPT 2026_compressed.pdf`, `ICD-10-CM 2026.pdf`). A `pdftotext`-based extraction workflow now exists and is proven in production: converts the whole CPT book (~750 pages) to plain text in ~15 seconds, and the whole ICD-10-CM book to plain text in ~60 seconds — both well under a minute, no more manual copy-pasting required. Used successfully to build the ICD-10 Chapter 9 (Circulatory System) content suite. Note: the extracted text has a systematic OCR-style artifact where "I" renders as "1" in ICD-10 code numbers (e.g., "I10" appears as "110") — always verify code numbers against real ICD-10-CM knowledge before publishing.
+
+## Quality control
+
+- `.claude/agents/reviewer-quality-check.md` is a custom subagent (added 2026-09-18) that reviews any reviewer/quiz/flashcard page for beginner-friendliness, commuter-skim-friendliness, comprehensiveness vs. overwhelm, format consistency, CPC-exam readiness, and copyright discipline. Run it after building new content, before committing.
