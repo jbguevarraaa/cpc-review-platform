@@ -50,8 +50,15 @@ export default function TwentyThousandSeriesPage() {
 
         <Link href="/cpt/surgery/20000-series-guidelines-reviewer" style={{ textDecoration: "none", color: "inherit" }}>
           <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
-            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🪜 Guidelines Reviewer (Step by Step)</h3>
-            <p style={{ margin: 0 }}>Fracture/dislocation definitions, tumor excision tiers, wound exploration, biopsy, injections, external fixation, and drug-delivery devices — grouped by category, with a step-by-step coding flow, examples, and traps per topic.</p>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🪜 Guidelines Reviewer Pt. 1</h3>
+            <p style={{ margin: 0 }}>General subsection (20100–20999): fracture/dislocation definitions, tumor excision tiers, wound exploration, biopsy, injections, external fixation, and drug-delivery devices — grouped by category, with a step-by-step coding flow, examples, and traps per topic.</p>
+          </div>
+        </Link>
+
+        <Link href="/cpt/surgery/20000-series-guidelines-reviewer-part-2" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🪜 Guidelines Reviewer Pt. 2</h3>
+            <p style={{ margin: 0 }}>Head, Neck &amp; Thorax, Back &amp; Flank, and Spine (21010–22899): craniofacial reconstruction, facial fractures, and every spine arthrodesis/instrumentation rule — same step-by-step format.</p>
           </div>
         </Link>
       </div>

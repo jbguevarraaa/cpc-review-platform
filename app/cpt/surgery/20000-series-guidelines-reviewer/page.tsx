@@ -332,6 +332,9 @@ const heroStyle = { background: "linear-gradient(135deg, #0f172a, #2563eb)", col
 const kickerStyle = { margin: "0 0 10px", color: "#bfdbfe", fontWeight: 800, letterSpacing: "0.08em" };
 const navStyle = { display: "flex", flexWrap: "wrap" as const, gap: "10px", marginBottom: "26px" };
 const navLinkStyle = { textDecoration: "none", color: "#2563eb", background: "#ffffff", border: "1px solid #dbe3f0", borderRadius: "999px", padding: "10px 15px", fontWeight: 700, fontSize: "14px" };
+const pagerStyle = { display: "flex", flexWrap: "wrap" as const, gap: "10px", marginBottom: "26px" };
+const pagerLinkStyle = { textDecoration: "none", color: "#2563eb", background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" };
+const pagerActiveStyle = { ...pagerLinkStyle, background: "#2563eb", color: "#fff", border: "1px solid #2563eb" };
 const introStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "7px solid #2563eb", borderRadius: "12px", padding: "22px 24px", marginBottom: "24px", lineHeight: 1.7 };
 const sectionStyle = { background: "#ffffff", border: "1px solid #e2e7f0", borderRadius: "14px", padding: "24px 26px", marginBottom: "20px", boxShadow: "0 5px 16px rgba(15,23,42,0.05)" };
 const sectionHeaderStyle = { display: "flex", alignItems: "center", gap: "12px", marginBottom: "6px", flexWrap: "wrap" as const };
@@ -353,8 +356,13 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
       <header style={heroStyle}>
         <p style={kickerStyle}>20,000 SERIES · MUSCULOSKELETAL SYSTEM</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 48px)" }}>CPT Surgery Guidelines Reviewer</h1>
-        <p style={{ margin: "12px 0 0", fontSize: "18px", lineHeight: 1.5 }}>General guidelines, fracture/dislocation definitions, tumor excision tiers, and the General subsection (20100–20999) — grouped by category, not code-by-code.</p>
+        <p style={{ margin: "12px 0 0", fontSize: "18px", lineHeight: 1.5 }}>Part 1 — General guidelines, fracture/dislocation definitions, tumor excision tiers, and the General subsection (20100–20999) — grouped by category, not code-by-code.</p>
       </header>
+
+      <div style={pagerStyle}>
+        <span style={pagerActiveStyle}>Part 1 (General, 20100–20999)</span>
+        <Link href="/cpt/surgery/20000-series-guidelines-reviewer-part-2" style={pagerLinkStyle}>Part 2 (Head–Spine, 21010–22899) →</Link>
+      </div>
 
       <nav aria-label="20,000 series navigation" style={navStyle}>
         <Link href="/cpt/surgery/20,000" style={navLinkStyle}>20,000 Series home</Link>
@@ -363,7 +371,7 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
       </nav>
 
       <section style={introStyle}>
-        <strong>How this complements the existing study tips page:</strong> the study tips page already covers fracture treatment basics, trigger points, and bone grafting in a fast-reference format. This page is built the same way as the ICD-10 chapter reviewers — a structured Topic → Rule Summary → Step-by-Step → Example → Traps format — and adds ground the study tips page doesn't cover yet: wound exploration, muscle/bone biopsy, external fixation, and antibiotic drug-delivery devices. Codes are grouped by category rather than listed individually, per your request. Written in original wording, not copied from the CPT text.
+        <strong>How this complements the existing study tips page:</strong> the study tips page already covers fracture treatment basics, trigger points, and bone grafting in a fast-reference format. This page is built the same way as the ICD-10 chapter reviewers — a structured Topic → Rule Summary → Step-by-Step → Example → Traps format — and adds ground the study tips page doesn't cover yet: wound exploration, muscle/bone biopsy, external fixation, and antibiotic drug-delivery devices. Codes are grouped by category rather than listed individually, per your request. Written in original wording, not copied from the CPT text. Head through Spine now live in Part 2 — linked above.
       </section>
 
       {topics.map((t) => (
@@ -405,7 +413,8 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
         </section>
       ))}
 
-      <div style={{ marginTop: "10px" }}>
+      <div style={{ marginTop: "10px", display: "flex", gap: "16px", flexWrap: "wrap" as const }}>
+        <Link href="/cpt/surgery/20000-series-guidelines-reviewer-part-2" style={backLinkStyle}>Continue to Part 2 (Head–Spine) →</Link>
         <Link href="/cpt/surgery/20,000" style={backLinkStyle}>← Back to 20,000 Series</Link>
       </div>
     </main>
