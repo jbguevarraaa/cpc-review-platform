@@ -22,6 +22,7 @@ export default function CardiovascularSeriesPage() {
 
       <nav aria-label="Cardiovascular series navigation" style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "30px" }}>
         <Link href="/cpt/surgery" style={navLinkStyle}>Back to Surgery</Link>
+        <Link href="/cpt/surgery/33000-series-coding-approach" style={navLinkStyle}>How to Approach This Series</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Guidelines Reviewer Pt. 3</Link>
@@ -31,6 +32,11 @@ export default function CardiovascularSeriesPage() {
       </nav>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "18px" }}>
+        <Link href="/cpt/surgery/33000-series-coding-approach" style={cardStyle}>
+          <span style={{ color: "#b91c1c", fontWeight: 800 }}>HOW TO APPROACH THIS SERIES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>The Coding Decision Hierarchy</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Start here if you're not sure where to begin: the eight-question universal checklist (system, approach, bypass status, count, material, standalone-vs-add-on, bundling, special reporting), plus a family-by-family priority checklist covering pericardium through vascular access.</p>
+        </Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 1</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Pericardium → Electrophysiology</h2>
