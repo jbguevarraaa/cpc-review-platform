@@ -316,6 +316,7 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPart2Page() {
       <div style={pagerStyle}>
         <Link href="/cpt/surgery/20000-series-guidelines-reviewer" style={pagerLinkStyle}>Part 1 (General, 20100–20999)</Link>
         <span style={pagerActiveStyle}>Part 2 (Head–Spine, 21010–22899)</span>
+        <Link href="/cpt/surgery/20000-series-guidelines-reviewer-part-3" style={pagerLinkStyle}>Part 3 (Abdomen–Wrist, 22900–25999) →</Link>
       </div>
 
       <nav aria-label="20,000 series navigation" style={navStyle}>
@@ -369,6 +370,7 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPart2Page() {
 
       <div style={{ marginTop: "10px", display: "flex", gap: "16px", flexWrap: "wrap" as const }}>
         <Link href="/cpt/surgery/20000-series-guidelines-reviewer" style={backLinkStyle}>← Back to Part 1</Link>
+        <Link href="/cpt/surgery/20000-series-guidelines-reviewer-part-3" style={backLinkStyle}>Continue to Part 3 (Abdomen–Wrist) →</Link>
         <Link href="/cpt/surgery/20,000" style={backLinkStyle}>← Back to 20,000 Series</Link>
       </div>
     </main>
