@@ -1,6 +1,6 @@
 # CPC Exam Content Tracker
 
-_Last updated: 2026-09-20 (post ICD-10 Chapter 15 build). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
+_Last updated: 2026-09-20 (post ICD-10 Chapter 16 build). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
 
 **Exam date target: within ~3 months of 2026-09-18.**
 
@@ -56,7 +56,8 @@ _Last updated: 2026-09-20 (post ICD-10 Chapter 15 build). This tracks study-cont
 | 12 (Skin/Subcutaneous Tissue) | ✅ | ✅ (15 Q) | ✅ (19 cards) | ✅ (15 scenarios) |
 | 14 (Genitourinary System) | ✅ (narrow scope — official guidelines cover only chronic kidney disease) | ✅ (9 Q) | ✅ (13 cards) | ✅ (9 scenarios) |
 | 15 (Pregnancy/Childbirth/Puerperium) | ✅ (Parts 1–2, one of the densest chapters in the book) | ✅ (28 Q) | ✅ (40 cards) | ✅ (16 scenarios) |
-| 16–17, 19–21 (5 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — in progress, working sequentially |
+| 16 (Perinatal Period) | ✅ | ✅ (20 Q) | ✅ (27 cards) | ✅ (16 scenarios) |
+| 17, 19–21 (4 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — in progress, working sequentially |
 
 **Note on chapter format:** Not every ICD-10-CM chapter has official narrative guidelines — CMS marks several as "Reserved for future guideline expansion" (confirmed so far: Chapter 3). For those, the reviewer format shifts from sequencing-rule summaries to code-category/clinical-distinction summaries, and Worked Examples are skipped in favor of a tighter Reviewer + Quiz + Flashcards set, to keep pace sustainable across all remaining chapters.
 
