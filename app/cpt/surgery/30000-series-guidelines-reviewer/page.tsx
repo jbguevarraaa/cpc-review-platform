@@ -7,6 +7,7 @@ type Subsection = {
   title: string;
   range: string;
   intro?: string;
+  definitions?: [string, string][];
   categories: Category[];
   steps: string[];
   rules: string[];
@@ -171,6 +172,7 @@ const subsections: Subsection[] = [
       "This is the single biggest bundling trap in the 30,000 series: nearly every surgical endoscopy add-on explicitly excludes being reported with several sibling codes when performed on the same side. Once the most extensive procedure for a given sinus/region is billed on one side, the lesser or diagnostic components for that same side are not separately reportable.",
       "The plain diagnostic codes (31231–31235) assume a full inspection of the nasal cavity, meatus, turbinates, and spheno-ethmoid recess in one pass — you don't report a separate code per structure examined. If the exam is incomplete (technically unable, altered anatomy, or not clinically indicated), append modifier 52 when no repeat is planned, or modifier 53 when a repeat exam is planned.",
       "31242/31243 (posterior nasal nerve ablation) are written as bilateral procedures by default — use modifier 52 for a unilateral procedure — and are not reported together with plain diagnostic endoscopy (31231) or nasal endoscopy for other purposes (92511).",
+      "Stereotactic computer-assisted navigation used during nasal/sinus endoscopy is NOT part of the surgical package — it's reported separately with add-on code 61782, regardless of which endoscopy code is billed as the base procedure.",
     ],
     tips: [
       "Before picking any endoscopy add-on code, ask: 'is this already included in a more extensive code I'm also billing on this side?' — the exclusion notes are dense, but they all follow this one logic.",
@@ -182,6 +184,11 @@ const subsections: Subsection[] = [
     title: "Larynx",
     range: "31300–31599",
     intro: "Laryngoscopy examines the tongue base, larynx, and hypopharynx together. Midline single structures (tongue base, vallecula, epiglottis, subglottis, posterior pharyngeal wall) and paired structures (true/false vocal cords, arytenoids, ventricles, pyriform sinuses, aryepiglottic folds) are both covered in one pass — all paired structures on one side of the larynx/pharynx count as \"unilateral\" for reporting.",
+    definitions: [
+      ["Indirect Laryngoscopy", "Structures are viewed using a mirrored reflection."],
+      ["Direct Laryngoscopy", "Structures are viewed with the naked eye, or through a scope with a direct line of sight."],
+      ["Flexible Laryngoscopy", "Structures are viewed with a thin tube containing a fiber-optic camera."],
+    ],
     categories: [
       {
         name: "Excision",
@@ -254,7 +261,7 @@ const subsections: Subsection[] = [
     ],
     rules: [
       "The laryngeal stenosis/web repair family (31551, 31552, 31553, 31554, 31580) is mutually exclusive across all five codes — the correct choice depends on patient age (under vs. 12+), whether a stent is left in place, and whether it's a web (31580) vs. stenosis (31551–31554).",
-      "When an operating microscope or telescope is used with a laryngoscopy code, that component is billed once per session, and add-on code 69990 is not reported separately alongside the microscope-inclusive laryngoscopy codes.",
+      "When an operating microscope or telescope is used with a laryngoscopy code that already has its own dedicated microscope/telescope-inclusive variant (like 31526, 31531, or 31536), that work is already billed once per session as part of that code — 69990 is not reported separately on top of it. But for a laryngoscopy code that does NOT have such a variant, the use of an operating microscope or telescope (or both) IS reported separately with add-on code 69990 — still only once per operative session, regardless of how many structures were examined with it.",
       "The 3157x flexible-laryngoscopy add-ons (ablation, therapeutic injection, augmentation injection) are specified as unilateral — a bilateral procedure is reported by using the code twice or per the payer's bilateral convention, not assumed automatically.",
     ],
     tips: [
@@ -267,6 +274,11 @@ const subsections: Subsection[] = [
     title: "Trachea and Bronchi",
     range: "31600–31899",
     intro: "Surgical bronchoscopy always includes a diagnostic bronchoscopy performed by the same physician — the two are never billed separately. Codes 31622–31651, 31660, and 31661 already include fluoroscopic guidance when it's used.",
+    definitions: [
+      ["Tracheoscopy", "The tip of the scope reaches only as far as the trachea."],
+      ["Bronchoscopy", "The tip of the scope reaches all the way to the bronchi."],
+      ["Tracheobronchoscopy", "The trachea is examined through a surgical incision, AND the tip of the scope reaches the bronchi."],
+    ],
     categories: [
       {
         name: "Incision",
@@ -350,6 +362,7 @@ const subsections: Subsection[] = [
       "Step 4 — Is this about lymph node sampling? If EBUS-guided, use the standalone EBUS codes (31652/31653). If it's specifically about a peripheral lesion, look for the transendoscopic ultrasound add-on (31654) instead.",
     ],
     rules: [
+      "Tracheoscopy itself has no dedicated code family in this subsection — it's reported WITH the laryngoscopy codes back in the Larynx subsection (31515–31574), not a separate trachea-specific code. Bronchoscopy (scope reaching the bronchi) uses this subsection's 31622–31654 family. Tracheobronchoscopy through an already-established tracheostomy incision has its own single code, 31615.",
       "Same bundling logic as the sinus endoscopy family: most 316xx therapeutic bronchoscopy add-ons exclude being billed together with several sibling codes when performed on the same side or same lobe — check what the more extensive code already includes before stacking add-ons.",
       "31628 (transbronchial lung biopsy) and 31629 (transbronchial needle aspiration biopsy) are each billed once per lobe/site no matter how many individual biopsies are taken there — additional lobes go to the add-on codes 31632 and 31633, respectively, not repeated units of the base code.",
       "31652/31653 (EBUS-guided sampling) are complete, separately reportable services in their own right, while 31654 is only an add-on used alongside a separate diagnostic or therapeutic bronchoscopy code for a peripheral lesion — they answer different clinical questions (lymph node staging vs. peripheral lesion access).",
@@ -386,7 +399,13 @@ const tipsBoxStyle = { background: "#f0fdf4", border: "1px solid #bbf7d0", borde
 const tipsTitleStyle = { margin: "0 0 8px", color: "#166534", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const stepsBoxStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "5px solid #2563eb", borderRadius: "10px", padding: "16px 18px", margin: "18px 0 0", lineHeight: 1.7 };
 const stepsTitleStyle = { margin: "0 0 8px", color: "#1e40af", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+const definitionsBoxStyle = { background: "#f5f3ff", border: "1px solid #ddd6fe", borderLeft: "5px solid #7c3aed", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
+const definitionsTitleStyle = { margin: "0 0 8px", color: "#5b21b6", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const backLinkStyle = { textDecoration: "none", color: "#0f766e", fontWeight: 700 };
+const rangeMapGridStyle = { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "14px", marginTop: "12px" };
+const rangeMapCardStyle = { background: "#f9faf9", border: "1px solid #ece7db", borderRadius: "12px", padding: "16px 18px" };
+const rangeMapTitleStyle = { margin: "0 0 8px", fontSize: "15px", fontWeight: 800, color: "#111827" };
+const rangeMapSubListStyle = { margin: "6px 0 0", paddingLeft: "18px", display: "grid", gap: "4px", fontSize: "13.5px", lineHeight: 1.5 };
 const highlightGridStyle = { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px", marginTop: "14px" };
 const highlightCardStyle = { background: "#f9faf9", border: "1px solid #ece7db", borderRadius: "12px", padding: "16px 18px" };
 const highlightTitleStyle = { margin: "0 0 10px", display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" as const, fontSize: "15px", fontWeight: 800, color: "#111827" };
@@ -421,6 +440,22 @@ const examHighlights: ExamHighlight[] = [
   },
 ];
 
+type RangeMapBlock = { title: string; range: string; sub?: string[] };
+
+const rangeMap: RangeMapBlock[] = [
+  { title: "Nose", range: "30,000 series (30000–30999)" },
+  {
+    title: "All structures in between",
+    range: "31,000 series (31000–31899)",
+    sub: [
+      "31,000–31,299 — Accessory Sinuses",
+      "31,300–31,599 — Larynx",
+      "31,600–31,899 — Trachea and Bronchi",
+    ],
+  },
+  { title: "Lungs and Pleura", range: "32,000 series (32035–32999, covered in Part 2)" },
+];
+
 export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
   return (
     <main style={mainStyle}>
@@ -448,6 +483,27 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
 
       <section style={sectionStyle}>
         <div style={sectionHeaderStyle}>
+          <span style={sectionNumberStyle}>🗺️</span>
+          <h2 style={sectionTitleStyle}>Code Range Map — The General Outline</h2>
+        </div>
+        <p style={pStyle}>Before diving into any specific code, orient yourself with the big picture: the whole 30,000 series is built around three body regions, moving from the nose down to the lungs. Everything in between the nose and the lungs — sinuses, larynx, trachea, and bronchi — shares the 31,000 series.</p>
+        <div style={rangeMapGridStyle}>
+          {rangeMap.map((block) => (
+            <div key={block.title} style={rangeMapCardStyle}>
+              <p style={rangeMapTitleStyle}>{block.title}</p>
+              <span style={rangeChipStyle}>{block.range}</span>
+              {block.sub && (
+                <ul style={rangeMapSubListStyle}>
+                  {block.sub.map((s) => <li key={s}>{s}</li>)}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={sectionStyle}>
+        <div style={sectionHeaderStyle}>
           <span style={sectionNumberStyle}>🚨</span>
           <h2 style={sectionTitleStyle}>Top Exam Traps &amp; Tips — Quick Reference</h2>
         </div>
@@ -471,6 +527,15 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
           {sub.intro && <p style={pStyle}>{sub.intro}</p>}
+
+          {sub.definitions && (
+            <div style={definitionsBoxStyle}>
+              <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
+              <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
+                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+              </ul>
+            </div>
+          )}
 
           {sub.categories.map((cat) => (
             <div key={cat.name}>

@@ -7,6 +7,8 @@ type Subsection = {
   title: string;
   range: string;
   intro?: string;
+  definitions?: [string, string][];
+  hierarchy?: string[];
   categories: Category[];
   steps: string[];
   rules: string[];
@@ -19,6 +21,9 @@ const subsections: Subsection[] = [
     title: "Lung & Pleural Biopsy — Picking the Right Approach",
     range: "32096–32098, 32400, 32408, 32601–32609",
     intro: "Three fundamentally different approaches exist for sampling lung/pleural tissue — open (thoracotomy), percutaneous needle, and thoracoscopic (VATS) — each with its own dedicated code family. They're never mixed.",
+    definitions: [
+      ["Biopsy", "Obtaining a tissue sample WITHOUT attention to surgical margins — the goal is a diagnostic sample, not a complete, margin-clean removal."],
+    ],
     categories: [
       {
         name: "Open (Thoracotomy) Biopsy",
@@ -47,17 +52,20 @@ const subsections: Subsection[] = [
     steps: [
       "Step 1 — What approach was used: open/thoracotomy, percutaneous needle, or thoracoscopic (VATS)? That decides the entire code family.",
       "Step 2 — For percutaneous: was this a core needle biopsy (actual tissue sample) or a fine needle aspiration (cells only)? Those are different code families.",
-      "Step 3 — For any wedge-technique sampling: was this purely diagnostic, or does the documentation show attention to margins/complete removal (therapeutic)? Did a more extensive resection follow in the same session at the same site? If so, report only the more extensive procedure.",
+      "Step 3 — For any wedge-technique sampling: was this purely diagnostic (no attention to margins), or does the documentation show attention to margins/complete removal (therapeutic)? Did a more extensive resection follow in the same session at the same site because of what the diagnostic wedge/biopsy found? If so, that's a two-code situation — see the rules below and the full escalation logic in the Lung Resection subsection.",
       "Step 4 — Check how many times the biopsy code can be reported — most cap at once per lung/lesion, with modifier 59 needed for a genuinely separate additional lesion.",
     ],
     rules: [
       "32408 already bundles in ALL imaging guidance used for that biopsy, no matter how many modalities were involved — imaging guidance codes are never separately added on top of it.",
       "Surgical thoracoscopy always includes diagnostic thoracoscopy — a plain diagnostic thoracoscopy code is never billed alongside a thoracoscopic biopsy at the same session.",
-      "A diagnostic wedge resection that leads to a more extensive resection at the same anatomic location during the same operative session is not separately billed — only the most extensive procedure performed is reported.",
+      "If a diagnostic wedge resection or intraoperative biopsy is performed to help decide how extensive the resection should be, and the findings do NOT lead to any further, more extensive resection, only the therapeutic wedge resection code itself is reported (32505 open / 32666 VATS).",
+      "If those same findings DO lead to a more extensive resection in the same session, report TWO codes together: the code for the most extensive procedure actually performed, PLUS the matching add-on for the preceding diagnostic wedge — 32507 (open) or 32668 (VATS). That add-on exists specifically to capture this exact scenario, so it's never dropped just because a bigger procedure also happened.",
+      "This diagnostic-intent rule is a DIFFERENT scenario from a THERAPEUTIC-intent wedge resection (already a complete, margin-attentive procedure) that's later followed by a bigger procedure — that case follows its own separate same-lobe-vs-different-lobe rule, covered in the Lung Resection subsection below. The dividing question between the two is always: was the wedge done to help DECIDE on further surgery (diagnostic), or was it already a finished treatment in its own right (therapeutic)?",
     ],
     tips: [
       "\"How many imaging modalities were used\" is a red herring for 32408 — no matter how many, it's still just one code, one guidance bundle.",
       "Watch for \"same lesion\" vs. \"different lesion\" language — that detail decides whether modifier 52 (same lesion, avoid double-counting guidance) or modifier 59 (genuinely separate lesion) applies.",
+      "Don't apply the \"only the most extensive procedure is reported\" instinct here without checking first — that instinct is correct when a wedge finding leads to NO further resection, but wrong once a bigger resection follows, since 32507/32668 exist precisely to add that detail back in.",
     ],
   },
   {
@@ -120,6 +128,21 @@ const subsections: Subsection[] = [
     n: 3,
     title: "Lung Resection — Pneumonectomy, Lobectomy & Segmentectomy",
     range: "32440–32507",
+    definitions: [
+      ["Wedge Resection", "Surgical removal of a triangle-shaped slice of lung tissue. Wedge technique performed for DIAGNOSTIC purposes does not require attention to surgical margins; the same wedge technique performed for THERAPEUTIC purposes DOES require attention to surgical margins — that's the actual conceptual difference between the two, not just why it was done."],
+      ["Segmentectomy", "Surgical removal of a portion (segment) of a lung."],
+      ["Lobectomy", "Surgical removal of a single lobe of the lung."],
+      ["Bilobectomy", "Surgical removal of two lobes of a lung."],
+      ["Pneumonectomy", "Surgical removal of an entire lung."],
+    ],
+    hierarchy: [
+      "Pneumonectomy (removal of an entire lung)",
+      "Bilobectomy (removal of two lobes)",
+      "Lobectomy (removal of one lobe)",
+      "Segmentectomy (removal of a lung segment)",
+      "Wedge Resection (removal of a triangle-shaped slice)",
+      "Biopsy (tissue sample only, no attention to margins)",
+    ],
     categories: [
       {
         name: "Pneumonectomy",
@@ -158,15 +181,20 @@ const subsections: Subsection[] = [
     steps: [
       "Step 1 — How much lung tissue is being removed: an entire lung, two lobes, one lobe, one segment, or just a wedge/nodule? That decides which resection tier applies.",
       "Step 2 — Is this a sleeve resection (an airway segment removed and reconnected along with the lung tissue)? If so, use the specific sleeve-resection code instead of the standard one.",
-      "Step 3 — For a wedge resection: is it the initial wedge, an additional wedge on the same side, or a wedge in a different lobe than a more extensive resection performed the same session? Each scenario has a different code/modifier combination.",
+      "Step 3 — For a wedge resection followed by a bigger procedure at the same session: was the wedge described as being done to CHECK/DETERMINE/EVALUATE before deciding on further surgery (diagnostic-intent), or was it described as the actual treatment itself, performed with attention to clear margins (therapeutic-intent)? That single detail decides which of the escalation rules below applies — diagnostic-intent points to the 32507/32668 add-on; therapeutic-intent points to bundling or modifier 59, depending on location.",
       "Step 4 — Was bronchoplasty performed to preserve the remaining lung's function? If so, add 32501 alongside the resection code — but only when it's genuinely reconstructive, not just closing the resected stump.",
     ],
     rules: [
-      "A therapeutic wedge resection performed at the SAME site as a more extensive resection in the same session is not separately billed. A wedge resection in a DIFFERENT lobe than a more extensive resection performed the same session IS separately billed, with modifier 59.",
+      "There's a hierarchy to excision procedures on the lungs, from most to least extensive: Pneumonectomy → Bilobectomy → Lobectomy → Segmentectomy → Wedge Resection → Biopsy. This hierarchy is NOT a blanket \"always bundle the smaller step into the bigger one\" rule, though — whether a preceding wedge/biopsy is bundled, billed as its own add-on, or billed separately with a modifier depends on the diagnostic-vs-therapeutic-intent fork below.",
+      "DIAGNOSTIC-intent wedge or intraoperative biopsy (done specifically to help decide how extensive the resection needs to be) that leads to a bigger resection at the SAME site: report the bigger procedure code PLUS the add-on 32507 (open) or 32668 (VATS) — two codes together. (See the Lung & Pleural Biopsy subsection above for the full logic, including what happens when that same diagnostic wedge does NOT lead to any further resection.)",
+      "THERAPEUTIC-intent wedge resection (already a complete, margin-attentive procedure in its own right, not just a check) followed by a bigger procedure in the SAME lobe or lung: the wedge is bundled entirely into the bigger procedure's surgical package — only the bigger procedure code is reported, with no add-on and no modifier.",
+      "THERAPEUTIC-intent wedge resection followed by a bigger procedure in a DIFFERENT lobe or the OPPOSITE lung: this is NOT part of the bigger procedure's package — report both the wedge code (32505 or 32666) and the bigger procedure code, with modifier 59 to show they're genuinely separate sites.",
+      "Multiple therapeutic wedge resections, no bigger procedure involved: a single wedge resection is reported with 32505 (open) or 32666 (VATS). An ADDITIONAL wedge resection in the SAME (ipsilateral) lung is reported with the matching add-on code — 32506 (open) or 32667 (VATS) — never a second unit of the base code. An additional wedge resection in the OPPOSITE (contralateral) lung is NOT an add-on situation — it's a distinct procedure on an entirely separate organ, so report the base wedge code again (32505 or 32666) with modifier 59.",
       "If chest wall tumor resection is performed alongside any lung resection, the chest wall tumor code is reported in addition to the lung resection code — they're not bundled into each other.",
     ],
     tips: [
-      "Bigger resection at the same site as a smaller diagnostic sample = report only the bigger one. Bigger resection alongside a separate smaller resection at a different site = both get reported, with modifier 59 on the separate one.",
+      "Four different wedge-plus-bigger-procedure outcomes hinge on just two questions: (1) was the wedge diagnostic-intent or therapeutic-intent? (2) same site or a different lobe/opposite lung? Diagnostic + same site → add-on code (32507/32668). Therapeutic + same lobe/lung → bundled, no extra code at all. Therapeutic + different lobe/opposite lung → separate code + modifier 59. There's no scenario here where \"only the most extensive procedure is reported\" is a safe universal shortcut — it's only true for the therapeutic-intent-same-site case.",
+      "For wedge-only scenarios (no bigger procedure at all), remember the fork is SAME lung vs. OPPOSITE lung, not \"more vs. fewer wedges\": same lung → add-on code (32506/32667). Opposite lung → base code again + modifier 59, since it's not additional work on the same organ.",
     ],
   },
   {
@@ -216,6 +244,9 @@ const subsections: Subsection[] = [
     title: "Thoracoscopy (VATS) — Diagnostic & Therapeutic",
     range: "32601–32674",
     intro: "Surgical thoracoscopy always includes diagnostic thoracoscopy — a plain diagnostic code is never billed alongside a therapeutic thoracoscopic procedure at the same session.",
+    definitions: [
+      ["VATS (Video-Assisted Thoracic Surgery)", "A minimally invasive thoracic procedure that does not use a thoracotomy incision to create access, while still allowing adequate visualization despite the limited access."],
+    ],
     categories: [
       {
         name: "Diagnostic",
@@ -382,6 +413,10 @@ const rulesBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", bord
 const rulesTitleStyle = { margin: "0 0 8px", color: "#991b1b", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const tipsBoxStyle = { background: "#f0fdf4", border: "1px solid #bbf7d0", borderLeft: "5px solid #16a34a", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
 const tipsTitleStyle = { margin: "0 0 8px", color: "#166534", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+const definitionsBoxStyle = { background: "#f5f3ff", border: "1px solid #ddd6fe", borderLeft: "5px solid #7c3aed", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
+const definitionsTitleStyle = { margin: "0 0 8px", color: "#5b21b6", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+const hierarchyBoxStyle = { background: "#ecfeff", border: "1px solid #a5f3fc", borderLeft: "5px solid #0e7490", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
+const hierarchyTitleStyle = { margin: "0 0 8px", color: "#155e75", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
 const backLinkStyle = { textDecoration: "none", color: "#0f766e", fontWeight: 700 };
 
 export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
@@ -417,6 +452,24 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
           {sub.intro && <p style={pStyle}>{sub.intro}</p>}
+
+          {sub.definitions && (
+            <div style={definitionsBoxStyle}>
+              <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
+              <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
+                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+              </ul>
+            </div>
+          )}
+
+          {sub.hierarchy && (
+            <div style={hierarchyBoxStyle}>
+              <p style={hierarchyTitleStyle}>📶 HIERARCHY — MOST TO LEAST EXTENSIVE</p>
+              <ol style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "6px" }}>
+                {sub.hierarchy.map((h) => <li key={h}>{h}</li>)}
+              </ol>
+            </div>
+          )}
 
           {sub.categories.map((cat) => (
             <div key={cat.name}>
