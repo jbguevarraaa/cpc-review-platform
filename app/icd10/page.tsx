@@ -71,6 +71,10 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-12-practice-quiz" style={navLinkStyle}>Chapter 12 Quiz</Link>
         <Link href="/icd10/chapter-12-worked-examples" style={navLinkStyle}>Chapter 12 Worked Examples</Link>
         <Link href="/icd10/chapter-12-flashcards" style={navLinkStyle}>Chapter 12 Flashcards</Link>
+        <Link href="/icd10/chapter-14-guidelines-reviewer" style={navLinkStyle}>Chapter 14 Reviewer</Link>
+        <Link href="/icd10/chapter-14-practice-quiz" style={navLinkStyle}>Chapter 14 Quiz</Link>
+        <Link href="/icd10/chapter-14-worked-examples" style={navLinkStyle}>Chapter 14 Worked Examples</Link>
+        <Link href="/icd10/chapter-14-flashcards" style={navLinkStyle}>Chapter 14 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -373,6 +377,30 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 12 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>19 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-14-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 14 · N00–N99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Genitourinary System</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Chronic kidney disease stage classification, ESRD, kidney transplant status, and sequencing with other conditions — the sole focus of this chapter's official narrative guidelines.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-14-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 14 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-14-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 14 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-14-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 14 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>13 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
