@@ -75,6 +75,11 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-14-practice-quiz" style={navLinkStyle}>Chapter 14 Quiz</Link>
         <Link href="/icd10/chapter-14-worked-examples" style={navLinkStyle}>Chapter 14 Worked Examples</Link>
         <Link href="/icd10/chapter-14-flashcards" style={navLinkStyle}>Chapter 14 Flashcards</Link>
+        <Link href="/icd10/chapter-15-guidelines-reviewer" style={navLinkStyle}>Chapter 15 Reviewer Pt. 1</Link>
+        <Link href="/icd10/chapter-15-guidelines-reviewer-part-2" style={navLinkStyle}>Chapter 15 Reviewer Pt. 2</Link>
+        <Link href="/icd10/chapter-15-practice-quiz" style={navLinkStyle}>Chapter 15 Quiz</Link>
+        <Link href="/icd10/chapter-15-worked-examples" style={navLinkStyle}>Chapter 15 Worked Examples</Link>
+        <Link href="/icd10/chapter-15-flashcards" style={navLinkStyle}>Chapter 15 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -401,6 +406,36 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 14 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>13 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-15-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 15 · O00–O9A · PART 1</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Pregnancy, Childbirth &amp; the Puerperium</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>General rules: sequencing priority, trimester logic, fetus identification, principal diagnosis selection, and pre-existing vs. pregnancy-related conditions. One of the largest, densest chapters in the whole book — split into two parts.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-15-guidelines-reviewer-part-2" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 15 · PART 2</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Specific Conditions</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Fetal conditions, HIV, diabetes, sepsis, substance use, poisoning, normal delivery, peripartum/postpartum, abortion, abuse, and COVID-19 in pregnancy.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-15-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 15 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>28-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer, covering both parts of this chapter.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-15-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 15 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>16 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-15-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 15 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>40 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
