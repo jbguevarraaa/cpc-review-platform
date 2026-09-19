@@ -67,6 +67,10 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-11-guidelines-reviewer" style={navLinkStyle}>Chapter 11 Reviewer</Link>
         <Link href="/icd10/chapter-11-practice-quiz" style={navLinkStyle}>Chapter 11 Quiz</Link>
         <Link href="/icd10/chapter-11-flashcards" style={navLinkStyle}>Chapter 11 Flashcards</Link>
+        <Link href="/icd10/chapter-12-guidelines-reviewer" style={navLinkStyle}>Chapter 12 Reviewer</Link>
+        <Link href="/icd10/chapter-12-practice-quiz" style={navLinkStyle}>Chapter 12 Quiz</Link>
+        <Link href="/icd10/chapter-12-worked-examples" style={navLinkStyle}>Chapter 12 Worked Examples</Link>
+        <Link href="/icd10/chapter-12-flashcards" style={navLinkStyle}>Chapter 12 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -345,6 +349,30 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 11 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>18 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-12-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 12 · L00–L99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Diseases of the Skin &amp; Subcutaneous Tissue</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Pressure ulcer staging, unstageable vs. unspecified, healed vs. healing, the two-code progression rule, deep tissue damage, and the parallel non-pressure chronic ulcer rules.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-12-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 12 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>15-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-12-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 12 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>15 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-12-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 12 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>19 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
