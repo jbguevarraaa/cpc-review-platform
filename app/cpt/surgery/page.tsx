@@ -147,18 +147,26 @@ export default function SurgeryPage() {
         </div>
         </Link>
 
+        <Link
+          href="/cpt/surgery/50,000"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
         <div
           style={{
-            border: "1px solid #ddd",
+            border: "1px solid #c7d2fe",
             borderRadius: "12px",
             padding: "20px",
             width: "220px",
-            backgroundColor: "white",
+            backgroundColor: "#f6f7ff",
           }}
         >
           <h3>50,000 Series</h3>
           <p>Urinary & Genital Systems</p>
         </div>
+        </Link>
 
         <div
           style={{

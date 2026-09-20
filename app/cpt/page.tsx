@@ -159,18 +159,27 @@ export default function SurgeryPage() {
         </Link>
 
         {/* 50,000 Series */}
-        <div
+        <Link
+          href="/cpt/surgery/50,000"
           style={{
-            border: "1px solid #ddd",
-            borderRadius: "12px",
-            padding: "20px",
-            width: "220px",
-            backgroundColor: "white",
+            textDecoration: "none",
+            color: "inherit",
           }}
         >
-          <h3>50,000 Series</h3>
-          <p>Urinary & Genital Systems</p>
-        </div>
+          <div
+            style={{
+              border: "1px solid #c7d2fe",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "220px",
+              backgroundColor: "#f6f7ff",
+              cursor: "pointer",
+            }}
+          >
+            <h3>50,000 Series</h3>
+            <p>Urinary & Genital Systems</p>
+          </div>
+        </Link>
 
         {/* 60,000 Series */}
         <div
