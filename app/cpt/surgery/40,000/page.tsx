@@ -67,6 +67,8 @@ export default function DigestiveSeriesPage() {
         <Link href="/cpt/surgery/40000-series-guidelines-reviewer" style={navLinkStyle}>Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/40000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/40000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Reviewer Pt. 3</Link>
+        <Link href="/cpt/surgery/40000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
+        <Link href="/cpt/surgery/40000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -92,6 +94,19 @@ export default function DigestiveSeriesPage() {
           <span style={labelStyle}>GUIDELINES REVIEWER · PART 3</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Bariatric, Hernia & Hemorrhoids</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Sleeve, bypass, and band codes; the age/PCA and defect-size hernia grids (2026 codes); the hemorrhoid treatment map — with the hernia and hemorrhoid slide questions solved.</p>
+        </Link>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "18px", marginBottom: "30px" }}>
+        <Link href="/cpt/surgery/40000-series-practice-quiz" style={cardStyle}>
+          <span style={labelStyle}>PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>56 Scenario Questions</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Endoscopy, ERCP, colonoscopy, bariatric, hernia, and hemorrhoid scenarios. Each answer shows what to look for and how to eliminate the wrong choices.</p>
+        </Link>
+        <Link href="/cpt/surgery/40000-series-flashcards" style={cardStyle}>
+          <span style={labelStyle}>FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Tap-to-flip cards, one rule per card, covering the whole Digestive series — modifiers, once-per-session codes, PCA tiers, and hernia and hemorrhoid splits.</p>
         </Link>
       </div>
 
