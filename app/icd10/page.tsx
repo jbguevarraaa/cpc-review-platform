@@ -567,7 +567,7 @@ export default function ICD10Page() {
 
         <Link href="/icd10/chapter-20-practice-quiz" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · PRACTICE QUIZ</span>
-          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>18-Question Scenario Quiz</h2>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>24-Question Scenario Quiz</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
         </Link>
 
@@ -580,7 +580,7 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-20-flashcards" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>25 tap-to-flip flashcards, one rule per card.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>26 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <Link href="/icd10/chapter-21-guidelines-reviewer" style={cardStyle}>
@@ -597,7 +597,7 @@ export default function ICD10Page() {
 
         <Link href="/icd10/chapter-21-practice-quiz" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · PRACTICE QUIZ</span>
-          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>28-Question Scenario Quiz</h2>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>36-Question Scenario Quiz</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
         </Link>
 
@@ -610,7 +610,7 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-21-flashcards" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>38 tap-to-flip flashcards, one rule per card.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>41 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>

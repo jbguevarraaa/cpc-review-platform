@@ -53,20 +53,21 @@ const topics: Topic[] = [
       answer: "The well-baby exam is the reason for the visit, and Z23 may be reported as a secondary code because the vaccination was a routine part of the preventive care.",
     },
     tips: [
-      "Z20 = exposure to a communicable disease, first-listed only if the visit is for testing; otherwise usually secondary.",
+      "Z20 = exposure to a communicable disease; it may be first-listed to explain an encounter for testing, but is more commonly secondary.",
       "Z23 needs procedure codes for the administration and the vaccine type.",
     ],
   },
   {
     n: 3,
     title: "Status Codes — What They Are and When NOT to Use Them",
-    codes: "Z14–Z22 · Z28.3 · Z66–Z99",
+    codes: "Z14–Z19 · Z21 · Z22 · Z28.3 · Z66–Z99",
     summary: [
       "Status codes indicate that a patient is a carrier of a disease, or has the sequelae or residual of a past disease or condition — including the presence of prosthetic or mechanical devices from past treatment. A status code is informative because the status may affect the course of treatment and its outcome.",
       "A status code is DISTINCT from a history code. A history code says the patient no longer has the condition; a status code says something about the patient's ongoing state.",
       "Do NOT use a status code with a diagnosis code from a body system chapter when that diagnosis code already includes the information. For example, don't use Z94.1 (heart transplant status) with a T86.2- complication of heart transplant — the complication code already tells you the patient is a heart transplant patient.",
       "For encounters for weaning from a mechanical ventilator, assign a code from J96.1- (chronic respiratory failure), followed by Z99.11 (dependence on respirator [ventilator] status).",
       "Categories Z89–Z90 and Z93–Z99 are for use only if there are NO complications or malfunctions of the organ or tissue replaced, the amputation site, or the equipment on which the patient is dependent.",
+      "The status categories the guideline lists: Z14 (genetic carrier — carries a gene tied to a disease that may be passed on, but does not have the disease and isn't at risk of developing it); Z15 (genetic susceptibility — carries a gene that raises the risk of disease); Z16 (resistance to antimicrobial drugs); Z17 (estrogen receptor status); Z18 (retained foreign body fragments); Z19 (hormone sensitivity malignancy status); Z21 (asymptomatic HIV infection status — tested positive, no signs or symptoms); Z22 (carrier of infectious disease — harbors the organisms without symptoms and can transmit them); Z28.3 (underimmunization status); Z33.1 (incidental pregnant state); Z66 (do not resuscitate); Z67 (blood type); Z68 (BMI); Z74.01 (bed confinement status); Z76.82 (awaiting organ transplant status); Z78 (other specified health status); Z79 (long-term drug therapy); Z88 (allergy status to drugs, except Z88.9); Z89–Z90 (acquired absence); Z91.0- (allergy status other than to drugs); Z92.82 (tPA in another facility); Z93–Z99.",
     ],
     easy: {
       scenario: "A patient with a pacemaker attends a routine visit and has no device problems.",
@@ -135,7 +136,7 @@ const topics: Topic[] = [
   {
     n: 6,
     title: "History Codes — Personal and Family",
-    codes: "Z80–Z87 · Z91.4- · Z91.5- · Z91.8-",
+    codes: "Z80–Z87 · Z91.4- · Z91.5- · Z91.81 · Z91.82 · Z91.85 · Z92 (not Z92.0 or Z92.82)",
     summary: [
       "There are two types of history Z codes: PERSONAL and FAMILY. Personal history codes explain a patient's past medical condition that no longer exists and isn't being treated, but has the potential for recurrence and may need continued monitoring. Family history codes are for when a family member has had a disease that puts the patient at higher risk of contracting it.",
       "Personal history codes may be used in conjunction with follow-up codes, and family history codes may be used with screening codes to explain the need for a test or procedure.",
@@ -205,6 +206,7 @@ const topics: Topic[] = [
       "Observation = ruled out, with no related signs or symptoms. Symptoms present = code the symptoms.",
       "Z05 follows Z38 on the birth record.",
       "Inconclusive suspected fetal condition = O35, O36, O40, or O41 — not Z03.7-.",
+      "Z03 and Z05 can be secondary when unrelated to the principal diagnosis. Z04 is also on the first-listed-only list (Part 2, topic 8), so treat Z04 as first-listed.",
     ],
   },
 ];

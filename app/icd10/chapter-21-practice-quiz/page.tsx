@@ -406,6 +406,118 @@ const questions: Question[] = [
     lookFor: "A non-provider clinician's documentation of a social problem.",
     eliminate: "A, C, and D add restrictions that the guideline doesn't have.",
   },
+  {
+    topic: "Genetic Susceptibility (Z15)",
+    question: "A patient with a genetic susceptibility to cancer is seen for follow-up after completed treatment, and the cancer no longer exists. How are the codes sequenced?",
+    options: [
+      "A. Z15 first",
+      "B. The follow-up code first, followed by the personal history and genetic susceptibility codes",
+      "C. Only the history code",
+      "D. Only Z15",
+    ],
+    correct: "B",
+    explanation: "Z15 codes generally aren't first-listed. For follow-up after completed treatment when the condition no longer exists, the follow-up code is first, followed by the appropriate personal history and genetic susceptibility codes.",
+    lookFor: "Treatment complete, condition gone, patient carries a susceptibility gene.",
+    eliminate: "A and D put Z15 first. C leaves out the follow-up code and susceptibility.",
+  },
+  {
+    topic: "Observation — Symptoms Present",
+    question: "A patient is evaluated for a suspected condition and has signs or symptoms related to it. Which is coded?",
+    options: [
+      "A. A Z03 observation code",
+      "B. Z04",
+      "C. The diagnosis or symptom code, not an observation code",
+      "D. A history code",
+    ],
+    correct: "C",
+    explanation: "Observation codes are for suspected conditions that are ruled out and aren't used when an injury, illness, or any signs or symptoms related to the suspected condition are present. The diagnosis or symptom code is used instead.",
+    lookFor: "Related signs or symptoms are present.",
+    eliminate: "A and B are for ruled-out conditions with no related symptoms. D doesn't explain the reason for the encounter.",
+  },
+  {
+    topic: "Inconclusive Fetal Condition",
+    question: "An encounter is for a suspected fetal condition that remains inconclusive after testing. Which codes apply?",
+    options: [
+      "A. A Z03.7- code",
+      "B. A code from O35, O36, O40, or O41",
+      "C. Z34",
+      "D. Z3A only",
+    ],
+    correct: "B",
+    explanation: "For encounters for a suspected fetal condition that are inconclusive following testing and evaluation, assign the appropriate code from category O35, O36, O40, or O41. Z03.7- is for suspected conditions that are ruled out.",
+    lookFor: "'Inconclusive' — not ruled out.",
+    eliminate: "A requires the condition to be ruled out. C is for normal pregnancy supervision. D is additional information only.",
+  },
+  {
+    topic: "Aftercare — Additional Code",
+    question: "During an encounter for treatment of another condition, a colostomy is closed. How may the closure be reported?",
+    options: [
+      "A. The aftercare code cannot be used with other diagnoses",
+      "B. Only as the first-listed code",
+      "C. As an additional aftercare code, because a specific type of aftercare was provided and no diagnosis code applies",
+      "D. With a follow-up code",
+    ],
+    correct: "C",
+    explanation: "An aftercare code may be reported as an additional code when a specific type of aftercare is provided in addition to the reason for the encounter and no diagnosis code is applicable — the guideline's own example is closure of a colostomy during an encounter for treatment of another condition.",
+    lookFor: "A specific aftercare service alongside another reason for the visit.",
+    eliminate: "A and B say aftercare is only first-listed. D is for surveillance after completed treatment.",
+  },
+  {
+    topic: "Aftercare with Status",
+    question: "Which pairing is appropriate?",
+    options: [
+      "A. Z43.0 (attention to tracheostomy) with Z93.0 (tracheostomy status)",
+      "B. Z95.1 (aortocoronary bypass graft status) with Z48.812 (surgical aftercare following circulatory surgery)",
+      "C. Z94.1 with T86.2-",
+      "D. Z98.85 at the encounter where the transplanted organ is removed",
+    ],
+    correct: "B",
+    explanation: "Status codes may be used with aftercare codes to show the nature of the aftercare (Z95.1 with Z48.812). A status code shouldn't be used when the aftercare code already indicates the status (Z43.0 with Z93.0).",
+    lookFor: "The aftercare code doesn't already contain the status.",
+    eliminate: "A repeats the tracheostomy status. C repeats a status the complication code contains. D assigns a removal status at the removal encounter.",
+  },
+  {
+    topic: "Z3A — Elective Termination",
+    question: "For which pregnancy situation is Z3A (weeks of gestation) NOT assigned?",
+    options: [
+      "A. A pregnancy with elective termination (Z33.2)",
+      "B. A routine prenatal visit",
+      "C. A high-risk pregnancy visit",
+      "D. A pregnancy admission spanning more than one week",
+    ],
+    correct: "A",
+    explanation: "Z3A isn't assigned for pregnancies with abortive outcomes, elective termination (Z33.2), or postpartum conditions. For stays spanning weeks, the date of admission determines the week.",
+    lookFor: "The exclusion list: abortive outcomes, elective termination, postpartum.",
+    eliminate: "B, C, and D are situations where Z3A may give additional pregnancy information.",
+  },
+  {
+    topic: "Prophylactic Surgery — Other-Site Malignancy",
+    question: "A patient with a malignancy at one site has prophylactic removal of an organ at another site to prevent a new primary or metastatic disease. What is reported?",
+    options: [
+      "A. Only Z40.0",
+      "B. Only the malignancy code",
+      "C. A history code",
+      "D. Z40.0 plus a code for the malignancy",
+    ],
+    correct: "D",
+    explanation: "If the patient has a malignancy at one site and prophylactic removal at another site to prevent a new primary or metastatic disease, a code for the malignancy should also be assigned in addition to the Z40.0 code.",
+    lookFor: "Cancer at one site, prophylactic removal elsewhere.",
+    eliminate: "A leaves out the malignancy. B leaves out the reason for the surgery. C doesn't describe a current malignancy.",
+  },
+  {
+    topic: "Asymptomatic HIV Status",
+    question: "A patient has tested positive for HIV but has no signs or symptoms of the disease. Which code family describes this?",
+    options: [
+      "A. A symptomatic HIV code",
+      "B. A Z21 asymptomatic HIV infection status code",
+      "C. A Z22 carrier code",
+      "D. Z20 contact code",
+    ],
+    correct: "B",
+    explanation: "Z21 (asymptomatic HIV infection status) indicates a patient has tested positive for HIV but has manifested no signs or symptoms of the disease.",
+    lookFor: "Positive test, no signs or symptoms.",
+    eliminate: "A requires symptoms. C is for carriers who harbor organisms without symptoms and can transmit the infection — a different status. D is exposure without confirmed infection.",
+  },
 ];
 
 const mainStyle = { maxWidth: "900px", margin: "0 auto", padding: "36px 24px 64px", minHeight: "100vh", background: "#f6f9f9", color: "#141d1c", fontFamily: "Arial, sans-serif" };
@@ -474,7 +586,7 @@ export default function Icd10Chapter21PracticeQuizPage() {
       <header style={heroStyle}>
         <p style={kickerStyle}>ICD-10-CM · CHAPTER 21 · PRACTICE QUIZ</p>
         <h1 style={{ margin: 0, fontSize: "clamp(24px, 5vw, 38px)" }}>Chapter 21 Practice Quiz</h1>
-        <p style={{ margin: "10px 0 0", fontSize: "15.5px", lineHeight: 1.5 }}>28 original scenario questions with elimination tricks, covering status vs. history, screening vs. diagnostic, aftercare, follow-up, obstetric Z codes, prophylactic surgery, and social determinants of health.</p>
+        <p style={{ margin: "10px 0 0", fontSize: "15.5px", lineHeight: 1.5 }}>36 original scenario questions with elimination tricks, covering status vs. history, screening vs. diagnostic, aftercare, follow-up, obstetric Z codes, prophylactic surgery, and social determinants of health.</p>
       </header>
 
       <nav aria-label="ICD-10 quiz navigation" style={navStyle}>

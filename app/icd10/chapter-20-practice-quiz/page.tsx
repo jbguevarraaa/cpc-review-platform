@@ -82,7 +82,7 @@ const questions: Question[] = [
     correct: "A",
     explanation: "Most Chapter 20 categories have a 7th character, and it should match the 7th character of the code assigned for the associated injury or condition for that encounter.",
     lookFor: "'Injury code D' — match it.",
-    eliminate: "B ignores the matching rule. C is for sequela. D is false — most Chapter 20 categories have 7th characters (Y92 is the exception).",
+    eliminate: "B ignores the matching rule. C is for sequela. D is false — most Chapter 20 categories have 7th characters (the guideline specifically says Y92 has none).",
   },
   {
     topic: "7th Characters",
@@ -250,7 +250,7 @@ const questions: Question[] = [
     correct: "D",
     explanation: "When the cause of an injury is only suspected to be the result of terrorism, a Y38 code is not assigned. Suspected cases are classified as assault.",
     lookFor: "'Suspected' terrorism.",
-    eliminate: "A and B require the Federal Government (FBI) to identify the event as terrorism. C is the perpetrator-of-maltreatment code.",
+    eliminate: "A requires the Federal Government (FBI) to identify the event as terrorism. B is only for later, secondary conditions of a terrorist event. C is the perpetrator-of-maltreatment code.",
   },
   {
     topic: "Terrorism — Secondary Effects",
@@ -265,6 +265,90 @@ const questions: Question[] = [
     explanation: "Y38.9 is assigned for conditions occurring subsequent to the terrorist event. It is not for conditions due to the initial terrorist act, and it may accompany another Y38 code when both apply.",
     lookFor: "'After the terrorist event' — a subsequent result.",
     eliminate: "B is for conditions due to the initial act. C is a perpetrator code. D drops a documented condition.",
+  },
+  {
+    topic: "Hierarchy — Terrorism vs. Cataclysmic Event",
+    question: "A patient's injuries come from a cataclysmic event (such as an earthquake) and from an FBI-identified terrorist act. Which external cause code takes priority as first-listed?",
+    options: [
+      "A. The cataclysmic event code",
+      "B. The terrorism (Y38) code",
+      "C. Whichever event was more recent",
+      "D. The transport accident code",
+    ],
+    correct: "B",
+    explanation: "External cause codes for terrorism events take priority over all other external cause codes except child and adult abuse — so they rank above cataclysmic events and transport accidents.",
+    lookFor: "The hierarchy: abuse > terrorism > cataclysmic events > transport accidents.",
+    eliminate: "A ranks cataclysmic events above terrorism. C invents a recency rule. D ranks below both.",
+  },
+  {
+    topic: "Limited Formats — Extra Room",
+    question: "A reporting format has room for additional external cause codes beyond the first. Which codes should fill the extra space?",
+    options: [
+      "A. Place of occurrence, activity, and status codes",
+      "B. The perpetrator code Y07 only",
+      "C. The cause and intent of the additional events, including medical misadventures",
+      "D. Y99.9",
+    ],
+    correct: "C",
+    explanation: "If the format permits capturing additional external cause codes, report the cause and intent — including medical misadventures — of the additional events rather than the codes for place, activity, or external status.",
+    lookFor: "Extra space and additional events.",
+    eliminate: "A is the reverse of the guidance. B covers one situation only. D is an unspecified status code the guideline says not to assign when status isn't stated.",
+  },
+  {
+    topic: "Undetermined Intent",
+    question: "A record states that the intent of an injury 'cannot be determined.' What intent is coded?",
+    options: [
+      "A. Accidental",
+      "B. Intentional self-harm",
+      "C. Assault",
+      "D. Undetermined",
+    ],
+    correct: "D",
+    explanation: "External cause codes for events of undetermined intent are used only if the documentation specifies that the intent cannot be determined. Otherwise unknown or unspecified intent is coded as accidental.",
+    lookFor: "The record explicitly says intent can't be determined.",
+    eliminate: "A is the default only when intent is simply not stated. B and C assume a specific intent.",
+  },
+  {
+    topic: "Sequela — Late Effect Treated",
+    question: "A patient is seen for treatment of a documented late effect of an earlier injury. Which 7th character goes on the external cause code?",
+    options: [
+      "A. A",
+      "B. D",
+      "C. S",
+      "D. None",
+    ],
+    correct: "C",
+    explanation: "Sequela are reported using the external cause code with 7th character S, with any report of a late effect or sequela resulting from a previous injury. It is never used with a related current injury code.",
+    lookFor: "A late effect being treated.",
+    eliminate: "A and B apply to current injuries. D omits a required 7th character.",
+  },
+  {
+    topic: "Combination External Cause Codes",
+    question: "A patient falls and, during the fall, strikes an object. Which external cause coding is appropriate?",
+    options: [
+      "A. Only the fall code",
+      "B. The combination external cause code that matches the sequence of events (a fall resulting in striking against an object)",
+      "C. Only the code for striking an object",
+      "D. No external cause code",
+    ],
+    correct: "B",
+    explanation: "Some external cause codes are combination codes for sequential events, such as a fall that results in striking against an object. The combination code used should match the sequence of events, regardless of which caused the most serious injury.",
+    lookFor: "Sequential events — one leading to the next.",
+    eliminate: "A and C drop half of the sequence. D drops the external cause entirely.",
+  },
+  {
+    topic: "New Injury During Hospitalization",
+    question: "A new injury occurs while the patient is hospitalized for a different condition. May an additional place of occurrence code be assigned?",
+    options: [
+      "A. Yes, in that rare instance",
+      "B. No — only one place of occurrence code is ever allowed",
+      "C. Yes, at every encounter",
+      "D. Only with Y92.9",
+    ],
+    correct: "A",
+    explanation: "A place of occurrence code is generally assigned once, at the initial encounter. In the rare instance that a new injury occurs during hospitalization, an additional place of occurrence code may be assigned.",
+    lookFor: "A NEW injury during the hospital stay.",
+    eliminate: "B ignores the stated exception. C repeats it at every encounter. D uses the unspecified code the guideline prohibits when the place isn't stated.",
   },
 ];
 
@@ -334,7 +418,7 @@ export default function Icd10Chapter20PracticeQuizPage() {
       <header style={heroStyle}>
         <p style={kickerStyle}>ICD-10-CM · CHAPTER 20 · PRACTICE QUIZ</p>
         <h1 style={{ margin: 0, fontSize: "clamp(24px, 5vw, 38px)" }}>Chapter 20 Practice Quiz</h1>
-        <p style={{ margin: "10px 0 0", fontSize: "15.5px", lineHeight: 1.5 }}>18 original scenario questions with elimination tricks, covering never-first-listed, 7th characters, place/activity/status codes, the sequencing hierarchy, unknown intent, sequela, and terrorism.</p>
+        <p style={{ margin: "10px 0 0", fontSize: "15.5px", lineHeight: 1.5 }}>24 original scenario questions with elimination tricks, covering never-first-listed, 7th characters, place/activity/status codes, the sequencing hierarchy, unknown intent, sequela, and terrorism.</p>
       </header>
 
       <nav aria-label="ICD-10 quiz navigation" style={navStyle}>

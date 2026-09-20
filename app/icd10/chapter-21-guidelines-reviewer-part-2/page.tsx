@@ -14,7 +14,7 @@ const topics: Topic[] = [
   {
     n: 1,
     title: "Aftercare Z Codes — Healing and Recovery, Not Acute Disease or Injuries",
-    codes: "Z42–Z51",
+    codes: "Z42–Z49 · Z51",
     summary: [
       "Aftercare visit codes cover situations when the initial treatment of a disease has been performed and the patient requires continued care during the healing or recovery phase, or for the long-term consequences of the disease.",
       "Do NOT use an aftercare Z code if treatment is directed at a current, acute disease — use the diagnosis code. Do NOT use aftercare Z codes for aftercare of INJURIES either: assign the acute injury code with the appropriate 7th character for a subsequent encounter.",
@@ -25,7 +25,7 @@ const topics: Topic[] = [
     ],
     easy: {
       scenario: "A patient returns for aftercare following joint replacement surgery, and the reason for the visit is the continued care during recovery.",
-      answer: "An aftercare code (such as Z47.1) is first-listed — it explains the specific reason for the encounter.",
+      answer: "An aftercare code (e.g., Z47.1) is first-listed — it explains the specific reason for the encounter.",
     },
     hard: {
       scenario: "A patient returns for routine care of a healing fracture, and the coder assigns an aftercare Z code.",
@@ -40,13 +40,13 @@ const topics: Topic[] = [
   {
     n: 2,
     title: "Follow-Up Codes (Z08, Z09) — Completed Treatment, Condition Gone",
-    codes: "Z08 · Z09",
+    codes: "Z08 · Z09 · Z39",
     summary: [
       "Follow-up codes explain continuing SURVEILLANCE after completed treatment of a disease, condition, or injury. They imply the condition has been fully treated and no longer exists.",
       "They should not be confused with aftercare codes, or with injury codes with a 7th character for a subsequent encounter, which explain ongoing care of a HEALING condition or its sequelae.",
       "Follow-up codes may be used with history codes to give the full picture of the healed condition and its treatment. The follow-up code is sequenced FIRST, followed by the history code.",
       "A follow-up code may explain multiple visits. If the condition is found to have RECURRED at the follow-up visit, assign the diagnosis code for the condition instead of the follow-up code.",
-      "Z08 is follow-up after completed treatment for malignant neoplasm; Z09 is for conditions other than malignant neoplasm. Both may be assigned following any type of completed treatment (medical and surgical).",
+      "Z08 is follow-up after completed treatment for malignant neoplasm; Z09 is for conditions other than malignant neoplasm. Both may be assigned following any type of completed treatment (medical and surgical). Z39 (maternal postpartum care and examination) is also on the follow-up list.",
     ],
     easy: {
       scenario: "A patient whose cancer treatment is complete and no cancer remains returns for scheduled surveillance.",
@@ -68,7 +68,7 @@ const topics: Topic[] = [
     codes: "Z52 · Z30.0- · Z31.5 · Z31.6- · Z32.2 · Z32.3 · Z69 · Z70 · Z71 · Z76.81",
     summary: [
       "Category Z52 (donors of organs and tissues) is for LIVING individuals donating blood or other body tissue — for others or as self-donation. It is NOT used for cadaveric donations.",
-      "Counseling Z codes are used when a patient or family member receives assistance in the aftermath of an illness or injury, or when support is needed to cope with family or social problems. The counseling categories include Z30.0-, Z31.5, Z31.6-, Z32.2, Z32.3, Z69, Z70, Z71, and Z76.81.",
+      "Counseling Z codes are used when a patient or family member receives assistance in the aftermath of an illness or injury, or when support is needed to cope with family or social problems. The counseling categories include Z30.0- (general contraception counseling and advice), Z31.5 (procreative genetic counseling), Z31.6- (general procreation counseling and advice), Z32.2 (childbirth instruction), Z32.3 (childcare instruction), Z69 (mental health services for victims and perpetrators of abuse), Z70 (counseling on sexual attitude, behavior, and orientation), Z71 (other counseling and medical advice), and Z76.81 (expectant mother prebirth pediatrician visit).",
       "Z71.84 is for health counseling related to travel — health risk and safety counseling for future travel.",
       "Z71.85 (immunization safety counseling) is for counseling the patient or caregiver about the SAFETY of a vaccine. It is not used for general information about risks and potential side effects provided during routine vaccine administration encounters.",
       "Z71.87 (pediatric-to-adult transition counseling) is assigned when transition counseling is the sole reason for the encounter or is provided in addition to other services. If both transition counseling and treatment of a medical condition happen at the same encounter, report the condition code(s) and Z71.87, sequenced according to the circumstances of the encounter.",
@@ -146,7 +146,7 @@ const topics: Topic[] = [
       "For encounters specifically for PROPHYLACTIC REMOVAL of an organ (such as removing breasts because of a genetic susceptibility or family history of cancer), the principal or first-listed code should be from Z40.0 (prophylactic surgery for risk factors related to malignant neoplasms) or Z40.8 (other prophylactic surgery). Assign additional code(s) for any associated risk factor, such as genetic susceptibility or family history.",
       "If the patient has a malignancy at one site and is having prophylactic removal at ANOTHER site to prevent a new primary or metastatic disease, ALSO assign the code for the malignancy along with the Z40.0 code.",
       "Do NOT assign Z40.0 if the organ removal is for TREATMENT of a malignancy — such as removing the testes to treat prostate cancer.",
-      "Miscellaneous categories include Z28 (immunization not carried out, except Z28.3-), Z29, Z40, Z41 (procedure for purposes other than remedying health state, except Z41.9), Z53, Z72, Z73, Z74 (except Z74.01), Z75, Z76.0, Z76.3, Z76.4, Z76.5, Z91.1-, Z91.A-, Z91.B, Z91.83, Z91.84-, and Z91.89. For Z72 and Z73, assign the code only when the documentation says the patient has an associated problem.",
+      "Miscellaneous categories include Z28 (immunization not carried out, except Z28.3-), Z29 (other prophylactic measures), Z40 (prophylactic surgery), Z41 (procedure for purposes other than remedying health state, except Z41.9), Z53 (specific procedure or treatment not carried out), Z72 (lifestyle problems), Z73 (life management difficulty), Z74 (care provider dependency, except Z74.01), Z75 (medical facility problems), Z76.0 (repeat prescription), Z76.3 (healthy person accompanying a sick person), Z76.4 (other boarder), Z76.5 (malingerer), Z91.1- (patient noncompliance), Z91.A- (caregiver noncompliance), Z91.B (DES exposure risk factor), Z91.83 (wandering), Z91.84- (oral health risk factors), and Z91.89 (other personal risk factors). For Z72 and Z73, assign the code only when the documentation says the patient has an associated problem.",
     ],
     easy: {
       scenario: "A patient with a documented genetic susceptibility to breast cancer is admitted specifically for prophylactic mastectomy.",
@@ -180,7 +180,7 @@ const topics: Topic[] = [
       answer: "Incorrect — there is little justification for nonspecific Z codes inpatient, and a sign, symptom, or other reason for the visit captured in another code should be used.",
     },
     tips: [
-      "Nonspecific Z codes end in 9 (unspecified) or are the redundant ones listed — inpatient use is hard to justify.",
+      "The nonspecific list is closed — Z02.9, Z04.9, Z13.9, Z41.9, Z52.9, Z86.59, Z88.9, Z92.0. Don't infer it from the last digit; inpatient use is hard to justify.",
       "Outpatient: only when no further documentation allows a more precise code.",
     ],
   },

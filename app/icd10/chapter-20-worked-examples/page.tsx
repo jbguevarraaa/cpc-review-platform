@@ -18,12 +18,12 @@ const questions: Question[] = [
     scenario: "A patient is admitted with a hip fracture after a documented accidental fall on a sidewalk.",
     options: [
       "A. The fall external cause code first, then the fracture",
-      "B. The fracture first, then the fall external cause code, then the place of occurrence",
+      "B. The fracture first, then the fall external cause code, the place of occurrence, and the external cause status code",
       "C. Only the fall external cause code",
       "D. The place of occurrence first, then the fracture",
     ],
     correct: "B",
-    explanation: "External cause codes are never first-listed. The fracture is reported first, followed by the fall (cause and intent), then the place of occurrence.",
+    explanation: "External cause codes are never first-listed. The fracture is reported first, followed by the fall (cause and intent), the place of occurrence, and the external cause status code that goes with the other external cause codes.",
     lookFor: "The injury always leads; external cause codes follow.",
   },
   {

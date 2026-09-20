@@ -30,7 +30,8 @@ const cards: Card[] = [
   { topic: "Terrorism", front: "FBI-identified terrorism — which code goes first?", back: "A Y38 code as the first-listed external cause code, plus a Y92 place code. More than one Y38 code is allowed for more than one mechanism." },
   { topic: "Terrorism", front: "Suspected terrorism?", back: "No Y38 code. Suspected cases are classified as assault." },
   { topic: "Terrorism", front: "What is Y38.9 for?", back: "Terrorism, secondary effects — conditions that occur AFTER the terrorist event, not conditions due to the initial act. It can accompany another Y38 code when both apply." },
-  { topic: "Biggest Trap", front: "The #1 trap in Chapter 20?", back: "Listing an external cause code first, or repeating place/activity/status at follow-up visits. They're secondary, one-time codes — and never used with poisonings, adverse effects, misadventures, or (for activity/status) sequela." },
+  { topic: "Biggest Trap", front: "The #1 trap in Chapter 20?", back: "Listing an external cause code first, or repeating place/activity/status at follow-up visits. They're secondary codes, and place, activity, and status are generally assigned only once. Y93 and Y99 are never used with poisonings, adverse effects, misadventures, or sequela — Y92 has no such exclusion." },
+  { topic: "Abuse", front: "Suspected abuse — is an external cause or perpetrator code reported?", back: "No. For suspected cases, don't report an external cause or perpetrator code. Only CONFIRMED abuse gets an assault code, plus Y07 when the perpetrator is known." },
 ];
 
 const mainStyle = { maxWidth: "480px", margin: "0 auto", padding: "28px 18px 56px", minHeight: "100vh", background: "#f6f9f9", color: "#141d1c", fontFamily: "Arial, sans-serif", display: "flex", flexDirection: "column" as const };

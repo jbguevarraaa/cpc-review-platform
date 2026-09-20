@@ -222,7 +222,7 @@ const topics: Topic[] = [
     tips: [
       "Unknown or unspecified intent = accidental. Undetermined = only when documented as impossible to determine.",
       "Transport accident categories assume accidental intent.",
-      "Confirmed abuse: an assault code, plus Y07 when the perpetrator is known.",
+      "Confirmed abuse: an assault code, plus Y07 when the perpetrator is known. For SUSPECTED abuse, do not report an external cause or perpetrator code.",
     ],
   },
   {
