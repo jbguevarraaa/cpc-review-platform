@@ -1,6 +1,6 @@
 # CPC Exam Content Tracker
 
-_Last updated: 2026-09-20 (post 33,000-series cardiovascular expansion; ICD-10 built through Chapter 17). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
+_Last updated: 2026-09-20 (post 33,000-series cardiovascular expansion; ICD-10 built through Chapter 20). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
 
 **Exam date target: within ~3 months of 2026-09-18.**
 
@@ -58,7 +58,9 @@ _Last updated: 2026-09-20 (post 33,000-series cardiovascular expansion; ICD-10 b
 | 15 (Pregnancy/Childbirth/Puerperium) | ✅ (Parts 1–2, one of the densest chapters in the book) | ✅ (28 Q) | ✅ (40 cards) | ✅ (16 scenarios) |
 | 16 (Perinatal Period) | ✅ | ✅ (20 Q) | ✅ (27 cards) | ✅ (16 scenarios) |
 | 17 (Congenital Malformations) | ✅ (block map + 6 topics; narrow official guidelines) | ✅ (14 Q) | ✅ (21 cards) | ✅ (13 scenarios) |
-| 19–21 (3 chapters: Injury/Poisoning, External Causes, Z-codes) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — working sequentially |
+| 19 (Injury, Poisoning & Consequences of External Causes) | ✅ (Parts 1–2: injuries/fractures/burns; drug reactions/abuse/complications) | ✅ (34 Q) | ✅ (38 cards) | ✅ (18 scenarios) |
+| 20 (External Causes of Morbidity) | ✅ (11 topics) | ✅ (18 Q) | ✅ (25 cards) | ✅ (12 scenarios) |
+| 21 (Factors Influencing Health Status / Z-codes) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — largest remaining ICD chapter |
 
 **Note on chapter format:** Not every ICD-10-CM chapter has official narrative guidelines — CMS marks several as "Reserved for future guideline expansion" (confirmed so far: Chapter 3). For those, the reviewer format shifts from sequencing-rule summaries to code-category/clinical-distinction summaries, and Worked Examples are skipped in favor of a tighter Reviewer + Quiz + Flashcards set, to keep pace sustainable across all remaining chapters.
 

@@ -88,6 +88,15 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-17-practice-quiz" style={navLinkStyle}>Chapter 17 Quiz</Link>
         <Link href="/icd10/chapter-17-worked-examples" style={navLinkStyle}>Chapter 17 Worked Examples</Link>
         <Link href="/icd10/chapter-17-flashcards" style={navLinkStyle}>Chapter 17 Flashcards</Link>
+        <Link href="/icd10/chapter-19-guidelines-reviewer" style={navLinkStyle}>Chapter 19 Reviewer (Part 1)</Link>
+        <Link href="/icd10/chapter-19-guidelines-reviewer-part-2" style={navLinkStyle}>Chapter 19 Reviewer (Part 2)</Link>
+        <Link href="/icd10/chapter-19-practice-quiz" style={navLinkStyle}>Chapter 19 Quiz</Link>
+        <Link href="/icd10/chapter-19-worked-examples" style={navLinkStyle}>Chapter 19 Worked Examples</Link>
+        <Link href="/icd10/chapter-19-flashcards" style={navLinkStyle}>Chapter 19 Flashcards</Link>
+        <Link href="/icd10/chapter-20-guidelines-reviewer" style={navLinkStyle}>Chapter 20 Reviewer</Link>
+        <Link href="/icd10/chapter-20-practice-quiz" style={navLinkStyle}>Chapter 20 Quiz</Link>
+        <Link href="/icd10/chapter-20-worked-examples" style={navLinkStyle}>Chapter 20 Worked Examples</Link>
+        <Link href="/icd10/chapter-20-flashcards" style={navLinkStyle}>Chapter 20 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -492,6 +501,60 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 17 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>21 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-19-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 19 · S00–T88 · PART 1</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Injuries, Fractures &amp; Burns</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>7th characters (A, D, S) and active treatment, sequela order, coding multiple injuries, superficial and iatrogenic injuries, fracture defaults and Gustilo, osteoporosis (M80), and burns and corrosions.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-19-guidelines-reviewer-part-2" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 19 · T36–T88 · PART 2</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Drug Reactions, Abuse &amp; Complications</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>The four-way table (adverse effect, poisoning, underdosing, toxic effect), intent rules, adult and child abuse, device pain, complications of care, and transplant complications.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-19-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 19 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>34-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-19-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 19 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>18 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-19-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 19 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>38 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-20-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · V00–Y99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>External Causes of Morbidity</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Never first-listed, general rules, 7th characters, place of occurrence (Y92), activity (Y93), status (Y99), the abuse &gt; terrorism &gt; cataclysmic &gt; transport hierarchy, unknown intent, sequela, and terrorism (Y38).</p>
+        </Link>
+
+        <Link href="/icd10/chapter-20-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>18-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-20-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>12 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-20-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>25 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
