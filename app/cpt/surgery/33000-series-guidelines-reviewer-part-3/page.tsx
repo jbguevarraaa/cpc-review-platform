@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
+import { cvadCases } from "../_cases/cases-33000";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -13,6 +15,7 @@ type Subsection = {
   categories: Category[];
   rules: string[];
   tips: string[];
+  cases?: SolvedCase[];
 };
 
 const subsections: Subsection[] = [
@@ -323,6 +326,7 @@ const subsections: Subsection[] = [
   {
     n: 5,
     title: "Central Venous Access Devices",
+    cases: cvadCases,
     range: "36555–36598",
     intro: [
       "Peripherally inserted central catheters (PICCs) can be placed or replaced with or without imaging guidance. Without imaging guidance, use 36568/36569 (insertion). With imaging guidance (ultrasound and/or fluoroscopy), the bundled codes 36572, 36573, and 36584 already include all imaging, image documentation, the associated radiological supervision and interpretation, venography through the same puncture, and confirming the catheter tip's final central position.",
@@ -878,6 +882,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
               </ul>
             </div>
           )}
+          {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}
         </section>
       ))}
 

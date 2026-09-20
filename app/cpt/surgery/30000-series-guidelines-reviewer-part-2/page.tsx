@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
+import { wedgeCases, thoracoscopyCases } from "../_cases/cases-30000";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -13,6 +15,7 @@ type Subsection = {
   steps: string[];
   rules: string[];
   tips: string[];
+  cases?: SolvedCase[];
 };
 
 const subsections: Subsection[] = [
@@ -127,6 +130,7 @@ const subsections: Subsection[] = [
   {
     n: 3,
     title: "Lung Resection — Pneumonectomy, Lobectomy & Segmentectomy",
+    cases: wedgeCases,
     range: "32440–32507",
     definitions: [
       ["Wedge Resection", "Surgical removal of a triangle-shaped slice of lung tissue. Wedge technique performed for DIAGNOSTIC purposes does not require attention to surgical margins; the same wedge technique performed for THERAPEUTIC purposes DOES require attention to surgical margins — that's the actual conceptual difference between the two, not just why it was done."],
@@ -189,12 +193,12 @@ const subsections: Subsection[] = [
       "DIAGNOSTIC-intent wedge or intraoperative biopsy (done specifically to help decide how extensive the resection needs to be) that leads to a bigger resection at the SAME site: report the bigger procedure code PLUS the add-on 32507 (open) or 32668 (VATS) — two codes together. (See the Lung & Pleural Biopsy subsection above for the full logic, including what happens when that same diagnostic wedge does NOT lead to any further resection.)",
       "THERAPEUTIC-intent wedge resection (already a complete, margin-attentive procedure in its own right, not just a check) followed by a bigger procedure in the SAME lobe or lung: the wedge is bundled entirely into the bigger procedure's surgical package — only the bigger procedure code is reported, with no add-on and no modifier.",
       "THERAPEUTIC-intent wedge resection followed by a bigger procedure in a DIFFERENT lobe or the OPPOSITE lung: this is NOT part of the bigger procedure's package — report both the wedge code (32505 or 32666) and the bigger procedure code, with modifier 59 to show they're genuinely separate sites.",
-      "Multiple therapeutic wedge resections, no bigger procedure involved: a single wedge resection is reported with 32505 (open) or 32666 (VATS). An ADDITIONAL wedge resection in the SAME (ipsilateral) lung is reported with the matching add-on code — 32506 (open) or 32667 (VATS) — never a second unit of the base code. An additional wedge resection in the OPPOSITE (contralateral) lung is NOT an add-on situation — it's a distinct procedure on an entirely separate organ, so report the base wedge code again (32505 or 32666) with modifier 59.",
+      "Multiple therapeutic wedge resections, no bigger procedure involved: a single wedge resection is reported with 32505 (open) or 32666 (VATS). An ADDITIONAL wedge resection in the SAME (ipsilateral) lung is reported with the matching add-on code — 32506 (open) or 32667 (VATS) — never a second unit of the base code. An additional wedge resection in the OPPOSITE (contralateral) lung is NOT an add-on situation — it's a distinct procedure on an entirely separate organ, so report the base wedge code again. Open (32505): the deck uses modifier 59 on the second one. VATS (32666): the codebook note says to report a bilateral procedure with modifier 50 (32666-50).",
       "If chest wall tumor resection is performed alongside any lung resection, the chest wall tumor code is reported in addition to the lung resection code — they're not bundled into each other.",
     ],
     tips: [
       "Four different wedge-plus-bigger-procedure outcomes hinge on just two questions: (1) was the wedge diagnostic-intent or therapeutic-intent? (2) same site or a different lobe/opposite lung? Diagnostic + same site → add-on code (32507/32668). Therapeutic + same lobe/lung → bundled, no extra code at all. Therapeutic + different lobe/opposite lung → separate code + modifier 59. There's no scenario here where \"only the most extensive procedure is reported\" is a safe universal shortcut — it's only true for the therapeutic-intent-same-site case.",
-      "For wedge-only scenarios (no bigger procedure at all), remember the fork is SAME lung vs. OPPOSITE lung, not \"more vs. fewer wedges\": same lung → add-on code (32506/32667). Opposite lung → base code again + modifier 59, since it's not additional work on the same organ.",
+      "For wedge-only scenarios (no bigger procedure at all), remember the fork is SAME lung vs. OPPOSITE lung, not \"more vs. fewer wedges\": same lung → add-on code (32506/32667). Opposite lung → base code again, since it's not additional work on the same organ (open: 32505 with modifier 59 per the deck; VATS: 32666-50 per the codebook).",
     ],
   },
   {
@@ -242,6 +246,7 @@ const subsections: Subsection[] = [
   {
     n: 5,
     title: "Thoracoscopy (VATS) — Diagnostic & Therapeutic",
+    cases: thoracoscopyCases,
     range: "32601–32674",
     intro: "Surgical thoracoscopy always includes diagnostic thoracoscopy — a plain diagnostic code is never billed alongside a therapeutic thoracoscopic procedure at the same session.",
     definitions: [
@@ -505,6 +510,7 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
               {sub.tips.map((tip) => <li key={tip}>{tip}</li>)}
             </ul>
           </div>
+          {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}
         </section>
       ))}
 

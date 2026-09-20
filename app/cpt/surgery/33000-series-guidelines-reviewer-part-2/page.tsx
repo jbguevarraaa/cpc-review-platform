@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
+import { aorticValveCases, cabgCases, ecmoCases } from "../_cases/cases-33000";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -13,6 +15,7 @@ type Subsection = {
   categories: Category[];
   rules: string[];
   tips: string[];
+  cases?: SolvedCase[];
 };
 
 const subsections: Subsection[] = [
@@ -61,6 +64,7 @@ const subsections: Subsection[] = [
   {
     n: 2,
     title: "Aortic Valve — TAVR & Open Replacement",
+    cases: aorticValveCases,
     range: "33361–33417",
     intro: [
       "TAVR/TAVI (transcatheter aortic valve replacement/implantation) codes are picked purely by the ARTERIAL ACCESS ROUTE used to deliver the new valve — femoral, axillary, iliac, or transaortic/transapical — not by the valve type or manufacturer.",
@@ -81,10 +85,6 @@ const subsections: Subsection[] = [
       "⑦ Transcatheter ventricular support (a VAD or balloon pump) → reported with the appropriate VAD/IABP code.",
       "⑧ Cardiopulmonary bypass → add-on 33367 (percutaneous peripheral), 33368 (open peripheral), or 33369 (central).",
       "⑨ Two operators → each reports the code with modifier 62.",
-    ],
-    examples: [
-      "83-year-old with severe aortic stenosis, CAD, and heart failure, high risk for open AVR. TAVR by OPEN femoral artery approach, with cardiopulmonary bypass through open iliac arterial and venous cannulation → 33362 + 33368, both operators with modifier 62.",
-      "Severe aortic stenosis; on the heart-lung machine, the aortic valve is replaced with a prosthetic valve through an open approach → 33405 (bypass is inherent in the open valve code — no separate bypass code).",
     ],
     categories: [
       {
@@ -186,6 +186,7 @@ const subsections: Subsection[] = [
   {
     n: 4,
     title: "Coronary Artery Bypass Grafting — Venous, Arterial & Combined",
+    cases: cabgCases,
     range: "33500–33536, 33572",
     intro: [
       "CABG codes are counted by the number of DISTAL ANASTOMOSES — the points where the graft is actually sutured onto a diseased coronary artery — not by how many separate graft segments or incisions were used.",
@@ -196,11 +197,6 @@ const subsections: Subsection[] = [
     definitions: [
       ["Number of grafts", "the number of DISTAL ANASTOMOSES — the contact points where a graft is sutured onto a diseased coronary artery."],
       ["CABG concept", "the diseased part of the coronary artery is bypassed by attaching a healthy vessel above and below the diseased area."],
-    ],
-    examples: [
-      "Saphenous vein graft to the right coronary artery, plus an upper-extremity vein graft to the LAD → 2 venous grafts = 33511, plus +35500 for harvesting the upper-extremity vein.",
-      "Two arterial grafts from the internal mammary arteries → 33534 (two coronary arterial grafts).",
-      "One internal mammary artery graft plus three reversed saphenous vein grafts → 33533 (one arterial graft) + 33519 (combined arterial-venous add-on for 3 venous grafts).",
     ],
     categories: [
       {
@@ -338,6 +334,7 @@ const subsections: Subsection[] = [
   {
     n: 7,
     title: "ECMO/ECLS & Cardiac Assist — Balloon Pump, VAD & Percutaneous VAD",
+    cases: ecmoCases,
     range: "33946–33999",
     intro: [
       "ECMO (extracorporeal membrane oxygenation) and ECLS (extracorporeal life support) are the same idea: a machine circulates the patient's blood outside the body through an artificial lung and back in, doing the work of the heart and/or lungs. The physician services are reported as a consistent grid — initiation, daily management, cannula insertion, cannula repositioning, and decannulation — across two circuit types.",
@@ -729,6 +726,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
               </ul>
             </div>
           )}
+          {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}
         </section>
       ))}
 

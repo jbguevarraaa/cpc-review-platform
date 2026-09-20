@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
+import { nasalEndoscopyCases, bronchoscopyCases } from "../_cases/cases-30000";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -12,6 +14,7 @@ type Subsection = {
   steps: string[];
   rules: string[];
   tips: string[];
+  cases?: SolvedCase[];
 };
 
 const subsections: Subsection[] = [
@@ -107,6 +110,7 @@ const subsections: Subsection[] = [
   {
     n: 2,
     title: "Accessory Sinuses",
+    cases: nasalEndoscopyCases,
     range: "31000–31299",
     intro: "A surgical sinus endoscopy always includes a sinusotomy (when appropriate) plus a diagnostic endoscopy — those are never billed as separate add-ons to the surgical code. Codes 31233–31298 describe unilateral procedures unless stated otherwise.",
     categories: [
@@ -272,6 +276,7 @@ const subsections: Subsection[] = [
   {
     n: 4,
     title: "Trachea and Bronchi",
+    cases: bronchoscopyCases,
     range: "31600–31899",
     intro: "Surgical bronchoscopy always includes a diagnostic bronchoscopy performed by the same physician — the two are never billed separately. Codes 31622–31651, 31660, and 31661 already include fluoroscopic guidance when it's used.",
     definitions: [
@@ -571,6 +576,7 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
               {sub.tips.map((tip) => <li key={tip}>{tip}</li>)}
             </ul>
           </div>
+          {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}
         </section>
       ))}
 

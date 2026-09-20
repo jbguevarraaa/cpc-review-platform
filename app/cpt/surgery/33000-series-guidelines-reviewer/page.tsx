@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
+import { pacemakerCases } from "../_cases/cases-33000";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -13,6 +15,7 @@ type Subsection = {
   categories: Category[];
   rules: string[];
   tips: string[];
+  cases?: SolvedCase[];
 };
 
 const subsections: Subsection[] = [
@@ -91,6 +94,7 @@ const subsections: Subsection[] = [
   {
     n: 4,
     title: "Pacemaker or Implantable Defibrillator",
+    cases: pacemakerCases,
     range: "33202–33275",
     intro: [
       "A pacemaker system = a pulse generator (electronics + battery) plus one or more leads. Single chamber = one lead (atrium or ventricle). Dual chamber = two leads (right atrium + right ventricle). A third lead for biventricular/CRT pacing is reported separately with 33224 (standalone) or 33225 (add-on, at the time of generator insertion) if placed transvenously into the cardiac venous system, or with 33202/33203 if placed epicardially.",
@@ -111,10 +115,6 @@ const subsections: Subsection[] = [
       "⑤ Skin pocket: revising the pocket is included. Relocating it (33222 pacemaker, 33223 ICD) — for example at a generator replacement — is reported separately and includes opening the old pocket, draining any hematoma or abscess, closing it, and creating the new pocket.",
       "⑥ Testing: pacemaker/ICD device evaluation (93260, 93261, 93279–93298) is not reported with insertion or revision codes. Defibrillation threshold testing during transvenous ICD insertion or replacement is separately reportable (93640, 93641); during S-ICD insertion it is not; at follow-up or at replacement use 93642 or 93644.",
       "⑦ Imaging: radiological supervision and interpretation is INCLUDED in the pacemaker/ICD generator, lead, and system codes.",
-    ],
-    examples: [
-      "Recent heart attack; a permanent pacemaker system is placed with a pulse generator and transvenous electrodes in the right ventricle and right atrium → 33208 (new permanent pacemaker system, dual chamber).",
-      "A single-chamber pacemaker system implanted 5 years ago has a depleted battery and is upgraded to a dual-lead device with a new lead → 33214 (upgrade of a single-chamber to a dual-chamber pacemaker system — includes removing the old generator, testing the existing lead, the new lead, and the new generator).",
     ],
     categories: [
       {
@@ -548,6 +548,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
               </ul>
             </div>
           )}
+          {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}
         </section>
       ))}
 
