@@ -177,6 +177,9 @@ export default function Icd10Chapter13GuidelinesReviewerPage() {
 
       <nav aria-label="ICD-10 navigation" style={navStyle}>
         <Link href="/icd10" style={navLinkStyle}>ICD-10-CM home</Link>
+        <Link href="/icd10/chapter-13-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
+        <Link href="/icd10/chapter-13-worked-examples" style={navLinkStyle}>Worked Examples</Link>
+        <Link href="/icd10/chapter-13-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/icd10/chapter-1-guidelines-reviewer" style={navLinkStyle}>Chapter 1</Link>
         <Link href="/icd10/chapter-18-guidelines-reviewer" style={navLinkStyle}>Chapter 18</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>

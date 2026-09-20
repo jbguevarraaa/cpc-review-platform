@@ -29,6 +29,9 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-18-worked-examples" style={navLinkStyle}>Chapter 18 Worked Examples</Link>
         <Link href="/icd10/chapter-18-flashcards" style={navLinkStyle}>Chapter 18 Flashcards</Link>
         <Link href="/icd10/chapter-13-guidelines-reviewer" style={navLinkStyle}>Chapter 13 Reviewer</Link>
+        <Link href="/icd10/chapter-13-practice-quiz" style={navLinkStyle}>Chapter 13 Quiz</Link>
+        <Link href="/icd10/chapter-13-worked-examples" style={navLinkStyle}>Chapter 13 Worked Examples</Link>
+        <Link href="/icd10/chapter-13-flashcards" style={navLinkStyle}>Chapter 13 Flashcards</Link>
         <Link href="/icd10/chapter-9-guidelines-reviewer" style={navLinkStyle}>Chapter 9 Reviewer</Link>
         <Link href="/icd10/chapter-9-coding-approach" style={navLinkStyle}>Chapter 9 How to Approach</Link>
         <Link href="/icd10/chapter-9-practice-quiz" style={navLinkStyle}>Chapter 9 Quiz</Link>
@@ -152,6 +155,24 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 13 · M00–M99</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Musculoskeletal System &amp; Connective Tissue</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Site/laterality, acute vs. chronic conditions, pathologic fractures, and osteoporosis (M80 vs. M81) — plus a quick anatomy and common-pathology reference.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-13-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 13 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>12-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-13-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 13 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>9 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-13-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 13 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>15 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <Link href="/icd10/chapter-9-guidelines-reviewer" style={cardStyle}>
