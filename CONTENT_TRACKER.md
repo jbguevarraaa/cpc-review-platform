@@ -1,6 +1,6 @@
 # CPC Exam Content Tracker
 
-_Last updated: 2026-09-20 (post ICD-10 Chapter 16 build). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
+_Last updated: 2026-09-20 (post 33,000-series cardiovascular expansion; ICD-10 built through Chapter 17). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
 
 **Exam date target: within ~3 months of 2026-09-18.**
 
@@ -17,8 +17,8 @@ _Last updated: 2026-09-20 (post ICD-10 Chapter 16 build). This tracks study-cont
 |---|---|---|---|---|
 | 10,000 (Integumentary) | ✅ (2026-updated) | ✅ | ✅ (3 quizzes) | Fully built |
 | 20,000 (Musculoskeletal) | 🟡 Parts 1–3 done (General, Head–Spine, Abdomen–Wrist); **Part 4 (Hand & Fingers, Pelvis & Hip, Femur & Knee) and Part 5 (Leg/Ankle/Foot, Casts, Arthroscopy) pending** | ✅ | ✅ | Largest series in scope — source text fully in hand via PDF extraction now |
-| 30,000 (Respiratory) | ✅ Parts 1–2 | — | — | No dedicated quiz/flashcards yet |
-| 33,000 (Cardiovascular) | ✅ Parts 1–2 | — | — | No dedicated quiz/flashcards yet |
+| 30,000 (Respiratory) | ✅ Parts 1–2 (merged with training-deck content, code range map, definitions/hierarchy boxes) | ✅ beginner guide | ✅ practice quiz + flashcards | Fully built |
+| 33,000 (Cardiovascular) | ✅ Parts 1–3, expanded 2026-09-20 from a training deck cross-checked against CPT 2026: pacemaker/ICD steps + schematic, TAVR/CABG steps and worked examples, ECMO & cardiac assist rewrite, heart/heart-lung transplant + artificial heart (Part 2 §8), EVAR/FEVAR, bypass grafts, catheter placement/angiography, venipuncture/sclerotherapy/ablation (Part 3 §1–4), SVG schematics | ✅ "how to approach" decision-hierarchy page | ✅ 40-Q practice quiz + 61 flashcards | Deck codes deleted in CPT 2026 (37221, 37223, 33884) were replaced with current codes; Part 3 still stops at 37214 — endovascular revascularization 37220+ and embolectomy 34001–34490 not yet built |
 | 40,000 (Digestive) | ⬜ | ⬜ | ⬜ | Not started |
 | 50,000 (Urinary/Genital) | ⬜ | ⬜ | ⬜ | Not started |
 | 60,000 (Nervous System) | ⬜ | ⬜ | ⬜ | Not started |
@@ -57,7 +57,8 @@ _Last updated: 2026-09-20 (post ICD-10 Chapter 16 build). This tracks study-cont
 | 14 (Genitourinary System) | ✅ (narrow scope — official guidelines cover only chronic kidney disease) | ✅ (9 Q) | ✅ (13 cards) | ✅ (9 scenarios) |
 | 15 (Pregnancy/Childbirth/Puerperium) | ✅ (Parts 1–2, one of the densest chapters in the book) | ✅ (28 Q) | ✅ (40 cards) | ✅ (16 scenarios) |
 | 16 (Perinatal Period) | ✅ | ✅ (20 Q) | ✅ (27 cards) | ✅ (16 scenarios) |
-| 17, 19–21 (4 chapters) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — in progress, working sequentially |
+| 17 (Congenital Malformations) | ✅ (block map + 6 topics; narrow official guidelines) | ✅ (14 Q) | ✅ (21 cards) | ✅ (13 scenarios) |
+| 19–21 (3 chapters: Injury/Poisoning, External Causes, Z-codes) | ⬜ | ⬜ | ⬜ | ⬜ | Not started — working sequentially |
 
 **Note on chapter format:** Not every ICD-10-CM chapter has official narrative guidelines — CMS marks several as "Reserved for future guideline expansion" (confirmed so far: Chapter 3). For those, the reviewer format shifts from sequencing-rule summaries to code-category/clinical-distinction summaries, and Worked Examples are skipped in favor of a tighter Reviewer + Quiz + Flashcards set, to keep pace sustainable across all remaining chapters.
 

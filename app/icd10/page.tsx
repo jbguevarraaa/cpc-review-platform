@@ -84,6 +84,10 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-16-practice-quiz" style={navLinkStyle}>Chapter 16 Quiz</Link>
         <Link href="/icd10/chapter-16-worked-examples" style={navLinkStyle}>Chapter 16 Worked Examples</Link>
         <Link href="/icd10/chapter-16-flashcards" style={navLinkStyle}>Chapter 16 Flashcards</Link>
+        <Link href="/icd10/chapter-17-guidelines-reviewer" style={navLinkStyle}>Chapter 17 Reviewer</Link>
+        <Link href="/icd10/chapter-17-practice-quiz" style={navLinkStyle}>Chapter 17 Quiz</Link>
+        <Link href="/icd10/chapter-17-worked-examples" style={navLinkStyle}>Chapter 17 Worked Examples</Link>
+        <Link href="/icd10/chapter-17-flashcards" style={navLinkStyle}>Chapter 17 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -464,6 +468,30 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 16 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>27 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-17-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 17 · Q00–Q99</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Congenital Malformations, Deformations &amp; Chromosomal Abnormalities</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>An eleven-block code map plus the chapter rules: documentation and sequencing, general vs. specific codes, inherent vs. non-inherent manifestations, corrected malformations (Z87.7-), diagnosis later in life, and the Z38-first birth admission.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-17-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 17 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>14-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-17-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 17 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>13 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-17-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 17 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>21 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
