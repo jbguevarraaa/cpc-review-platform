@@ -188,13 +188,13 @@ const questions: Question[] = [
     options: [
       "A. Yes — the most serious condition is listed first",
       "B. Yes, if the provider asks for it",
-      "C. Yes, but only with a Chapter 16 code in front of it",
+      "C. Yes, but only with a Z38 code after it",
       "D. No — Z38 stays principal and the heart defect code follows it",
     ],
     correct: "D",
     explanation: "For the birth admission, the appropriate Z38 code is sequenced as the principal diagnosis, followed by any congenital anomaly codes, no matter how serious the anomaly is.",
     lookFor: "\"Birth-episode chart\" — Z38 is principal.",
-    eliminate: "A and B sequence by severity or preference. C invents a Chapter 16 requirement.",
+    eliminate: "A and B sequence by severity or preference. C invents a sequencing exception; Z38 leads on the birth admission.",
   },
   {
     topic: "Cleft Lip & Palate",

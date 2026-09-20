@@ -50,7 +50,7 @@ const topics: Topic[] = [
       answer: "Assign Q89.7, plus a code for the documented hearing loss. Don't guess at specific malformations that weren't named.",
     },
     tips: [
-      "Test: does the code NAME the anomaly specifically? If it is 'other specified,' 'NEC,' or 'multiple,' the manifestations need their own codes.",
+      "Test: does the malformation have its OWN unique code? If not — it can only be reported with a general code — add codes for the manifestations that are present.",
       "Never invent specific malformations to avoid a general code — code what is documented.",
     ],
   },
@@ -74,7 +74,7 @@ const topics: Topic[] = [
     tips: [
       "Read the code's title and its notes before adding anything — the answer is usually in the combination wording or a 'use additional code' note.",
       "An additional, separately identified malformation (such as a septal defect in a child with Down syndrome) gets its own Chapter 17 code, because the Down syndrome code doesn't describe it.",
-      "Q05 has an Excludes1 note for Arnold-Chiari syndrome type II (Q07.0-) and spina bifida occulta (Q76.0) — those aren't reported with Q05.",
+      "Tabular List notes: Q05 has an Excludes1 note for Arnold-Chiari syndrome type II (Q07.0-) and spina bifida occulta (Q76.0) — those aren't reported with Q05. Likewise Q35 (cleft palate) and Q36 (cleft lip) each carry an Excludes1 note pointing to Q37 (cleft palate with cleft lip) for the combined condition.",
     ],
   },
   {
