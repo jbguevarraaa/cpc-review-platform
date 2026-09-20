@@ -7,6 +7,9 @@ type Subsection = {
   title: string;
   range: string;
   intro?: string[];
+  definitions?: [string, string][];
+  steps?: string[];
+  examples?: string[];
   categories: Category[];
   rules: string[];
   tips: string[];
@@ -93,9 +96,25 @@ const subsections: Subsection[] = [
       "A pacemaker system = a pulse generator (electronics + battery) plus one or more leads. Single chamber = one lead (atrium or ventricle). Dual chamber = two leads (right atrium + right ventricle). A third lead for biventricular/CRT pacing is reported separately with 33224 (standalone) or 33225 (add-on, at the time of generator insertion) if placed transvenously into the cardiac venous system, or with 33202/33203 if placed epicardially.",
       "A leadless pacemaker (33274 insert/replace/remove, 33275 removal only) is a single self-contained unit with a built-in battery and electrode, placed transvenously into the right ventricle. Device evaluation done at the time of insertion, replacement, or removal is bundled into these codes and not billed separately.",
       "Implantable defibrillators come in three forms: transvenous ICD (antitachycardia pacing plus low-energy cardioversion or shocks), subcutaneous S-ICD (a single subcutaneous electrode, shock-only — no antitachycardia or chronic pacing), and substernal ICD (at least one substernal electrode, provides antitachycardia pacing and shocks but not chronic pacing).",
-      "When a pulse generator's 'battery' is changed, what's actually being changed is the whole pulse generator — there's no separate 'battery only' code. Removing only the generator uses 33233 (pacemaker) or 33241 (ICD); inserting a new generator onto already-existing leads uses the existing-lead codes (33212/33213/33221 pacemaker, 33240/33230/33231 ICD); replacing both the generator and lead(s) together uses the full system codes (33206–33208 pacemaker, 33249 ICD).",
-      "Revising the skin pocket is bundled into the main insertion/replacement codes. Relocating the pocket entirely (33222 pacemaker, 33223 ICD) is a separate, distinct service — used for issues like infection or erosion — and includes all the work of the original pocket plus creating the new one.",
-      "Device interrogation/programming codes (93260, 93261, 93279–93298) cannot be billed in the same session as the matching insertion/revision codes — the evaluation is already part of the procedure. Defibrillation threshold (DFT) testing during a transvenous ICD insertion or replacement is separately billable (93640, 93641); DFT testing during S-ICD insertion is not separately billable; DFT testing at follow-up or replacement uses 93642 or 93644.",
+    ],
+    definitions: [
+      ["Pulse generator", "the part of the system that holds the electronics and the battery, placed in a subcutaneous pocket. The 'battery' is simply the power supply inside the generator case — so a 'battery change' is really a generator replacement; there is no battery-only code."],
+      ["Lead (electrode)", "carries the impulse between the generator and the heart. Transvenous leads are inserted through a vein; epicardial leads are placed on the surface of the heart."],
+      ["Pacemaker systems", "single-chamber (generator + one electrode in the atrium OR the ventricle); dual-chamber (two electrodes: right atrium + right ventricle); biventricular (three electrodes: right atrium, right ventricle, left ventricle); leadless (generator with built-in battery and electrode)."],
+      ["Implantable defibrillators", "the transvenous ICD combines antitachycardia pacing, low-energy cardioversion, and defibrillating shocks and can also provide chronic pacing; the subcutaneous ICD (S-ICD) has a single subcutaneous electrode and does NOT provide antitachycardia or chronic pacing."],
+    ],
+    steps: [
+      "① What was done? Lead(s) only, generator only, or a full system (generator + lead[s])?",
+      "② Which device? Pacemaker, transvenous ICD, S-ICD, or leadless pacemaker?",
+      "③ Generator only: count the FINAL number of existing leads (single / dual / multiple). No old generator removed → insertion codes (33212/33213/33221 pacemaker; 33240/33230/33231 ICD). Old generator removed and replaced → 33227–33229 (pacemaker) or 33262–33264 (ICD); do not add 33233/33241, because removal is already included.",
+      "④ Full system: a complete system insertion or replacement is a composite of removing the old generator, removing the old electrode(s), inserting the new generator, and inserting the new electrode(s) → report the SYSTEM code (33206–33208, 33249, 33270). Removal of the old generator (33233/33241) and lead extraction (33234, 33235, 33244 transvenous; 33272 subcutaneous) may be reported separately when performed.",
+      "⑤ Skin pocket: revising the pocket is included. Relocating it (33222 pacemaker, 33223 ICD) — for example at a generator replacement — is reported separately and includes opening the old pocket, draining any hematoma or abscess, closing it, and creating the new pocket.",
+      "⑥ Testing: pacemaker/ICD device evaluation (93260, 93261, 93279–93298) is not reported with insertion or revision codes. Defibrillation threshold testing during transvenous ICD insertion or replacement is separately reportable (93640, 93641); during S-ICD insertion it is not; at follow-up or at replacement use 93642 or 93644.",
+      "⑦ Imaging: radiological supervision and interpretation is INCLUDED in the pacemaker/ICD generator, lead, and system codes.",
+    ],
+    examples: [
+      "Recent heart attack; a permanent pacemaker system is placed with a pulse generator and transvenous electrodes in the right ventricle and right atrium → 33208 (new permanent pacemaker system, dual chamber).",
+      "A single-chamber pacemaker system implanted 5 years ago has a depleted battery and is upgraded to a dual-lead device with a new lead → 33214 (upgrade of a single-chamber to a dual-chamber pacemaker system — includes removing the old generator, testing the existing lead, the new lead, and the new generator).",
     ],
     categories: [
       {
@@ -177,6 +196,7 @@ const subsections: Subsection[] = [
     rules: [
       "This whole family runs on a scenario → code lookup, not memorized numbers. The table below maps the common clinical scenarios directly to the pacemaker code and the matching implantable-defibrillator code.",
       "33206–33208 (full pacemaker system) cannot be reported together with 33227–33229 (generator-only replacement) or with 33216/33217 (electrode-only insertion) — they describe overlapping levels of the same work.",
+      "Replacing ONLY the pulse generator (33227–33229, 33262–33264): the old generator's removal is already included, so 33233/33241 is not added. With a full SYSTEM code (33206–33208, 33249, 33270), removal of the old generator (33233/33241) and lead extraction (33234, 33235, 33244, 33272) may be reported separately when performed.",
       "Fluoroscopy (76000, 77002), ultrasound guidance for vascular access (76937), right ventriculography (93566), and femoral venography (75820) are already bundled into the leadless pacemaker codes (33274, 33275) — don't bill them separately.",
       "Right heart catheterization codes generally cannot be billed alongside the leadless pacemaker codes, unless a complete right heart catheterization is performed for a reason unrelated to the pacemaker procedure.",
     ],
@@ -236,7 +256,7 @@ const subsections: Subsection[] = [
   {
     n: 7,
     title: "Electrophysiologic Operative Procedures",
-    range: "33250–33269 (Incision) — Endoscopy portion still pending",
+    range: "33250–33269",
     intro: [
       "This family covers surgical (open or thoracoscopic) treatment of supraventricular arrhythmias — distinct from the percutaneous catheter-based ablation codes elsewhere in CPT. 'Limited' ablation/reconstruction means isolating the triggers (e.g., pulmonary vein isolation). 'Extensive' means limited, plus additional ablation lines through the right atrium, atrial septum, or left atrium in continuity with the AV annulus (the classic full maze procedure).",
       "Left atrial appendage (LAA) exclusion is already bundled into the maze procedures (33254–33259, 33265, 33266) and into mitral valve repair/replacement (33420–33430) — it is not separately reported when done in the same session as those.",
@@ -254,6 +274,7 @@ const subsections: Subsection[] = [
         codes: [
           ["33254", "Limited operative tissue ablation and reconstruction of the atria (modified maze)"],
           ["33255 / 33256", "Extensive operative tissue ablation and reconstruction (maze) — without vs. with cardiopulmonary bypass"],
+          ["33265 / 33266", "Endoscopic (surgical endoscopy) maze without cardiopulmonary bypass — limited (modified maze) / extensive (maze)"],
         ],
       },
       {
@@ -311,7 +332,65 @@ const pacemakerTable: [string, string, string][] = [
   ["Convert existing system to biventricular pacing", "33225 + (33228 or 33229)", "33225 + (33263 or 33264)"],
 ];
 
-const mainStyle = { maxWidth: "1160px", margin: "0 auto", padding: "36px 24px 64px", minHeight: "100vh", background: "#fdf6f6", color: "#291a1a", fontFamily: "Arial, sans-serif" };
+const rangeMap: [string, string][] = [
+  ["Heart & Pericardium", "33016–33999 — this Part 1 (pericardium through electrophysiology) and Part 2 (repair, valves, CABG, aorta, ECMO, assist, transplant)"],
+  ["Arteries & Veins", "34001–37799 — Part 3 (endovascular aorta, bypass, vascular injection, venous access, dialysis, thrombectomy)"],
+  ["Hemic & Lymphatic / Mediastinum & Diaphragm", "38xxx and 39000–39599 — the rest of the Cardiovascular section header range (33016–39599); not covered in this series"],
+  ["Medicine — Cardiovascular", "92920–93799 — coronary therapeutic services, catheterization, monitoring, and device evaluation (a separate CPT section)"],
+];
+
+const diagramBoxStyle = { background: "#fff7f7", border: "1px solid #f0d7d7", borderRadius: "14px", padding: "18px", margin: "16px 0", textAlign: "center" as const, overflowX: "auto" as const };
+const diagramCaptionStyle = { margin: "10px 0 0", fontSize: "13px", color: "#7a3a3a", fontWeight: 700 };
+const rangeMapStyle = { display: "grid", gap: "8px", margin: "12px 0 0", padding: 0, listStyle: "none" };
+const rangeMapRowStyle = { display: "flex", flexWrap: "wrap" as const, gap: "8px 14px", alignItems: "baseline", background: "#ffffff", border: "1px solid #fecaca", borderRadius: "8px", padding: "9px 13px" };
+const rangeMapLabelStyle = { fontWeight: 800, color: "#991b1b", minWidth: "210px" };
+const definitionsBoxStyle = { background: "#f5f3ff", border: "1px solid #ddd6fe", borderLeft: "5px solid #7c3aed", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
+const definitionsTitleStyle = { margin: "0 0 8px", color: "#5b21b6", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+const stepsBoxStyle = { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "5px solid #1d4ed8", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
+const stepsTitleStyle = { margin: "0 0 8px", color: "#1e3a8a", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+const examplesBoxStyle = { background: "#fffbeb", border: "1px solid #fde68a", borderLeft: "5px solid #d97706", borderRadius: "10px", padding: "16px 18px", margin: "14px 0 0", lineHeight: 1.7 };
+const examplesTitleStyle = { margin: "0 0 8px", color: "#92400e", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
+
+function PacemakerSystemsDiagram() {
+  const cards: { title: string; leads: string[]; code: string; note: string }[] = [
+    { title: "Single-chamber", leads: ["RA or RV"], code: "33206 / 33207", note: "generator + 1 lead" },
+    { title: "Dual-chamber", leads: ["RA", "RV"], code: "33208", note: "generator + 2 leads" },
+    { title: "Biventricular (CRT)", leads: ["RA", "RV", "LV"], code: "33208 + 33225", note: "3rd lead in the cardiac vein" },
+    { title: "Leadless", leads: ["in the RV"], code: "33274 / 33275", note: "battery + electrode in one capsule" },
+    { title: "ICD (transvenous)", leads: ["RV (+/- RA)"], code: "33249", note: "pacing + cardioversion + shocks" },
+    { title: "S-ICD", leads: ["subcutaneous"], code: "33270", note: "shock only — no pacing" },
+  ];
+  return (
+    <div style={diagramBoxStyle}>
+      <svg viewBox="0 0 720 360" role="img" aria-label="Pacemaker and defibrillator system types with their code families" style={{ width: "100%", height: "auto", maxWidth: "720px", minWidth: "560px" }}>
+        {cards.map((c, i) => {
+          const x = 10 + (i % 3) * 235;
+          const y = 10 + Math.floor(i / 3) * 175;
+          return (
+            <g key={c.title}>
+              <rect x={x} y={y} width="220" height="160" rx="12" fill="#ffffff" stroke="#f0d7d7" strokeWidth="1.5" />
+              <text x={x + 110} y={y + 24} textAnchor="middle" fontSize="14" fontWeight="800" fill="#450a0a">{c.title}</text>
+              <rect x={x + 16} y={y + 46} width="40" height="28" rx="6" fill="#7c3aed" />
+              <text x={x + 36} y={y + 65} textAnchor="middle" fontSize="12" fontWeight="800" fill="#ffffff">PG</text>
+              {c.leads.map((lead, j) => (
+                <g key={lead}>
+                  <path d={"M" + (x + 56) + " " + (y + 60) + " L" + (x + 104) + " " + (y + 52 + j * 20)} stroke="#b91c1c" strokeWidth="3" fill="none" strokeLinecap="round" />
+                  <circle cx={x + 108} cy={y + 52 + j * 20} r="4.5" fill="#b91c1c" />
+                  <text x={x + 118} y={y + 56 + j * 20} fontSize="12" fill="#291a1a">{lead}</text>
+                </g>
+              ))}
+              <text x={x + 110} y={y + 120} textAnchor="middle" fontSize="13.5" fontWeight="800" fill="#991b1b">{c.code}</text>
+              <text x={x + 110} y={y + 141} textAnchor="middle" fontSize="11.5" fill="#291a1a">{c.note}</text>
+            </g>
+          );
+        })}
+      </svg>
+      <p style={diagramCaptionStyle}>PG = pulse generator (electronics + battery). RA = right atrium, RV = right ventricle, LV = left ventricle.</p>
+    </div>
+  );
+}
+
+const mainStyle = { maxWidth: "1160px", margin: "0 auto", padding: "36px clamp(12px, 4vw, 24px) 64px", minHeight: "100vh", background: "#fdf6f6", color: "#291a1a", fontFamily: "Arial, sans-serif" };
 const heroStyle = { background: "linear-gradient(135deg, #450a0a, #b91c1c)", color: "white", padding: "48px 44px", borderRadius: "18px", marginBottom: "26px", boxShadow: "0 12px 28px rgba(69,10,10,0.22)" };
 const kickerStyle = { margin: "0 0 10px", color: "#fecaca", fontWeight: 800, letterSpacing: "0.08em" };
 const navStyle = { display: "flex", flexWrap: "wrap" as const, gap: "10px", marginBottom: "26px" };
@@ -320,7 +399,7 @@ const pagerStyle = { display: "flex", flexWrap: "wrap" as const, gap: "10px", ma
 const pagerLinkStyle = { textDecoration: "none", color: "#b91c1c", background: "#fff1f0", border: "1px solid #fecaca", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" };
 const pagerActiveStyle = { ...pagerLinkStyle, background: "#b91c1c", color: "#fff", border: "1px solid #b91c1c" };
 const introBoxStyle = { background: "#fff1f0", border: "1px solid #fecaca", borderLeft: "7px solid #b91c1c", borderRadius: "12px", padding: "22px 24px", marginBottom: "30px", lineHeight: 1.7 };
-const sectionStyle = { background: "#ffffff", border: "1px solid #f0e2e2", borderRadius: "14px", padding: "26px 28px", marginBottom: "22px", boxShadow: "0 5px 16px rgba(69,10,10,0.06)" };
+const sectionStyle = { background: "#ffffff", border: "1px solid #f0e2e2", borderRadius: "14px", padding: "24px clamp(14px, 3.5vw, 28px)", marginBottom: "22px", boxShadow: "0 5px 16px rgba(69,10,10,0.06)" };
 const sectionHeaderStyle = { display: "flex", alignItems: "center", gap: "14px", marginBottom: "10px", flexWrap: "wrap" as const };
 const sectionNumberStyle = { background: "#b91c1c", color: "#fff", width: "36px", height: "36px", minWidth: "36px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "15px" };
 const sectionTitleStyle = { margin: 0, fontSize: "22px", color: "#111827" };
@@ -328,7 +407,7 @@ const rangeChipStyle = { background: "#fff1f0", border: "1px solid #fecaca", col
 const pStyle = { lineHeight: 1.75, margin: "0 0 10px" };
 const categoryTitleStyle = { margin: "18px 0 8px", fontSize: "16px", color: "#b91c1c", fontWeight: 800 };
 const codeListStyle = { listStyle: "none", padding: 0, margin: "0 0 4px", display: "grid", gap: "7px" };
-const codeItemStyle = { display: "flex", gap: "12px", alignItems: "baseline", background: "#fdf8f8", border: "1px solid #f0e2e2", borderRadius: "8px", padding: "8px 13px" };
+const codeItemStyle = { display: "flex", flexWrap: "wrap" as const, gap: "6px 12px", alignItems: "baseline", background: "#fdf8f8", border: "1px solid #f0e2e2", borderRadius: "8px", padding: "8px 13px" };
 const codeChipStyle = { fontWeight: 800, color: "#b91c1c", minWidth: "130px", fontFamily: "Consolas, monospace", fontSize: "13.5px" };
 const rulesBoxStyle = { background: "#fef2f2", border: "1px solid #fecaca", borderLeft: "5px solid #dc2626", borderRadius: "10px", padding: "16px 18px", margin: "18px 0 0", lineHeight: 1.7 };
 const rulesTitleStyle = { margin: "0 0 8px", color: "#991b1b", fontWeight: 800, fontSize: "14px", letterSpacing: "0.03em" };
@@ -347,13 +426,13 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
       <header style={heroStyle}>
         <p style={kickerStyle}>33,000 SERIES · CARDIOVASCULAR SYSTEM</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 48px)" }}>CPT Surgery Guidelines Reviewer</h1>
-        <p style={{ margin: "12px 0 0", fontSize: "19px", lineHeight: 1.5 }}>Part 1 — Pericardium through Electrophysiologic Operative Procedures (33016–33269)</p>
+        <p style={{ margin: "12px 0 0", fontSize: "19px", lineHeight: 1.5 }}>Part 1 — Pericardium through Pacemakers, Phrenic Nerve Stimulation & Electrophysiology (33016–33288)</p>
       </header>
 
       <div style={pagerStyle}>
-        <span style={pagerActiveStyle}>Part 1 (33016–33269)</span>
+        <span style={pagerActiveStyle}>Part 1 (33016–33288)</span>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={pagerLinkStyle}>Part 2 (33300–33999)</Link>
-        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={pagerLinkStyle}>Part 3 (36555–37214) →</Link>
+        <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={pagerLinkStyle}>Part 3 (34701–37214) →</Link>
       </div>
 
       <nav aria-label="Cardiovascular series navigation" style={navStyle}>
@@ -366,7 +445,15 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
       </nav>
 
       <section style={introBoxStyle}>
-        <strong>Full series now complete:</strong> this page covers Pericardium through Electrophysiologic Operative Procedures (33016–33269). Part 2 picks up with general cardiac repair, LAA closure, heart valves (TAVR and open), coronary artery bypass grafting, aorta &amp; great vessel repair, and ECMO/VAD support. Part 3 covers venous/arterial access, dialysis circuit, portal decompression, and thrombectomy.
+        <strong>Where this fits — the Cardiovascular System map.</strong> This page covers Pericardium through Pacemakers, Phrenic Nerve Stimulation & Electrophysiology (33016–33288). Part 2 picks up with general cardiac repair, LAA closure, heart valves (TAVR and open), coronary artery bypass grafting, aorta &amp; great vessel repair, ECMO and cardiac assist, and heart transplantation. Part 3 covers the endovascular aorta, bypass grafts, vascular injection, venous access, dialysis circuit, portal decompression, and thrombectomy.
+        <ul style={rangeMapStyle}>
+          {rangeMap.map(([label, codes]) => (
+            <li key={label} style={rangeMapRowStyle}>
+              <span style={rangeMapLabelStyle}>{label}</span>
+              <span>{codes}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {subsections.map((sub) => (
@@ -378,6 +465,35 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
           </div>
           {sub.intro?.map((p) => <p key={p} style={pStyle}>{p}</p>)}
 
+          {sub.n === 4 && <PacemakerSystemsDiagram />}
+
+          {sub.definitions && (
+            <div style={definitionsBoxStyle}>
+              <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
+              <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
+                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+              </ul>
+            </div>
+          )}
+
+          {sub.steps && (
+            <div style={stepsBoxStyle}>
+              <p style={stepsTitleStyle}>🪜 STEP-BY-STEP — WHAT IS INCLUDED VS. REPORTED SEPARATELY</p>
+              <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px", listStyle: "none" }}>
+                {sub.steps.map((step) => <li key={step}>{step}</li>)}
+              </ul>
+            </div>
+          )}
+
+          {sub.examples && (
+            <div style={examplesBoxStyle}>
+              <p style={examplesTitleStyle}>🧪 WORKED EXAMPLES</p>
+              <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
+                {sub.examples.map((ex) => <li key={ex}>{ex}</li>)}
+              </ul>
+            </div>
+          )}
+
           {sub.categories.map((cat) => (
             <div key={cat.name}>
               <h3 style={categoryTitleStyle}>{cat.name}</h3>
@@ -385,7 +501,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
                 {cat.codes.map(([code, desc]) => (
                   <li key={code} style={codeItemStyle}>
                     <code style={codeChipStyle}>{code}</code>
-                    <span>{desc}</span>
+                    <span style={{ flex: "1 1 220px" }}>{desc}</span>
                   </li>
                 ))}
               </ul>

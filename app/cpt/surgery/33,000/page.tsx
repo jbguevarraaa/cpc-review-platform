@@ -40,22 +40,22 @@ export default function CardiovascularSeriesPage() {
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 1</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Pericardium → Electrophysiology</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Code ranges, category tables, the full pacemaker/ICD scenario lookup table, paraphrased coding rules, and memory tips for 33016–33269.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Code ranges, category tables, the full pacemaker/ICD scenario lookup table, step-by-step outlines, a pacemaker-systems schematic, worked examples, and memory tips for 33016–33288.</p>
         </Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 2</span>
-          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Heart Valves, CABG, Aorta &amp; ECMO/VAD</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>TAVR and open valve replacement across all four valves, coronary artery bypass grafting (with a labeled graft diagram), aorta/great vessel repair including TEVAR, and ECMO/VAD support for 33300–33999.</p>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Heart Valves, CABG, Aorta, ECMO/Assist &amp; Transplant</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>TAVR and open valve replacement across all four valves, coronary artery bypass grafting, aorta/great vessel repair including TEVAR, ECMO and cardiac assist devices, and heart/heart-lung transplantation for 33300–33999 — with step-by-step outlines and schematics.</p>
         </Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 3</span>
-          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Venous/Arterial Access → Thrombectomy</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Central venous access device table, hemodialysis/AV fistula access, the dialysis-circuit intervention ladder, portal decompression, and transcatheter thrombectomy for 36555–37214.</p>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>EVAR, Bypass, Vascular Injection → Thrombectomy</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Endovascular abdominal aortic repair (EVAR/FEVAR), bypass grafts, catheter placement and angiography, venipuncture, transfusion, sclerotherapy and endovenous ablation, central venous access, hemodialysis access, the dialysis-circuit intervention ladder, portal decompression, and transcatheter thrombectomy for 34701–37214 — with schematics.</p>
         </Link>
         <Link href="/cpt/surgery/33000-series-practice-quiz" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>PRACTICE QUIZ</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Scenario Quiz, All 3 Parts</h2>
-          <p style={{ margin: 0, lineHeight: 1.65 }}>Interactive questions with elimination tips, covering pacemakers/ICDs, valves, CABG, aorta, ECMO/VAD, and vascular access.</p>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Interactive questions with elimination tips, covering pacemakers/ICDs, valves, CABG, aorta and EVAR, bypass grafts, catheter placement, ECMO/VAD, heart transplant, and vascular access.</p>
         </Link>
         <Link href="/cpt/surgery/33000-series-flashcards" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>FLASHCARDS</span>
