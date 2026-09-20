@@ -97,6 +97,11 @@ export default function ICD10Page() {
         <Link href="/icd10/chapter-20-practice-quiz" style={navLinkStyle}>Chapter 20 Quiz</Link>
         <Link href="/icd10/chapter-20-worked-examples" style={navLinkStyle}>Chapter 20 Worked Examples</Link>
         <Link href="/icd10/chapter-20-flashcards" style={navLinkStyle}>Chapter 20 Flashcards</Link>
+        <Link href="/icd10/chapter-21-guidelines-reviewer" style={navLinkStyle}>Chapter 21 Reviewer (Part 1)</Link>
+        <Link href="/icd10/chapter-21-guidelines-reviewer-part-2" style={navLinkStyle}>Chapter 21 Reviewer (Part 2)</Link>
+        <Link href="/icd10/chapter-21-practice-quiz" style={navLinkStyle}>Chapter 21 Quiz</Link>
+        <Link href="/icd10/chapter-21-worked-examples" style={navLinkStyle}>Chapter 21 Worked Examples</Link>
+        <Link href="/icd10/chapter-21-flashcards" style={navLinkStyle}>Chapter 21 Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -555,6 +560,36 @@ export default function ICD10Page() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 20 · FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>25 tap-to-flip flashcards, one rule per card.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-21-guidelines-reviewer" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · Z00–Z99 · PART 1</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Status, History, Screening &amp; Observation</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Z codes in any setting, contact/exposure, vaccines, status vs. history, the special-instruction status codes (Z79, BMI, Z16, Z33.1, Z92.82, Z98.85), screening vs. diagnostic exams, and observation codes.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-21-guidelines-reviewer-part-2" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · Z00–Z99 · PART 2</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Aftercare, Follow-Up, OB, Exams &amp; SDOH</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Aftercare vs. follow-up, donors and counseling, Z34/Z3A/Z37, routine exams, prophylactic surgery, nonspecific codes, the first-listed-only list, newborn codes, and social determinants of health.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-21-practice-quiz" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · PRACTICE QUIZ</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>28-Question Scenario Quiz</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Same format — a &quot;what to look for&quot; clue and an elimination-strategy tip for every answer.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-21-worked-examples" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · WORKED EXAMPLES</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>14 Scenarios, Jump to Any Question</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Full reasoning per scenario, with a number-jump bar so you can check the correct answer for any specific question directly.</p>
+        </Link>
+
+        <Link href="/icd10/chapter-21-flashcards" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>CHAPTER 21 · FLASHCARDS</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>38 tap-to-flip flashcards, one rule per card.</p>
         </Link>
 
         <div style={{ ...cardStyle, opacity: 0.65, cursor: "default" }}>
