@@ -22,6 +22,11 @@ export default function EMSeriesPage() {
 
       <h2 style={{ fontSize: "30px", marginBottom: "16px" }}>E/M Series Resources</h2>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "18px" }}>
+        <Link href="/cpt/e-m/99,000" style={resourceCardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>99,000 SERIES · CPT 2026</span>
+          <h3 style={{ fontSize: "25px", color: "#12343b", margin: "10px 0 8px" }}>🩺 99,000 Series Reviewer</h3>
+          <p style={{ lineHeight: 1.6, margin: 0 }}>Three-part reviewer with schematics, the three deck case questions solved step by step, a 10-question practice quiz, and flashcards.</p>
+        </Link>
         <Link href="/cpt/e-m/guidelines" style={resourceCardStyle}>
           <span style={{ color: "#b45309", fontWeight: 800 }}>CODEMED MASTERY · PART 1</span>
           <h3 style={{ fontSize: "25px", color: "#0f766e", margin: "10px 0 8px" }}>📚 E/M Guidelines Reviewer</h3>

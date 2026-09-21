@@ -23,6 +23,8 @@ export const INDIGO: Theme = { dark: "#1e1b4b", accent: "#4338ca", soft: "#eef0f
 
 export const VIOLET: Theme = { dark: "#2e1065", accent: "#6d28d9", soft: "#f5f0ff", border: "#e6def7", bg: "#faf8ff", text: "#231a36", muted: "#5b4a80", light: "#ddd6fe" };
 
+export const TEAL: Theme = { dark: "#12343b", accent: "#0f766e", soft: "#ecf8f6", border: "#d7e2df", bg: "#f7faf9", text: "#17212b", muted: "#3f5f5c", light: "#b7f7e8" };
+
 type Extras = { backHref?: string; backLabel?: string; theme?: Theme };
 
 const LETTERS = ["A", "B", "C", "D"] as const;

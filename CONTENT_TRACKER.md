@@ -1,6 +1,6 @@
 # CPC Exam Content Tracker
 
-_Last updated: 2026-09-21 (60,000-series Neuro-Endocrine reviewer, quiz, and flashcards added; 50,000-series Genitourinary reviewer, quiz, and flashcards added; 40,000-series Digestive reviewer, quiz, and flashcards added; ICD-10 complete for every chapter with narrative guidelines). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
+_Last updated: 2026-09-21 (E/M 99,000-series reviewer, quiz, and flashcards added; 60,000-series Neuro-Endocrine reviewer, quiz, and flashcards added; 50,000-series Genitourinary reviewer, quiz, and flashcards added; 40,000-series Digestive reviewer, quiz, and flashcards added; ICD-10 complete for every chapter with narrative guidelines). This tracks study-content coverage across the site against the actual CPC exam blueprint — separate from PROJECT_MEMORY.md, which tracks codebase/architecture health. Read this at the start of a session to see what's built, what's pending, and what to prioritize given the exam timeline. Update it whenever a reviewer/quiz/flashcard page is added or a series is completed._
 
 **Exam date target: within ~3 months of 2026-09-18.**
 
@@ -28,7 +28,7 @@ _Last updated: 2026-09-21 (60,000-series Neuro-Endocrine reviewer, quiz, and fla
 
 | Section | Status | Notes |
 |---|---|---|
-| Evaluation & Management (E/M) | ✅ Guidelines + quiz + consolidated reviewer | High exam weight — already solid |
+| Evaluation & Management (E/M) | ✅ Guidelines + quiz + consolidated reviewer; ✅ 99,000 series Parts 1–3 built 2026-09-21 (E/M layout and common rules, picking the level by MDM or time, critical care, prolonged services; 3 deck cases solved; 3 SVG schematics; hub at /cpt/e-m/99,000) + ✅ quiz (10 Q) + ✅ flashcards | High exam weight — already solid. Deck differences flagged on the hub (old 3-of-3 / 2-of-3 key components and 50% counseling rule vs 2026 MDM/time, deleted 99201 and 99354–99357, 93598) |
 | Anesthesia | ⬜ | Not started at all |
 | Radiology (70,000) | 🟡 Master reviewer Parts 1–2 + study tips built; guidelines page still a stub | |
 | Pathology & Laboratory | ⬜ | Not started |
