@@ -21,6 +21,8 @@ export type Theme = { dark: string; accent: string; soft: string; border: string
 export const ORANGE: Theme = { dark: "#431407", accent: "#c2410c", soft: "#fff1e6", border: "#f1e0d3", bg: "#fff8f3", text: "#2b1a12", muted: "#7c3a1a", light: "#fed7aa" };
 export const INDIGO: Theme = { dark: "#1e1b4b", accent: "#4338ca", soft: "#eef0ff", border: "#dcdff5", bg: "#f6f7ff", text: "#1c1b33", muted: "#4a4a7c", light: "#c7d2fe" };
 
+export const VIOLET: Theme = { dark: "#2e1065", accent: "#6d28d9", soft: "#f5f0ff", border: "#e6def7", bg: "#faf8ff", text: "#231a36", muted: "#5b4a80", light: "#ddd6fe" };
+
 type Extras = { backHref?: string; backLabel?: string; theme?: Theme };
 
 const LETTERS = ["A", "B", "C", "D"] as const;
