@@ -41,7 +41,7 @@ export default function SurgeryPage() {
         }}
       >
         <Link
-  href="/cpt/surgery/10000-series-post-work-quiz"
+  href="/cpt/surgery/10,000"
   style={{
     textDecoration: "none",
     color: "inherit",
@@ -212,6 +212,27 @@ export default function SurgeryPage() {
             flexWrap: "wrap",
           }}
         >
+          <Link
+            href="/cpt/surgery/10000-series-guidelines-reviewer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                padding: "20px",
+                width: "300px",
+                backgroundColor: "white",
+                cursor: "pointer",
+              }}
+            >
+              <h3 style={{ margin: "0 0 8px 0" }}>📖 Guidelines Reviewer (Parts 1–3)</h3>
+              <p style={{ margin: 0 }}>
+                Removal procedures, repair procedures, and other procedures — with schematics, solved deck cases, a 10-question quiz, and flashcards.
+              </p>
+            </div>
+          </Link>
+
           <Link
             href="/cpt/surgery/10000-series-post-work-quiz"
             style={{ textDecoration: "none", color: "inherit" }}

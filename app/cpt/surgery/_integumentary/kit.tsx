@@ -22,26 +22,26 @@ export type Subsection = {
 };
 
 const s = {
-  main: { maxWidth: "1160px", margin: "0 auto", padding: "36px clamp(12px, 4vw, 24px) 64px", minHeight: "100vh", background: "#faf8ff", color: "#231a36", fontFamily: "Arial, sans-serif" },
-  hero: { background: "linear-gradient(135deg, #2e1065, #6d28d9)", color: "white", padding: "48px clamp(20px, 4vw, 44px)", borderRadius: "18px", marginBottom: "26px", boxShadow: "0 12px 28px rgba(46,16,101,0.22)" },
-  kicker: { margin: "0 0 10px", color: "#ddd6fe", fontWeight: 800, letterSpacing: "0.08em" },
+  main: { maxWidth: "1160px", margin: "0 auto", padding: "36px clamp(12px, 4vw, 24px) 64px", minHeight: "100vh", background: "#f7fafe", color: "#1c2434", fontFamily: "Arial, sans-serif" },
+  hero: { background: "linear-gradient(135deg, #1e3a8a, #2563eb)", color: "white", padding: "48px clamp(20px, 4vw, 44px)", borderRadius: "18px", marginBottom: "26px", boxShadow: "0 12px 28px rgba(30,58,138,0.22)" },
+  kicker: { margin: "0 0 10px", color: "#bfdbfe", fontWeight: 800, letterSpacing: "0.08em" },
   nav: { display: "flex", flexWrap: "wrap" as const, gap: "10px", marginBottom: "22px" },
-  navLink: { textDecoration: "none", color: "#6d28d9", background: "#ffffff", border: "1px solid #e6def7", borderRadius: "999px", padding: "10px 15px", fontWeight: 700, fontSize: "14px" },
-  pagerLink: { textDecoration: "none", color: "#6d28d9", background: "#f5f0ff", border: "1px solid #ddd6fe", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" },
-  pagerActive: { textDecoration: "none", color: "#fff", background: "#6d28d9", border: "1px solid #6d28d9", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" },
-  intro: { background: "#f5f0ff", border: "1px solid #ddd6fe", borderLeft: "7px solid #6d28d9", borderRadius: "12px", padding: "22px 24px", marginBottom: "26px", lineHeight: 1.7 },
-  section: { background: "#ffffff", border: "1px solid #e6def7", borderRadius: "14px", padding: "24px clamp(14px, 3.5vw, 28px)", marginBottom: "22px", boxShadow: "0 5px 16px rgba(46,16,101,0.06)" },
+  navLink: { textDecoration: "none", color: "#2563eb", background: "#ffffff", border: "1px solid #dbeafe", borderRadius: "999px", padding: "10px 15px", fontWeight: 700, fontSize: "14px" },
+  pagerLink: { textDecoration: "none", color: "#2563eb", background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" },
+  pagerActive: { textDecoration: "none", color: "#fff", background: "#2563eb", border: "1px solid #2563eb", borderRadius: "999px", padding: "8px 16px", fontWeight: 700, fontSize: "14px" },
+  intro: { background: "#eff6ff", border: "1px solid #bfdbfe", borderLeft: "7px solid #2563eb", borderRadius: "12px", padding: "22px 24px", marginBottom: "26px", lineHeight: 1.7 },
+  section: { background: "#ffffff", border: "1px solid #dbeafe", borderRadius: "14px", padding: "24px clamp(14px, 3.5vw, 28px)", marginBottom: "22px", boxShadow: "0 5px 16px rgba(30,58,138,0.06)" },
   sectionHeader: { display: "flex", alignItems: "center", gap: "14px", marginBottom: "10px", flexWrap: "wrap" as const },
-  num: { background: "#6d28d9", color: "#fff", width: "36px", height: "36px", minWidth: "36px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "15px" },
+  num: { background: "#2563eb", color: "#fff", width: "36px", height: "36px", minWidth: "36px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "15px" },
   title: { margin: 0, fontSize: "22px", color: "#111827" },
-  range: { background: "#f5f0ff", border: "1px solid #ddd6fe", color: "#6d28d9", borderRadius: "999px", padding: "4px 12px", fontWeight: 800, fontSize: "13px", fontFamily: "Consolas, monospace" },
+  range: { background: "#eff6ff", border: "1px solid #bfdbfe", color: "#2563eb", borderRadius: "999px", padding: "4px 12px", fontWeight: 800, fontSize: "13px", fontFamily: "Consolas, monospace" },
   p: { lineHeight: 1.75, margin: "0 0 10px" },
-  catTitle: { margin: "18px 0 8px", fontSize: "16px", color: "#6d28d9", fontWeight: 800 },
+  catTitle: { margin: "18px 0 8px", fontSize: "16px", color: "#2563eb", fontWeight: 800 },
   codeList: { listStyle: "none", padding: 0, margin: "0 0 4px", display: "grid", gap: "7px" },
-  codeItem: { display: "flex", flexWrap: "wrap" as const, gap: "6px 12px", alignItems: "baseline", background: "#faf7ff", border: "1px solid #e6def7", borderRadius: "8px", padding: "8px 13px" },
-  codeChip: { fontWeight: 800, color: "#6d28d9", minWidth: "120px", fontFamily: "Consolas, monospace", fontSize: "13.5px" },
+  codeItem: { display: "flex", flexWrap: "wrap" as const, gap: "6px 12px", alignItems: "baseline", background: "#f8f9ff", border: "1px solid #dbeafe", borderRadius: "8px", padding: "8px 13px" },
+  codeChip: { fontWeight: 800, color: "#2563eb", minWidth: "120px", fontFamily: "Consolas, monospace", fontSize: "13.5px" },
   ul: { margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" },
-  diagramBox: { background: "#faf7ff", border: "1px solid #e6def7", borderRadius: "14px", padding: "18px", margin: "16px 0", textAlign: "center" as const, overflowX: "auto" as const },
+  diagramBox: { background: "#f8f9ff", border: "1px solid #dbeafe", borderRadius: "14px", padding: "18px", margin: "16px 0", textAlign: "center" as const, overflowX: "auto" as const },
 };
 
 function Box({ bg, border, left, titleColor, title, children }: { bg: string; border: string; left: string; titleColor: string; title: string; children: ReactNode }) {
@@ -57,7 +57,7 @@ export function DiagramFrame({ caption, children }: { caption: string; children:
   return (
     <div style={s.diagramBox}>
       {children}
-      <p style={{ margin: "10px 0 0", fontSize: "13px", color: "#5b4a80", fontWeight: 700 }}>{caption}</p>
+      <p style={{ margin: "10px 0 0", fontSize: "13px", color: "#3d5580", fontWeight: 700 }}>{caption}</p>
     </div>
   );
 }
@@ -168,9 +168,9 @@ export function SectionView({ sub }: { sub: Subsection }) {
 }
 
 const PARTS = [
-  { href: "/cpt/surgery/60000-series-guidelines-reviewer", label: "Part 1 (Skull base & endovascular)" },
-  { href: "/cpt/surgery/60000-series-guidelines-reviewer-part-2", label: "Part 2 (Radiosurgery & neurostimulators)" },
-  { href: "/cpt/surgery/60000-series-guidelines-reviewer-part-3", label: "Part 3 (Spine & endocrine)" },
+  { href: "/cpt/surgery/10000-series-guidelines-reviewer", label: "Part 1 (Removal Procedures)" },
+  { href: "/cpt/surgery/10000-series-guidelines-reviewer-part-2", label: "Part 2 (Repair Procedures)" },
+  { href: "/cpt/surgery/10000-series-guidelines-reviewer-part-3", label: "Part 3 (Other Procedures)" },
 ];
 
 export function ReviewerShell({ part, subtitle, intro, sections }: { part: 1 | 2 | 3; subtitle: string; intro: ReactNode; sections: Subsection[] }) {
@@ -178,7 +178,7 @@ export function ReviewerShell({ part, subtitle, intro, sections }: { part: 1 | 2
     <main style={s.main}>
       <HighlightToolbar />
       <header style={s.hero}>
-        <p style={s.kicker}>60,000 SERIES · NEURO-ENDOCRINE SYSTEM</p>
+        <p style={s.kicker}>10,000 SERIES · INTEGUMENTARY SYSTEM</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 48px)" }}>CPT Surgery Guidelines Reviewer</h1>
         <p style={{ margin: "12px 0 0", fontSize: "19px", lineHeight: 1.5 }}>{subtitle}</p>
       </header>
@@ -189,8 +189,9 @@ export function ReviewerShell({ part, subtitle, intro, sections }: { part: 1 | 2
         )}
       </div>
 
-      <nav aria-label="Neuro-endocrine system navigation" style={s.nav}>
-        <Link href="/cpt/surgery/60,000" style={s.navLink}>Neuro-Endocrine System home</Link>
+      <nav aria-label="Integumentary system navigation" style={s.nav}>
+        <Link href="/cpt/surgery/10,000" style={s.navLink}>Integumentary System home</Link>
+        <Link href="/cpt/surgery/10000-series-discussion-guide" style={s.navLink}>Discussion Guide</Link>
         <Link href="/cpt/surgery" style={s.navLink}>Surgery home</Link>
         <Link href="/cpt" style={s.navLink}>CPT home</Link>
       </nav>
@@ -204,9 +205,9 @@ export function ReviewerShell({ part, subtitle, intro, sections }: { part: 1 | 2
       {sections.map((sec) => <SectionView key={sec.id} sub={sec} />)}
 
       <div style={{ marginTop: "30px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
-        {part > 1 && <Link href={PARTS[part - 2].href} style={{ textDecoration: "none", color: "#6d28d9", fontWeight: 700 }}>← Previous part</Link>}
-        {part < 3 && <Link href={PARTS[part].href} style={{ textDecoration: "none", color: "#6d28d9", fontWeight: 700 }}>Continue to next part →</Link>}
-        <Link href="/cpt/surgery/60,000" style={{ textDecoration: "none", color: "#6d28d9", fontWeight: 700 }}>← Back to Neuro-Endocrine System</Link>
+        {part > 1 && <Link href={PARTS[part - 2].href} style={{ textDecoration: "none", color: "#2563eb", fontWeight: 700 }}>← Previous part</Link>}
+        {part < 3 && <Link href={PARTS[part].href} style={{ textDecoration: "none", color: "#2563eb", fontWeight: 700 }}>Continue to next part →</Link>}
+        <Link href="/cpt/surgery/10,000" style={{ textDecoration: "none", color: "#2563eb", fontWeight: 700 }}>← Back to the 10,000 Series</Link>
       </div>
     </main>
   );

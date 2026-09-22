@@ -506,10 +506,12 @@ export default function IntegumentaryDiscussionGuidePage() {
       blurb="Every question from the training discussion guide, answered step by step and checked against the CPT 2026 codebook and this series' study material."
       nav={[
         { href: "/cpt/surgery/10,000", label: "10,000 Series home" },
+        { href: "/cpt/surgery/10000-series-guidelines-reviewer", label: "Reviewer Part 1" },
+        { href: "/cpt/surgery/10000-series-guidelines-reviewer-part-2", label: "Part 2" },
+        { href: "/cpt/surgery/10000-series-guidelines-reviewer-part-3", label: "Part 3" },
+        { href: "/cpt/surgery/10000-series-practice-quiz", label: "Practice Quiz" },
+        { href: "/cpt/surgery/10000-series-flashcards", label: "Flashcards" },
         { href: "/cpt/surgery/10000-series-study-tips", label: "Study Tips" },
-        { href: "/cpt/surgery/10000-series-guidelines-quiz", label: "Guidelines Quiz" },
-        { href: "/cpt/surgery/10000-series-post-work-quiz", label: "Post-Work Quiz" },
-        { href: "/cpt/surgery/10000-series-transcript-quiz", label: "Transcript Quiz" },
       ]}
       backHref="/cpt/surgery/10,000"
       backLabel="← Back to the 10,000 Series"

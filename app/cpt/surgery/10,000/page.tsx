@@ -234,6 +234,128 @@ export default function TenThousandSeriesPage() {
             </p>
           </div>
         </Link>
+
+        {/* Guidelines Reviewer Part 1 */}
+        <Link
+          href="/cpt/surgery/10000-series-guidelines-reviewer"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "25px",
+              width: "320px",
+              backgroundColor: "white",
+              cursor: "pointer",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              📖 Guidelines Reviewer Part 1 (Removal Procedures)
+            </h3>
+
+            <p style={{ margin: 0 }}>
+              Shaving, excision, destruction, and Mohs surgery — with every solved case from the deck.
+            </p>
+          </div>
+        </Link>
+
+        {/* Guidelines Reviewer Part 2 */}
+        <Link
+          href="/cpt/surgery/10000-series-guidelines-reviewer-part-2"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "25px",
+              width: "320px",
+              backgroundColor: "white",
+              cursor: "pointer",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              📖 Guidelines Reviewer Part 2 (Repair Procedures)
+            </h3>
+
+            <p style={{ margin: 0 }}>
+              Repair/closure, adjacent tissue transfer, skin replacement surgery, and flaps.
+            </p>
+          </div>
+        </Link>
+
+        {/* Guidelines Reviewer Part 3 */}
+        <Link
+          href="/cpt/surgery/10000-series-guidelines-reviewer-part-3"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "25px",
+              width: "320px",
+              backgroundColor: "white",
+              cursor: "pointer",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              📖 Guidelines Reviewer Part 3 (Other Procedures)
+            </h3>
+
+            <p style={{ margin: 0 }}>
+              Incision &amp; drainage, pressure ulcers, burns, nails, pilonidal cysts, and breast procedures.
+            </p>
+          </div>
+        </Link>
+
+        {/* Practice Quiz */}
+        <Link href="/cpt/surgery/10000-series-practice-quiz" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>📝 10 Scenario Questions</h3>
+            <p style={{ margin: 0 }}>
+              Ten scenarios covering the new reviewer&apos;s excision, destruction, Mohs, repair, ATT, skin replacement, and breast procedure content.
+            </p>
+          </div>
+        </Link>
+
+        {/* Flashcards */}
+        <Link href="/cpt/surgery/10000-series-flashcards" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🗂️ Flashcards</h3>
+            <p style={{ margin: 0 }}>
+              Tap-to-flip cards, one rule per card, covering the whole new reviewer.
+            </p>
+          </div>
+        </Link>
       </div>
 
       {/* Back Button */}

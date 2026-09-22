@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Highlightable, HighlightToolbar } from "./highlighter";
 
 export type CodeEntry = [string, string];
 export type Category = { name: string; codes: CodeEntry[] };
@@ -69,30 +70,44 @@ export function SectionView({ sub }: { sub: Subsection }) {
         <h2 style={s.title}>{sub.title}</h2>
         <span style={s.range}>{sub.range}</span>
       </div>
-      {sub.intro?.map((t) => <p key={t} style={s.p}>{t}</p>)}
+      {sub.intro?.map((t, i) => (
+        <Highlightable key={t} id={`${sub.id}-intro-${i}`} as="div" style={s.p}>{t}</Highlightable>
+      ))}
       {sub.diagram}
 
       {sub.definitions && (
         <Box bg="#f5f3ff" border="#ddd6fe" left="#7c3aed" titleColor="#5b21b6" title="📖 DEFINITIONS">
-          <ul style={s.ul}>{sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}</ul>
+          <ul style={s.ul}>
+            {sub.definitions.map(([term, def], i) => (
+              <li key={term}>
+                <Highlightable id={`${sub.id}-def-${i}`} as="span"><strong>{term}:</strong> {def}</Highlightable>
+              </li>
+            ))}
+          </ul>
         </Box>
       )}
 
       {sub.steps && (
         <Box bg="#eff6ff" border="#bfdbfe" left="#1d4ed8" titleColor="#1e3a8a" title="🪜 STEP-BY-STEP — HOW TO CODE IT">
-          <ul style={{ ...s.ul, listStyle: "none", paddingLeft: 0 }}>{sub.steps.map((t) => <li key={t}>{t}</li>)}</ul>
+          <ul style={{ ...s.ul, listStyle: "none", paddingLeft: 0 }}>
+            {sub.steps.map((t, i) => (
+              <li key={t}>
+                <Highlightable id={`${sub.id}-step-${i}`} as="span">{t}</Highlightable>
+              </li>
+            ))}
+          </ul>
         </Box>
       )}
 
-      {sub.categories.map((cat) => (
+      {sub.categories.map((cat, catIndex) => (
         <div key={cat.name}>
           <h3 style={s.catTitle}>{cat.name}</h3>
           <ul style={s.codeList}>
-            {cat.codes.map(([code, desc]) => (
-              <li key={code} style={s.codeItem}>
+            {cat.codes.map(([code, desc], codeIndex) => (
+              <Highlightable key={code} id={`${sub.id}-cat-${catIndex}-code-${codeIndex}`} as="li" style={s.codeItem}>
                 <code style={s.codeChip}>{code}</code>
                 <span style={{ flex: "1 1 220px" }}>{desc}</span>
-              </li>
+              </Highlightable>
             ))}
           </ul>
         </div>
@@ -100,28 +115,52 @@ export function SectionView({ sub }: { sub: Subsection }) {
 
       {sub.rules.length > 0 && (
         <Box bg="#fef2f2" border="#fecaca" left="#dc2626" titleColor="#991b1b" title="🟥 KEY CODING RULES">
-          <ul style={s.ul}>{sub.rules.map((t) => <li key={t}>{t}</li>)}</ul>
+          <ul style={s.ul}>
+            {sub.rules.map((t, i) => (
+              <li key={t}>
+                <Highlightable id={`${sub.id}-rule-${i}`} as="span">{t}</Highlightable>
+              </li>
+            ))}
+          </ul>
         </Box>
       )}
 
       {sub.tips.length > 0 && (
         <Box bg="#f0fdf4" border="#bbf7d0" left="#16a34a" titleColor="#166534" title="🧠 CODING TIPS">
-          <ul style={s.ul}>{sub.tips.map((t) => <li key={t}>{t}</li>)}</ul>
+          <ul style={s.ul}>
+            {sub.tips.map((t, i) => (
+              <li key={t}>
+                <Highlightable id={`${sub.id}-tip-${i}`} as="span">{t}</Highlightable>
+              </li>
+            ))}
+          </ul>
         </Box>
       )}
 
       {sub.traps && sub.traps.length > 0 && (
         <Box bg="#fffbeb" border="#fde68a" left="#d97706" titleColor="#92400e" title="⚠️ COMMON TRAPS">
-          <ul style={s.ul}>{sub.traps.map((t) => <li key={t}>{t}</li>)}</ul>
+          <ul style={s.ul}>
+            {sub.traps.map((t, i) => (
+              <li key={t}>
+                <Highlightable id={`${sub.id}-trap-${i}`} as="span">{t}</Highlightable>
+              </li>
+            ))}
+          </ul>
         </Box>
       )}
 
-      {sub.cases?.map((c) => (
+      {sub.cases?.map((c, ci) => (
         <Box key={c.title} bg="#f0fdfa" border="#99f6e4" left="#0f766e" titleColor="#115e59" title={`🧩 ${c.label ?? "SOLVED CASE"} — ${c.title}`}>
-          <p style={{ margin: "0 0 10px", fontStyle: "italic" }}>{c.scenario}</p>
+          <Highlightable id={`${sub.id}-case-${ci}-scenario`} as="div" style={{ margin: "0 0 10px", fontStyle: "italic" }}>{c.scenario}</Highlightable>
           <p style={{ margin: "0 0 4px", fontWeight: 800 }}>How to solve it</p>
-          <ol style={{ ...s.ul, paddingLeft: "22px", marginBottom: "10px" }}>{c.steps.map((t) => <li key={t}>{t}</li>)}</ol>
-          <p style={{ margin: 0, background: "#ccfbf1", borderRadius: "8px", padding: "10px 12px", fontWeight: 800 }}>Answer: {c.answer}</p>
+          <ol style={{ ...s.ul, paddingLeft: "22px", marginBottom: "10px" }}>
+            {c.steps.map((t, i) => (
+              <li key={t}>
+                <Highlightable id={`${sub.id}-case-${ci}-step-${i}`} as="span">{t}</Highlightable>
+              </li>
+            ))}
+          </ol>
+          <Highlightable id={`${sub.id}-case-${ci}-answer`} as="div" style={{ margin: 0, background: "#ccfbf1", borderRadius: "8px", padding: "10px 12px", fontWeight: 800 }}>Answer: {c.answer}</Highlightable>
         </Box>
       ))}
     </section>
@@ -137,6 +176,7 @@ const PARTS = [
 export function ReviewerShell({ part, subtitle, intro, sections }: { part: 1 | 2 | 3; subtitle: string; intro: ReactNode; sections: Subsection[] }) {
   return (
     <main style={s.main}>
+      <HighlightToolbar />
       <header style={s.hero}>
         <p style={s.kicker}>40,000 SERIES · DIGESTIVE SYSTEM</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 48px)" }}>CPT Surgery Guidelines Reviewer</h1>

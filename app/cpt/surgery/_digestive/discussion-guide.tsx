@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Theme } from "./players";
+import { Highlightable, HighlightToolbar } from "./highlighter";
 
 /** One discussion-guide sub-question (the PDF's lettered items, or a single unlettered question). */
 export type DGItem = {
@@ -72,6 +73,7 @@ export function DiscussionGuidePage({
 
   return (
     <main style={s.main}>
+      <HighlightToolbar />
       <header style={s.hero}>
         <p style={s.kicker}>{kicker}</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 46px)" }}>{title}</h1>
@@ -99,16 +101,16 @@ export function DiscussionGuidePage({
           {topic.lead && <p style={s.lead}>{topic.lead}</p>}
           {topic.items.map((it, i) => (
             <div key={i} style={s.item}>
-              <p style={s.q}>{it.q}</p>
+              <Highlightable id={`${topic.n}-item-${i}-q`} as="div" style={s.q}>{it.q}</Highlightable>
               {it.approach && (
                 <div style={s.approachBox}>
                   <span>🔎</span>
-                  <span><strong>How to approach:</strong> {it.approach}</span>
+                  <span><strong>How to approach:</strong> <Highlightable id={`${topic.n}-item-${i}-approach`} as="span">{it.approach}</Highlightable></span>
                 </div>
               )}
               <div style={s.answerBox}>
                 <p style={s.answerLabel}>ANSWER</p>
-                <div>{it.answer}</div>
+                <Highlightable id={`${topic.n}-item-${i}-answer`} as="div">{it.answer}</Highlightable>
                 {it.codes && it.codes.length > 0 && (
                   <div style={s.codeChips}>
                     {it.codes.map(([code, desc]) => (
