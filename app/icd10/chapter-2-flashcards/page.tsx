@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { HighlightToolbar } from "../../cpt/surgery/_digestive/highlighter";
 import { useState } from "react";
 
 type Card = { topic: string; front: string; back: string };
@@ -95,6 +96,7 @@ export default function Icd10Chapter2FlashcardsPage() {
 
   return (
     <main style={mainStyle}>
+      <HighlightToolbar />
       <header style={headerStyle}>
         <p style={kickerStyle}>ICD-10-CM · CHAPTER 2 · FLASHCARDS</p>
         <h1 style={titleStyle}>5-Minute Commute Review</h1>

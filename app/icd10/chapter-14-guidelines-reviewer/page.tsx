@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HighlightToolbar } from "../../cpt/surgery/_digestive/highlighter";
 
 type Topic = {
   n: number;
@@ -118,6 +119,7 @@ const backLinkStyle = { textDecoration: "none", color: "#0f766e", fontWeight: 70
 export default function Icd10Chapter14GuidelinesReviewerPage() {
   return (
     <main style={mainStyle}>
+      <HighlightToolbar />
       <header style={heroStyle}>
         <p style={kickerStyle}>ICD-10-CM · CHAPTER 14 · 2026 OFFICIAL GUIDELINES</p>
         <h1 style={{ margin: 0, fontSize: "clamp(26px, 5vw, 44px)" }}>Diseases of the Genitourinary System</h1>

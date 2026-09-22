@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HighlightToolbar } from "../cpt/surgery/_digestive/highlighter";
 
 const cardStyle = {
   display: "block",
@@ -14,6 +15,7 @@ const cardStyle = {
 export default function ICD10Page() {
   return (
     <main style={{ maxWidth: "1120px", margin: "0 auto", padding: "36px 24px 64px", minHeight: "100vh", background: "#f6f9f9", color: "#141d1c", fontFamily: "Arial, sans-serif" }}>
+      <HighlightToolbar />
       <header style={{ background: "linear-gradient(135deg, #101719, #0f766e)", color: "white", padding: "48px 44px", borderRadius: "18px", marginBottom: "28px", boxShadow: "0 12px 28px rgba(16,23,25,0.22)" }}>
         <p style={{ margin: "0 0 10px", color: "#99f6e4", fontWeight: 800, letterSpacing: "0.08em" }}>DIAGNOSIS CODING</p>
         <h1 style={{ margin: 0, fontSize: "clamp(38px, 7vw, 64px)" }}>ICD-10-CM</h1>

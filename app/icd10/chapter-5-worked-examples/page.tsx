@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { HighlightToolbar } from "../../cpt/surgery/_digestive/highlighter";
 
 type Question = {
   topic: string;
@@ -195,6 +196,7 @@ export default function Icd10Chapter5WorkedExamplesPage() {
 
   return (
     <main style={mainStyle}>
+      <HighlightToolbar />
       <header style={heroStyle}>
         <p style={kickerStyle}>ICD-10-CM · CHAPTER 5 · WORKED EXAMPLES</p>
         <h1 style={{ margin: 0, fontSize: "clamp(24px, 5vw, 38px)" }}>Chapter 5 Worked Examples</h1>
