@@ -106,6 +106,7 @@ export default function DigestiveFlashcardsPage() {
         { href: "/cpt/surgery/40000-series-guidelines-reviewer-part-2", label: "Part 2" },
         { href: "/cpt/surgery/40000-series-guidelines-reviewer-part-3", label: "Part 3" },
         { href: "/cpt/surgery/40000-series-practice-quiz", label: "Quiz" },
+        { href: "/cpt/surgery/40000-series-discussion-guide", label: "Discussion Guide" },
       ]}
       cards={cards}
     />

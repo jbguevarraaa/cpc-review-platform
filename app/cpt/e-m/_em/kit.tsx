@@ -151,6 +151,7 @@ export function ReviewerShell({ part, subtitle, intro, sections }: { part: 1 | 2
 
       <nav aria-label="E/M series navigation" style={s.nav}>
         <Link href="/cpt/e-m/99,000" style={s.navLink}>99,000 Series home</Link>
+        <Link href="/cpt/e-m/99000-series-discussion-guide" style={s.navLink}>Discussion Guide</Link>
         <Link href="/cpt/e-m" style={s.navLink}>E/M Series home</Link>
         <Link href="/cpt" style={s.navLink}>CPT home</Link>
       </nav>

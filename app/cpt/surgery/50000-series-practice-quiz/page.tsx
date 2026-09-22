@@ -104,6 +104,7 @@ export default function GenitourinaryPracticeQuizPage() {
         { href: "/cpt/surgery/50000-series-guidelines-reviewer", label: "Reviewer Part 1" },
         { href: "/cpt/surgery/50000-series-guidelines-reviewer-part-2", label: "Part 2" },
         { href: "/cpt/surgery/50000-series-guidelines-reviewer-part-3", label: "Part 3" },
+        { href: "/cpt/surgery/50000-series-discussion-guide", label: "Discussion Guide" },
         { href: "/cpt/surgery/50000-series-flashcards", label: "Flashcards" },
       ]}
       items={items}

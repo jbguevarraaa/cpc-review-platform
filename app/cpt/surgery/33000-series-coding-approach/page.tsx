@@ -258,6 +258,7 @@ export default function CardiovascularCodingApproachPage() {
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Guidelines Reviewer Pt. 3</Link>
+        <Link href="/cpt/surgery/33000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/surgery/33000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
       </nav>

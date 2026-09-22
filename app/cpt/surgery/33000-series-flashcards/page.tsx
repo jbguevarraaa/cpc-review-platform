@@ -143,6 +143,7 @@ export default function SurgeryThirtyThreeThousandFlashcardsPage() {
           <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={navLinkStyle}>Reviewer Part 1</Link>
           <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Part 2</Link>
           <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Part 3</Link>
+          <Link href="/cpt/surgery/33000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         </nav>
       </header>
 

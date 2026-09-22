@@ -438,6 +438,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPage() {
       <nav aria-label="Cardiovascular series navigation" style={navStyle}>
         <Link href="/cpt/surgery/33,000" style={navLinkStyle}>Cardiovascular System home</Link>
         <Link href="/cpt/surgery/33000-series-coding-approach" style={navLinkStyle}>How to Approach This Series</Link>
+        <Link href="/cpt/surgery/33000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/surgery/33000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>

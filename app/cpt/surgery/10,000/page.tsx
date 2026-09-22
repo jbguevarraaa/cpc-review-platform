@@ -200,6 +200,40 @@ export default function TenThousandSeriesPage() {
             </p>
           </div>
         </Link>
+
+        {/* Discussion Guide */}
+        <Link
+          href="/cpt/surgery/10000-series-discussion-guide"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "25px",
+              width: "320px",
+              backgroundColor: "white",
+              cursor: "pointer",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.05)",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              🗂️ Discussion Guide
+            </h3>
+
+            <p style={{ margin: 0 }}>
+              Answers every question from the training discussion guide, step by step.
+            </p>
+          </div>
+        </Link>
       </div>
 
       {/* Back Button */}

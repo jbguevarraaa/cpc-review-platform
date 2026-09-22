@@ -564,6 +564,7 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
 
       <nav aria-label="20,000 series navigation" style={navStyle}>
         <Link href="/cpt/surgery/20,000" style={navLinkStyle}>20,000 Series home</Link>
+        <Link href="/cpt/surgery/20000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/surgery/20,000-series-study-tips" style={navLinkStyle}>Study Tips</Link>
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>
       </nav>

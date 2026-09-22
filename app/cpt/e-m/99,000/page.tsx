@@ -71,6 +71,7 @@ export default function EmSeriesHubPage() {
         <Link href="/cpt/e-m/99000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Reviewer Pt. 3</Link>
         <Link href="/cpt/e-m/99000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/e-m/99000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
+        <Link href="/cpt/e-m/99000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -101,6 +102,11 @@ export default function EmSeriesHubPage() {
           <span style={labelStyle}>PRACTICE QUIZ</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>10 Scenario Questions</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Ten scenarios across the whole series. Each answer shows what to look for and how to eliminate the wrong choices.</p>
+        </Link>
+        <Link href="/cpt/e-m/99000-series-discussion-guide" style={cardStyle}>
+          <span style={labelStyle}>DISCUSSION GUIDE</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Every Discussion-Guide Question, Answered</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>All 8 questions from the training discussion guide, answered step by step with a \"how to approach\" note for each, checked against CPT 2026.</p>
         </Link>
         <Link href="/cpt/e-m/99000-series-flashcards" style={cardStyle}>
           <span style={labelStyle}>FLASHCARDS</span>

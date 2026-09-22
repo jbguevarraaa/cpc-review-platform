@@ -63,6 +63,7 @@ export default function GenitourinarySeriesPage() {
         <Link href="/cpt/surgery/50000-series-guidelines-reviewer" style={navLinkStyle}>Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/50000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/50000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Reviewer Pt. 3</Link>
+        <Link href="/cpt/surgery/50000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/surgery/50000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/50000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
@@ -90,6 +91,11 @@ export default function GenitourinarySeriesPage() {
           <span style={labelStyle}>GUIDELINES REVIEWER · PART 3</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Maternal Care & Delivery</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>The obstetric global package, vaginal, cesarean, and VBAC codes, and the separate services — with a delivery-package grid and Martha's case solved.</p>
+        </Link>
+        <Link href="/cpt/surgery/50000-series-discussion-guide" style={cardStyle}>
+          <span style={labelStyle}>DISCUSSION GUIDE</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Every Training Question, Answered</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>All 22 questions from the training discussion guide — chapter organization, renal transplantation, endoscopy, hysterectomy, the prostate, and maternal care — answered step by step against CPT 2026.</p>
         </Link>
         <Link href="/cpt/surgery/50000-series-practice-quiz" style={cardStyle}>
           <span style={labelStyle}>PRACTICE QUIZ</span>

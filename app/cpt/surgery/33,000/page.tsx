@@ -26,6 +26,7 @@ export default function CardiovascularSeriesPage() {
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/33000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Guidelines Reviewer Pt. 3</Link>
+        <Link href="/cpt/surgery/33000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/surgery/33000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
@@ -51,6 +52,11 @@ export default function CardiovascularSeriesPage() {
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>GUIDELINES REVIEWER · PART 3</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>EVAR, Bypass, Vascular Injection → Thrombectomy</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Endovascular abdominal aortic repair (EVAR/FEVAR), bypass grafts, catheter placement and angiography, venipuncture, transfusion, sclerotherapy and endovenous ablation, central venous access, hemodialysis access, the dialysis-circuit intervention ladder, portal decompression, and transcatheter thrombectomy for 34701–37214 — with schematics.</p>
+        </Link>
+        <Link href="/cpt/surgery/33000-series-discussion-guide" style={cardStyle}>
+          <span style={{ color: "#b91c1c", fontWeight: 800 }}>DISCUSSION GUIDE</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Every Training Question, Answered</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>A Q&amp;A companion covering both training discussion-guide sessions — chapter organization, pacemakers/ICDs, valves, CABG, thoracic aorta, heart-lung transplant, ECMO/ECLS, abdominal aorta, catheterization, and central venous access.</p>
         </Link>
         <Link href="/cpt/surgery/33000-series-practice-quiz" style={cardStyle}>
           <span style={{ color: "#b91c1c", fontWeight: 800 }}>PRACTICE QUIZ</span>

@@ -68,6 +68,13 @@ export default function TwentyThousandSeriesPage() {
             <p style={{ margin: 0 }}>Abdomen, Shoulder, Humerus &amp; Elbow, and Forearm &amp; Wrist (22900–25999): rotator cuff/capsulorrhaphy variants, Monteggia and Galeazzi fracture-dislocations, and prosthetic arthroplasty coding — same step-by-step format.</p>
           </div>
         </Link>
+
+        <Link href="/cpt/surgery/20000-series-discussion-guide" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🗂️ Discussion Guide</h3>
+            <p style={{ margin: 0 }}>Every question from the training discussion guide — chapter organization, packaged services, fracture/dislocation treatment, tumor excision, casts and strapping, arthrocentesis, and endoscopy/arthroscopy — answered step by step.</p>
+          </div>
+        </Link>
       </div>
 
       <div style={{ marginTop: "35px" }}>

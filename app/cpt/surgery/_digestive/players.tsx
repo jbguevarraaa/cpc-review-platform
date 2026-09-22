@@ -25,6 +25,12 @@ export const VIOLET: Theme = { dark: "#2e1065", accent: "#6d28d9", soft: "#f5f0f
 
 export const TEAL: Theme = { dark: "#12343b", accent: "#0f766e", soft: "#ecf8f6", border: "#d7e2df", bg: "#f7faf9", text: "#17212b", muted: "#3f5f5c", light: "#b7f7e8" };
 
+export const BLUE: Theme = { dark: "#1e3a8a", accent: "#2563eb", soft: "#eff6ff", border: "#dbeafe", bg: "#f7fafe", text: "#1c2434", muted: "#3d5580", light: "#bfdbfe" };
+
+export const SLATE: Theme = { dark: "#1e293b", accent: "#475569", soft: "#f1f5f9", border: "#e2e8f0", bg: "#f8fafc", text: "#1a222e", muted: "#556072", light: "#cbd5e1" };
+
+export const CRIMSON: Theme = { dark: "#450a0a", accent: "#b91c1c", soft: "#fef2f2", border: "#fecaca", bg: "#fffafa", text: "#2b1414", muted: "#7c2d2d", light: "#fca5a5" };
+
 type Extras = { backHref?: string; backLabel?: string; theme?: Theme };
 
 const LETTERS = ["A", "B", "C", "D"] as const;

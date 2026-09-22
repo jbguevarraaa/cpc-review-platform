@@ -105,6 +105,7 @@ export default function EmPracticeQuizPage() {
         { href: "/cpt/e-m/99000-series-guidelines-reviewer-part-2", label: "Part 2" },
         { href: "/cpt/e-m/99000-series-guidelines-reviewer-part-3", label: "Part 3" },
         { href: "/cpt/e-m/99000-series-flashcards", label: "Flashcards" },
+        { href: "/cpt/e-m/99000-series-discussion-guide", label: "Discussion Guide" },
       ]}
       items={items}
       backHref="/cpt/e-m/99,000"

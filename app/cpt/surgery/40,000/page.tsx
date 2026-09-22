@@ -69,6 +69,7 @@ export default function DigestiveSeriesPage() {
         <Link href="/cpt/surgery/40000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Reviewer Pt. 3</Link>
         <Link href="/cpt/surgery/40000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/40000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
+        <Link href="/cpt/surgery/40000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -107,6 +108,11 @@ export default function DigestiveSeriesPage() {
           <span style={labelStyle}>FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Tap-to-flip cards, one rule per card, covering the whole Digestive series — modifiers, once-per-session codes, PCA tiers, and hernia and hemorrhoid splits.</p>
+        </Link>
+        <Link href="/cpt/surgery/40000-series-discussion-guide" style={cardStyle}>
+          <span style={labelStyle}>DISCUSSION GUIDE</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Q&amp;A Companion</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>Answers every question from the training discussion guide — chapter organization, endoscopy structures, bariatric approaches, hernia PCA and code pairs, and hemorrhoid treatment modalities.</p>
         </Link>
       </div>
 
