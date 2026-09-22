@@ -83,7 +83,7 @@ const sections: Subsection[] = [
           ["11400–11406", "Trunk, arms, or legs (T/A/L) — 0.5 cm or less through over 4.0 cm"],
           ["11420–11426", "Scalp, neck, hands, feet, or genitalia (S/N/H/F/G) — same 6 size tiers"],
           ["11440–11446", "Face, ears, eyelids, nose, lips, or mucous membrane (F/E/E/N/L/M) — same 6 size tiers"],
-          ["11450–11471", "Condition-specific benign excisions (e.g. pilonidal cyst, skin tag-adjacent conditions) — a separate block from the \"general\" codes above"],
+          ["11450–11471", "Condition-specific excisions — specifically hidradenitis (axillary, inguinal, and perianal/perineal/umbilical, with their own repair-type split — see the table below) — a separate block from the \"general\" codes above, not to be confused with pilonidal cyst excision (11770–11772), which lives in a different part of the chapter"],
         ],
       },
       {
@@ -92,6 +92,14 @@ const sections: Subsection[] = [
           ["11600–11606", "Trunk, arms, or legs"],
           ["11620–11626", "Scalp, neck, hands, feet, or genitalia"],
           ["11640–11646", "Face, ears, eyelids, nose, lips, or mucous membrane"],
+        ],
+      },
+      {
+        name: "Condition-specific excision — hidradenitis (11450–11471), by site and repair complexity",
+        codes: [
+          ["11450 / 11451", "Axillary — with simple or intermediate repair / with complex repair"],
+          ["11462 / 11463", "Inguinal — with simple or intermediate repair / with complex repair"],
+          ["11470 / 11471", "Perianal, perineal, or umbilical — with simple or intermediate repair / with complex repair"],
         ],
       },
     ],
@@ -107,6 +115,7 @@ const sections: Subsection[] = [
     tips: [
       "\"Excised diameter\" always beats \"lesion size\" as the phrase to look for in a question — if margins are given, add them on both sides before picking the tier.",
       "Only two body-region groups really exist for most of this chapter — see the diagram. Excision and destruction split the second group further into two named sub-groups; simple/intermediate repair keeps it as just two.",
+      "Hidradenitis excision (11450–11471) is a self-contained family, not a size-tiered one like the general 11400s/11600s — the repair type (simple/intermediate vs. complex) is baked directly into the code itself, so there's no separate closure code to hunt for.",
     ],
     traps: [
       "Treating a benign lesion excision like a repair and adding two lesions' diameters together. Report each lesion with its own code (append modifier 51 to the second).",
@@ -160,6 +169,16 @@ const sections: Subsection[] = [
           "The re-excision day removed a 1.0 cm excised diameter. Leg, malignant, 0.6–1.0 cm tier = 11600.",
         ],
         answer: "11600-58.",
+      },
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "Excision of axillary hidradenitis",
+        scenario: "Preoperative Diagnosis: Left axillary hidradenitis. Postoperative Diagnosis: Left axillary hidradenitis. Operation: Excision of hidradenitis. An elliptical skin incision was made in the axilla to excise most of the hidradenitis tracts. The incision was carried down through subcutaneous tissue. The underlying subcutaneous tissue was excised. The subcutaneous tissues were closed with a continuous suture of 2-0 Vicryl. The skin edges were stapled together. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "Excision of hidradenitis has its OWN dedicated code family, separate from the general benign-lesion excision codes (11400–11446) — the axillary-specific codes are 11450 (with simple or intermediate repair) and 11451 (with complex repair). These codes bundle the repair type INTO the excision code itself, unlike ordinary lesion excision where closure is often separately reported.",
+          "The closure described — a continuous suture of the subcutaneous layer plus skin staples — is a simple/intermediate closure, not a complex (e.g., flap or graft) closure.",
+        ],
+        answer: "11450.",
       },
     ],
   },
@@ -238,6 +257,18 @@ const sections: Subsection[] = [
           "Different anatomical groups, so both are reported as their own codes (no summing).",
         ],
         answer: "17262 and 17274.",
+      },
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "Three malignant lesions, two anatomical sites, two destruction methods",
+        scenario: "Two malignant lesions on the scalp measuring 1.1 cm and 2.0 cm, and one malignant lesion on the neck measuring 2.2 cm were destroyed. Electrocautery was used for the first two lesions and laser was used for the third lesion. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "Malignant destruction codes (17260–17286) are \"any method\" codes — electrocautery vs. laser makes no difference to code selection.",
+          "Scalp AND neck are BOTH in the scalp/neck/hands/feet/genitalia anatomical group for malignant destruction (17270–17276) — same group, even though they're different specific sites.",
+          "Each lesion is coded by its OWN diameter, never summed with another lesion (same rule as excision). 1.1 cm and 2.0 cm both fall in the 1.1–2.0 cm tier (17272). 2.2 cm falls in the 2.1–3.0 cm tier (17273).",
+          "Two lesions share the same code (the two scalp lesions), so report that code twice — once plain, once with modifier 51 for the repeat — and report the third (different-tier) code once.",
+        ],
+        answer: "17273, 17272, 17272-51 (three lesions total; the two 1.1cm/2.0cm scalp lesions share code 17272, reported twice).",
       },
     ],
   },

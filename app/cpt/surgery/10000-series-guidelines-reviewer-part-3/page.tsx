@@ -57,6 +57,16 @@ const sections: Subsection[] = [
         ],
         answer: "10060 (I&D of abscess, skin, simple/single).",
       },
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "I&D of a postoperative wound infection, with mesh removal",
+        scenario: "What is the CPT code for incision and drainage of postoperative wound infection, complex, with removal of mesh from the abdominal wall?",
+        steps: [
+          "\"Incision and drainage, complex, postoperative wound infection\" is a specific dedicated code, 10180 — confirmed by the sequence this family runs in ascending order: 10120 foreign body removal, 10140 hematoma/seroma I&D, 10160 puncture aspiration, 10180 complex postop wound infection I&D.",
+          "Removal of mesh from the abdominal wall for infection has its own add-on code, 11008 (\"Removal of prosthetic material or mesh\") — the codebook explicitly lists this add-on as usable in conjunction with 10180.",
+        ],
+        answer: "10180, 11008.",
+      },
     ],
   },
   {
@@ -192,6 +202,18 @@ const sections: Subsection[] = [
       "Read \"for permanent removal\" as the tell for 11750 — a nail avulsion alone (11730) is not permanent; it grows back.",
       "11755 is marked a \"separate procedure\" — like other separate-procedure codes across CPT, don't report it in addition to a more extensive nail procedure performed at the same session on the same nail unit.",
     ],
+    cases: [
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "Traumatic nail bed laceration — avulsion plus repair",
+        scenario: "A patient presents to the emergency room with a laceration of her right great toenail bed due to it being struck by a knife. The ED physician removes the damaged and surrounding nail from the nail bed. He then sutures the nail bed into the correct position. Bleeding was controlled through electrocautery and the wound was dressed. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "Removing the damaged nail plate = avulsion of nail plate, 11730 (avulsion, single nail) — this is a single nail, so no add-on (+11732) is needed.",
+          "Suturing the nail bed back into position is a distinct second procedure: repair of nail bed, 11760.",
+        ],
+        answer: "11730, 11760.",
+      },
+    ],
   },
   {
     id: "pilonidal-cyst",
@@ -318,17 +340,63 @@ const sections: Subsection[] = [
       },
     ],
   },
+  {
+    id: "drug-delivery-implants",
+    n: 7,
+    title: "Drug-Delivery Implants",
+    range: "11981–11983",
+    intro: [
+      "A small, easy-to-miss family from the Introduction/Removal subsection of the Integumentary chapter: subdermal placement (and later removal) of a drug-delivery rod or capsule, such as a non-biodegradable hormonal contraceptive implant.",
+    ],
+    definitions: [
+      ["Drug-delivery implant", "a bioresorbable, biodegradable, or non-biodegradable device placed subdermally to release medication over time (eg, a multi-rod hormonal contraceptive implant)."],
+    ],
+    steps: [
+      "① Is this an insertion, a removal, or a removal-with-reinsertion (e.g., swapping out an expired implant for a new one in the same session)? That picks the code.",
+      "② How many rods or capsules were placed or removed? Irrelevant to code selection — each of these codes is billed ONCE per procedure, not once per rod/capsule.",
+    ],
+    categories: [
+      {
+        name: "Code map",
+        codes: [
+          ["11981", "Insertion, drug-delivery implant (ie, bioresorbable, biodegradable, non-biodegradable)"],
+          ["11982", "Removal, non-biodegradable drug-delivery implant"],
+          ["11983", "Removal with reinsertion, non-biodegradable drug-delivery implant"],
+        ],
+      },
+    ],
+    rules: [
+      "Each of 11981–11983 is reported ONCE per procedure/encounter, regardless of how many individual rods or capsules are inserted or removed.",
+      "A simple closure of the small placement incision is bundled into the procedure — it is not separately reported.",
+    ],
+    tips: [
+      "The \"once per procedure, not once per rod\" rule is the most commonly tested trap in this family — a 6-capsule Norplant-style insertion is still just one unit of 11981.",
+    ],
+    cases: [
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "Subdermal contraceptive rod implantation, six capsules",
+        scenario: "A 19-year-old female is seen in the hospital-based outpatient department for surgical implantation of birth control. Using a trocar, six 3.0 cm. Norplant II (Levonorgestrel) capsules are implanted subdermally. After all capsules were placed, the incision was closed with a simple repair. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "This is insertion of a non-biodegradable, multi-rod hormonal contraceptive implant — coded 11981 (\"Insertion, drug-delivery implant\").",
+          "This code describes the INSERTION PROCEDURE/EVENT, not a per-capsule count — it is reported ONCE regardless of how many capsules (6, here) are placed, a common trap.",
+          "The simple closure of the small incision is bundled into the procedure, not separately reported.",
+        ],
+        answer: "11981.",
+      },
+    ],
+  },
 ];
 
 export default function IntegumentaryReviewerPart3Page() {
   return (
     <ReviewerShell
       part={3}
-      subtitle="Part 3 — Other Procedures: Incision & Drainage, Pressure Ulcers, Burns, Nails, Pilonidal Cysts & Breast Procedures (10040–19369)"
+      subtitle="Part 3 — Other Procedures: Incision & Drainage, Pressure Ulcers, Burns, Nails, Pilonidal Cysts, Breast Procedures & Drug-Delivery Implants (10040–19369, 11981–11983)"
       sections={sections}
       intro={
         <>
-          <strong>How this series is organized.</strong> This 10,000-series reviewer follows the training deck&apos;s own Topics: Part 1 covers Topic 2 (Removal Procedures), Part 2 covers Topic 3 (Repair Procedures), and this Part 3 — the last part of the series — covers Topic 4 (Other Procedures): incision and drainage, pressure ulcers, burns, nails, pilonidal cysts, and breast procedures. Two of Topic 4&apos;s named sub-topics, Nails and Pilonidal Cyst Procedures, are never actually covered in the deck&apos;s own slides (it jumps straight from Burns to Breasts), so those two sections here are sourced directly from the CPT 2026 codebook instead of paraphrased from the deck — that&apos;s flagged again at the top of each of those sections. The deck&apos;s remaining case questions (Q14–Q16) are solved step by step below, including a correction to the deck&apos;s presumed radical-mastectomy answer once the actual 19305/19306 descriptors are checked against the codebook. This series sits beside the site&apos;s existing 10,000-series study tips and quizzes and does not replace them.
+          <strong>How this series is organized.</strong> This 10,000-series reviewer follows the training deck&apos;s own Topics: Part 1 covers Topic 2 (Removal Procedures), Part 2 covers Topic 3 (Repair Procedures), and this Part 3 — the last part of the series — covers Topic 4 (Other Procedures): incision and drainage, pressure ulcers, burns, nails, pilonidal cysts, and breast procedures. Two of Topic 4&apos;s named sub-topics, Nails and Pilonidal Cyst Procedures, are never actually covered in the deck&apos;s own slides (it jumps straight from Burns to Breasts), so those two sections here are sourced directly from the CPT 2026 codebook instead of paraphrased from the deck — that&apos;s flagged again at the top of each of those sections. The deck&apos;s remaining case questions (Q14–Q16) are solved step by step below, including a correction to the deck&apos;s presumed radical-mastectomy answer once the actual 19305/19306 descriptors are checked against the codebook. A final section, Drug-Delivery Implants (11981–11983), was added afterward from a separate prework case question — it sits here rather than in Part 1 simply because Part 1 was already full; it isn&apos;t one of the deck&apos;s named Topic 4 items. This series sits beside the site&apos;s existing 10,000-series study tips and quizzes and does not replace them.
         </>
       }
     />

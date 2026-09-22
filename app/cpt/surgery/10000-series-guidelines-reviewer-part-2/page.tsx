@@ -138,6 +138,17 @@ const sections: Subsection[] = [
         answer: "14041.",
       },
       {
+        label: "PREWORK CASE · SOLVED",
+        title: "Melanoma excision closed with a rotation flap over 30 sq cm",
+        scenario: "A female patient presents to the outpatient clinic for excision of a 4.8 cm malignant melanoma of the left inner thigh. A 6 cm x 6 cm rotation flap was created for closure. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "A rotation flap used to close a defect is an adjacent tissue transfer (ATT) — per this series' own already-documented rule, excision codes (11400s/11600s) are NOT separately reported when the excision is closed with an ATT; the ATT code already includes the excision. So the excision itself (which would otherwise be 11606, thigh/T-A-L group, malignant, >4.0cm tier) is not separately billed.",
+          "ATT defect area = 6 x 6 = 36 sq cm.",
+          "Thigh falls in the scalp/arms/legs ATT group (14020/14021), but those group-specific codes only cover defects up to 30 sq cm. 36 sq cm exceeds that, so per this series' own already-documented correction (ATT defects of 30.1–60.0 sq cm use a universal \"any area\" code regardless of anatomical group), the correct code is 14301, not a group-specific code.",
+        ],
+        answer: "14301 (only — the excision is bundled into the ATT).",
+      },
+      {
         label: "DECK CASE · HARD SCENARIO",
         title: "Postauricular flap for an ear scar, with a graft to close the donor site",
         scenario: "A scar is excised from the auricle of the right ear. A postauricular flap is used to fill the defect. A full thickness skin graft from the left thigh is used to close the 4 x 2 cm flap donor site. How should this procedure be coded?",
@@ -255,6 +266,30 @@ const sections: Subsection[] = [
           "Split-thickness autograft placement, trunk/arms/legs group = 15100. Again 70 sq cm is under the 100 sq cm first tier, so one unit only.",
         ],
         answer: "15002 and 15100 — both first-tier only, no add-ons, since 70 sq cm is under each code's 100 sq cm threshold.",
+      },
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "Burn eschar removal plus an acellular dermal allograft, abdomen",
+        scenario: "A patient presents to the hospital-based ambulatory surgery center for skin grafts due to previous third degree burns on the abdomen. Burn eschar is removed from the abdomen and the defect size at that time measured 10 cm x 10 cm. An acellular dermal allograft from a donor bank was placed on the defect and sewn into place. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "Removing burn eschar to prepare the wound bed is \"surgical preparation of the recipient site\" — the 15002–15005 family, whose own descriptor explicitly includes excision of burn eschar. Abdomen is in the trunk/arms/legs group.",
+          "Defect = 10 x 10 = 100 sq cm, which fits within the first 100 sq cm tier of 15002 — no add-on needed.",
+          "An acellular dermal ALLOGRAFT from a donor bank is not the patient's own tissue (that would be an autograft) — it's a non-autologous skin substitute, coded from the skin substitute graft family, 15271–15278, not the autograft family (15040–15261).",
+          "Trunk/arms/legs group, and the codebook splits this family by whether TOTAL wound area is under 100 sq cm (15271/+15272, billed in 25 sq cm increments) or 100 sq cm OR MORE (15273/+15274, billed in 100 sq cm increments) — at exactly 100 sq cm, it's 15273, not 15271.",
+          "100 sq cm exactly fits the first 100 sq cm tier of 15273 — no add-on needed.",
+        ],
+        answer: "15002, 15273.",
+      },
+      {
+        label: "PREWORK CASE · SOLVED",
+        title: "Keloid scar excision, hand, full-thickness autograft from the arm",
+        scenario: "A patient was admitted to the ASC for corrective surgery of a keloid scar on the left hand due to a burn experienced in a brush fire one year ago. Radical excision of the scar was carried out and the defect was covered with a full-thickness graft 40 sq cm taken from the upper arm. The patient was discharged in good condition, to be seen in the physician's office in two weeks. What is/are the correct CPT® code(s) for this procedure?",
+        steps: [
+          "\"Radical excision of the scar\" to prepare the wound bed = surgical preparation of the recipient site, 15002–15005 family (the descriptor for 15002 explicitly includes excision of a scar). Hand is NOT trunk/arms/legs — it's in the \"all other body areas\" group, so 15004 (not 15002). The defect fits within the first 100 sq cm tier.",
+          "The graft is a FULL-THICKNESS AUTOGRAFT (from the patient's own upper arm) placed on the hand. The full-thickness autograft anatomical grouping for forehead, cheeks, chin, mouth, neck, axillae, genitalia, hands, and/or feet is 15240 (first 20 sq cm) / +15241 (each additional 20 sq cm) — hand falls in this group, NOT the scalp/arms/legs group (15220/15221) despite the donor site being the arm. The CODE is picked by the RECIPIENT site (hand), not the donor site.",
+          "40 sq cm total = 15240 (first 20 sq cm) + one unit of +15241 (the remaining 20 sq cm).",
+        ],
+        answer: "15004, 15240, 15241 (one unit).",
       },
     ],
   },
