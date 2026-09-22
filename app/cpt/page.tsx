@@ -45,7 +45,7 @@ export default function SurgeryPage() {
       >
         {/* 10,000 Series */}
         <Link
-          href="/cpt/surgery/10000"
+          href="/cpt/surgery/10,000"
           style={{
             textDecoration: "none",
             color: "inherit",
