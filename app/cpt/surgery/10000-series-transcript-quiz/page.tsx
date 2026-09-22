@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type TranscriptQuestion = {
   question: string;
@@ -267,6 +268,8 @@ export default function TranscriptQuizPage() {
           minHeight: "100vh",
         }}
       >
+        <HighlightToolbar />
+
         <div
           style={{
             background: "linear-gradient(135deg,#1d4ed8,#7c3aed)",
@@ -308,7 +311,9 @@ export default function TranscriptQuizPage() {
               <strong>Correct answer:</strong> {q.correct}
             </p>
             <p>
-              <strong>Justification:</strong> {q.explanation}
+              <Highlightable id={`explain-${index}`}>
+                <strong>Justification:</strong> {q.explanation}
+              </Highlightable>
             </p>
           </section>
         ))}
@@ -348,6 +353,8 @@ export default function TranscriptQuizPage() {
         lineHeight: 1.7,
       }}
     >
+      <HighlightToolbar />
+
       <div
         style={{
           background: "linear-gradient(135deg, #eff6ff, #f5f3ff)",

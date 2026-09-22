@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Highlightable, HighlightToolbar } from "../../surgery/_digestive/highlighter";
 
 type Question = {
   question: string;
@@ -218,6 +219,7 @@ export default function EMGuidelinesQuizPage() {
   if (complete) {
     return (
       <main style={pageStyle}>
+        <HighlightToolbar />
         <header style={headerStyle}>
           <p style={eyebrowStyle}>E/M SERIES · MDM AND TIME</p>
           <h1 style={{ margin: 0 }}>Quiz Complete</h1>
@@ -226,11 +228,11 @@ export default function EMGuidelinesQuizPage() {
         {questions.map((item, index) => (
           <section key={item.question} style={cardStyle}>
             <h2 style={{ fontSize: "22px", marginTop: 0 }}>Question {index + 1}</h2>
-            <p style={{ lineHeight: 1.65 }}>{item.question}</p>
+            <p style={{ lineHeight: 1.65 }}><Highlightable id={`result-${index}-question`} as="span">{item.question}</Highlightable></p>
             <p><strong>Your answer:</strong> {answers[index]}</p>
             <p><strong>Correct answer:</strong> {item.correct}</p>
-            <p style={{ lineHeight: 1.65 }}><strong>Rationale:</strong> {item.explanation}</p>
-            <p style={noteStyle}><strong>Study note:</strong> {item.studyNote}</p>
+            <p style={{ lineHeight: 1.65 }}><Highlightable id={`result-${index}-explanation`} as="span"><strong>Rationale:</strong> {item.explanation}</Highlightable></p>
+            <p style={noteStyle}><Highlightable id={`result-${index}-studynote`} as="span"><strong>Study note:</strong> {item.studyNote}</Highlightable></p>
           </section>
         ))}
         <button onClick={() => { setCurrent(0); setSelected(""); setAnswers([]); setComplete(false); }} style={buttonStyle}>Retake Quiz</button>
@@ -241,10 +243,11 @@ export default function EMGuidelinesQuizPage() {
 
   return (
     <main style={pageStyle}>
+      <HighlightToolbar />
       <header style={headerStyle}>
         <p style={eyebrowStyle}>E/M SERIES · SEPARATE QUIZ</p>
         <h1 style={{ margin: 0 }}>MDM and Time Quiz</h1>
-        <p style={{ fontSize: "18px", lineHeight: 1.6, marginBottom: 0 }}>Photo-based questions with transcript-based rationale. This quiz is separate from the CodeMed Mastery reviewer.</p>
+        <p style={{ fontSize: "18px", lineHeight: 1.6, marginBottom: 0 }}><Highlightable id="quiz-intro" as="span">Photo-based questions with transcript-based rationale. This quiz is separate from the CodeMed Mastery reviewer.</Highlightable></p>
       </header>
 
       <section style={cardStyle}>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type Scenario = {
   n: number;
@@ -125,21 +126,25 @@ export default function ThirtyThousandBeginnerGuidePage() {
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>
       </nav>
 
+      <HighlightToolbar />
+
       <section style={introStyle}>
-        <strong>Why this page exists:</strong> the main guidelines reviewer is dense and code-heavy on purpose — it's built for fast lookup. This page is the opposite: it's meant to be read slowly, with made-up example scenarios that show the actual thought process a coder walks through, one question at a time.
+        <Highlightable id="intro-1" as="div">
+          <strong>Why this page exists:</strong> the main guidelines reviewer is dense and code-heavy on purpose — it's built for fast lookup. This page is the opposite: it's meant to be read slowly, with made-up example scenarios that show the actual thought process a coder walks through, one question at a time.
+        </Highlightable>
       </section>
 
       <section style={frameworkStyle}>
         <p style={{ ...labelStyle, fontSize: "14px", marginBottom: "10px" }}>THE FIVE-QUESTION FRAMEWORK</p>
-        <p style={pStyle}>Before you even think about a code number, ask these five questions about any scenario, in this order:</p>
+        <p style={pStyle}><Highlightable id="framework-intro">Before you even think about a code number, ask these five questions about any scenario, in this order:</Highlightable></p>
         <ol style={{ margin: 0, paddingLeft: "22px", display: "grid", gap: "6px" }}>
-          <li><strong>What body part and structure?</strong> (nose, sinus, larynx, trachea, a specific lobe...)</li>
-          <li><strong>What's actually being done to it?</strong> (removed, repaired, biopsied, scoped...)</li>
-          <li><strong>How is it being done?</strong> (in the office vs. the hospital, with or without a scope, open vs. percutaneous...)</li>
-          <li><strong>Are there extra details that split a code family?</strong> (age, laterality, with/without a stent or contrast...)</li>
-          <li><strong>Is anything already bundled in?</strong> (did the question describe a smaller step that a bigger code already includes?)</li>
+          <li><Highlightable id="framework-q-1"><strong>What body part and structure?</strong> (nose, sinus, larynx, trachea, a specific lobe...)</Highlightable></li>
+          <li><Highlightable id="framework-q-2"><strong>What's actually being done to it?</strong> (removed, repaired, biopsied, scoped...)</Highlightable></li>
+          <li><Highlightable id="framework-q-3"><strong>How is it being done?</strong> (in the office vs. the hospital, with or without a scope, open vs. percutaneous...)</Highlightable></li>
+          <li><Highlightable id="framework-q-4"><strong>Are there extra details that split a code family?</strong> (age, laterality, with/without a stent or contrast...)</Highlightable></li>
+          <li><Highlightable id="framework-q-5"><strong>Is anything already bundled in?</strong> (did the question describe a smaller step that a bigger code already includes?)</Highlightable></li>
         </ol>
-        <p style={{ ...pStyle, marginTop: "10px", marginBottom: 0 }}>Every scenario below walks through exactly this sequence.</p>
+        <p style={{ ...pStyle, marginTop: "10px", marginBottom: 0 }}><Highlightable id="framework-outro">Every scenario below walks through exactly this sequence.</Highlightable></p>
       </section>
 
       {scenarios.map((s) => (
@@ -151,24 +156,24 @@ export default function ThirtyThousandBeginnerGuidePage() {
           </div>
 
           <p style={labelStyle}>📋 SCENARIO</p>
-          <p style={scenarioBoxStyle}>&ldquo;{s.scenario}&rdquo;</p>
+          <p style={scenarioBoxStyle}><Highlightable id={`${s.n}-scenario`}>&ldquo;{s.scenario}&rdquo;</Highlightable></p>
 
           <p style={labelStyle}>👀 WHAT TO LOOK FOR</p>
           <ul style={{ margin: "0 0 14px", paddingLeft: "20px", display: "grid", gap: "4px" }}>
-            {s.lookFor.map((item) => <li key={item}>{item}</li>)}
+            {s.lookFor.map((item, i) => <li key={item}><Highlightable id={`${s.n}-lookfor-${i}`}>{item}</Highlightable></li>)}
           </ul>
 
           <p style={labelStyle}>🧭 HOW TO THINK THROUGH IT</p>
           <ol style={{ margin: "0 0 4px", paddingLeft: "20px", display: "grid", gap: "6px" }}>
-            {s.walkthrough.map((step) => <li key={step}>{step}</li>)}
+            {s.walkthrough.map((step, i) => <li key={step}><Highlightable id={`${s.n}-walkthrough-${i}`}>{step}</Highlightable></li>)}
           </ol>
 
           <div style={answerBoxStyle}>
-            <strong>✅ Answer:</strong> {s.answer}
+            <Highlightable id={`${s.n}-answer`} as="div"><strong>✅ Answer:</strong> {s.answer}</Highlightable>
           </div>
 
           <div style={watchOutBoxStyle}>
-            <strong>🟥 Watch out:</strong> {s.watchOut}
+            <Highlightable id={`${s.n}-watchout`} as="div"><strong>🟥 Watch out:</strong> {s.watchOut}</Highlightable>
           </div>
         </section>
       ))}
@@ -179,7 +184,7 @@ export default function ThirtyThousandBeginnerGuidePage() {
           <h2 style={subTitleStyle}>Common Beginner Mistakes</h2>
         </div>
         <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "10px", lineHeight: 1.7 }}>
-          {mistakes.map((m) => <li key={m}>{m}</li>)}
+          {mistakes.map((m, i) => <li key={m}><Highlightable id={`mistake-${i}`}>{m}</Highlightable></li>)}
         </ul>
       </section>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Highlightable, HighlightToolbar } from "../../_digestive/highlighter";
 
 const sections = [
   {
@@ -178,9 +179,15 @@ function BookSection({ title, paragraphs, definitions }: { title: string; paragr
   return (
     <section className="book-section">
       <h2>{title}</h2>
-      {paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-      {definitions?.map(([term, definition]) => (
-        <p className="definition" key={term}><strong>{term}:</strong> {definition}</p>
+      {paragraphs?.map((paragraph, i) => (
+        <p key={paragraph}>
+          <Highlightable id={`${title}-p-${i}`} as="span">{paragraph}</Highlightable>
+        </p>
+      ))}
+      {definitions?.map(([term, definition], i) => (
+        <p className="definition" key={term}>
+          <Highlightable id={`${title}-def-${i}`} as="span"><strong>{term}:</strong> {definition}</Highlightable>
+        </p>
       ))}
     </section>
   );
@@ -189,6 +196,7 @@ function BookSection({ title, paragraphs, definitions }: { title: string; paragr
 export default function CptBookPageOne() {
   return (
     <main className="cpt-book-page">
+      <HighlightToolbar />
       <header className="book-header">
         <div className="book-kicker">CPT 20,000 SERIES</div>
         <h1>Musculoskeletal System</h1>
@@ -206,9 +214,13 @@ export default function CptBookPageOne() {
 
       <section className="book-section">
         <h2>General</h2>
-        <p className="book-note"><strong>Complete early-range musculoskeletal code families for page 1:</strong> 20100-20103, 20150, 20200-20206, 20220-20225, 20240-20245, 20250-20251, 20500-20501, 20520-20527, 20550-20553, 20600-20610, 20650, 20670-20680, 20690-20692, 20900-20902, 20910, 20920-20924, 20930-20931, 20936-20938, 20950, 20979, 20999.</p>
+        <p className="book-note">
+          <Highlightable id="general-note-1" as="span"><strong>Complete early-range musculoskeletal code families for page 1:</strong> 20100-20103, 20150, 20200-20206, 20220-20225, 20240-20245, 20250-20251, 20500-20501, 20520-20527, 20550-20553, 20600-20610, 20650, 20670-20680, 20690-20692, 20900-20902, 20910, 20920-20924, 20930-20931, 20936-20938, 20950, 20979, 20999.</Highlightable>
+        </p>
         <h3>Incision</h3>
-        <p className="book-note">(For incision and drainage of subfascial soft tissue abscess, see appropriate incision and drainage for specific anatomic sites)</p>
+        <p className="book-note">
+          <Highlightable id="incision-note-1" as="span">(For incision and drainage of subfascial soft tissue abscess, see appropriate incision and drainage for specific anatomic sites)</Highlightable>
+        </p>
 
         <div style={{ marginTop: "18px", marginBottom: "18px" }}>
           <h3>Full Early-Range Code Index</h3>
@@ -217,7 +229,9 @@ export default function CptBookPageOne() {
               <article className="code-entry" key={code + description}>
                 <div className="code-number">{code}</div>
                 <div>
-                  <div className="code-description">{description}</div>
+                  <div className="code-description">
+                    <Highlightable id={`full-${code}`} as="span">{description}</Highlightable>
+                  </div>
                 </div>
               </article>
             ))}
@@ -227,13 +241,19 @@ export default function CptBookPageOne() {
         {groupedCodeEntries.map((group) => (
           <div key={group.title} style={{ marginTop: "22px" }}>
             <h3>{group.title}</h3>
-            {group.tip && <p className="book-note" style={{ marginBottom: "14px" }}><strong>Coding tip:</strong> {group.tip}</p>}
+            {group.tip && (
+              <p className="book-note" style={{ marginBottom: "14px" }}>
+                <Highlightable id={`grp-${group.title}-tip`} as="span"><strong>Coding tip:</strong> {group.tip}</Highlightable>
+              </p>
+            )}
             <div className="code-list">
               {group.codes.map(([code, description, reference]) => (
                 <article className="code-entry" key={code + description}>
                   <div className="code-number">{code}</div>
                   <div>
-                    <div className="code-description">{description}</div>
+                    <div className="code-description">
+                      <Highlightable id={`grp-${group.title}-${code}`} as="span">{description}</Highlightable>
+                    </div>
                     {reference && <div className="code-reference">➲ {reference}</div>}
                   </div>
                 </article>

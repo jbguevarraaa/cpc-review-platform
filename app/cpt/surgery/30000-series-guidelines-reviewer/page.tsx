@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
 import { nasalEndoscopyCases, bronchoscopyCases } from "../_cases/cases-30000";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -482,8 +483,12 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
+      <HighlightToolbar />
+
       <section style={introStyle}>
-        <strong>How to use this reviewer:</strong> each subsection lists its code range, the codes grouped by category the way the book organizes them, a step-by-step coding walkthrough, a set of key coding rules (paraphrased closely for accuracy, not copied verbatim), and a couple of editable memory tips. Lungs &amp; Pleura now lives in Part 2 — linked above.
+        <Highlightable id="intro-1" as="div">
+          <strong>How to use this reviewer:</strong> each subsection lists its code range, the codes grouped by category the way the book organizes them, a step-by-step coding walkthrough, a set of key coding rules (paraphrased closely for accuracy, not copied verbatim), and a couple of editable memory tips. Lungs &amp; Pleura now lives in Part 2 — linked above.
+        </Highlightable>
       </section>
 
       <section style={sectionStyle}>
@@ -491,7 +496,7 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
           <span style={sectionNumberStyle}>🗺️</span>
           <h2 style={sectionTitleStyle}>Code Range Map — The General Outline</h2>
         </div>
-        <p style={pStyle}>Before diving into any specific code, orient yourself with the big picture: the whole 30,000 series is built around three body regions, moving from the nose down to the lungs. Everything in between the nose and the lungs — sinuses, larynx, trachea, and bronchi — shares the 31,000 series.</p>
+        <p style={pStyle}><Highlightable id="rangemap-intro">Before diving into any specific code, orient yourself with the big picture: the whole 30,000 series is built around three body regions, moving from the nose down to the lungs. Everything in between the nose and the lungs — sinuses, larynx, trachea, and bronchi — shares the 31,000 series.</Highlightable></p>
         <div style={rangeMapGridStyle}>
           {rangeMap.map((block) => (
             <div key={block.title} style={rangeMapCardStyle}>
@@ -512,13 +517,13 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
           <span style={sectionNumberStyle}>🚨</span>
           <h2 style={sectionTitleStyle}>Top Exam Traps &amp; Tips — Quick Reference</h2>
         </div>
-        <p style={pStyle}>Skim this before diving into the full sections below — one flagship trap and one memory tip per subsection. The complete rule and tip lists live further down under each subsection.</p>
+        <p style={pStyle}><Highlightable id="exam-highlights-intro">Skim this before diving into the full sections below — one flagship trap and one memory tip per subsection. The complete rule and tip lists live further down under each subsection.</Highlightable></p>
         <div style={highlightGridStyle}>
           {examHighlights.map((h) => (
             <div key={h.title} style={highlightCardStyle}>
               <p style={highlightTitleStyle}>{h.title} <span style={rangeChipStyle}>{h.range}</span></p>
-              <p style={highlightLineStyle}><strong>🟥 Trap:</strong> {h.trap}</p>
-              <p style={{ ...highlightLineStyle, margin: 0 }}><strong>🧠 Tip:</strong> {h.tip}</p>
+              <p style={highlightLineStyle}><strong>🟥 Trap:</strong> <Highlightable id={`highlight-${h.title}-trap`}>{h.trap}</Highlightable></p>
+              <p style={{ ...highlightLineStyle, margin: 0 }}><strong>🧠 Tip:</strong> <Highlightable id={`highlight-${h.title}-tip`}>{h.tip}</Highlightable></p>
             </div>
           ))}
         </div>
@@ -531,26 +536,26 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
             <h2 style={sectionTitleStyle}>{sub.title}</h2>
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
-          {sub.intro && <p style={pStyle}>{sub.intro}</p>}
+          {sub.intro && <p style={pStyle}><Highlightable id={`${sub.n}-intro`}>{sub.intro}</Highlightable></p>}
 
           {sub.definitions && (
             <div style={definitionsBoxStyle}>
               <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+                {sub.definitions.map(([term, def], i) => <li key={term}><Highlightable id={`${sub.n}-def-${i}`}><strong>{term}:</strong> {def}</Highlightable></li>)}
               </ul>
             </div>
           )}
 
-          {sub.categories.map((cat) => (
+          {sub.categories.map((cat, ci) => (
             <div key={cat.name}>
               <h3 style={categoryTitleStyle}>{cat.name}</h3>
               <ul style={codeListStyle}>
-                {cat.codes.map(([code, desc]) => (
-                  <li key={code} style={codeItemStyle}>
+                {cat.codes.map(([code, desc], cj) => (
+                  <Highlightable key={code} id={`${sub.n}-cat-${ci}-code-${cj}`} as="li" style={codeItemStyle}>
                     <code style={codeChipStyle}>{code}</code>
                     <span>{desc}</span>
-                  </li>
+                  </Highlightable>
                 ))}
               </ul>
             </div>
@@ -559,21 +564,21 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPage() {
           <div style={stepsBoxStyle}>
             <p style={stepsTitleStyle}>🪜 STEP BY STEP — HOW TO CODE THIS</p>
             <ol style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {sub.steps.map((step) => <li key={step}>{step}</li>)}
+              {sub.steps.map((step, i) => <li key={step}><Highlightable id={`${sub.n}-step-${i}`}>{step}</Highlightable></li>)}
             </ol>
           </div>
 
           <div style={rulesBoxStyle}>
             <p style={rulesTitleStyle}>🟥 KEY CODING RULES</p>
             <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {sub.rules.map((rule) => <li key={rule}>{rule}</li>)}
+              {sub.rules.map((rule, i) => <li key={rule}><Highlightable id={`${sub.n}-rule-${i}`}>{rule}</Highlightable></li>)}
             </ul>
           </div>
 
           <div style={tipsBoxStyle}>
             <p style={tipsTitleStyle}>🧠 CODING TIPS</p>
             <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {sub.tips.map((tip) => <li key={tip}>{tip}</li>)}
+              {sub.tips.map((tip, i) => <li key={tip}><Highlightable id={`${sub.n}-tip-${i}`}>{tip}</Highlightable></li>)}
             </ul>
           </div>
           {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}

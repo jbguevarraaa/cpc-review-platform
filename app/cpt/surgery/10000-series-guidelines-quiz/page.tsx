@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type GuidelineQuestion = {
   question: string;
@@ -308,6 +309,8 @@ export default function GuidelinesQuizPage() {
           minHeight: "100vh",
         }}
       >
+        <HighlightToolbar />
+
         <div
           style={{
             background: "linear-gradient(135deg,#0f766e,#2563eb)",
@@ -343,7 +346,9 @@ export default function GuidelinesQuizPage() {
               <strong>Correct answer:</strong> {q.correct}
             </p>
             <p>
-              <strong>Justification:</strong> {q.explanation}
+              <Highlightable id={`explain-${index}`}>
+                <strong>Justification:</strong> {q.explanation}
+              </Highlightable>
             </p>
           </section>
         ))}
@@ -383,6 +388,8 @@ export default function GuidelinesQuizPage() {
         lineHeight: 1.7,
       }}
     >
+      <HighlightToolbar />
+
       <div
         style={{
           background: "linear-gradient(135deg, #ecfeff, #ecfdf5)",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
 import { cvadCases } from "../_cases/cases-33000";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -800,8 +801,12 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
         ))}
       </nav>
 
+      <HighlightToolbar />
+
       <section style={introBoxStyle}>
-        <strong>Arteries &amp; Veins (34001–37799) — the map for this part.</strong> A primary vascular procedure code already covers building the inflow and outflow, plus the surgeon's own operative arteriogram (and sympathectomy when done with a listed aortic procedure); use 37799 when nothing listed fits. The topics run through this part in this order:
+        <Highlightable id="intro-1" as="div">
+          <strong>Arteries &amp; Veins (34001–37799) — the map for this part.</strong> A primary vascular procedure code already covers building the inflow and outflow, plus the surgeon's own operative arteriogram (and sympathectomy when done with a listed aortic procedure); use 37799 when nothing listed fits. The topics run through this part in this order:
+        </Highlightable>
         <ul style={rangeMapStyle}>
           {rangeMap.map(([label, codes]) => (
             <li key={label} style={rangeMapRowStyle}>
@@ -819,7 +824,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
             <h2 style={sectionTitleStyle}>{sub.title}</h2>
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
-          {sub.intro?.map((p) => <p key={p} style={pStyle}>{p}</p>)}
+          {sub.intro?.map((p, i) => <p key={p} style={pStyle}><Highlightable id={`${sub.n}-intro-${i}`}>{p}</Highlightable></p>)}
 
           {sub.n === 1 && <AortaZoneDiagram />}
           {sub.n === 3 && <CatheterLadderDiagram />}
@@ -829,7 +834,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
             <div style={definitionsBoxStyle}>
               <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+                {sub.definitions.map(([term, def], i) => <li key={term}><Highlightable id={`${sub.n}-def-${i}`}><strong>{term}:</strong> {def}</Highlightable></li>)}
               </ul>
             </div>
           )}
@@ -838,7 +843,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
             <div style={hierarchyBoxStyle}>
               <p style={hierarchyTitleStyle}>📶 HIERARCHY — MOST TO LEAST INTENSIVE</p>
               <ol style={{ margin: 0, paddingLeft: "22px", display: "grid", gap: "6px" }}>
-                {sub.hierarchy.map((h) => <li key={h}>{h}</li>)}
+                {sub.hierarchy.map((h, i) => <li key={h}><Highlightable id={`${sub.n}-hierarchy-${i}`}>{h}</Highlightable></li>)}
               </ol>
             </div>
           )}
@@ -847,20 +852,20 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
             <div style={stepsBoxStyle}>
               <p style={stepsTitleStyle}>🪜 STEP-BY-STEP — WHAT IS INCLUDED VS. REPORTED SEPARATELY</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px", listStyle: "none" }}>
-                {sub.steps.map((step) => <li key={step}>{step}</li>)}
+                {sub.steps.map((step, i) => <li key={step}><Highlightable id={`${sub.n}-step-${i}`}>{step}</Highlightable></li>)}
               </ul>
             </div>
           )}
 
-          {sub.categories.map((cat) => (
+          {sub.categories.map((cat, ci) => (
             <div key={cat.name}>
               <h3 style={categoryTitleStyle}>{cat.name}</h3>
               <ul style={codeListStyle}>
-                {cat.codes.map(([code, desc]) => (
-                  <li key={code} style={codeItemStyle}>
+                {cat.codes.map(([code, desc], cj) => (
+                  <Highlightable key={code} id={`${sub.n}-cat-${ci}-code-${cj}`} as="li" style={codeItemStyle}>
                     <code style={codeChipStyle}>{code}</code>
                     <span style={{ flex: "1 1 220px" }}>{desc}</span>
-                  </li>
+                  </Highlightable>
                 ))}
               </ul>
             </div>
@@ -870,7 +875,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
             <div style={rulesBoxStyle}>
               <p style={rulesTitleStyle}>🟥 KEY CODING RULES</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.rules.map((rule) => <li key={rule}>{rule}</li>)}
+                {sub.rules.map((rule, i) => <li key={rule}><Highlightable id={`${sub.n}-rule-${i}`}>{rule}</Highlightable></li>)}
               </ul>
             </div>
           )}
@@ -879,7 +884,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart3Page() {
             <div style={tipsBoxStyle}>
               <p style={tipsTitleStyle}>🧠 CODING TIPS</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.tips.map((tip) => <li key={tip}>{tip}</li>)}
+                {sub.tips.map((tip, i) => <li key={tip}><Highlightable id={`${sub.n}-tip-${i}`}>{tip}</Highlightable></li>)}
               </ul>
             </div>
           )}

@@ -52,6 +52,7 @@ _Last updated: 2026-09-14, based on a full codebase audit. This document is the 
 - CPT Radiology (70,000 Series) — hub only; guidelines/study-tips are stubs awaiting content.
 - Final Exams — Exam 1 fully built (100-question mock exam); Exam 2/3 not built.
 - Quiz mechanic (reimplemented independently per page): single-question view → option select → "Check Answer" reveal with explanation → "Next".
+- Click-to-highlight reading-progress tool (`app/cpt/surgery/_digestive/highlighter.tsx`, `Highlightable`/`HighlightToolbar`): click any rule, tip, step, definition, or answer to highlight it yellow, click again to remove it; a floating "N highlighted / Clear all" pill shows the count. Persisted per-browser via localStorage, keyed by page path (there is no account system, so this is the only persistence available). Wired into every kit-based reviewer (10k/40k/50k/60k/99k), all 6 discussion-guide pages, the 30k/33k solved-case boxes, and every older hand-built CPT reviewer/study-tips/quiz page (10k legacy, 20k, 30k, 33k, E/M legacy) as of 2026-09-22 — not yet extended to ICD-10 pages.
 
 ## 4. Coding Style Used
 
@@ -103,9 +104,9 @@ app/
 
 ## 7. Known Issues
 
-- **Broken link:** `app/cpt/page.tsx` → `/cpt/surgery/10000` (no comma; real folder has a comma) → 404.
+- ~~**Broken link:** `app/cpt/page.tsx` → `/cpt/surgery/10000` (no comma; real folder has a comma) → 404.~~ Fixed 2026-09-22.
 - **Broken links:** `app/final-exams/page.tsx` → `/final-exams/exam2` and `/exam3` → folders don't exist.
-- **Unreachable page:** `app/cpt/surgery/10,000/page.tsx` has no incoming link from anywhere in the app.
+- ~~**Unreachable page:** `app/cpt/surgery/10,000/page.tsx` has no incoming link from anywhere in the app.~~ Fixed 2026-09-22 (the /cpt page.tsx link above was the missing incoming link; now corrected).
 - **Dead component:** `app/components/QuizPage.tsx` is never imported anywhere.
 - **Dead code:** `app/cpt/surgery/page.tsx` has an unused `questions` array (~130 lines) after the component's closing brace.
 - **Dead file:** `app/final-exams/exam1/globals.css` is never imported (only root `app/globals.css` is used, via `layout.tsx`).

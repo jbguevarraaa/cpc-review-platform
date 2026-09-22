@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
 import { wedgeCases, thoracoscopyCases } from "../_cases/cases-30000";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -445,8 +446,12 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
+      <HighlightToolbar />
+
       <section style={introStyle}>
-        <strong>How to use this reviewer:</strong> same format as Part 1 — code ranges grouped by category, a step-by-step &quot;how to code this&quot; walkthrough, key coding rules, and memory tips, for each of the 7 topics covering Lungs &amp; Pleura. This completes the 30,000 series (Respiratory System) reviewer.
+        <Highlightable id="intro-1" as="div">
+          <strong>How to use this reviewer:</strong> same format as Part 1 — code ranges grouped by category, a step-by-step &quot;how to code this&quot; walkthrough, key coding rules, and memory tips, for each of the 7 topics covering Lungs &amp; Pleura. This completes the 30,000 series (Respiratory System) reviewer.
+        </Highlightable>
       </section>
 
       {subsections.map((sub) => (
@@ -456,13 +461,13 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
             <h2 style={sectionTitleStyle}>{sub.title}</h2>
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
-          {sub.intro && <p style={pStyle}>{sub.intro}</p>}
+          {sub.intro && <p style={pStyle}><Highlightable id={`${sub.n}-intro`}>{sub.intro}</Highlightable></p>}
 
           {sub.definitions && (
             <div style={definitionsBoxStyle}>
               <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+                {sub.definitions.map(([term, def], i) => <li key={term}><Highlightable id={`${sub.n}-def-${i}`}><strong>{term}:</strong> {def}</Highlightable></li>)}
               </ul>
             </div>
           )}
@@ -471,20 +476,20 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
             <div style={hierarchyBoxStyle}>
               <p style={hierarchyTitleStyle}>📶 HIERARCHY — MOST TO LEAST EXTENSIVE</p>
               <ol style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "6px" }}>
-                {sub.hierarchy.map((h) => <li key={h}>{h}</li>)}
+                {sub.hierarchy.map((h, i) => <li key={h}><Highlightable id={`${sub.n}-hierarchy-${i}`}>{h}</Highlightable></li>)}
               </ol>
             </div>
           )}
 
-          {sub.categories.map((cat) => (
+          {sub.categories.map((cat, ci) => (
             <div key={cat.name}>
               <h3 style={categoryTitleStyle}>{cat.name}</h3>
               <ul style={codeListStyle}>
-                {cat.codes.map(([code, desc]) => (
-                  <li key={code} style={codeItemStyle}>
+                {cat.codes.map(([code, desc], cj) => (
+                  <Highlightable key={code} id={`${sub.n}-cat-${ci}-code-${cj}`} as="li" style={codeItemStyle}>
                     <code style={codeChipStyle}>{code}</code>
                     <span>{desc}</span>
-                  </li>
+                  </Highlightable>
                 ))}
               </ul>
             </div>
@@ -493,21 +498,21 @@ export default function SurgeryThirtyThousandGuidelinesReviewerPart2Page() {
           <div style={stepsBoxStyle}>
             <p style={stepsTitleStyle}>🪜 STEP BY STEP — HOW TO CODE THIS</p>
             <ol style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {sub.steps.map((step) => <li key={step}>{step}</li>)}
+              {sub.steps.map((step, i) => <li key={step}><Highlightable id={`${sub.n}-step-${i}`}>{step}</Highlightable></li>)}
             </ol>
           </div>
 
           <div style={rulesBoxStyle}>
             <p style={rulesTitleStyle}>🟥 KEY CODING RULES</p>
             <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {sub.rules.map((rule) => <li key={rule}>{rule}</li>)}
+              {sub.rules.map((rule, i) => <li key={rule}><Highlightable id={`${sub.n}-rule-${i}`}>{rule}</Highlightable></li>)}
             </ul>
           </div>
 
           <div style={tipsBoxStyle}>
             <p style={tipsTitleStyle}>🧠 CODING TIPS</p>
             <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {sub.tips.map((tip) => <li key={tip}>{tip}</li>)}
+              {sub.tips.map((tip, i) => <li key={tip}><Highlightable id={`${sub.n}-tip-${i}`}>{tip}</Highlightable></li>)}
             </ul>
           </div>
           {sub.cases?.map((c) => <SolvedCaseBox key={c.title} c={c} />)}

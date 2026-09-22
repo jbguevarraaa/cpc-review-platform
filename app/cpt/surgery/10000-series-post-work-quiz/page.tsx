@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 const questions = [
   {
@@ -185,6 +186,8 @@ export default function PostWorkQuiz() {
           minHeight: "100vh",
         }}
       >
+        <HighlightToolbar />
+
         <div
           style={{
             background: "linear-gradient(135deg,#2563eb,#7c3aed)",
@@ -263,7 +266,7 @@ export default function PostWorkQuiz() {
                   lineHeight: "1.6",
                 }}
               >
-                {q.explanation}
+                <Highlightable id={`explain-${index}`}>{q.explanation}</Highlightable>
               </p>
             </div>
           </div>
@@ -303,6 +306,8 @@ export default function PostWorkQuiz() {
         minHeight: "100vh",
       }}
     >
+      <HighlightToolbar />
+
       <div
         style={{
           background:

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type ChecklistItem = {
   n: number;
@@ -263,8 +264,12 @@ export default function CardiovascularCodingApproachPage() {
         <Link href="/cpt/surgery/33000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
       </nav>
 
+      <HighlightToolbar />
+
       <section style={introStyle}>
-        <strong>Why this page exists:</strong> the Guidelines Reviewer (Parts 1–3) is a code-lookup reference — dense and organized by code range on purpose. This page is the opposite: it's the general reasoning process cardiovascular coders actually use, distilled into a fixed order of questions. Learn this hierarchy once, and it applies to every subsection in the series, not just the one you happen to be studying that day.
+        <Highlightable id="intro-1" as="div">
+          <strong>Why this page exists:</strong> the Guidelines Reviewer (Parts 1–3) is a code-lookup reference — dense and organized by code range on purpose. This page is the opposite: it's the general reasoning process cardiovascular coders actually use, distilled into a fixed order of questions. Learn this hierarchy once, and it applies to every subsection in the series, not just the one you happen to be studying that day.
+        </Highlightable>
       </section>
 
       <section style={sectionStyle}>
@@ -272,12 +277,12 @@ export default function CardiovascularCodingApproachPage() {
           <span style={numberBadgeStyle}>★</span>
           <h2 style={sectionTitleStyle}>The Universal Cardiovascular Coding Hierarchy</h2>
         </div>
-        <p style={pStyle}>Before opening the codebook to a specific range, work through these eight questions IN ORDER. Each one narrows the field before the next one even matters — skipping ahead (like jumping straight to "how many grafts?" before confirming this is even a CABG case) is the most common way to land on the wrong code.</p>
+        <p style={pStyle}><Highlightable id="hierarchy-intro">Before opening the codebook to a specific range, work through these eight questions IN ORDER. Each one narrows the field before the next one even matters — skipping ahead (like jumping straight to "how many grafts?" before confirming this is even a CABG case) is the most common way to land on the wrong code.</Highlightable></p>
         {checklist.map((c) => (
           <div key={c.n} style={{ marginTop: "18px" }}>
             <p style={{ margin: "0 0 4px", fontWeight: 800, fontSize: "15px", color: "#111827" }}>{c.n}. {c.question}</p>
-            <p style={{ ...pStyle, margin: "0 0 6px" }}>{c.why}</p>
-            <div style={exampleBoxStyle}><strong>For example:</strong> {c.example}</div>
+            <p style={{ ...pStyle, margin: "0 0 6px" }}><Highlightable id={`checklist-${c.n}-why`}>{c.why}</Highlightable></p>
+            <div style={exampleBoxStyle}><Highlightable id={`checklist-${c.n}-example`}><strong>For example:</strong> {c.example}</Highlightable></div>
           </div>
         ))}
       </section>
@@ -287,7 +292,7 @@ export default function CardiovascularCodingApproachPage() {
           <span style={numberBadgeStyle}>≡</span>
           <h2 style={sectionTitleStyle}>Family-by-Family Priority Checklist</h2>
         </div>
-        <p style={pStyle}>Here's the same eight-question hierarchy applied to each major family in the series, condensed into the specific questions that actually matter for that family — in the order to ask them.</p>
+        <p style={pStyle}><Highlightable id="family-checklist-intro">Here's the same eight-question hierarchy applied to each major family in the series, condensed into the specific questions that actually matter for that family — in the order to ask them.</Highlightable></p>
       </section>
 
       {families.map((f) => (
@@ -300,15 +305,15 @@ export default function CardiovascularCodingApproachPage() {
 
           <p style={labelStyle}>👀 LOOK FOR, IN THIS ORDER</p>
           <ol style={{ margin: "0 0 4px", paddingLeft: "20px", display: "grid", gap: "6px", fontSize: "14.5px", lineHeight: 1.65 }}>
-            {f.lookFor.map((item) => <li key={item}>{item}</li>)}
+            {f.lookFor.map((item, i) => <li key={item}><Highlightable id={`family-${f.n}-lookfor-${i}`}>{item}</Highlightable></li>)}
           </ol>
 
           <div style={distinctionBoxStyle}>
-            <strong>🟥 The distinction that matters most:</strong> {f.distinction}
+            <Highlightable id={`family-${f.n}-distinction`} as="div"><strong>🟥 The distinction that matters most:</strong> {f.distinction}</Highlightable>
           </div>
 
           <div style={tipBoxStyle}>
-            <strong>🧠 Priority tip:</strong> {f.tip}
+            <Highlightable id={`family-${f.n}-tip`} as="div"><strong>🧠 Priority tip:</strong> {f.tip}</Highlightable>
           </div>
 
           <Link href={f.href} style={familyLinkStyle}>{f.linkLabel} →</Link>

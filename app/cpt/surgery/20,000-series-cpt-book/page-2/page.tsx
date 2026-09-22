@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Highlightable, HighlightToolbar } from "../../_digestive/highlighter";
 
 const sections = [
   {
@@ -76,6 +77,7 @@ const codeEntries = [
 export default function CptBookPageTwo() {
   return (
     <main className="cpt-book-page">
+      <HighlightToolbar />
       <header className="book-header">
         <div className="book-kicker">CPT 20,000 SERIES</div>
         <h1>Musculoskeletal System</h1>
@@ -92,8 +94,10 @@ export default function CptBookPageTwo() {
       {sections.map((section) => (
         <section key={section.title} className="book-section">
           <h2>{section.title}</h2>
-          {section.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+          {section.paragraphs.map((paragraph, i) => (
+            <p key={paragraph}>
+              <Highlightable id={`${section.title}-p-${i}`} as="span">{paragraph}</Highlightable>
+            </p>
           ))}
         </section>
       ))}
@@ -105,7 +109,9 @@ export default function CptBookPageTwo() {
             <article className="code-entry" key={code + description}>
               <div className="code-number">{code}</div>
               <div>
-                <div className="code-description">{description}</div>
+                <div className="code-description">
+                  <Highlightable id={`code-${code}`} as="span">{description}</Highlightable>
+                </div>
                 {reference && <div className="code-reference">➲ {reference}</div>}
               </div>
             </article>

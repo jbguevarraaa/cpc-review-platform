@@ -4,21 +4,34 @@ import { useEffect, useState, type ReactNode, type CSSProperties } from "react";
 
 const EVENT = "cpc-hl-change";
 
+export type HLColor = "yellow" | "green";
+const COLOR_HEX: Record<HLColor, string> = { yellow: "#fde047", green: "#86efac" };
+/** Click order: off → yellow → green → off. */
+const NEXT: Record<"off" | HLColor, "off" | HLColor> = { off: "yellow", yellow: "green", green: "off" };
+
 function storageKeyFor(pathname: string) {
   return `cpc-highlights:${pathname}`;
 }
-function readSet(key: string): Set<string> {
+
+function readMap(key: string): Record<string, HLColor> {
   try {
     const raw = localStorage.getItem(key);
-    if (!raw) return new Set();
-    return new Set(JSON.parse(raw) as string[]);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      // Migrate the older single-color (yellow-only) format: a plain array of ids.
+      const map: Record<string, HLColor> = {};
+      for (const id of parsed as string[]) map[id] = "yellow";
+      return map;
+    }
+    return (parsed ?? {}) as Record<string, HLColor>;
   } catch {
-    return new Set();
+    return {};
   }
 }
-function writeSet(key: string, s: Set<string>) {
+function writeMap(key: string, map: Record<string, HLColor>) {
   try {
-    localStorage.setItem(key, JSON.stringify([...s]));
+    localStorage.setItem(key, JSON.stringify(map));
   } catch {
     /* ignore (private browsing, quota, etc.) */
   }
@@ -31,8 +44,11 @@ function writeSet(key: string, s: Set<string>) {
 
 /**
  * Wrap one reviewable "chunk" (a paragraph, a rule, a tip, a definition row, a solved-case
- * step, a quiz explanation...) to make it click-to-highlight. State is per-browser
- * (localStorage), keyed by the page's path, so it survives reloads but never leaves the device.
+ * step, a quiz explanation...) to make it click-to-highlight, in yellow or green. State is
+ * per-browser (localStorage), keyed by the page's path, so it survives reloads but never
+ * leaves the device.
+ *
+ * Click cycles: no highlight → yellow → green → no highlight.
  *
  * `id` must be stable and unique within the page — a short deterministic string built from the
  * section/topic id plus the item's index in its array is enough (content order doesn't change).
@@ -50,37 +66,41 @@ export function Highlightable({
 }) {
   const pathname = usePathname() || "";
   const key = storageKeyFor(pathname);
-  const [on, setOn] = useState(false);
+  const [color, setColor] = useState<HLColor | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    setOn(readSet(key).has(id));
+    setColor(readMap(key)[id] ?? null);
     const onChange = (e: Event) => {
       const detail = (e as CustomEvent).detail as { key: string } | undefined;
-      if (detail?.key === key) setOn(readSet(key).has(id));
+      if (detail?.key === key) setColor(readMap(key)[id] ?? null);
     };
     window.addEventListener(EVENT, onChange);
     return () => window.removeEventListener(EVENT, onChange);
   }, [key, id]);
 
-  const toggle = () => {
-    const s = readSet(key);
-    if (s.has(id)) s.delete(id);
-    else s.add(id);
-    writeSet(key, s);
+  const cycle = () => {
+    const map = readMap(key);
+    const next = NEXT[map[id] ?? "off"];
+    if (next === "off") delete map[id];
+    else map[id] = next;
+    writeMap(key, map);
   };
+
+  const title =
+    color === "yellow" ? "Click to change to green" : color === "green" ? "Click to remove highlight" : "Click to highlight — tracks your place on this page";
 
   const Tag = as as any;
   return (
     <Tag
-      onClick={toggle}
-      title={on ? "Click to unhighlight" : "Click to highlight — tracks your place on this page"}
+      onClick={cycle}
+      title={title}
       style={{
         cursor: "pointer",
         borderRadius: "4px",
         transition: "background-color 120ms ease",
-        background: mounted && on ? "#fde047" : "transparent",
+        background: mounted && color ? COLOR_HEX[color] : "transparent",
         ...style,
       }}
     >
@@ -90,19 +110,28 @@ export function Highlightable({
 }
 
 /**
- * Small floating pill (bottom-right) showing how many blocks are highlighted on THIS page,
- * with a one-click "Clear all". Renders nothing until mounted or when the count is 0, so it
- * never shows during server render / before localStorage has been read.
+ * Small floating pill (bottom-right) showing how many blocks are highlighted on THIS page
+ * (broken down by color), with a one-click "Clear all". Renders nothing until mounted or when
+ * the count is 0, so it never shows during server render / before localStorage has been read.
  */
 export function HighlightToolbar() {
   const pathname = usePathname() || "";
   const key = storageKeyFor(pathname);
-  const [count, setCount] = useState(0);
+  const [counts, setCounts] = useState({ yellow: 0, green: 0 });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const update = () => setCount(readSet(key).size);
+    const update = () => {
+      const map = readMap(key);
+      let yellow = 0;
+      let green = 0;
+      for (const c of Object.values(map)) {
+        if (c === "yellow") yellow++;
+        else if (c === "green") green++;
+      }
+      setCounts({ yellow, green });
+    };
     update();
     const onChange = (e: Event) => {
       const detail = (e as CustomEvent).detail as { key: string } | undefined;
@@ -112,7 +141,8 @@ export function HighlightToolbar() {
     return () => window.removeEventListener(EVENT, onChange);
   }, [key]);
 
-  if (!mounted || count === 0) return null;
+  const total = counts.yellow + counts.green;
+  if (!mounted || total === 0) return null;
 
   return (
     <div
@@ -134,9 +164,11 @@ export function HighlightToolbar() {
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <span>🖍 {count} highlighted</span>
+      <span>
+        🟡 {counts.yellow} · 🟢 {counts.green}
+      </span>
       <button
-        onClick={() => writeSet(key, new Set())}
+        onClick={() => writeMap(key, {})}
         style={{
           background: "rgba(255,255,255,0.15)",
           border: "none",

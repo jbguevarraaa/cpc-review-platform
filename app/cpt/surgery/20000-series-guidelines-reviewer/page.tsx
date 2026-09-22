@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type CodeEntry = { code: string; desc: string };
 type Category = { title: string; codes: CodeEntry[] };
@@ -550,6 +551,7 @@ const codeNumStyle = { fontFamily: "Consolas, monospace", fontWeight: 800, color
 export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
   return (
     <main style={mainStyle}>
+      <HighlightToolbar />
       <header style={heroStyle}>
         <p style={kickerStyle}>20,000 SERIES · MUSCULOSKELETAL SYSTEM</p>
         <h1 style={{ margin: 0, fontSize: "clamp(28px, 5.5vw, 48px)" }}>CPT Surgery Guidelines Reviewer</h1>
@@ -570,7 +572,9 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
       </nav>
 
       <section style={introStyle}>
-        <strong>How this complements the existing study tips page:</strong> the study tips page already covers fracture treatment basics, trigger points, and bone grafting in a fast-reference format. This page is built the same way as the ICD-10 chapter reviewers — a structured Topic → Rule Summary → Step-by-Step → Example → Traps format — and adds ground the study tips page doesn't cover yet: wound exploration, muscle/bone biopsy, external fixation, and antibiotic drug-delivery devices. Codes are grouped by category rather than listed individually, per your request. Written in original wording, not copied from the CPT text. Head through Spine now live in Part 2 — linked above.
+        <Highlightable id="intro-1" as="span">
+          <strong>How this complements the existing study tips page:</strong> the study tips page already covers fracture treatment basics, trigger points, and bone grafting in a fast-reference format. This page is built the same way as the ICD-10 chapter reviewers — a structured Topic → Rule Summary → Step-by-Step → Example → Traps format — and adds ground the study tips page doesn't cover yet: wound exploration, muscle/bone biopsy, external fixation, and antibiotic drug-delivery devices. Codes are grouped by category rather than listed individually, per your request. Written in original wording, not copied from the CPT text. Head through Spine now live in Part 2 — linked above.
+        </Highlightable>
       </section>
 
       {topics.map((t) => (
@@ -584,15 +588,15 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
           {t.categories && (
             <>
               <p style={labelStyle}>🗂️ KEY CODES BY CATEGORY</p>
-              {t.categories.map((c) => (
+              {t.categories.map((c, ci) => (
                 <div key={c.title}>
                   <p style={categoryTitleStyle}>{c.title}</p>
                   <div style={codeListStyle}>
-                    {c.codes.map((entry) => (
-                      <span key={entry.code} style={codeItemStyle}>
+                    {c.codes.map((entry, ei) => (
+                      <Highlightable key={entry.code} id={`t${t.n}-cat${ci}-code${ei}`} as="span" style={codeItemStyle}>
                         <span style={codeNumStyle}>{entry.code}</span>
                         {entry.desc}
-                      </span>
+                      </Highlightable>
                     ))}
                   </div>
                 </div>
@@ -601,31 +605,43 @@ export default function SurgeryTwentyThousandGuidelinesReviewerPage() {
           )}
 
           <p style={labelStyle}>📋 RULE SUMMARY</p>
-          {t.summary.map((s) => <p key={s} style={pStyle}>{s}</p>)}
+          {t.summary.map((s, i) => (
+            <p key={s} style={pStyle}>
+              <Highlightable id={`t${t.n}-summary-${i}`} as="span">{s}</Highlightable>
+            </p>
+          ))}
 
           <p style={labelStyle}>🪜 STEP BY STEP — HOW TO CODE THIS</p>
           <div style={stepsBoxStyle}>
             <ol style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-              {t.steps.map((step) => <li key={step}>{step}</li>)}
+              {t.steps.map((step, i) => (
+                <li key={step}>
+                  <Highlightable id={`t${t.n}-step-${i}`} as="span">{step}</Highlightable>
+                </li>
+              ))}
             </ol>
           </div>
 
           <p style={labelStyle}>🎯 TWO EXAMPLE SCENARIOS</p>
           <div style={scenarioGridStyle}>
             <div style={easyCardStyle}>
-              <strong>🟢 Easy:</strong> {t.easy.scenario}
-              <p style={{ margin: "8px 0 0" }}><strong>Answer:</strong> {t.easy.answer}</p>
+              <strong>🟢 Easy:</strong> <Highlightable id={`t${t.n}-easy-scenario`} as="span">{t.easy.scenario}</Highlightable>
+              <p style={{ margin: "8px 0 0" }}><strong>Answer:</strong> <Highlightable id={`t${t.n}-easy-answer`} as="span">{t.easy.answer}</Highlightable></p>
             </div>
             <div style={hardCardStyle}>
-              <strong>🟠 Hard:</strong> {t.hard.scenario}
-              <p style={{ margin: "8px 0 0" }}><strong>Answer:</strong> {t.hard.answer}</p>
+              <strong>🟠 Hard:</strong> <Highlightable id={`t${t.n}-hard-scenario`} as="span">{t.hard.scenario}</Highlightable>
+              <p style={{ margin: "8px 0 0" }}><strong>Answer:</strong> <Highlightable id={`t${t.n}-hard-answer`} as="span">{t.hard.answer}</Highlightable></p>
             </div>
           </div>
 
           <div style={tipsBoxStyle}>
             <strong>🟥 Common Traps</strong>
             <ul style={{ margin: "8px 0 0", paddingLeft: "20px", display: "grid", gap: "6px" }}>
-              {t.tips.map((tip) => <li key={tip}>{tip}</li>)}
+              {t.tips.map((tip, i) => (
+                <li key={tip}>
+                  <Highlightable id={`t${t.n}-tip-${i}`} as="span">{tip}</Highlightable>
+                </li>
+              ))}
             </ul>
           </div>
         </section>

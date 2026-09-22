@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SolvedCaseBox, type SolvedCase } from "../_cases/solved-case";
 import { aorticValveCases, cabgCases, ecmoCases } from "../_cases/cases-33000";
+import { Highlightable, HighlightToolbar } from "../_digestive/highlighter";
 
 type CodeEntry = [string, string];
 type Category = { name: string; codes: CodeEntry[] };
@@ -652,8 +653,12 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
         <Link href="/cpt/surgery" style={navLinkStyle}>Surgery home</Link>
       </nav>
 
+      <HighlightToolbar />
+
       <section style={introBoxStyle}>
-        <strong>This fills the biggest gap in the series:</strong> heart valve surgery (TAVR/TAVI, open valve repair and replacement across all four valves) and coronary artery bypass grafting (CABG) — arguably the most clinically central and most heavily tested part of cardiovascular surgery — plus aorta/great vessel repair (open and endovascular/TEVAR), ECMO and cardiac assist devices, and heart/heart-lung transplantation. Where older study material still cites codes that CPT 2026 has deleted (for example 33884, 37221, 37223), this page uses the current codes. Written in original wording, not copied from the CPT text; codes are grouped by category with representative entries, not every single code listed.
+        <Highlightable id="intro-1" as="div">
+          <strong>This fills the biggest gap in the series:</strong> heart valve surgery (TAVR/TAVI, open valve repair and replacement across all four valves) and coronary artery bypass grafting (CABG) — arguably the most clinically central and most heavily tested part of cardiovascular surgery — plus aorta/great vessel repair (open and endovascular/TEVAR), ECMO and cardiac assist devices, and heart/heart-lung transplantation. Where older study material still cites codes that CPT 2026 has deleted (for example 33884, 37221, 37223), this page uses the current codes. Written in original wording, not copied from the CPT text; codes are grouped by category with representative entries, not every single code listed.
+        </Highlightable>
       </section>
 
       {subsections.map((sub) => (
@@ -663,7 +668,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <h2 style={sectionTitleStyle}>{sub.title}</h2>
             <span style={rangeChipStyle}>{sub.range}</span>
           </div>
-          {sub.intro?.map((p) => <p key={p} style={pStyle}>{p}</p>)}
+          {sub.intro?.map((p, i) => <p key={p} style={pStyle}><Highlightable id={`${sub.n}-intro-${i}`}>{p}</Highlightable></p>)}
 
           {sub.n === 4 && <CabgDiagram />}
           {sub.n === 7 && <EcmoDiagram />}
@@ -673,7 +678,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <div style={definitionsBoxStyle}>
               <p style={definitionsTitleStyle}>📖 DEFINITIONS</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.definitions.map(([term, def]) => <li key={term}><strong>{term}:</strong> {def}</li>)}
+                {sub.definitions.map(([term, def], i) => <li key={term}><Highlightable id={`${sub.n}-def-${i}`}><strong>{term}:</strong> {def}</Highlightable></li>)}
               </ul>
             </div>
           )}
@@ -682,7 +687,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <div style={stepsBoxStyle}>
               <p style={stepsTitleStyle}>🪜 STEP-BY-STEP — WHAT IS INCLUDED VS. REPORTED SEPARATELY</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px", listStyle: "none" }}>
-                {sub.steps.map((step) => <li key={step}>{step}</li>)}
+                {sub.steps.map((step, i) => <li key={step}><Highlightable id={`${sub.n}-step-${i}`}>{step}</Highlightable></li>)}
               </ul>
             </div>
           )}
@@ -691,20 +696,20 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <div style={examplesBoxStyle}>
               <p style={examplesTitleStyle}>🧪 WORKED EXAMPLES</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.examples.map((ex) => <li key={ex}>{ex}</li>)}
+                {sub.examples.map((ex, i) => <li key={ex}><Highlightable id={`${sub.n}-example-${i}`}>{ex}</Highlightable></li>)}
               </ul>
             </div>
           )}
 
-          {sub.categories.map((cat) => (
+          {sub.categories.map((cat, ci) => (
             <div key={cat.name}>
               <h3 style={categoryTitleStyle}>{cat.name}</h3>
               <ul style={codeListStyle}>
-                {cat.codes.map(([code, desc]) => (
-                  <li key={code} style={codeItemStyle}>
+                {cat.codes.map(([code, desc], cj) => (
+                  <Highlightable key={code} id={`${sub.n}-cat-${ci}-code-${cj}`} as="li" style={codeItemStyle}>
                     <code style={codeChipStyle}>{code}</code>
                     <span style={{ flex: "1 1 220px" }}>{desc}</span>
-                  </li>
+                  </Highlightable>
                 ))}
               </ul>
             </div>
@@ -714,7 +719,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <div style={rulesBoxStyle}>
               <p style={rulesTitleStyle}>🟥 KEY CODING RULES</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.rules.map((rule) => <li key={rule}>{rule}</li>)}
+                {sub.rules.map((rule, i) => <li key={rule}><Highlightable id={`${sub.n}-rule-${i}`}>{rule}</Highlightable></li>)}
               </ul>
             </div>
           )}
@@ -723,7 +728,7 @@ export default function SurgeryCardiovascularGuidelinesReviewerPart2Page() {
             <div style={tipsBoxStyle}>
               <p style={tipsTitleStyle}>🧠 CODING TIPS</p>
               <ul style={{ margin: 0, paddingLeft: "20px", display: "grid", gap: "8px" }}>
-                {sub.tips.map((tip) => <li key={tip}>{tip}</li>)}
+                {sub.tips.map((tip, i) => <li key={tip}><Highlightable id={`${sub.n}-tip-${i}`}>{tip}</Highlightable></li>)}
               </ul>
             </div>
           )}
