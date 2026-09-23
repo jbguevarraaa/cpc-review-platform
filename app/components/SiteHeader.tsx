@@ -10,6 +10,7 @@ const links = [
   { href: "/hcpcs", label: "HCPCS" },
   { href: "/business-medicine", label: "Business of Medicine" },
   { href: "/final-exams", label: "Final Exams" },
+  { href: "/reference", label: "🔍 Code Lookup" },
 ];
 
 const barStyle: React.CSSProperties = {
