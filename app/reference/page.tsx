@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import cptCuratedRaw from "./data/cpt_curated.json";
+import cptExpandedRaw from "./data/cpt_expanded.json";
 import icd10CuratedRaw from "./data/icd10_curated.json";
 import cptTocRanges from "./data/cpt_toc_ranges.json";
 
@@ -27,12 +28,14 @@ type CptTocRange = {
 
 const cptCurated: CptCurated[] = (
   cptCuratedRaw as Array<CptCurated & { file?: string }>
-).map(({ code, description, section, href }) => ({
-  code,
-  description,
-  section,
-  href,
-}));
+)
+  .map(({ code, description, section, href }) => ({
+    code,
+    description,
+    section,
+    href,
+  }))
+  .concat(cptExpandedRaw as CptCurated[]);
 
 const icd10Curated: Icd10Curated[] = (
   icd10CuratedRaw as Array<Icd10Curated & { file?: string }>
@@ -142,14 +145,19 @@ export default function ReferencePage() {
             maxWidth: "820px",
           }}
         >
-          This covers codes already taught across this site&apos;s own
-          CPT and ICD-10-CM reviewer pages (fully verified against the
-          reviewers), plus a CPT section/range browser sourced from the
-          codebook&apos;s table of contents. It is{" "}
-          <strong>not</strong> a complete code-by-code CPT/ICD-10 database
-          &mdash; a full mechanical parse of the raw codebook produced too
-          many misaligned or wrong entries to trust, so that was left out
-          of scope this round.
+          This covers roughly 2,000 CPT codes and 334 ICD-10-CM codes,
+          each individually checked against the CPT 2026 text rather than
+          bulk-parsed &mdash; some already taught across this site&apos;s
+          own reviewer pages (those link straight to the reviewer), the
+          rest spanning Anesthesia, Radiology, Pathology &amp; Lab,
+          Medicine, and the Surgery sections not yet built into full
+          reviewers (Vascular, Nervous System, Eye, Auditory) &mdash;
+          plus a CPT section/range browser sourced from the codebook&apos;s
+          table of contents. It is <strong>not</strong> a complete
+          code-by-code CPT/ICD-10 database &mdash; a full mechanical parse
+          of the entire raw codebook produced too many misaligned or wrong
+          entries to trust, so exhaustive per-code coverage of every single
+          CPT/ICD-10 code was left out of scope.
         </p>
       </div>
 
