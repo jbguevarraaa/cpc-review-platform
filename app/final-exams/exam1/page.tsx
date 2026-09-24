@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const questions = [
   {
@@ -1272,13 +1272,45 @@ const questions = [
   
 ];
 
+const FOUR_HOURS_SECONDS = 4 * 60 * 60;
+
+function formatTime(totalSeconds: number) {
+  const clamped = Math.max(0, totalSeconds);
+  const h = Math.floor(clamped / 3600);
+  const m = Math.floor((clamped % 3600) / 60);
+  const s = clamped % 60;
+  return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
+
 export default function Exam1() {
+  const [started, setStarted] = useState(false);
+  const [timerEnabled, setTimerEnabled] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(FOUR_HOURS_SECONDS);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [answers, setAnswers] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
 
   const letters = ["A", "B", "C", "D"];
+
+  useEffect(() => {
+    if (!started || !timerEnabled || showResults) return;
+    if (secondsLeft <= 0) {
+      const finalAnswers = selectedAnswer ? [...answers, selectedAnswer] : [...answers];
+      setAnswers(finalAnswers);
+      setShowResults(true);
+      return;
+    }
+    const id = setTimeout(() => setSecondsLeft((s) => s - 1), 1000);
+    return () => clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [started, timerEnabled, showResults, secondsLeft]);
+
+  function handleStart(withTimer: boolean) {
+    setTimerEnabled(withTimer);
+    setSecondsLeft(FOUR_HOURS_SECONDS);
+    setStarted(true);
+  }
 
   const handleNext = () => {
     if (!selectedAnswer) return;
@@ -1299,6 +1331,67 @@ export default function Exam1() {
     (answer, index) =>
       answer === questions[index].correct
   ).length;
+
+  if (!started) {
+    return (
+      <main style={{ maxWidth: "900px", margin: "0 auto", padding: "40px", fontFamily: "Arial" }}>
+        <div
+          style={{
+            background: "linear-gradient(135deg,#2563eb,#7c3aed)",
+            color: "white",
+            padding: "50px 40px",
+            borderRadius: "20px",
+            marginBottom: "30px",
+            textAlign: "center",
+          }}
+        >
+          <h1 style={{ margin: "0 0 10px" }}>🎓 CPC Final Exam 1</h1>
+          <p style={{ fontSize: "18px", opacity: 0.95, margin: 0 }}>100 Questions</p>
+        </div>
+
+        <div style={{ background: "white", padding: "30px", borderRadius: "16px", boxShadow: "0 4px 12px rgba(0,0,0,0.08)", textAlign: "center" }}>
+          <h2 style={{ marginTop: 0 }}>How would you like to take this exam?</h2>
+          <p style={{ color: "#555", lineHeight: 1.6 }}>
+            The real CPC exam gives you 4 hours. You can practice under that same time pressure, or take it untimed and focus on
+            learning.
+          </p>
+
+          <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", marginTop: "24px" }}>
+            <button
+              onClick={() => handleStart(true)}
+              style={{
+                padding: "16px 28px",
+                background: "#2563eb",
+                color: "white",
+                border: "none",
+                borderRadius: "12px",
+                fontSize: "16px",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              ⏱ Start with 4-Hour Timer
+            </button>
+            <button
+              onClick={() => handleStart(false)}
+              style={{
+                padding: "16px 28px",
+                background: "#7c3aed",
+                color: "white",
+                border: "none",
+                borderRadius: "12px",
+                fontSize: "16px",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              ▶ Start Without a Timer
+            </button>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   if (showResults) {
     const percentage = Math.round(
@@ -1337,6 +1430,10 @@ export default function Exam1() {
               ? "✅ PASS"
               : "❌ FAIL"}
           </h2>
+
+          {timerEnabled && secondsLeft <= 0 && (
+            <p style={{ opacity: 0.9 }}>⏱ Time expired — the exam was submitted automatically with your answers so far.</p>
+          )}
         </div>
 
         {questions.map((q, index) => (
@@ -1359,7 +1456,7 @@ export default function Exam1() {
 
             <p>
               <strong>Your Answer:</strong>{" "}
-              {answers[index]}
+              {answers[index] ?? "Not answered"}
             </p>
 
             <p>
@@ -1368,7 +1465,9 @@ export default function Exam1() {
             </p>
 
             <p>
-              {answers[index] === q.correct
+              {answers[index] === undefined
+                ? "⬜ Not answered"
+                : answers[index] === q.correct
                 ? "✅ Correct"
                 : "❌ Incorrect"}
             </p>
@@ -1407,14 +1506,35 @@ export default function Exam1() {
           padding: "40px",
           borderRadius: "20px",
           marginBottom: "30px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          flexWrap: "wrap",
+          gap: "16px",
         }}
       >
-        <h1>🎓 CPC Final Exam 1</h1>
+        <div>
+          <h1 style={{ margin: 0 }}>🎓 CPC Final Exam 1</h1>
 
-        <p>
-          Question {currentQuestion + 1} of{" "}
-          {questions.length}
-        </p>
+          <p style={{ margin: "6px 0 0" }}>
+            Question {currentQuestion + 1} of{" "}
+            {questions.length}
+          </p>
+        </div>
+        {timerEnabled && (
+          <div
+            style={{
+              background: secondsLeft <= 300 ? "#dc2626" : "rgba(255,255,255,0.15)",
+              padding: "10px 18px",
+              borderRadius: "10px",
+              fontWeight: 800,
+              fontSize: "18px",
+              fontFamily: "Consolas, monospace",
+            }}
+          >
+            ⏱ {formatTime(secondsLeft)}
+          </div>
+        )}
       </div>
 
       <div
