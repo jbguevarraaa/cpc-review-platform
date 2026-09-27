@@ -145,21 +145,21 @@ export default function ReferencePage() {
             maxWidth: "820px",
           }}
         >
-          This covers roughly 3,350 CPT codes and 334 ICD-10-CM codes,
+          This covers roughly 3,800 CPT codes and 334 ICD-10-CM codes,
           each individually checked against the CPT 2026 text rather than
           bulk-parsed &mdash; some already taught across this site&apos;s
           own reviewer pages (those link straight to the reviewer), plus
-          full code-level detail across almost the entire CPT Surgery
-          chapter (including every Musculoskeletal anatomic region &mdash;
-          spine, shoulder, hand, hip, knee, foot, and the whole arthroscopy
-          family), Anesthesia, Radiology, Pathology &amp; Lab, and Medicine
-          &mdash; plus a CPT section/range browser sourced from the
-          codebook&apos;s table of contents for anything not yet expanded
-          to full detail. It is <strong>not</strong> a complete code-by-code
-          CPT/ICD-10 database &mdash; a full mechanical parse of the entire
-          raw codebook produced too many misaligned or wrong entries to
-          trust, so exhaustive per-code coverage of every single CPT/ICD-10
-          code was left out of scope.
+          full code-level detail across nearly the entire CPT Surgery
+          chapter (every Musculoskeletal anatomic region, Male and Female
+          Genital systems, Maternity Care &amp; Delivery, and the Endocrine
+          System, on top of Anesthesia, Radiology, Pathology &amp; Lab, and
+          Medicine) &mdash; plus a CPT section/range browser sourced from
+          the codebook&apos;s table of contents for anything not yet
+          expanded to full detail. It is <strong>not</strong> a complete
+          code-by-code CPT/ICD-10 database &mdash; a full mechanical parse
+          of the entire raw codebook produced too many misaligned or wrong
+          entries to trust, so exhaustive per-code coverage of every single
+          CPT/ICD-10 code was left out of scope.
         </p>
       </div>
 
