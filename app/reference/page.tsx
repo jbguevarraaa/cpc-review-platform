@@ -5,6 +5,7 @@ import Link from "next/link";
 import cptCuratedRaw from "./data/cpt_curated.json";
 import cptExpandedRaw from "./data/cpt_expanded.json";
 import icd10CuratedRaw from "./data/icd10_curated.json";
+import icd10ExpandedRaw from "./data/icd10_expanded.json";
 import cptTocRanges from "./data/cpt_toc_ranges.json";
 
 type CptCurated = {
@@ -39,12 +40,14 @@ const cptCurated: CptCurated[] = (
 
 const icd10Curated: Icd10Curated[] = (
   icd10CuratedRaw as Array<Icd10Curated & { file?: string }>
-).map(({ code, description, chapter, href }) => ({
-  code,
-  description,
-  chapter,
-  href,
-}));
+)
+  .map(({ code, description, chapter, href }) => ({
+    code,
+    description,
+    chapter,
+    href,
+  }))
+  .concat(icd10ExpandedRaw as Icd10Curated[]);
 
 const tocRanges: CptTocRange[] = cptTocRanges as CptTocRange[];
 
@@ -145,20 +148,23 @@ export default function ReferencePage() {
             maxWidth: "820px",
           }}
         >
-          This covers roughly 5,500 CPT codes and 334 ICD-10-CM codes,
-          each individually checked against the CPT 2026 text rather than
-          bulk-parsed &mdash; the entire CPT Surgery chapter, all of
-          Evaluation &amp; Management (every visit-level code with its own
-          time/MDM threshold, not just a combined range summary), and
+          This covers roughly 5,500 CPT codes and 1,200 ICD-10-CM codes,
+          each individually checked against the CPT/ICD-10-CM 2026 text
+          rather than bulk-parsed &mdash; the entire CPT Surgery chapter,
+          all of Evaluation &amp; Management (every visit-level code with
+          its own time/MDM threshold, not just a combined range summary),
           nearly all of Anesthesia, Radiology, Pathology &amp; Lab, and
-          Medicine, on top of what&apos;s already taught across this
-          site&apos;s own reviewer pages (those link straight to the
-          reviewer) &mdash; plus a CPT section/range browser sourced from
-          the codebook&apos;s table of contents for the small remainder
-          (mainly Category II/III codes) not yet expanded to full detail.
-          It is <strong>not</strong> a complete code-by-code CPT/ICD-10
-          database &mdash; a full mechanical parse of the entire raw
-          codebook produced too many misaligned or wrong entries to trust,
+          Medicine, and every ICD-10-CM code that appears as an answer
+          choice anywhere in this site&apos;s own final exams, practice
+          quizzes, and worked examples &mdash; on top of what&apos;s
+          already taught across this site&apos;s own reviewer pages (those
+          link straight to the reviewer) &mdash; plus a CPT section/range
+          browser sourced from the codebook&apos;s table of contents for
+          the small remainder (mainly Category II/III codes) not yet
+          expanded to full detail. It is <strong>not</strong> a complete
+          code-by-code CPT/ICD-10 database &mdash; a full mechanical parse
+          of the entire raw codebook produced too many misaligned or wrong
+          entries to trust,
           so exhaustive per-code coverage of every single CPT/ICD-10 code
           was left out of scope.
         </p>
