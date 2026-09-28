@@ -233,7 +233,7 @@ const questions: Question[] = [
   {
     topic: "Wart Destruction + Separate Lesion Biopsy",
     question: "Three plantar warts on the right foot are destroyed via cryosurgery, and a separate, suspicious-looking lesion on the left arm is removed via punch biopsy. Pathology on the arm lesion shows a blue nevus with no atypical features.",
-    options: ["A. 17000, 17003, D23.6, B07", "B. 17000, 17003, 11100-59, D23.62, B07.0", "C. 17110, 11104-59, B07.0, D23.62", "D. 17110, D23.69, B07.9"],
+    options: ["A. 17000, 17003, D23.6, B07", "B. 17000, 17003, 11100-59, D23.62, B07.0", "C. 17110, 11104-59, B07.0, D23.62", "D. 17110, D23.62, B07.9"],
     correct: "C",
     explanation: "Plantar warts are benign, not premalignant, so the premalignant destruction codes (most commonly used for actinic keratosis) don't apply — the benign-lesion destruction code fits instead. Since a completely separate biopsy was performed on a different lesion at a different site, that punch biopsy needs its own code with modifier 59 to show it's distinct from the wart destruction.",
     lookFor: "Warts are benign, not premalignant — don't default to the premalignant destruction codes just because a lesion is being destroyed.",

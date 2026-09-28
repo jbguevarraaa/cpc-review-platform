@@ -507,10 +507,10 @@ const questions: Q[] = [
     question:
       "A 22-year-old driver lost control of her car and crashed into a light pole on the highway. She arrived at the hospital. She had CT scans without contrast of the brain and chest. She had X-rays of AP and PA views of her left ribs and AP and PA views of her right ribs with a posteroanterior view of the chest. The CT scan of the brain showed a fracture of the skull base with no hemorrhage of the brain. The CT of the lung showed no puncture of the lungs. The X-ray showed fractures in the right and left second, third, and fifth ribs. What CPT and ICD-10-CM codes are reported?",
     options: [
-      "70460-26, 71260-26, 71110-26, S02.01XA, S22.49XB V47.0XXA, Y92.411",
-      "70450-26, 71250-26, 71101-26, S02.109A, S22.43XA, V47.32XA, Y92.411",
+      "70460-26, 71260-26, 71110-26, S02.0XXA, S22.49XB V47.0XXA, Y92.411",
+      "70450-26, 71250-26, 71101-26, S02.109A, S22.43XA, V47.3XXA, Y92.411",
       "70450-26, 71250-26, 71111-26, S02.109A, S22.43XA, V47.5XXA, Y92.411",
-      "70450-26, 71250-26, 71111-26, 71045-26, S01.109A, S22.49XA, V47.32XA, Y92.411",
+      "70450-26, 71250-26, 71111-26, 71045-26, S01.109A, S22.49XA, V47.3XXA, Y92.411",
     ],
     correct: "C",
     explanation:
@@ -673,7 +673,7 @@ const questions: Q[] = [
   {
     question:
       "A 25-year-old is brought to the burn unit being rescued from a burning house. She sustained 25% second degree burns on her anterior trunk and back and 20% third degree burns on her legs and arms. Total body surface area burned is 45%. What ICD-10-CM code is reported for the burns classified according to the extent of body surface involved?",
-    options: ["T31.22", "T32.42", "T31.42", "T31.24"],
+    options: ["T31.22", "T32.42", "T31.42", "T31.44"],
     correct: "C",
     explanation:
       "Per guideline I.C.19.d.6, add the second- and third-degree percentages together for total TBSA (25% + 20% = 45%), giving the 4th character 4 (40-49%). The 5th character reflects only the third-degree portion (20%), giving character 2 (20-29%). This is fire, not chemical corrosion (eliminating the T32 option). ICD-10-CM: Burn/extent (percentage of body surface)/40-49 percent/with 20-29 percent third degree burns refers to T31.42.",
@@ -681,10 +681,10 @@ const questions: Q[] = [
   {
     question:
       "The patient is a 75-year-old woman who is here for follow-up after an incident last week in which she had an FB lodged in her throat. An emergency esophagoscopy was performed and the piece of hamburger meat removed and biopsy performed. She is positive for Barrett's esophagus. She has GERD which is currently being treated by medication and is here today to be evaluated for photodynamic therapy. What diagnosis codes should be reported for today's visit?",
-    options: ["K22.70, K21.9", "T18.12XA, K22.70", "K22.70, K21.9", "T18.12XA, K22.70, K21.9"],
+    options: ["K22.70, K21.9", "T18.120A, K22.70", "K22.70, K21.9", "T18.120A, K22.70, K21.9"],
     correct: "A",
     explanation:
-      "The biopsy confirmed Barrett's esophagus (K22.70), typically caused by GERD (K21.9) — both are reported for today's visit. The foreign body (T18.12XA) was already resolved last week and is not reported for today's follow-up encounter.",
+      "The biopsy confirmed Barrett's esophagus (K22.70), typically caused by GERD (K21.9) — both are reported for today's visit. The foreign body (T18.120A) was already resolved last week and is not reported for today's follow-up encounter.",
   },
   {
     question:
