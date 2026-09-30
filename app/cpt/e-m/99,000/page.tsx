@@ -72,6 +72,7 @@ export default function EmSeriesHubPage() {
         <Link href="/cpt/e-m/99000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/e-m/99000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt/e-m/99000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
+        <Link href="/cpt/e-m/schematic" style={navLinkStyle}>Schematic (visual map)</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
 
@@ -112,6 +113,11 @@ export default function EmSeriesHubPage() {
           <span style={labelStyle}>FLASHCARDS</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>5-Minute Commute Review</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Tap-to-flip cards, one rule per card — time thresholds, MDM data levels, the critical care ladder, and where 99417 starts.</p>
+        </Link>
+        <Link href="/cpt/e-m/schematic" style={cardStyle}>
+          <span style={labelStyle}>STRATEGIC SCHEMATIC</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>E/M at a Glance</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>A one-page visual roadmap of the whole series — ten stops from the code map to the MDM-vs-time strategy, for a fast visual refresher.</p>
         </Link>
       </div>
 

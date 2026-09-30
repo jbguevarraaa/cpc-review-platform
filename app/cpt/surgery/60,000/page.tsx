@@ -66,6 +66,7 @@ export default function NeuroEndocrineSeriesPage() {
         <Link href="/cpt/surgery/60000-series-guidelines-reviewer" style={navLinkStyle}>Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/60000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/60000-series-guidelines-reviewer-part-3" style={navLinkStyle}>Reviewer Pt. 3</Link>
+        <Link href="/cpt/surgery/60000-series-schematic" style={navLinkStyle}>Strategic Schematic</Link>
         <Link href="/cpt/surgery/60000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/60000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
@@ -93,6 +94,11 @@ export default function NeuroEndocrineSeriesPage() {
           <span style={labelStyle}>GUIDELINES REVIEWER · PART 3</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Spine & the Endocrine Glands</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Laminectomy, laminotomy, discectomy, and corpectomy with a level-counting grid, plus the thyroid, parathyroid, thymus, adrenal, and carotid body codes — with the cervical discectomy question solved.</p>
+        </Link>
+        <Link href="/cpt/surgery/60000-series-schematic" style={cardStyle}>
+          <span style={labelStyle}>STRATEGIC SCHEMATIC</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>The Whole Series at a Glance</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>A nine-stop visual roadmap from skull base surgery through spine decompression to the endocrine glands, closing with the five-question strategy that solves every code in this series.</p>
         </Link>
         <Link href="/cpt/surgery/60000-series-practice-quiz" style={cardStyle}>
           <span style={labelStyle}>PRACTICE QUIZ</span>

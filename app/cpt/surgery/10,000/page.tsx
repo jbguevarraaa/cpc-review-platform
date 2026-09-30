@@ -356,10 +356,39 @@ export default function TenThousandSeriesPage() {
             </p>
           </div>
         </Link>
+
+        {/* Strategic Schematic */}
+        <Link href="/cpt/surgery/10000-series-schematic" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🗺️ Strategic Schematic</h3>
+            <p style={{ margin: 0 }}>
+              A one-page visual roadmap of the whole series — twelve stops from the chapter map to the final strategy.
+            </p>
+          </div>
+        </Link>
       </div>
 
+      {/* Nav bar */}
+      <nav aria-label="10,000 Series navigation" style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "30px" }}>
+        <Link
+          href="/cpt/surgery/10000-series-schematic"
+          style={{
+            textDecoration: "none",
+            color: "#2563eb",
+            background: "#ffffff",
+            border: "1px solid #ddd",
+            borderRadius: "999px",
+            padding: "9px 14px",
+            fontWeight: 700,
+            fontSize: "13.5px",
+          }}
+        >
+          Strategic Schematic
+        </Link>
+      </nav>
+
       {/* Back Button */}
-      <div style={{ marginTop: "35px" }}>
+      <div style={{ marginTop: "20px" }}>
         <Link
           href="/cpt/surgery"
           style={{

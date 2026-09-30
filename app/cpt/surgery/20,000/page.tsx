@@ -75,6 +75,13 @@ export default function TwentyThousandSeriesPage() {
             <p style={{ margin: 0 }}>Every question from the training discussion guide — chapter organization, packaged services, fracture/dislocation treatment, tumor excision, casts and strapping, arthrocentesis, and endoscopy/arthroscopy — answered step by step.</p>
           </div>
         </Link>
+
+        <Link href="/cpt/surgery/20000-series-schematic" style={{ textDecoration: "none", color: "inherit" }}>
+          <div style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "25px", width: "320px", backgroundColor: "white", cursor: "pointer", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>🧭 Strategic Schematic</h3>
+            <p style={{ margin: 0 }}>The whole 20,000 Series as one visual roadmap — twelve stops from general bundling rules through arthroscopy, plus the biggest decision chain for the exam.</p>
+          </div>
+        </Link>
       </div>
 
       <div style={{ marginTop: "35px" }}>

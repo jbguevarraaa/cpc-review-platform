@@ -25,6 +25,7 @@ export default function ThirtyThousandSeriesPage() {
         <Link href="/cpt/surgery/30000-series-guidelines-reviewer" style={navLinkStyle}>Guidelines Reviewer Pt. 1</Link>
         <Link href="/cpt/surgery/30000-series-guidelines-reviewer-part-2" style={navLinkStyle}>Guidelines Reviewer Pt. 2</Link>
         <Link href="/cpt/surgery/30000-series-discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
+        <Link href="/cpt/surgery/30000-series-schematic" style={navLinkStyle}>Strategic Schematic</Link>
         <Link href="/cpt/surgery/30000-series-beginner-guide" style={navLinkStyle}>Beginner Scenarios</Link>
         <Link href="/cpt/surgery/30000-series-practice-quiz" style={navLinkStyle}>Practice Quiz</Link>
         <Link href="/cpt/surgery/30000-series-flashcards" style={navLinkStyle}>Flashcards</Link>
@@ -46,6 +47,11 @@ export default function ThirtyThousandSeriesPage() {
           <span style={{ color: "#0f766e", fontWeight: 800 }}>DISCUSSION GUIDE</span>
           <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Every Training Question, Answered</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Nasal endoscopy, laryngoscopy, bronchoscopy, thoracoscopy (VATS), and lung/pleura wedge-resection reporting logic, answered and cross-checked against CPT 2026.</p>
+        </Link>
+        <Link href="/cpt/surgery/30000-series-schematic" style={cardStyle}>
+          <span style={{ color: "#0f766e", fontWeight: 800 }}>STRATEGIC SCHEMATIC</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#111827" }}>Respiratory System at a Glance</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>A one-glance visual roadmap of the whole chapter, nose through lung transplantation, plus the biggest wedge-resection decision rule.</p>
         </Link>
         <Link href="/cpt/surgery/30000-series-beginner-guide" style={cardStyle}>
           <span style={{ color: "#0f766e", fontWeight: 800 }}>BEGINNER SCENARIOS</span>

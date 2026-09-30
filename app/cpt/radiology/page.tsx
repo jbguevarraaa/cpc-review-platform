@@ -26,6 +26,7 @@ export default function RadiologySeriesPage() {
         <Link href="/cpt/radiology/study-tips" style={navLinkStyle}>Study tips & hacks</Link>
         <Link href="/cpt/radiology/master-reviewer" style={navLinkStyle}>Master Reviewer Pt. 1</Link>
         <Link href="/cpt/radiology/master-reviewer-part-2" style={navLinkStyle}>Master Reviewer Pt. 2</Link>
+        <Link href="/cpt/radiology/schematic" style={navLinkStyle}>Schematic (visual map)</Link>
       </nav>
 
       <section style={{ background: "#fff7e8", border: "1px solid #efd39b", borderLeft: "7px solid #b7791f", borderRadius: "12px", padding: "22px 24px", marginBottom: "28px" }}>
@@ -53,6 +54,11 @@ export default function RadiologySeriesPage() {
           <span style={{ color: "#1d4ed8", fontWeight: 800 }}>MASTER REVIEWER · PART 2 OF 2</span>
           <h2 style={{ margin: "10px 0 8px", color: "#1e3a8a" }}>Master CPC Reviewer (76506–79999)</h2>
           <p style={{ margin: 0, lineHeight: 1.65 }}>Ultrasound, guidance codes, echocardiography, mammography, bone/joint studies, radiation oncology, and nuclear medicine.</p>
+        </Link>
+        <Link href="/cpt/radiology/schematic" style={cardStyle}>
+          <span style={{ color: "#8b5e3c", fontWeight: 800 }}>STRATEGIC SCHEMATIC</span>
+          <h2 style={{ margin: "10px 0 8px", color: "#6b4226" }}>Radiology at a Glance</h2>
+          <p style={{ margin: 0, lineHeight: 1.65 }}>A one-glance visual roadmap of the whole 70,000 series — the biggest code-family patterns, top to bottom, with a closing exam strategy.</p>
         </Link>
       </div>
     </main>
