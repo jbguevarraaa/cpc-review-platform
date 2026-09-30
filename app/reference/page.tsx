@@ -148,23 +148,25 @@ export default function ReferencePage() {
             maxWidth: "820px",
           }}
         >
-          This covers roughly 5,500 CPT codes and 1,200 ICD-10-CM codes,
+          This covers roughly 6,000 CPT codes and 1,200 ICD-10-CM codes,
           each individually checked against the CPT/ICD-10-CM 2026 text
           rather than bulk-parsed &mdash; the entire CPT Surgery chapter,
           all of Evaluation &amp; Management (every visit-level code with
           its own time/MDM threshold, not just a combined range summary),
           nearly all of Anesthesia, Radiology, Pathology &amp; Lab, and
-          Medicine, and every ICD-10-CM code that appears as an answer
-          choice anywhere in this site&apos;s own final exams, practice
-          quizzes, and worked examples &mdash; on top of what&apos;s
-          already taught across this site&apos;s own reviewer pages (those
-          link straight to the reviewer) &mdash; plus a CPT section/range
-          browser sourced from the codebook&apos;s table of contents for
-          the small remainder (mainly Category II/III codes) not yet
-          expanded to full detail. It is <strong>not</strong> a complete
-          code-by-code CPT/ICD-10 database &mdash; a full mechanical parse
-          of the entire raw codebook produced too many misaligned or wrong
-          entries to trust,
+          Medicine, and every CPT and ICD-10-CM code that appears as an
+          answer choice anywhere in this site&apos;s own final exams,
+          practice quizzes, and worked examples (including deleted/legacy
+          codes still used as deliberate wrong-answer distractors, clearly
+          labeled as such) &mdash; on top of what&apos;s already taught
+          across this site&apos;s own reviewer pages (those link straight
+          to the reviewer) &mdash; plus a CPT section/range browser sourced
+          from the codebook&apos;s table of contents for the small
+          remainder (mainly Category II/III codes) not yet expanded to
+          full detail. It is <strong>not</strong> a complete code-by-code
+          CPT/ICD-10 database &mdash; a full mechanical parse of the entire
+          raw codebook produced too many misaligned or wrong entries to
+          trust,
           so exhaustive per-code coverage of every single CPT/ICD-10 code
           was left out of scope.
         </p>

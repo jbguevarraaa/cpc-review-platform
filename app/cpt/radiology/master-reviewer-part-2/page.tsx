@@ -90,6 +90,7 @@ export default function RadiologyMasterReviewerPart2Page() {
       <nav aria-label="Radiology navigation" style={navStyle}>
         <Link href="/cpt/radiology" style={navLinkStyle}>70,000 Series home</Link>
         <Link href="/cpt/radiology/guidelines" style={navLinkStyle}>Guidelines</Link>
+        <Link href="/cpt/radiology/discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/radiology/study-tips" style={navLinkStyle}>Study tips &amp; hacks</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
@@ -441,6 +442,130 @@ export default function RadiologyMasterReviewerPart2Page() {
         <p style={pStyle}>Many PET services now include a CT component as part of the same code. Read the descriptor carefully, and don&apos;t automatically report a separate CT code on top of a combined PET/CT code.</p>
       </Section>
 
+      <Section n={42} title="Ultrasound — Required Elements for a &ldquo;Complete&rdquo; Exam">
+        <p style={pStyle}>For every body area that has both a &ldquo;complete&rdquo; and a &ldquo;limited&rdquo; ultrasound code, the same rule applies: ALL of the elements comprising a complete exam must be described in the report, OR the report must state why an element couldn&apos;t be visualized. If FEWER than the required elements are documented, the encounter is coded as the limited exam instead — even if the sonographer intended a complete study.</p>
+        <p style={pStyle}>The body areas with a complete/limited split are: Breast, Abdomen, Retroperitoneum, Pelvic (Obstetrical and Non-Obstetrical), and Extremities. Their required elements:</p>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "12px" }}>
+            <thead>
+              <tr>
+                <th style={{ border: "1px solid #e2d9c8", padding: "10px 12px", textAlign: "left" as const, fontSize: "14px", background: "#faf3e8", color: "#6b4226" }}>Exam type</th>
+                <th style={{ border: "1px solid #e2d9c8", padding: "10px 12px", textAlign: "left" as const, fontSize: "14px", background: "#faf3e8", color: "#6b4226" }}>Required elements for &ldquo;complete&rdquo;</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Breast (76641)", "All four quadrants of the breast, retroareolar region, and axilla (if performed)"],
+                ["Abdomen (76700)", "Liver, gallbladder, common bile duct, pancreas, spleen, kidneys, upper abdominal aorta, IVC, and any abnormality"],
+                ["Retroperitoneum (76770)", "Kidneys, abdominal aorta, common iliac artery origins, IVC, and any abnormality — OR kidneys, urinary bladder, and any urinary tract pathology"],
+                ["OB, 1st trimester (76801)", "Number of gestational sacs and fetuses; gestational sac/fetal measurements; survey of visible fetal and placental anatomic structure; qualitative amniotic fluid volume/gestational sac shape assessment; exam of maternal uterus and adnexa"],
+                ["OB, 2nd/3rd trimester (76805)", "Number of fetuses and amniotic/chorionic sacs; measurements appropriate for gestational age; survey of intracranial/spinal/abdominal anatomy; survey of the 4-chambered heart; survey of umbilical cord insertion site; survey of placenta location; amniotic fluid assessment; exam of maternal adnexa (when visible)"],
+                ["OB, detailed (76811)", "All 8 elements of 76805/76810 PLUS: fetal brain/ventricles evaluation, face evaluation, heart/outflow tract evaluation, chest anatomy, abdominal organ-specific anatomy, limbs evaluation, umbilical cord and placenta evaluation, and other fetal anatomy as indicated"],
+                ["Female, non-OB (76856)", "Description and measurement of the uterus and adnexal structures, measurement of the endometrium, measurement of the bladder (when applicable), and description of any pelvic pathology"],
+                ["Male, non-OB (76856)", "Evaluation and measurement of the urinary bladder (when applicable), evaluation of the prostate and seminal vesicles, and description of any pelvic pathology"],
+                ["Extremity (76881)", "Evaluation of muscles, tendons, joints, other soft tissue structures, and any identifiable abnormality"],
+              ].map(([exam, elements]) => (
+                <tr key={exam}>
+                  <td style={{ border: "1px solid #e2d9c8", padding: "10px 12px", fontSize: "14px", fontWeight: 800, color: "#6b4226" }}>{exam}</td>
+                  <td style={{ border: "1px solid #e2d9c8", padding: "10px 12px", fontSize: "14px" }}>{elements}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <Hack>The detailed OB exam (76811) is never a stand-alone concept to memorize separately — it&apos;s simply &ldquo;76805&apos;s 8 elements, PLUS 8 more.&rdquo; If a question lists all 16, that&apos;s your signal for 76811, not 76805.</Hack>
+        <Trap>A chest ultrasound and a complete male ultrasound both hinge on documentation completeness the same way every other complete/limited pair does — if a required element is missing from the note (and no reason is given for why it couldn&apos;t be seen), drop down to the limited code even if the sonographer calls it &ldquo;complete&rdquo; in the header.</Trap>
+      </Section>
+
+      <Section n={43} title="Ultrasound Guidance Requirements &amp; Intra-Articular Injection Reporting">
+        <p style={pStyle}>Ultrasound guidance procedures (76942 and similar) require two things: permanently recorded images of the site being localized, AND a documented description of the localization process. If an ultrasound is performed without a thorough evaluation of the organ/anatomic region, without image documentation, or without a final written report, the service is NOT separately reportable.</p>
+        <p style={pStyle}><strong>Intra-articular injections combined with imaging:</strong></p>
+        <CodeList items={[
+          ["Joint injection + radiographic arthrography", "Report the joint injection code AND the appropriate arthrography S&amp;I (supervision and interpretation) code — the arthrography S&amp;I code already includes any fluoroscopy used"],
+          ["Joint injection + CT or MR arthrography", "Report the joint injection code, the appropriate CT or MR code, AND the appropriate imaging guidance code — three codes, not two, since CT/MR arthrography guidance isn't bundled into the CT/MR code itself the way fluoroscopy is bundled into arthrography S&amp;I"],
+        ]} />
+        <Trap>Don&apos;t treat these two intra-articular scenarios as identical — radiographic arthrography folds guidance into one S&amp;I code, but CT/MR arthrography needs its own separate third code for guidance.</Trap>
+      </Section>
+
+      <Section n={44} title="Radiation Treatment Management — Professional, Global, or Technical?">
+        <p style={pStyle}>Every radiation oncology service on the &ldquo;Radiation Management and Treatment Table&rdquo; falls into one of three billing categories, and this classification is a direct exam favorite:</p>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "12px" }}>
+            <thead>
+              <tr>
+                <th style={{ border: "1px solid #e2d9c8", padding: "10px 12px", textAlign: "left" as const, fontSize: "14px", background: "#faf3e8", color: "#6b4226" }}>Category</th>
+                <th style={{ border: "1px solid #e2d9c8", padding: "10px 12px", textAlign: "left" as const, fontSize: "14px", background: "#faf3e8", color: "#6b4226" }}>Code type</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Clinical Treatment Planning (77261–77263)", "Professional only"],
+                ["Simulation (77280–77290)", "Global (append modifier 26 or TC as required)"],
+                ["Medical Radiation Physics, Dosimetry, Treatment Devices &amp; Special Services (77300–77370)", "Global (append modifier 26 or TC as required)"],
+                ["Treatment Delivery Services (77401–77525)", "Technical only"],
+                ["Radiation Treatment Management (77427–77499)", "Professional only"],
+              ].map(([cat, type]) => (
+                <tr key={cat}>
+                  <td style={{ border: "1px solid #e2d9c8", padding: "10px 12px", fontSize: "14px" }}>{cat}</td>
+                  <td style={{ border: "1px solid #e2d9c8", padding: "10px 12px", fontSize: "14px", fontWeight: 800, color: "#6b4226" }}>{type}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <Hack>Only two categories are &ldquo;Professional&rdquo; only, and they bookend the whole workflow: Clinical Treatment Planning (the start) and Radiation Treatment Management (the ongoing oversight). Everything in between — simulation, physics/dosimetry, and delivery — has a technical component, since it involves equipment/staff time, not just physician judgment.</Hack>
+      </Section>
+
+      <Section n={45} title="Radiation Treatment Management — Counting Fractions &amp; What's Packaged">
+        <p style={pStyle}>Per the CPT guideline: &ldquo;Radiation treatment management is reported in units of five fractions or treatment sessions, regardless of the actual time period in which the services are furnished.&rdquo; The fractions do NOT need to be furnished on consecutive days.</p>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "12px" }}>
+            <thead>
+              <tr>
+                <th style={{ border: "1px solid #e2d9c8", padding: "10px 12px", textAlign: "left" as const, fontSize: "14px", background: "#faf3e8", color: "#6b4226" }}>Fractions/treatments</th>
+                <th style={{ border: "1px solid #e2d9c8", padding: "10px 12px", textAlign: "left" as const, fontSize: "14px", background: "#faf3e8", color: "#6b4226" }}>Code reported</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["1–2 fractions", "77431 (not separately reported as 77427)"],
+                ["3–4 fractions", "77427 × 1"],
+                ["5 fractions", "77427 × 1"],
+                ["6–7 fractions", "77427 × 1"],
+                ["8–9 fractions", "77427 × 2"],
+                ["10 fractions", "77427 × 2"],
+              ].map(([count, code]) => (
+                <tr key={count}>
+                  <td style={{ border: "1px solid #e2d9c8", padding: "10px 12px", fontSize: "14px" }}>{count}</td>
+                  <td style={{ border: "1px solid #e2d9c8", padding: "10px 12px", fontSize: "14px", fontFamily: "Consolas, monospace", fontWeight: 800, color: "#6b4226" }}>{code}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <Trap>3–4 fractions beyond a completed multiple of five still round UP to another full unit of 77427 — but only 1–2 fractions beyond a multiple of five are dropped and not separately reported. This asymmetry (round up at 3, not at 1–2) is a classic exam trap.</Trap>
+        <p style={pStyle}><strong>What's packaged into radiation treatment management</strong> (never billed as a separate E/M visit): the physician&apos;s medical evaluation and management furnished for each RTM reporting period is included in the RTM code itself. This typically covers: assessment of the patient&apos;s response to treatment; coordination of care; review of imaging and/or lab test results; review of port images; review of dosimetry, dose delivery, and treatment parameters; and review of patient treatment set-up.</p>
+        <p style={pStyle}><strong>What's packaged into 77469</strong> (intraoperative radiation treatment management): code 77469 represents ONLY the intraoperative session management — it does not include medical evaluation and management outside of that specific intraoperative session. Any additional management furnished outside the intraoperative session is reported separately.</p>
+      </Section>
+
+      <Section n={46} title="Nuclear Medicine — Grouping &amp; What's Separately Reportable">
+        <p style={pStyle}>Nuclear Medicine services are grouped into two major categories by code range:</p>
+        <CodeList items={[
+          ["78012–78999", "Diagnostic nuclear medicine"],
+          ["79005–79999", "Therapeutic nuclear medicine"],
+        ]} />
+        <p style={pStyle}>Nuclear medicine service codes may be reported independently, or together with diagnostic work-up and/or follow-up care service codes.</p>
+        <p style={pStyle}><strong>NOT packaged — reported separately:</strong></p>
+        <CodeList items={[
+          ["HCPCS supply code", "Supply of the radiopharmaceutical or drug is explicitly excluded from the listed nuclear medicine procedures — always reported separately with the appropriate supply code, in addition to the procedure code"],
+        ]} />
+        <p style={pStyle}><strong>NOT packaged specifically to CV System Nuclear Medicine:</strong></p>
+        <CodeList items={[
+          ["93015–93018", "When myocardial perfusion or cardiac blood pool imaging studies are performed during exercise and/or pharmacologic stress, the appropriate stress testing code from this series is reported IN ADDITION to the imaging code — it is never bundled into the nuclear cardiology code"],
+        ]} />
+        <Hack>Two different &ldquo;packaging&rdquo; questions live in this chapter — don&apos;t conflate them. General Nuclear Medicine packaging is about the radiopharmaceutical SUPPLY (always separate). CV-specific packaging is about the STRESS TEST (always separate when stress was used to obtain the images).</Hack>
+      </Section>
+
       <Section n="✓" title="Part 2 — CPC “Must Know” List">
         <p style={pStyle}>If you had to memorize this list first before the CPC exam:</p>
         <MustKnowGroup title="Ultrasound" items={[
@@ -448,9 +573,19 @@ export default function RadiologyMasterReviewerPart2Page() {
           "76770 vs 76775",
           "76641 vs 76642",
           "76801",
-          "76805",
+          "76805 vs 76811 (8 elements vs. those 8 plus 8 more)",
           "76816",
           "76818 vs 76819",
+          "Required elements per body area — complete only counts if fully documented",
+        ]} />
+        <MustKnowGroup title="Radiation Treatment Management specifics" items={[
+          "Clinical Treatment Planning & RTM = Professional only; Delivery = Technical only",
+          "5 fractions = 1 unit of 77427; 3–4 over a multiple of 5 rounds up; 1–2 over does not",
+          "77469 = intraoperative session only, nothing outside that session",
+        ]} />
+        <MustKnowGroup title="Nuclear Medicine packaging" items={[
+          "Radiopharmaceutical/drug supply is never bundled — always its own HCPCS code",
+          "93015–93018 stress testing is never bundled into CV nuclear medicine codes",
         ]} />
         <MustKnowGroup title="Guidance" items={[
           "76937",

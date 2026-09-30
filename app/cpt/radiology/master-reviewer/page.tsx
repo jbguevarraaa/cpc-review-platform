@@ -113,6 +113,7 @@ export default function RadiologyMasterReviewerPart1Page() {
       <nav aria-label="Radiology navigation" style={navStyle}>
         <Link href="/cpt/radiology" style={navLinkStyle}>70,000 Series home</Link>
         <Link href="/cpt/radiology/guidelines" style={navLinkStyle}>Guidelines</Link>
+        <Link href="/cpt/radiology/discussion-guide" style={navLinkStyle}>Discussion Guide</Link>
         <Link href="/cpt/radiology/study-tips" style={navLinkStyle}>Study tips &amp; hacks</Link>
         <Link href="/cpt" style={navLinkStyle}>CPT home</Link>
       </nav>
