@@ -226,6 +226,29 @@ export default function SurgeryPage() {
             <p>Radiology</p>
           </div>
         </Link>
+
+        {/* Anesthesia */}
+        <Link
+          href="/cpt/anesthesia"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid #cbeaf1",
+              borderRadius: "12px",
+              padding: "20px",
+              width: "220px",
+              backgroundColor: "#ecfeff",
+              cursor: "pointer",
+            }}
+          >
+            <h3>00100–01999</h3>
+            <p>Anesthesia</p>
+          </div>
+        </Link>
       </div>
 
       {/* E/M Series */}
