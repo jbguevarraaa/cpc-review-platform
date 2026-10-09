@@ -11,6 +11,7 @@ const links = [
   { href: "/business-medicine", label: "Business of Medicine" },
   { href: "/final-exams", label: "Final Exams" },
   { href: "/reference", label: "🔍 Code Lookup" },
+  { href: "/break", label: "☕ Break Mode" },
 ];
 
 const barStyle: React.CSSProperties = {
